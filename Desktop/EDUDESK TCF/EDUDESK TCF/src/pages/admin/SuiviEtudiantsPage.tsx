@@ -1,0 +1,587 @@
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { supabase } from '@/db/supabase';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Skeleton } from '@/components/ui/skeleton';
+import {
+  Select, SelectContent, SelectItem, SelectTrigger, SelectValue,
+} from '@/components/ui/select';
+import {
+  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line, Legend,
+} from 'recharts';
+import {
+  Users, ChevronDown, ChevronUp, Search, TrendingUp,
+  Clock, CheckCircle2, ToggleLeft, ToggleRight, UserCheck, UserX, GraduationCap,
+} from 'lucide-react';
+import { cn } from '@/lib/utils';
+import { toast } from 'sonner';
+import type { Profile, SessionExamen, NiveauCECRL } from '@/types/index';
+import { CECRL_COLORS, EPREUVE_LABELS, NIVEAU_CECRL_LIST, pctToCECRL, CECRL_DESCRIPTIONS } from '@/types/index';
+
+interface EpreuveStats {
+  label: string;
+  moyenneExamen: number | null;
+  moyenneEntrainement: number | null;
+}
+
+interface EtudiantStats {
+  profile: Profile;
+  professeur?: Profile | null;
+  sessions: SessionExamen[];
+  sessionsTotal: number;
+  examsBlancs: number;
+  correctionsEnAttente: number;
+  dernierScore: number | null;
+  dernierNiveau: NiveauCECRL | null;
+  scoreMoyen: number | null;
+  progression: number | null;
+  niveauGlobal: NiveauCECRL | null;
+  parEpreuve: EpreuveStats[];
+}
+
+const SCORE_MAX = 699;
+
+function avg(vals: (number | null | undefined)[]): number | null {
+  const clean = vals.filter((v): v is number => v !== null && v !== undefined);
+  return clean.length ? Math.round(clean.reduce((a, b) => a + b, 0) / clean.length) : null;
+}
+
+function sessionEntrainementScore(s: SessionExamen): number | null {
+  const vals = [s.score_oral, s.score_ecrit, s.score_expression_ecrite, s.score_expression_orale].filter(
+    (v): v is number => v !== null && v !== undefined
+  );
+  return vals.length ? Math.round(vals.reduce((a, b) => a + b, 0) / vals.length) : null;
+}
+
+function scoreColor(score: number | null): string {
+  if (score === null) return 'text-muted-foreground';
+  if (score >= 500) return 'text-success';
+  if (score >= 300) return 'text-warning';
+  return 'text-destructive';
+}
+
+export default function SuiviEtudiantsPage() {
+  const [etudiants, setEtudiants] = useState<EtudiantStats[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [search, setSearch] = useState('');
+  const [filterNiveau, setFilterNiveau] = useState<NiveauCECRL | 'tous'>('tous');
+  const [filterAttribution, setFilterAttribution] = useState<'tous' | 'attribue' | 'non_attribue'>('tous');
+  const [expanded, setExpanded] = useState<string | null>(null);
+  const [toggling, setToggling] = useState<string | null>(null);
+
+  useEffect(() => {
+    const load = async () => {
+      const [profilesRes, attributionsRes, profsRes] = await Promise.all([
+        supabase.from('profiles').select('*').eq('role', 'etudiant').order('nom'),
+        supabase.from('attributions').select('etudiant_id, professeur_id'),
+        supabase.from('profiles').select('*').eq('role', 'professeur'),
+      ]);
+
+      const profiles = Array.isArray(profilesRes.data) ? profilesRes.data : [];
+      const profMap = new Map((profsRes.data || []).map(p => [p.id, p]));
+      const attrMap = new Map((attributionsRes.data || []).map(a => [a.etudiant_id, profMap.get(a.professeur_id) || null]));
+
+      if (!profiles.length && profilesRes.error) { setLoading(false); return; }
+
+      const enriched = await Promise.all(
+        profiles.map(async (profile: Profile) => {
+          const [sessionsRes, pendingRes] = await Promise.all([
+            supabase
+              .from('sessions_examen')
+              .select('*')
+              .eq('etudiant_id', profile.id)
+              .order('created_at', { ascending: false })
+              .limit(20),
+            supabase
+              .from('productions')
+              .select('id', { count: 'exact' })
+              .eq('etudiant_id', profile.id)
+              .eq('statut_correction', 'en_attente')
+              .not('professeur_id', 'is', null),
+          ]);
+
+          const sessions: SessionExamen[] = Array.isArray(sessionsRes.data) ? sessionsRes.data : [];
+          const examSessions = sessions.filter(s => s.mode === 'examen_blanc' && s.statut === 'termine');
+          const trainSessions = sessions.filter(s => s.mode === 'entrainement' && s.statut === 'termine');
+          const scored = examSessions.filter(s => s.score_global !== null);
+          const scores = scored.map(s => s.score_global as number);
+          const scoreMoyen = avg(scores);
+          const dernierScore = scores[0] ?? null;
+          const dernierNiveau = examSessions[0]?.niveau_cecrl ?? null;
+          const progression = scores.length >= 2 ? scores[0] - scores[1] : null;
+
+          // Moyennes par épreuve — séparées par mode
+          const epreuves: Array<{ label: string; key: keyof SessionExamen }> = [
+            { label: EPREUVE_LABELS.comprehension_oral,  key: 'score_oral' },
+            { label: EPREUVE_LABELS.comprehension_ecrit, key: 'score_ecrit' },
+            { label: EPREUVE_LABELS.expression_ecrite,   key: 'score_expression_ecrite' },
+            { label: EPREUVE_LABELS.expression_orale,    key: 'score_expression_orale' },
+          ];
+          const parEpreuve: EpreuveStats[] = epreuves.map(e => ({
+            label: e.label,
+            moyenneExamen: avg(examSessions.map(s => s[e.key] as number | null)),
+            moyenneEntrainement: avg(trainSessions.map(s => s[e.key] as number | null)),
+          }));
+
+          // Niveau global CECRL — toutes sessions confondues
+          const allScores: number[] = [];
+          sessions.forEach(s => {
+            if (s.mode === 'examen_blanc' && s.score_global !== null) {
+              allScores.push(s.score_global as number);
+            } else {
+              const sc = sessionEntrainementScore(s);
+              if (sc !== null) allScores.push(sc);
+            }
+          });
+          const globalAvg = avg(allScores);
+          const niveauGlobal: NiveauCECRL | null = globalAvg !== null
+            ? pctToCECRL(Math.round((globalAvg / SCORE_MAX) * 100))
+            : null;
+
+          return {
+            profile,
+            professeur: attrMap.get(profile.id) || null,
+            sessions,
+            sessionsTotal: sessions.length,
+            examsBlancs: examSessions.length,
+            correctionsEnAttente: pendingRes.count || 0,
+            dernierScore,
+            dernierNiveau,
+            scoreMoyen,
+            progression,
+            niveauGlobal,
+            parEpreuve,
+          } as EtudiantStats;
+        })
+      );
+      setEtudiants(enriched);
+      setLoading(false);
+    };
+    load();
+  }, []);
+
+  const toggleExamenBlanc = async (etudiantId: string, current: boolean) => {
+    setToggling(etudiantId);
+    const { error } = await supabase
+      .from('profiles')
+      .update({ examen_blanc_actif: !current })
+      .eq('id', etudiantId);
+    if (error) {
+      toast.error("Erreur lors de la mise à jour.");
+    } else {
+      setEtudiants(prev => prev.map(e =>
+        e.profile.id === etudiantId
+          ? { ...e, profile: { ...e.profile, examen_blanc_actif: !current } }
+          : e
+      ));
+      toast.success(!current ? 'Examen blanc activé ✓' : 'Examen blanc désactivé');
+    }
+    setToggling(null);
+  };
+
+  const filtered = etudiants.filter(({ profile, dernierNiveau, professeur }) => {
+    const matchSearch = !search ||
+      `${profile.prenom} ${profile.nom} ${profile.email} ${professeur?.prenom || ''} ${professeur?.nom || ''}`.toLowerCase().includes(search.toLowerCase());
+    const matchNiveau = filterNiveau === 'tous' || dernierNiveau === filterNiveau;
+    const matchAttr = filterAttribution === 'tous'
+      || (filterAttribution === 'attribue' && !!professeur)
+      || (filterAttribution === 'non_attribue' && !professeur);
+    return matchSearch && matchNiveau && matchAttr;
+  });
+
+  const stats = {
+    total: etudiants.length,
+    actifs: etudiants.filter(e => e.profile.examen_blanc_actif).length,
+    avgScore: (() => {
+      const withScore = etudiants.filter(e => e.dernierScore !== null);
+      if (!withScore.length) return null;
+      return Math.round(withScore.reduce((s, e) => s + (e.dernierScore || 0), 0) / withScore.length);
+    })(),
+    pending: etudiants.reduce((s, e) => s + e.correctionsEnAttente, 0),
+  };
+
+  return (
+    <div className="max-w-5xl mx-auto space-y-6 fade-in">
+      <div>
+        <h1 className="text-2xl font-bold text-foreground text-balance">Suivi des étudiants</h1>
+        <p className="text-muted-foreground mt-1">Gérez l'accès à l'examen blanc et suivez les progrès</p>
+      </div>
+
+      {/* Stats globales */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {[
+          { label: 'Étudiants', value: stats.total, icon: Users, color: 'text-primary' },
+          { label: 'Exam blanc activé', value: stats.actifs, icon: ToggleRight, color: 'text-success' },
+          { label: 'Score moyen', value: stats.avgScore !== null ? `${stats.avgScore}/699` : '—', icon: TrendingUp, color: 'text-secondary' },
+          { label: 'Corrections en attente', value: stats.pending, icon: Clock, color: 'text-destructive' },
+        ].map(c => (
+          <Card key={c.label} className="h-full">
+            <CardContent className="p-4 flex items-center gap-3">
+              <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                <c.icon className={`w-4 h-4 ${c.color}`} />
+              </div>
+              <div className="min-w-0">
+                <p className="text-lg font-bold text-foreground">{c.value}</p>
+                <p className="text-xs text-muted-foreground text-pretty">{c.label}</p>
+              </div>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+
+      {/* Filtres */}
+      <div className="flex flex-col md:flex-row gap-3">
+        <div className="relative flex-1">
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+          <Input value={search} onChange={e => setSearch(e.target.value)} placeholder="Rechercher un étudiant ou un professeur..." className="pl-9" />
+        </div>
+        <Select value={filterAttribution} onValueChange={v => setFilterAttribution(v as 'tous' | 'attribue' | 'non_attribue')}>
+          <SelectTrigger className="w-full md:w-52"><SelectValue placeholder="Attribution professeur" /></SelectTrigger>
+          <SelectContent>
+            <SelectItem value="tous">Toutes les attributions</SelectItem>
+            <SelectItem value="attribue">Professeur attribué</SelectItem>
+            <SelectItem value="non_attribue">Non attribué</SelectItem>
+          </SelectContent>
+        </Select>
+        <Select value={filterNiveau} onValueChange={v => setFilterNiveau(v as NiveauCECRL | 'tous')}>
+          <SelectTrigger className="w-full md:w-44"><SelectValue /></SelectTrigger>
+          <SelectContent>
+            <SelectItem value="tous">Tous les niveaux</SelectItem>
+            {NIVEAU_CECRL_LIST.map(n => <SelectItem key={n} value={n}>{n}</SelectItem>)}
+          </SelectContent>
+        </Select>
+      </div>
+
+      {/* Liste */}
+      {loading ? (
+        <div className="space-y-3">
+          {[1, 2, 3, 4].map(i => <Skeleton key={i} className="h-20 w-full bg-muted" />)}
+        </div>
+      ) : filtered.length === 0 ? (
+        <Card className="h-full">
+          <CardContent className="p-12 text-center">
+            <Users className="w-12 h-12 text-muted-foreground/30 mx-auto mb-4" />
+            <p className="text-muted-foreground">Aucun étudiant trouvé.</p>
+          </CardContent>
+        </Card>
+      ) : (
+        <div className="space-y-2">
+          {filtered.map(({ profile, professeur, sessions, sessionsTotal, examsBlancs, correctionsEnAttente, dernierScore, dernierNiveau, scoreMoyen, progression, niveauGlobal, parEpreuve }) => {
+            const isExpanded = expanded === profile.id;
+            const examActif = profile.examen_blanc_actif;
+
+            // Deux courbes : examen blanc + entraînement
+            type ChartPoint = { date: string; examen?: number; entrainement?: number };
+            const chartMap: Record<string, ChartPoint> = {};
+            sessions
+              .filter(s => s.statut === 'termine')
+              .forEach(s => {
+                const date = new Date(s.created_at).toLocaleDateString('fr-FR', { day: '2-digit', month: 'short' });
+                if (!chartMap[s.created_at]) chartMap[s.created_at] = { date };
+                if (s.mode === 'examen_blanc' && s.score_global !== null) {
+                  chartMap[s.created_at].examen = s.score_global as number;
+                } else if (s.mode === 'entrainement') {
+                  const sc = sessionEntrainementScore(s);
+                  if (sc !== null) chartMap[s.created_at].entrainement = sc;
+                }
+              });
+            const chartData = Object.entries(chartMap)
+              .sort(([a], [b]) => new Date(a).getTime() - new Date(b).getTime())
+              .slice(-10)
+              .map(([, v]) => v);
+
+            return (
+              <Card key={profile.id} className={cn('h-full transition-shadow', isExpanded && 'shadow-md')}>
+                <CardContent className="p-4">
+                  <div className="flex flex-col gap-2">
+                    {/* Ligne 1 : avatar + nom + email + professeur */}
+                    <div className="flex items-center gap-3 min-w-0">
+                      <div className="w-10 h-10 rounded-full bg-primary/15 flex items-center justify-center shrink-0">
+                        <span className="text-sm font-semibold text-primary">
+                          {profile.prenom?.[0]}{profile.nom?.[0]}
+                        </span>
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <div className="flex items-center gap-2 flex-wrap">
+                          <p className="font-semibold text-foreground truncate">{profile.prenom} {profile.nom}</p>
+                          {niveauGlobal && (
+                            <Badge
+                              style={{ backgroundColor: CECRL_COLORS[niveauGlobal] }}
+                              className="text-white text-xs shrink-0"
+                              title="Niveau CECRL global (tous modes confondus)"
+                            >
+                              {niveauGlobal}
+                            </Badge>
+                          )}
+                          {/* Badge Attribution Professeur */}
+                          {professeur ? (
+                            <Badge variant="outline" className="text-xs gap-1 border-primary/30 text-primary bg-primary/5 font-normal">
+                              <GraduationCap className="w-3 h-3 text-primary shrink-0" />
+                              <span className="truncate">Prof. {professeur.prenom} {professeur.nom}</span>
+                            </Badge>
+                          ) : (
+                            <Link to="/admin/attributions" onClick={e => e.stopPropagation()}>
+                              <Badge variant="outline" className="text-xs gap-1 border-amber-500/40 text-amber-600 dark:text-amber-400 bg-amber-500/5 font-normal hover:bg-amber-500/15 cursor-pointer transition-colors" title="Cliquez pour attribuer un professeur">
+                                <UserX className="w-3 h-3 text-amber-500 shrink-0" />
+                                <span>Professeur non attribué</span>
+                              </Badge>
+                            </Link>
+                          )}
+                        </div>
+                        <p className="text-xs text-muted-foreground truncate">{profile.email}</p>
+                      </div>
+                      {/* Expand en haut à droite */}
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        className="shrink-0"
+                        onClick={() => setExpanded(isExpanded ? null : profile.id)}
+                      >
+                        {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+                      </Button>
+                    </div>
+
+                    {/* Ligne 2 : stats + contrôles (s'adaptent sans écraser le nom) */}
+                    <div className="flex items-center gap-2 flex-wrap pl-13">
+                      {/* Score */}
+                      {dernierScore !== null && (
+                        <div className="text-center">
+                          <p className={cn('text-sm font-bold', scoreColor(dernierScore))}>
+                            {dernierScore}/699
+                          </p>
+                          <p className="text-xs text-muted-foreground">Dernier score</p>
+                        </div>
+                      )}
+
+                      {/* Progression */}
+                      {progression !== null && (
+                        <div className="text-center">
+                          <p className={cn('text-sm font-bold', progression >= 0 ? 'text-success' : 'text-destructive')}>
+                            {progression >= 0 ? '+' : ''}{progression}
+                          </p>
+                          <p className="text-xs text-muted-foreground">Évolution</p>
+                        </div>
+                      )}
+
+                      {/* Niveau */}
+                      {dernierNiveau && (
+                        <Badge style={{ backgroundColor: CECRL_COLORS[dernierNiveau] }} className="text-white shrink-0">
+                          {dernierNiveau}
+                        </Badge>
+                      )}
+
+                      {/* Corrections en attente */}
+                      {correctionsEnAttente > 0 && (
+                        <Badge variant="destructive" className="text-xs shrink-0">
+                          {correctionsEnAttente} en attente
+                        </Badge>
+                      )}
+
+                      {/* Toggle examen blanc */}
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className={cn(
+                          'gap-1.5 shrink-0 text-xs h-8',
+                          examActif
+                            ? 'border-success/50 text-success hover:bg-success/10'
+                            : 'border-muted-foreground/30 text-muted-foreground hover:bg-muted'
+                        )}
+                        onClick={() => toggleExamenBlanc(profile.id, examActif)}
+                        disabled={toggling === profile.id}
+                      >
+                        {examActif
+                          ? <ToggleRight className="w-3.5 h-3.5" />
+                          : <ToggleLeft className="w-3.5 h-3.5" />
+                        }
+                        <span>Examen blanc</span>
+                      </Button>
+                    </div>
+                  </div>
+
+                  {/* Détail expandé */}
+                  {isExpanded && (
+                    <div className="mt-4 space-y-4 border-t border-border pt-4">
+                      {/* Statut examen blanc */}
+                      <div className={cn(
+                        'flex items-center gap-3 p-3 rounded-lg border',
+                        examActif
+                          ? 'bg-success/5 border-success/20'
+                          : 'bg-muted/30 border-border'
+                      )}>
+                        {examActif
+                          ? <ToggleRight className="w-5 h-5 text-success shrink-0" />
+                          : <ToggleLeft className="w-5 h-5 text-muted-foreground shrink-0" />
+                        }
+                        <div className="flex-1 min-w-0">
+                          <p className={cn('text-sm font-medium', examActif ? 'text-success' : 'text-muted-foreground')}>
+                            Examen blanc {examActif ? 'activé' : 'désactivé'}
+                          </p>
+                          <p className="text-xs text-muted-foreground text-pretty">
+                            {examActif
+                              ? "Cet étudiant peut accéder à l'examen blanc TCF Canada."
+                              : "Cliquez sur le bouton pour activer l'accès à l'examen blanc."}
+                          </p>
+                        </div>
+                        <Button
+                          size="sm"
+                          variant={examActif ? 'outline' : 'default'}
+                          className={cn('shrink-0', examActif && 'border-destructive/40 text-destructive hover:bg-destructive/10')}
+                          onClick={() => toggleExamenBlanc(profile.id, examActif)}
+                          disabled={toggling === profile.id}
+                        >
+                          {toggling === profile.id ? 'En cours...' : examActif ? 'Désactiver' : 'Activer'}
+                        </Button>
+                      </div>
+
+                      {/* Attribution Professeur */}
+                      <div className={cn(
+                        'flex items-center gap-3 p-3 rounded-lg border',
+                        professeur
+                          ? 'bg-primary/5 border-primary/20'
+                          : 'bg-amber-500/5 border-amber-500/20'
+                      )}>
+                        {professeur
+                          ? <UserCheck className="w-5 h-5 text-primary shrink-0" />
+                          : <UserX className="w-5 h-5 text-amber-500 shrink-0" />
+                        }
+                        <div className="flex-1 min-w-0">
+                          <p className={cn('text-sm font-medium', professeur ? 'text-primary' : 'text-amber-600 dark:text-amber-400')}>
+                            {professeur ? `Professeur attribué : ${professeur.prenom} ${professeur.nom}` : 'Professeur non attribué'}
+                          </p>
+                          <p className="text-xs text-muted-foreground text-pretty">
+                            {professeur
+                              ? `Les épreuves d'expression (écrite & orale) sont assignées à ${professeur.prenom} ${professeur.nom} (${professeur.email}).`
+                              : "Cet étudiant n'a pas de professeur assigné pour corriger ses productions."}
+                          </p>
+                        </div>
+                        <Link to="/admin/attributions">
+                          <Button size="sm" variant="outline" className="shrink-0 text-xs">
+                            {professeur ? 'Modifier l\'attribution' : 'Attribuer un professeur'}
+                          </Button>
+                        </Link>
+                      </div>
+
+                      {/* Statistiques */}
+                      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                        {[
+                          { label: 'Sessions totales', value: sessionsTotal, score: null },
+                          { label: 'Examens blancs', value: examsBlancs, score: null },
+                          { label: 'Score moyen', value: scoreMoyen !== null ? `${scoreMoyen}/699` : '—', score: scoreMoyen },
+                          { label: 'Dernier score', value: dernierScore !== null ? `${dernierScore}/699` : '—', score: dernierScore },
+                        ].map(stat => {
+                          const niv = stat.score !== null ? pctToCECRL(Math.round((stat.score / 699) * 100)) : null;
+                          return (
+                            <div key={stat.label} className="bg-muted/50 rounded-lg p-3 text-center">
+                              <p className="text-base font-bold text-foreground">{stat.value}</p>
+                              {niv && (
+                                <Badge style={{ backgroundColor: CECRL_COLORS[niv] }} className="text-white text-xs mt-0.5">
+                                  {niv} — {CECRL_DESCRIPTIONS[niv]}
+                                </Badge>
+                              )}
+                              <p className="text-xs text-muted-foreground mt-0.5">{stat.label}</p>
+                            </div>
+                          );
+                        })}
+                      </div>
+
+                      {/* Moyennes par épreuve — entraînement vs examen blanc */}
+                      <div className="space-y-2">
+                        <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Moyennes par épreuve</p>
+                        <div className="overflow-x-auto">
+                          <table className="w-full text-xs min-w-[320px]">
+                            <thead>
+                              <tr className="border-b border-border">
+                                <th className="text-left py-1.5 pr-3 font-medium text-muted-foreground whitespace-nowrap">Épreuve</th>
+                                <th className="text-center py-1.5 px-2 font-medium whitespace-nowrap" style={{ color: 'hsl(var(--chart-1))' }}>Entraînement</th>
+                                <th className="text-center py-1.5 pl-2 font-medium whitespace-nowrap" style={{ color: 'hsl(var(--chart-2))' }}>Examen blanc</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {parEpreuve.map(e => (
+                                <tr key={e.label} className="border-b border-border/50 last:border-0">
+                                  <td className="py-1.5 pr-3 text-muted-foreground whitespace-nowrap">{e.label}</td>
+                                  <td className={cn('py-1.5 px-2 text-center font-mono font-semibold whitespace-nowrap', scoreColor(e.moyenneEntrainement))}>
+                                    {e.moyenneEntrainement !== null ? `${e.moyenneEntrainement}/699` : '—'}
+                                  </td>
+                                  <td className={cn('py-1.5 pl-2 text-center font-mono font-semibold whitespace-nowrap', scoreColor(e.moyenneExamen))}>
+                                    {e.moyenneExamen !== null ? `${e.moyenneExamen}/699` : '—'}
+                                  </td>
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+
+                      {/* Graphique progression — 2 courbes */}
+                      {chartData.length > 0 && (
+                        <div>
+                          <p className="text-xs font-medium text-muted-foreground mb-2 uppercase tracking-wide">
+                            Progression des scores
+                          </p>
+                          <div className="w-full min-w-0 overflow-hidden h-44">
+                            <ResponsiveContainer width="100%" height="100%">
+                              <LineChart data={chartData}>
+                                <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+                                <XAxis dataKey="date" tick={{ fontSize: 11 }} />
+                                <YAxis domain={[0, SCORE_MAX]} tick={{ fontSize: 11 }} />
+                                <Tooltip
+                                  contentStyle={{ background: 'hsl(var(--card))', border: '1px solid hsl(var(--border))', borderRadius: '6px', fontSize: 12 }}
+                                  formatter={(v: number, name: string) => [
+                                    `${v}/699`,
+                                    name === 'examen' ? 'Examen blanc' : 'Entraînement',
+                                  ]}
+                                />
+                                <Legend
+                                  layout="horizontal"
+                                  wrapperStyle={{ paddingTop: 8, fontSize: 11 }}
+                                  formatter={(v) => v === 'examen' ? 'Examen blanc' : 'Entraînement'}
+                                />
+                                <Line
+                                  type="monotone" dataKey="examen"
+                                  stroke="hsl(var(--chart-2))" strokeWidth={2}
+                                  dot={{ fill: 'hsl(var(--chart-2))', r: 3 }} activeDot={{ r: 5 }}
+                                  connectNulls
+                                />
+                                <Line
+                                  type="monotone" dataKey="entrainement"
+                                  stroke="hsl(var(--chart-1))" strokeWidth={2} strokeDasharray="4 3"
+                                  dot={{ fill: 'hsl(var(--chart-1))', r: 3 }} activeDot={{ r: 5 }}
+                                  connectNulls
+                                />
+                              </LineChart>
+                            </ResponsiveContainer>
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Corrections */}
+                      {correctionsEnAttente > 0 && (
+                        <div className="flex items-center gap-2 p-3 bg-destructive/5 border border-destructive/20 rounded-md">
+                          <Clock className="w-4 h-4 text-destructive shrink-0" />
+                          <p className="text-sm text-destructive">
+                            {correctionsEnAttente} production{correctionsEnAttente > 1 ? 's' : ''} en attente de correction
+                          </p>
+                        </div>
+                      )}
+                      {correctionsEnAttente === 0 && examsBlancs > 0 && (
+                        <div className="flex items-center gap-2 p-3 bg-success/5 border border-success/20 rounded-md">
+                          <CheckCircle2 className="w-4 h-4 text-success shrink-0" />
+                          <p className="text-sm text-success">Toutes les productions sont corrigées</p>
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+}
