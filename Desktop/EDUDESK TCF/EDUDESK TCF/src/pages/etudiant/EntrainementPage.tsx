@@ -287,8 +287,57 @@ export default function EntrainementPage() {
     setSessionDone(false);
     setAudioBlobs({});
     if (epreuve === 'expression_ecrite' || epreuve === 'expression_orale') {
-      const { data } = await supabase.from('taches').select('*').eq('epreuve', epreuve).eq('actif', true).order('numero_tache');
-      setTaches(Array.isArray(data) ? data : []);
+      const { data: tachesData } = await supabase
+        .from('taches')
+        .select('*')
+        .eq('epreuve', epreuve)
+        .eq('actif', true)
+        .order('numero_tache');
+
+      let list = Array.isArray(tachesData) ? tachesData : [];
+
+      // Fallback vers la table questions si taches est vide
+      if (list.length === 0) {
+        const { data: qData } = await supabase
+          .from('questions')
+          .select('*')
+          .eq('epreuve', epreuve)
+          .eq('actif', true);
+
+        if (Array.isArray(qData) && qData.length > 0) {
+          list = qData.map((q, idx) => ({
+            id: q.id,
+            epreuve: q.epreuve,
+            numero_tache: q.ordre || idx + 1,
+            reference: q.reference || null,
+            consigne: q.texte || '',
+            duree_secondes: null,
+            actif: true,
+            cree_par: q.cree_par || null,
+            created_at: q.created_at || new Date().toISOString(),
+          }));
+        }
+      }
+
+      // Sélectionner 1 sujet au hasard pour chaque numéro de tâche
+      const byNum: Record<number, Tache[]> = {};
+      list.forEach(t => {
+        if (!byNum[t.numero_tache]) byNum[t.numero_tache] = [];
+        byNum[t.numero_tache].push(t);
+      });
+      const selectedTaches: Tache[] = [];
+      const requiredNums = epreuve === 'expression_ecrite' ? [1, 2, 3] : [1, 3];
+      requiredNums.forEach(num => {
+        const pool = byNum[num];
+        if (pool && pool.length > 0) {
+          const randomIndex = Math.floor(Math.random() * pool.length);
+          selectedTaches.push(pool[randomIndex]);
+        } else if (list.some(t => t.numero_tache === num)) {
+          selectedTaches.push(list.find(t => t.numero_tache === num)!);
+        }
+      });
+
+      setTaches(selectedTaches.length > 0 ? selectedTaches : list);
     } else {
       const all = await fetchAllQuestions<Question>(epreuve);
       setQuestions(shuffle(all).slice(0, QCM_SESSION_SIZE));
@@ -499,10 +548,17 @@ export default function EntrainementPage() {
         {taches.map(tache => (
           <Card key={tache.id} className="h-full">
             <CardHeader>
-              <CardTitle className="text-base text-balance">Tâche {tache.numero_tache}</CardTitle>
+              <CardTitle className="text-base text-balance flex items-center justify-between gap-2 flex-wrap">
+                <span>Tâche {tache.numero_tache}</span>
+                {tache.reference && (
+                  <Badge variant="outline" className="text-xs font-mono font-medium border-primary/40 bg-primary/5 text-primary">
+                    {tache.reference}
+                  </Badge>
+                )}
+              </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              <p className="text-sm text-foreground bg-muted/50 rounded-lg p-4 text-pretty">{tache.consigne}</p>
+              <p className="text-sm text-foreground bg-muted/50 rounded-lg p-4 text-pretty whitespace-pre-wrap leading-relaxed">{tache.consigne}</p>
               <textarea
                 className="w-full min-h-32 text-base px-3 py-2 rounded-md border border-input bg-background resize-y focus:outline-none focus:ring-2 focus:ring-ring"
                 placeholder="Rédigez votre réponse ici..."
