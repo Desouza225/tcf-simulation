@@ -251,62 +251,28 @@ export default function ExamenBlancPage() {
     setTimerActive(epreuve !== 'expression_orale');
 
     if (epreuve === 'expression_ecrite' || epreuve === 'expression_orale') {
-      const { data: tachesData } = await supabase
-        .from('taches')
-        .select('*')
-        .eq('epreuve', epreuve)
-        .eq('actif', true)
-        .order('numero_tache');
+      const requiredNums = epreuve === 'expression_ecrite' ? [1, 2, 3] : [1, 3];
+      const selectedTaches: Tache[] = [];
 
-      let list = Array.isArray(tachesData) ? tachesData : [];
-
-      // Fallback vers questions si la table taches est vide
-      if (list.length === 0) {
-        const { data: qData } = await supabase
-          .from('questions')
+      for (const num of requiredNums) {
+        const { data: pool } = await supabase
+          .from('taches')
           .select('*')
           .eq('epreuve', epreuve)
+          .eq('numero_tache', num)
           .eq('actif', true);
 
-        if (Array.isArray(qData) && qData.length > 0) {
-          list = qData.map((q, idx) => ({
-            id: q.id,
-            epreuve: q.epreuve,
-            numero_tache: q.ordre || idx + 1,
-            reference: q.reference || null,
-            consigne: q.texte || '',
-            duree_secondes: null,
-            actif: true,
-            cree_par: q.cree_par || null,
-            created_at: q.created_at || new Date().toISOString(),
-          }));
+        if (Array.isArray(pool) && pool.length > 0) {
+          const randomIndex = Math.floor(Math.random() * pool.length);
+          selectedTaches.push(pool[randomIndex]);
         }
       }
 
-      // Tirer au sort 1 sujet par numéro de tâche
-      const byNum: Record<number, Tache[]> = {};
-      list.forEach(t => {
-        if (!byNum[t.numero_tache]) byNum[t.numero_tache] = [];
-        byNum[t.numero_tache].push(t);
-      });
-      const selectedTaches: Tache[] = [];
-      const requiredNums = epreuve === 'expression_ecrite' ? [1, 2, 3] : [1, 3];
-      requiredNums.forEach(num => {
-        const pool = byNum[num];
-        if (pool && pool.length > 0) {
-          const randomIndex = Math.floor(Math.random() * pool.length);
-          selectedTaches.push(pool[randomIndex]);
-        } else if (list.some(t => t.numero_tache === num)) {
-          selectedTaches.push(list.find(t => t.numero_tache === num)!);
-        }
-      });
+      setTaches(selectedTaches);
 
-      const finalTaches = selectedTaches.length > 0 ? selectedTaches : list;
-      setTaches(finalTaches);
-
-      if (epreuve === 'expression_orale' && finalTaches.length > 0) {
+      if (epreuve === 'expression_orale' && selectedTaches.length > 0) {
         setCurrentTaskIdx(0);
-        setTaskTimer(finalTaches[0].duree_secondes || 120);
+        setTaskTimer(selectedTaches[0].duree_secondes || 120);
       }
     } else {
       // Tirage ordonné par difficulté croissante — avec limite adaptée
