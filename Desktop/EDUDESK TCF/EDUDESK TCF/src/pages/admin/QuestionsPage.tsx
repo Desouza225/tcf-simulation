@@ -18,11 +18,13 @@ import {
   AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent,
   AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger,
 } from '@/components/ui/alert-dialog';
-import { Plus, Pencil, Trash2, Loader2, BookOpen, Search, Music, Image as ImageIcon } from 'lucide-react';
+import { Plus, Pencil, Trash2, Loader2, BookOpen, Search, Music, Image as ImageIcon, UploadCloud } from 'lucide-react';
 import { toast } from 'sonner';
 import type { Question, EpreuveType, NiveauCECRL } from '@/types/index';
 import { EPREUVE_LABELS, NIVEAU_CECRL_LIST } from '@/types/index';
 import MediaUpload from '@/components/ui/MediaUpload';
+import PackImportModal from '@/components/admin/PackImportModal';
+import CleanQuestionsModal from '@/components/admin/CleanQuestionsModal';
 
 const EMPTY_FORM = {
   epreuve: '' as EpreuveType,
@@ -58,6 +60,8 @@ export default function QuestionsPage() {
   }>(EMPTY_FORM);
   const [editId, setEditId] = useState<string | null>(null);
   const [dialogOpen, setDialogOpen] = useState(false);
+  const [importModalOpen, setImportModalOpen] = useState(false);
+  const [cleanModalOpen, setCleanModalOpen] = useState(false);
   const [saving, setSaving] = useState(false);
 
   const fetchQuestions = async (currentPage = page) => {
@@ -154,16 +158,34 @@ export default function QuestionsPage() {
           <h1 className="text-2xl font-bold text-foreground text-balance">Banque de questions</h1>
           <p className="text-muted-foreground mt-1">{totalCount} question{totalCount !== 1 ? 's' : ''} au total</p>
         </div>
-        <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-          <DialogTrigger asChild>
-            <Button onClick={() => handleOpen()} className="gap-2 shrink-0">
-              <Plus className="w-4 h-4" /> Nouvelle question
-            </Button>
-          </DialogTrigger>
-          <DialogContent className="max-w-[calc(100%-2rem)] md:max-w-2xl max-h-[90dvh] overflow-y-auto">
-            <DialogHeader>
-              <DialogTitle className="text-balance">{editId ? 'Modifier la question' : 'Nouvelle question'}</DialogTitle>
-            </DialogHeader>
+
+        <div className="flex items-center gap-2 flex-wrap">
+          <Button
+            variant="outline"
+            className="gap-2 shrink-0 border-destructive/30 text-destructive hover:bg-destructive/10"
+            onClick={() => setCleanModalOpen(true)}
+          >
+            <Trash2 className="w-4 h-4" /> Vider une épreuve
+          </Button>
+
+          <Button
+            variant="outline"
+            className="gap-2 shrink-0 border-primary/40 text-primary hover:bg-primary/10"
+            onClick={() => setImportModalOpen(true)}
+          >
+            <UploadCloud className="w-4 h-4" /> Importer un Pack
+          </Button>
+
+          <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
+            <DialogTrigger asChild>
+              <Button onClick={() => handleOpen()} className="gap-2 shrink-0">
+                <Plus className="w-4 h-4" /> Nouvelle question
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="max-w-[calc(100%-2rem)] md:max-w-2xl max-h-[90dvh] overflow-y-auto">
+              <DialogHeader>
+                <DialogTitle className="text-balance">{editId ? 'Modifier la question' : 'Nouvelle question'}</DialogTitle>
+              </DialogHeader>
             <div className="space-y-4 py-2">
               <div className="grid grid-cols-3 gap-3">
                 <div className="space-y-2">
@@ -254,6 +276,7 @@ export default function QuestionsPage() {
             </DialogFooter>
           </DialogContent>
         </Dialog>
+        </div>
       </div>
 
       {/* Filtres */}
@@ -379,6 +402,26 @@ export default function QuestionsPage() {
           </div>
         </div>
       )}
+
+      {/* Modale d'importation de packs */}
+      <PackImportModal
+        open={importModalOpen}
+        onOpenChange={setImportModalOpen}
+        onImportSuccess={() => {
+          setPage(0);
+          fetchQuestions(0);
+        }}
+      />
+
+      {/* Modale de nettoyage / suppression sélective */}
+      <CleanQuestionsModal
+        open={cleanModalOpen}
+        onOpenChange={setCleanModalOpen}
+        onCleanSuccess={() => {
+          setPage(0);
+          fetchQuestions(0);
+        }}
+      />
     </div>
   );
 }
