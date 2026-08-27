@@ -76,17 +76,41 @@ export default function PackImportModal({ open, onOpenChange, onImportSuccess }:
   const [statusMessage, setStatusMessage] = useState('');
   const [selectedCustomFile, setSelectedCustomFile] = useState<File | null>(null);
 
-  // Fonction utilitaire pour insérer par lots de 50
+  // Fonction utilitaire pour insérer par lots sécurisés avec retry et throttling
   const insertBatch = async (table: string, items: any[], onBatchProgress: (done: number) => void) => {
-    const BATCH_SIZE = 50;
+    const BATCH_SIZE = 15; // 15 éléments max par requête pour éviter Failed to fetch / payload limit
     for (let i = 0; i < items.length; i += BATCH_SIZE) {
       const batch = items.slice(i, i + BATCH_SIZE);
-      const { error } = await supabase.from(table).insert(batch);
-      if (error) {
-        console.error(`Erreur d'insertion dans ${table}:`, error);
-        throw error;
+      
+      let success = false;
+      let attempts = 0;
+      let lastError: any = null;
+
+      while (attempts < 4 && !success) {
+        attempts++;
+        try {
+          const { error } = await supabase.from(table).insert(batch);
+          if (error) throw error;
+          success = true;
+        } catch (err: any) {
+          lastError = err;
+          console.warn(`[Supabase Insert Retry] Tentative ${attempts}/4 pour ${table} (lot ${i + 1}-${i + batch.length}) :`, err);
+          if (attempts < 4) {
+            // Attente progressive avant de retenter
+            await new Promise(res => setTimeout(res, 500 * attempts));
+          }
+        }
       }
+
+      if (!success) {
+        throw new Error(
+          `Erreur d'insertion dans "${table}" (à la ligne ${i + 1}/${items.length}) : ${lastError?.message || lastError}`
+        );
+      }
+
       onBatchProgress(Math.min(i + batch.length, items.length));
+      // Pause de 50ms pour laisser le réseau respirer
+      await new Promise(res => setTimeout(res, 50));
     }
   };
 
