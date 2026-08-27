@@ -255,20 +255,55 @@ export default function PackImportModal({ open, onOpenChange, onImportSuccess }:
         });
 
       } else {
-        // Compréhension Écrite ou Orale
-        const questionRows = rawData.map((item: any) => ({
-          epreuve: pack.id,
-          reference: item.id || item.reference || null,
-          niveau: item.niveau || null,
-          texte: item.texte || null,
-          audio_url: item.audio_url || null,
-          image_url: item.image_url || null,
-          choix: item.choix || null,
-          bonne_reponse: item.bonne_reponse || 'A',
-          explication: item.explication || null,
-          ordre: item.ordre || 1,
-          actif: true,
-        }));
+        // Compréhension Écrite ou Orale (1 560 questions chacune)
+        const questionRows = rawData.map((item: any, idx: number) => {
+          const ref = item.id || item.reference || (pack.id === 'comprehension_oral' ? `CO_${idx + 1}` : `CE_${idx + 1}`);
+
+          // Formater les choix si propositions est un objet { A: '...', B: '...', C: '...', D: '...' }
+          let choixList: any[] = [];
+          if (Array.isArray(item.choix)) {
+            choixList = item.choix;
+          } else if (item.propositions && typeof item.propositions === 'object') {
+            choixList = Object.entries(item.propositions).map(([key, val]) => ({
+              id: key,
+              texte: String(val || '')
+            }));
+          }
+
+          // Normaliser audio_url et image_url
+          let audioUrl = item.audio_url || item.audio || null;
+          if (audioUrl && !audioUrl.startsWith('http') && !audioUrl.startsWith('/')) {
+            audioUrl = `/media/${audioUrl}`;
+          }
+
+          let imageUrl = item.image_url || item.image || null;
+          if (imageUrl && !imageUrl.startsWith('http') && !imageUrl.startsWith('/')) {
+            imageUrl = `/media/${imageUrl}`;
+          }
+
+          // Numéro d'ordre de la question
+          let ordreNum = item.ordre || (idx % 39) + 1;
+          if (ref && ref.includes('_Q')) {
+            const parts = ref.split('_Q');
+            if (parts[1] && !isNaN(parseInt(parts[1], 10))) {
+              ordreNum = parseInt(parts[1], 10);
+            }
+          }
+
+          return {
+            epreuve: pack.id,
+            reference: ref,
+            niveau: item.niveau || null,
+            texte: item.texte || item.consigne || null,
+            audio_url: audioUrl,
+            image_url: imageUrl,
+            choix: choixList.length > 0 ? choixList : null,
+            bonne_reponse: item.bonne_reponse || 'A',
+            explication: item.explication || null,
+            ordre: ordreNum,
+            actif: true,
+          };
+        });
 
         setStatusMessage(`Insertion des ${questionRows.length} questions QCM...`);
         await insertBatch('questions', questionRows, (done) => {
