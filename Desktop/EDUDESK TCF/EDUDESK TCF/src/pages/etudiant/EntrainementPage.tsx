@@ -12,7 +12,7 @@ import {
   Headphones, FileText, PenLine, Mic, Play, Pause,
   CheckCircle2, XCircle, ChevronLeft, ChevronRight,
   BookOpen, Clock, Loader2, Trophy, Square, AlertTriangle,
-  Send, Info,
+  Send, Info, Layers, Mail,
 } from 'lucide-react';
 import { toast } from 'sonner';
 import type { Question, Tache, EpreuveType, NiveauCECRL } from '@/types/index';
@@ -29,6 +29,75 @@ const EPREUVE_ICONS: Record<EpreuveType, React.ComponentType<{ className?: strin
   expression_ecrite: PenLine,
   expression_orale: Mic,
 };
+
+const EE_TASK_OPTIONS = [
+  {
+    mode: 'all' as const,
+    title: 'Session Complète (3 tâches)',
+    badge: 'Format Officiel',
+    badgeColor: 'border-primary/40 bg-primary/10 text-primary',
+    icon: Layers,
+    description: 'Les 3 tâches simultanées (message court, récit, argumentation) avec chronomètre.',
+    details: 'Simulation complète · 60 min conseillées',
+  },
+  {
+    mode: 1 as const,
+    title: 'Tâche 1 — Message court',
+    badge: '60 à 120 mots · A1-B1',
+    badgeColor: 'border-blue-500/40 bg-blue-500/10 text-blue-600 dark:text-blue-400',
+    icon: Mail,
+    description: 'Rédiger un courriel ou un message pour raconter un fait, exprimer un souhait, inviter ou répondre.',
+    details: '1 tâche ciblée · Correction individuelle',
+  },
+  {
+    mode: 2 as const,
+    title: 'Tâche 2 — Article / Récit',
+    badge: '120 à 150 mots · B1-B2',
+    badgeColor: 'border-amber-500/40 bg-amber-500/10 text-amber-600 dark:text-amber-400',
+    icon: BookOpen,
+    description: 'Rédiger un article ou un récit racontant une expérience personnelle, un voyage ou un fait marquant.',
+    details: '1 tâche ciblée · Correction individuelle',
+  },
+  {
+    mode: 3 as const,
+    title: 'Tâche 3 — Argumentation',
+    badge: '120 à 180 mots · B2-C2',
+    badgeColor: 'border-emerald-500/40 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400',
+    icon: Trophy,
+    description: 'Comparer deux documents contradictoires et exprimer un point de vue personnel argumenté et structuré.',
+    details: '1 tâche ciblée · Correction individuelle',
+  },
+];
+
+const EO_TASK_OPTIONS = [
+  {
+    mode: 'all' as const,
+    title: 'Session Complète (Tâches 1 & 3)',
+    badge: 'Tâches 1 & 3',
+    badgeColor: 'border-primary/40 bg-primary/10 text-primary',
+    icon: Layers,
+    description: 'Enchaînez la présentation/entretien et l\'expression de point de vue avec temps de préparation.',
+    details: 'Tâche 1 (2 min) + Tâche 3 (4 min 30s)',
+  },
+  {
+    mode: 1 as const,
+    title: 'Tâche 1 — Entretien sans préparation',
+    badge: '2 min · A1-B1',
+    badgeColor: 'border-blue-500/40 bg-blue-500/10 text-blue-600 dark:text-blue-400',
+    icon: Mic,
+    description: 'Parlez spontanément de vous, de vos activités, de votre quotidien, de votre famille ou de vos projets.',
+    details: '1 tâche ciblée · Enregistrement audio direct',
+  },
+  {
+    mode: 3 as const,
+    title: 'Tâche 3 — Expression d\'un point de vue',
+    badge: '4 min 30s · B2-C2',
+    badgeColor: 'border-emerald-500/40 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400',
+    icon: Trophy,
+    description: 'Défendez votre point de vue sur un thème de société après un temps de préparation.',
+    details: '1 tâche ciblée · Minuteur de préparation inclus',
+  },
+];
 
 function shuffle<T>(arr: T[]): T[] {
   const a = [...arr];
@@ -109,7 +178,6 @@ interface AudioRecorderProps {
 
 function AudioRecorder({ tacheNum, onRecorded, disabled, initialRecorded = false }: AudioRecorderProps) {
   const [recording, setRecording] = useState(false);
-  // initialRecorded synchronise l'état avec le blob parent (évite "Ré-enregistrer" sur tâche vierge)
   const [hasRecording, setHasRecording] = useState(initialRecorded);
   const [duration, setDuration] = useState(0);
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
@@ -119,7 +187,6 @@ function AudioRecorder({ tacheNum, onRecorded, disabled, initialRecorded = false
   const startRecording = async () => {
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      // Compression maximale : Opus 16 kbps mono (≈ 120 KB/min)
       const mimeType = MediaRecorder.isTypeSupported('audio/webm;codecs=opus')
         ? 'audio/webm;codecs=opus' : 'audio/webm';
       const mr = new MediaRecorder(stream, { mimeType, audioBitsPerSecond: 16000 });
@@ -216,6 +283,7 @@ export default function EntrainementPage() {
   const [selectedEpreuve, setSelectedEpreuve] = useState<EpreuveType | null>(
     (searchParams.get('epreuve') as EpreuveType) || null
   );
+  const [selectedTacheMode, setSelectedTacheMode] = useState<'all' | number | null>(null);
   const [questions, setQuestions] = useState<Question[]>([]);
   const [taches, setTaches] = useState<Tache[]>([]);
   const [currentIdx, setCurrentIdx] = useState(0);
@@ -237,9 +305,18 @@ export default function EntrainementPage() {
   const { user } = useAuth();
 
   useEffect(() => {
-    if (!selectedEpreuve) return;
-    loadContent(selectedEpreuve);
-  }, [selectedEpreuve, sessionKey]);
+    if (!selectedEpreuve) {
+      setSelectedTacheMode(null);
+      return;
+    }
+    // Pour QCM, chargement direct
+    if (selectedEpreuve === 'comprehension_oral' || selectedEpreuve === 'comprehension_ecrit') {
+      loadContent(selectedEpreuve);
+    } else if (selectedTacheMode !== null) {
+      // Pour Expression, chargement une fois la tâche choisie
+      loadContent(selectedEpreuve, selectedTacheMode);
+    }
+  }, [selectedEpreuve, selectedTacheMode, sessionKey]);
 
   useEffect(() => {
     if (!timerActive || timerSeconds <= 0) return;
@@ -247,19 +324,20 @@ export default function EntrainementPage() {
     return () => clearInterval(interval);
   }, [timerActive, timerSeconds]);
 
-  // Chronomètre expression écrite : démarre à l'entrée, s'arrête à la sortie/soumission
+  // Chronomètre expression écrite : démarre uniquement lors de la phase de rédaction
   useEffect(() => {
-    if (selectedEpreuve === 'expression_ecrite') {
+    if (selectedEpreuve === 'expression_ecrite' && selectedTacheMode !== null) {
       setEeElapsed(0);
       eeTimerRef.current = setInterval(() => setEeElapsed(e => e + 1), 1000);
     } else {
       if (eeTimerRef.current) { clearInterval(eeTimerRef.current); eeTimerRef.current = null; }
     }
     return () => { if (eeTimerRef.current) { clearInterval(eeTimerRef.current); eeTimerRef.current = null; } };
-  }, [selectedEpreuve]);
+  }, [selectedEpreuve, selectedTacheMode]);
 
   // Vérifier la limite avant d'afficher l'épreuve d'expression
   const checkAndSelectEpreuve = async (epreuve: EpreuveType) => {
+    setSelectedTacheMode(null);
     if (epreuve !== 'expression_ecrite' && epreuve !== 'expression_orale') {
       setSelectedEpreuve(epreuve);
       return;
@@ -280,14 +358,21 @@ export default function EntrainementPage() {
     setSelectedEpreuve(epreuve);
   };
 
-  const loadContent = async (epreuve: EpreuveType) => {
+  const loadContent = async (epreuve: EpreuveType, tacheMode: 'all' | number = 'all') => {
     setLoading(true);
     setCurrentIdx(0);
     setReponses({});
     setSessionDone(false);
     setAudioBlobs({});
+    setTexteReponses({});
     if (epreuve === 'expression_ecrite' || epreuve === 'expression_orale') {
-      const requiredNums = epreuve === 'expression_ecrite' ? [1, 2, 3] : [1, 3];
+      let requiredNums: number[] = [];
+      if (tacheMode === 'all') {
+        requiredNums = epreuve === 'expression_ecrite' ? [1, 2, 3] : [1, 3];
+      } else {
+        requiredNums = [tacheMode];
+      }
+
       const selectedTaches: Tache[] = [];
 
       for (const num of requiredNums) {
@@ -329,6 +414,11 @@ export default function EntrainementPage() {
   // Soumettre expression écrite
   const submitExpressionEcrite = async () => {
     if (!user || !selectedEpreuve) return;
+    const hasAnyText = taches.some(t => texteReponses[t.numero_tache]?.trim());
+    if (!hasAnyText) {
+      toast.error('Veuillez rédiger au moins une tâche avant de soumettre.');
+      return;
+    }
     setSubmitting(true);
     // Figer le chronomètre et capturer la durée
     if (eeTimerRef.current) { clearInterval(eeTimerRef.current); eeTimerRef.current = null; }
@@ -352,8 +442,12 @@ export default function EntrainementPage() {
           professeur_id: attribution?.professeur_id || null,
         });
       }
-      toast.success('Vos réponses ont été envoyées à votre professeur pour correction !');
+      toast.success(taches.length === 1
+        ? 'Votre réponse a été envoyée à votre professeur pour correction !'
+        : 'Vos réponses ont été envoyées à votre professeur pour correction !'
+      );
       setSelectedEpreuve(null);
+      setSelectedTacheMode(null);
       setPendingCount({});
     } catch {
       toast.error('Erreur lors de la soumission. Veuillez réessayer.');
@@ -411,8 +505,12 @@ export default function EntrainementPage() {
         });
       }
 
-      toast.success('Vos enregistrements ont été envoyés à votre professeur pour correction !');
+      toast.success(taches.length === 1
+        ? 'Votre enregistrement a été envoyé à votre professeur pour correction !'
+        : 'Vos enregistrements ont été envoyés à votre professeur pour correction !'
+      );
       setSelectedEpreuve(null);
+      setSelectedTacheMode(null);
       setPendingCount({});
     } catch (err) {
       toast.error('Erreur lors de la soumission. Veuillez réessayer.');
@@ -422,7 +520,7 @@ export default function EntrainementPage() {
     }
   };
 
-  // ─── Sélection épreuve ───────────────────────────────────────────────────────
+  // ─── Sélection épreuve principale ──────────────────────────────────────────
   if (!selectedEpreuve) {
     return (
       <div className="max-w-3xl mx-auto space-y-6 fade-in">
@@ -453,9 +551,131 @@ export default function EntrainementPage() {
                     <p className="text-sm text-muted-foreground mt-1 text-pretty">
                       {epreuve === 'comprehension_oral' && `${QCM_SESSION_SIZE} questions QCM aléatoires avec audio et images`}
                       {epreuve === 'comprehension_ecrit' && `${QCM_SESSION_SIZE} questions QCM aléatoires basées sur des textes`}
-                      {epreuve === 'expression_ecrite' && '3 tâches de rédaction — correction professeur'}
-                      {epreuve === 'expression_orale' && 'Tâches 1 & 3 — enregistrement audio (Tâche 2 non incluse : interaction)'}
+                      {epreuve === 'expression_ecrite' && 'Choix de tâche spécifique ou session complète (3 tâches)'}
+                      {epreuve === 'expression_orale' && 'Choix de tâche spécifique (1 ou 3) ou session complète'}
                     </p>
+                  </div>
+                </CardContent>
+              </Card>
+            );
+          })}
+        </div>
+      </div>
+    );
+  }
+
+  // ─── Limite atteinte ─────────────────────────────────────────────────────────
+  if (
+    (selectedEpreuve === 'expression_ecrite' || selectedEpreuve === 'expression_orale') &&
+    (pendingCount[selectedEpreuve] ?? 0) >= MAX_PENDING
+  ) {
+    return <LimiteAtteintCard epreuve={selectedEpreuve} onBack={() => setSelectedEpreuve(null)} />;
+  }
+
+  // ─── Choix de tâche : Expression Écrite ─────────────────────────────────────
+  if (selectedEpreuve === 'expression_ecrite' && selectedTacheMode === null) {
+    return (
+      <div className="max-w-3xl mx-auto space-y-6 fade-in">
+        <div className="flex items-center gap-3">
+          <Button variant="ghost" size="icon" onClick={() => setSelectedEpreuve(null)}>
+            <ChevronLeft className="w-5 h-5" />
+          </Button>
+          <div>
+            <h1 className="text-2xl font-bold text-foreground text-balance">Expression Écrite — Choix de la tâche</h1>
+            <p className="text-muted-foreground mt-1">Choisissez une tâche ciblée ou lancez les 3 tâches simultanément</p>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {EE_TASK_OPTIONS.map(opt => {
+            const Icon = opt.icon;
+            return (
+              <Card
+                key={String(opt.mode)}
+                className="cursor-pointer hover:border-primary/50 hover:shadow-md transition-all h-full flex flex-col justify-between"
+                onClick={() => setSelectedTacheMode(opt.mode)}
+              >
+                <CardContent className="p-6 flex flex-col justify-between h-full space-y-4">
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between gap-2">
+                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                        <Icon className="w-5 h-5 text-primary" />
+                      </div>
+                      <Badge variant="outline" className={`text-xs font-medium ${opt.badgeColor}`}>
+                        {opt.badge}
+                      </Badge>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-foreground text-balance">{opt.title}</h3>
+                      <p className="text-sm text-muted-foreground mt-1 text-pretty">{opt.description}</p>
+                    </div>
+                  </div>
+                  <div className="pt-3 border-t border-border/50 flex items-center justify-between text-xs text-muted-foreground">
+                    <span>{opt.details}</span>
+                    <span className="text-primary font-medium flex items-center">
+                      Commencer <ChevronRight className="w-3.5 h-3.5 ml-0.5" />
+                    </span>
+                  </div>
+                </CardContent>
+              </Card>
+            );
+          })}
+        </div>
+      </div>
+    );
+  }
+
+  // ─── Choix de tâche : Expression Orale ──────────────────────────────────────
+  if (selectedEpreuve === 'expression_orale' && selectedTacheMode === null) {
+    return (
+      <div className="max-w-3xl mx-auto space-y-6 fade-in">
+        <div className="flex items-center gap-3">
+          <Button variant="ghost" size="icon" onClick={() => setSelectedEpreuve(null)}>
+            <ChevronLeft className="w-5 h-5" />
+          </Button>
+          <div>
+            <h1 className="text-2xl font-bold text-foreground text-balance">Expression Orale — Choix de la tâche</h1>
+            <p className="text-muted-foreground mt-1">Choisissez une tâche ciblée ou lancez la session complète</p>
+          </div>
+        </div>
+
+        <Alert className="border-blue-500/30 bg-blue-500/5">
+          <Info className="h-4 w-4 text-blue-600 dark:text-blue-400 shrink-0" />
+          <AlertDescription className="text-pretty text-sm text-foreground">
+            <span className="font-semibold">La Tâche 2 n'est pas incluse dans cet exercice.</span>{' '}
+            Il s'agit d'un exercice en interaction directe avec un examinateur. Seules les <strong>Tâches 1 et 3</strong> sont proposées en autonomie.
+          </AlertDescription>
+        </Alert>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {EO_TASK_OPTIONS.map(opt => {
+            const Icon = opt.icon;
+            return (
+              <Card
+                key={String(opt.mode)}
+                className="cursor-pointer hover:border-primary/50 hover:shadow-md transition-all h-full flex flex-col justify-between"
+                onClick={() => setSelectedTacheMode(opt.mode)}
+              >
+                <CardContent className="p-6 flex flex-col justify-between h-full space-y-4">
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between gap-2">
+                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                        <Icon className="w-5 h-5 text-primary" />
+                      </div>
+                      <Badge variant="outline" className={`text-xs font-medium ${opt.badgeColor}`}>
+                        {opt.badge}
+                      </Badge>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-foreground text-balance">{opt.title}</h3>
+                      <p className="text-sm text-muted-foreground mt-1 text-pretty">{opt.description}</p>
+                    </div>
+                  </div>
+                  <div className="pt-3 border-t border-border/50 flex items-center justify-between text-xs text-muted-foreground">
+                    <span>{opt.details}</span>
+                    <span className="text-primary font-medium flex items-center">
+                      Commencer <ChevronRight className="w-3.5 h-3.5 ml-0.5" />
+                    </span>
                   </div>
                 </CardContent>
               </Card>
@@ -475,27 +695,32 @@ export default function EntrainementPage() {
     );
   }
 
-  // ─── Limite atteinte ─────────────────────────────────────────────────────────
-  if (
-    (selectedEpreuve === 'expression_ecrite' || selectedEpreuve === 'expression_orale') &&
-    (pendingCount[selectedEpreuve] ?? 0) >= MAX_PENDING
-  ) {
-    return <LimiteAtteintCard epreuve={selectedEpreuve} onBack={() => setSelectedEpreuve(null)} />;
-  }
-
-  // ─── Expression écrite ───────────────────────────────────────────────────────
+  // ─── Expression écrite : Rédaction ──────────────────────────────────────────
   if (selectedEpreuve === 'expression_ecrite') {
+    const isSingleTask = taches.length === 1;
+    const taskTitle = isSingleTask
+      ? `Expression Écrite — Tâche ${taches[0]?.numero_tache || ''}`
+      : 'Expression Écrite — Session complète (3 tâches)';
+
     return (
       <div className="max-w-3xl mx-auto space-y-6 fade-in">
-        {/* Bandeau sticky : toujours visible même quand l'étudiant scrolle entre les tâches */}
+        {/* Bandeau sticky : chronomètre informatif */}
         <div className="sticky top-0 z-20 bg-background/95 backdrop-blur-sm border-b border-border pb-3 -mx-4 px-4 md:-mx-6 md:px-6">
           <div className="flex items-center gap-3 pt-2">
-            <Button variant="ghost" size="icon" onClick={() => setSelectedEpreuve(null)}>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => {
+                setSelectedTacheMode(null);
+                setTaches([]);
+                setTexteReponses({});
+              }}
+            >
               <ChevronLeft className="w-5 h-5" />
             </Button>
             <div className="flex-1 min-w-0 flex items-center justify-between gap-3 flex-wrap">
-              <h1 className="text-xl font-bold text-foreground text-balance">Expression Écrite — Entraînement</h1>
-              {/* Chronomètre informatif — double taille, toujours visible */}
+              <h1 className="text-xl font-bold text-foreground text-balance">{taskTitle}</h1>
+              {/* Chronomètre informatif */}
               <div className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-muted border border-border font-mono text-xl font-bold text-foreground shrink-0 tabular-nums">
                 <Clock className="w-5 h-5 text-muted-foreground" />
                 {String(Math.floor(eeElapsed / 60)).padStart(2, '0')}:{String(eeElapsed % 60).padStart(2, '0')}
@@ -506,46 +731,72 @@ export default function EntrainementPage() {
 
         <Alert className="border-primary/30 bg-primary/5">
           <AlertDescription className="text-pretty">
-            Rédigez vos réponses pour chaque tâche. Vos productions seront envoyées à votre professeur pour correction.
+            {isSingleTask
+              ? 'Rédigez votre réponse pour cette tâche. Votre production sera envoyée à votre professeur pour correction.'
+              : 'Rédigez vos réponses pour chaque tâche. Vos productions seront envoyées à votre professeur pour correction.'}
           </AlertDescription>
         </Alert>
+
         {taches.length === 0 && (
-          <Card><CardContent className="p-8 text-center text-muted-foreground">Aucune tâche disponible pour cette épreuve.</CardContent></Card>
+          <Card><CardContent className="p-8 text-center text-muted-foreground">Aucune tâche disponible pour cette sélection.</CardContent></Card>
         )}
-        {taches.map(tache => (
-          <Card key={tache.id} className="h-full">
-            <CardHeader>
-              <CardTitle className="text-base text-balance flex items-center justify-between gap-2 flex-wrap">
-                <span>Tâche {tache.numero_tache}</span>
-                {tache.reference && (
-                  <Badge variant="outline" className="text-xs font-mono font-medium border-primary/40 bg-primary/5 text-primary">
-                    {tache.reference}
-                  </Badge>
-                )}
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <p className="text-sm text-foreground bg-muted/50 rounded-lg p-4 text-pretty whitespace-pre-wrap leading-relaxed">{tache.consigne}</p>
-              <textarea
-                className="w-full min-h-32 text-base px-3 py-2 rounded-md border border-input bg-background resize-y focus:outline-none focus:ring-2 focus:ring-ring"
-                placeholder="Rédigez votre réponse ici..."
-                autoComplete="off" autoCorrect="off" autoCapitalize="off" spellCheck={false}
-                value={texteReponses[tache.numero_tache] || ''}
-                onChange={e => setTexteReponses(prev => ({ ...prev, [tache.numero_tache]: e.target.value }))}
-                onPaste={e => e.preventDefault()}
-                onDrop={e => e.preventDefault()}
-              />
-              <p className="text-xs text-muted-foreground text-right">
-                {texteReponses[tache.numero_tache]?.split(/\s+/).filter(Boolean).length || 0} mots
-              </p>
-            </CardContent>
-          </Card>
-        ))}
+
+        {taches.map(tache => {
+          const wordCount = texteReponses[tache.numero_tache]?.split(/\s+/).filter(Boolean).length || 0;
+          const recommended = tache.numero_tache === 1
+            ? '60 à 120 mots'
+            : tache.numero_tache === 2
+              ? '120 à 150 mots'
+              : '120 à 180 mots';
+
+          return (
+            <Card key={tache.id} className="h-full">
+              <CardHeader>
+                <CardTitle className="text-base text-balance flex items-center justify-between gap-2 flex-wrap">
+                  <span className="font-semibold">Tâche {tache.numero_tache}</span>
+                  <div className="flex items-center gap-2">
+                    <Badge variant="outline" className="text-xs border-muted-foreground/30 text-muted-foreground font-normal">
+                      Recommandé : {recommended}
+                    </Badge>
+                    {tache.reference && (
+                      <Badge variant="outline" className="text-xs font-mono font-medium border-primary/40 bg-primary/5 text-primary">
+                        {tache.reference}
+                      </Badge>
+                    )}
+                  </div>
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-sm text-foreground bg-muted/50 rounded-lg p-4 text-pretty whitespace-pre-wrap leading-relaxed">
+                  {tache.consigne}
+                </p>
+                <textarea
+                  className="w-full min-h-36 text-base px-3 py-2 rounded-md border border-input bg-background resize-y focus:outline-none focus:ring-2 focus:ring-ring"
+                  placeholder="Rédigez votre réponse ici..."
+                  autoComplete="off" autoCorrect="off" autoCapitalize="off" spellCheck={false}
+                  value={texteReponses[tache.numero_tache] || ''}
+                  onChange={e => setTexteReponses(prev => ({ ...prev, [tache.numero_tache]: e.target.value }))}
+                  onPaste={e => e.preventDefault()}
+                  onDrop={e => e.preventDefault()}
+                />
+                <div className="flex items-center justify-between text-xs text-muted-foreground">
+                  <span>Recommandé : <strong className="text-foreground">{recommended}</strong></span>
+                  <span className={wordCount > 0 ? "font-semibold text-primary" : ""}>
+                    {wordCount} mot{wordCount > 1 ? 's' : ''}
+                  </span>
+                </div>
+              </CardContent>
+            </Card>
+          );
+        })}
+
         {taches.length > 0 && (
           <Button onClick={submitExpressionEcrite} disabled={submitting} className="w-full gap-2">
             {submitting
               ? <><Loader2 className="w-4 h-4 animate-spin" />Envoi en cours…</>
-              : <><Send className="w-4 h-4" />Envoyer pour correction</>
+              : isSingleTask
+                ? <><Send className="w-4 h-4" />Envoyer ma réponse pour correction</>
+                : <><Send className="w-4 h-4" />Envoyer mes réponses pour correction</>
             }
           </Button>
         )}
@@ -553,20 +804,34 @@ export default function EntrainementPage() {
     );
   }
 
-  // ─── Expression orale ─────────────────────────────────────────────────────────
+  // ─── Expression orale : Enregistrement ──────────────────────────────────────
   if (selectedEpreuve === 'expression_orale') {
     const tache = taches[currentIdx];
     const allRecorded = taches.length > 0 && taches.every(t => audioBlobs[t.numero_tache]);
     const anyRecorded = taches.some(t => audioBlobs[t.numero_tache]);
+    const isSingleTask = taches.length === 1;
 
     return (
       <div className="max-w-2xl mx-auto space-y-6 fade-in">
         <div className="flex items-center gap-3">
-          <Button variant="ghost" size="icon" onClick={() => setSelectedEpreuve(null)}>
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => {
+              setSelectedTacheMode(null);
+              setTaches([]);
+              setAudioBlobs({});
+              setTimerActive(false);
+            }}
+          >
             <ChevronLeft className="w-5 h-5" />
           </Button>
           <div className="flex-1 min-w-0">
-            <h1 className="text-xl font-bold text-foreground text-balance">Expression Orale — Entraînement</h1>
+            <h1 className="text-xl font-bold text-foreground text-balance">
+              {isSingleTask
+                ? `Expression Orale — Tâche ${taches[0]?.numero_tache || ''}`
+                : 'Expression Orale — Entraînement'}
+            </h1>
             <p className="text-sm text-muted-foreground">
               {taches.filter(t => audioBlobs[t.numero_tache]).length}/{taches.length} tâche{taches.length > 1 ? 's' : ''} enregistrée{taches.length > 1 ? 's' : ''}
             </p>
@@ -594,7 +859,7 @@ export default function EntrainementPage() {
           <Card><CardContent className="p-8 text-center text-muted-foreground">Aucune tâche disponible.</CardContent></Card>
         )}
 
-        {/* Navigation entre tâches */}
+        {/* Navigation entre tâches (si session complète avec > 1 tâche) */}
         {taches.length > 1 && (
           <div className="flex gap-2">
             {taches.map((t, i) => (
@@ -621,12 +886,17 @@ export default function EntrainementPage() {
           <Card className="h-full">
             <CardHeader>
               <div className="flex items-center justify-between gap-3 flex-wrap">
-                <CardTitle className="text-base text-balance">
-                  Tâche {tache.numero_tache}
+                <CardTitle className="text-base text-balance flex items-center gap-2">
+                  <span>Tâche {tache.numero_tache}</span>
                   {tache.duree_secondes && (
-                    <span className="text-sm font-normal text-muted-foreground ml-2">
+                    <span className="text-sm font-normal text-muted-foreground">
                       — {Math.floor(tache.duree_secondes / 60)} min{tache.duree_secondes % 60 > 0 ? ` ${tache.duree_secondes % 60}s` : ''}
                     </span>
+                  )}
+                  {tache.reference && (
+                    <Badge variant="outline" className="text-xs font-mono font-medium border-primary/40 bg-primary/5 text-primary ml-auto">
+                      {tache.reference}
+                    </Badge>
                   )}
                 </CardTitle>
                 <TimerDisplay seconds={timerActive ? timerSeconds : (tache.duree_secondes || 120)} />
@@ -667,7 +937,7 @@ export default function EntrainementPage() {
           </Card>
         )}
 
-        {/* Navigation tâches */}
+        {/* Navigation tâches (si multiples) */}
         {taches.length > 1 && (
           <div className="flex gap-3">
             <Button variant="outline" disabled={currentIdx === 0} onClick={() => { setCurrentIdx(i => i - 1); setTimerActive(false); }} className="flex-1">
@@ -688,9 +958,11 @@ export default function EntrainementPage() {
           >
             {submitting
               ? <><Loader2 className="w-4 h-4 animate-spin" />Envoi en cours…</>
-              : allRecorded
-                ? <><Send className="w-4 h-4" />Envoyer toutes les tâches pour correction</>
-                : <><Send className="w-4 h-4" />Envoyer les tâches enregistrées ({taches.filter(t => audioBlobs[t.numero_tache]).length}/{taches.length})</>
+              : isSingleTask
+                ? <><Send className="w-4 h-4" />Envoyer ma tâche pour correction</>
+                : allRecorded
+                  ? <><Send className="w-4 h-4" />Envoyer toutes les tâches pour correction</>
+                  : <><Send className="w-4 h-4" />Envoyer les tâches enregistrées ({taches.filter(t => audioBlobs[t.numero_tache]).length}/{taches.length})</>
             }
           </Button>
         )}

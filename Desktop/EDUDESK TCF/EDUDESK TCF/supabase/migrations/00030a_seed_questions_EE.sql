@@ -1,5 +1,5 @@
 -- ==========================================================
--- SEED QUESTIONS : 967 EXPRESSION ÉCRITE DANS LA TABLE QUESTIONS
+-- SEED QUESTIONS : 687 EXPRESSION ÉCRITE DANS LA TABLE QUESTIONS
 -- ==========================================================
 
 DELETE FROM public.questions WHERE epreuve = 'expression_ecrite';
@@ -46,7 +46,7 @@ D’autres considèrent que ces distributeurs favorisent une consommation excess
   'expression_ecrite',
   'EE_T1_002',
   'tache_1',
-  1,
+  4,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Dans le cadre d’un reportage sur les activités sportives amateurs, France Télévisions souhaite recueillir des témoignages. Et vous, quelle place occupe le sport dans votre vie ? Envoyez votre témoignage sur francetelevision.fr.',
@@ -56,7 +56,7 @@ Dans le cadre d’un reportage sur les activités sportives amateurs, France Té
   'expression_ecrite',
   'EE_T2_002',
   'tache_2',
-  2,
+  5,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous avez séjourné dans une magnifique région de votre pays pendant vos vacances. Vous rédigez un message à vos amis dans lequel vous racontez votre séjour et les raisons pour lesquelles cette expérience vous a beaucoup plu .',
@@ -66,7 +66,7 @@ Vous avez séjourné dans une magnifique région de votre pays pendant vos vacan
   'expression_ecrite',
   'EE_T3_002',
   'tache_3',
-  3,
+  6,
   'Thème du débat : « École privée : quels enjeux ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -83,7 +83,7 @@ Les collèges privés accueillent peu d’élèves provenant de milieux défavor
   'expression_ecrite',
   'EE_T1_003',
   'tache_1',
-  1,
+  7,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Écrire un message à un(e) ami(e) pour raconter son week-end à la campagne en détaillant les événements qui se sont déroulés.',
@@ -93,7 +93,7 @@ Les collèges privés accueillent peu d’élèves provenant de milieux défavor
   'expression_ecrite',
   'EE_T2_003',
   'tache_2',
-  2,
+  8,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Rédiger un message à la direction pour informer qu’un lieu a été trouvé pour la fête de fin d’année, en précisant le lieu, les tarifs, les services et autres informations pertinentes.',
@@ -103,7 +103,7 @@ Rédiger un message à la direction pour informer qu’un lieu a été trouvé p
   'expression_ecrite',
   'EE_T3_003',
   'tache_3',
-  3,
+  9,
   'Thème du débat : « Utilisation Des Nouvelles Technologies Dans Les Écoles : Pour Ou Contre ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -120,7 +120,7 @@ Inès : Je reste dubitative face à l''utilisation excessive des technologies da
   'expression_ecrite',
   'EE_T1_004',
   'tache_1',
-  1,
+  10,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Votre ami Cédric a été invité à votre mariage au Château de Chombony, mais il ignore où se trouve le château. Rédigez un message pour lui expliquer la localisation (situation, accès, transport, etc.) .',
@@ -130,7 +130,7 @@ Votre ami Cédric a été invité à votre mariage au Château de Chombony, mais
   'expression_ecrite',
   'EE_T2_004',
   'tache_2',
-  2,
+  11,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous publiez un message sur un forum pour partager votre vécu et vos impressions dans l’apprentissage d’une langue étrangère.',
@@ -140,7 +140,7 @@ Vous publiez un message sur un forum pour partager votre vécu et vos impression
   'expression_ecrite',
   'EE_T3_004',
   'tache_3',
-  3,
+  12,
   'Thème du débat : « Cuisiner pour le plaisir ou comme métier ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -157,7 +157,7 @@ Grâce aux réseaux sociaux et aux cours en ligne, certains autodidactes se sont
   'expression_ecrite',
   'EE_T1_005',
   'tache_1',
-  1,
+  13,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Rédigez un message afin de convier vos amis à une célébration de fin d’année.',
@@ -167,7 +167,7 @@ Rédigez un message afin de convier vos amis à une célébration de fin d’ann
   'expression_ecrite',
   'EE_T2_005',
   'tache_2',
-  2,
+  14,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous avez effectué un séjour au Canada grâce à une agence de voyages. Rédigez un commentaire pour décrire l’expérience que vous avez vécue pendant ce voyage .',
@@ -177,7 +177,7 @@ Vous avez effectué un séjour au Canada grâce à une agence de voyages. Rédig
   'expression_ecrite',
   'EE_T3_005',
   'tache_3',
-  3,
+  15,
   'Thème du débat : « L’interdiction des voitures en ville »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -194,7 +194,7 @@ De nombreuses villes lancent des projets visant à interdire les voitures en mil
   'expression_ecrite',
   'EE_T1_006',
   'tache_1',
-  1,
+  16,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 « Bonjour, 
@@ -208,7 +208,7 @@ De nombreuses villes lancent des projets visant à interdire les voitures en mil
   'expression_ecrite',
   'EE_T2_006',
   'tache_2',
-  2,
+  17,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Un concours en ligne invite les participants à raconter leur plus belle fête. Vous participez à ce concours. Dans votre texte, vous racontez comment cette fête s’est déroulée (anniversaire, fête culturelle, etc.) et vous précisez ce que vous en retenez.',
@@ -218,7 +218,7 @@ Un concours en ligne invite les participants à raconter leur plus belle fête. 
   'expression_ecrite',
   'EE_T3_006',
   'tache_3',
-  3,
+  18,
   'Thème du débat : « Lecture et enfants : encourager sans forcer »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -235,7 +235,7 @@ Lire avec ses enfants est une activité agréable et bénéfique. Elle contribue
   'expression_ecrite',
   'EE_T1_007',
   'tache_1',
-  1,
+  19,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Un de vos proches souhaite partir en voyage pour découvrir un nouveau pays. Vous lui envoyez un message pour lui présenter votre pays et ses traditions (lieux à visiter, sites touristiques, monuments, etc.) .',
@@ -245,7 +245,7 @@ Un de vos proches souhaite partir en voyage pour découvrir un nouveau pays. Vou
   'expression_ecrite',
   'EE_T2_007',
   'tache_2',
-  2,
+  20,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous avez commencé un nouvel emploi. Vous envoyez un courriel à vos proches pour leur raconter votre première semaine (entreprise, poste, missions, etc.) .',
@@ -255,7 +255,7 @@ Vous avez commencé un nouvel emploi. Vous envoyez un courriel à vos proches po
   'expression_ecrite',
   'EE_T3_007',
   'tache_3',
-  3,
+  21,
   'Thème du débat : « Femmes et hommes au travail »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -272,7 +272,7 @@ Même si des efforts sont faits pour atteindre la parité, des inégalités deme
   'expression_ecrite',
   'EE_T1_008',
   'tache_1',
-  1,
+  22,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous rédigez un message à vos amis pour les convier à une fête d’anniversaire surprise organisée pour votre meilleur(e) ami(e). Indiquez le lieu, la date et l’heure, etc .',
@@ -282,7 +282,7 @@ Vous rédigez un message à vos amis pour les convier à une fête d’anniversa
   'expression_ecrite',
   'EE_T2_008',
   'tache_2',
-  2,
+  23,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous avez pris part à un marché d’occasion dans votre ville. Rédigez un article sur votre blog pour raconter cette activité et dire pourquoi elle vous a plu .',
@@ -292,7 +292,7 @@ Vous avez pris part à un marché d’occasion dans votre ville. Rédigez un art
   'expression_ecrite',
   'EE_T3_008',
   'tache_3',
-  3,
+  24,
   'Thème du débat : « Les vols low-cost : avantages et limites »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -309,7 +309,7 @@ Dernièrement, j’ai décidé d’arrêter de voyager avec les compagnies aéri
   'expression_ecrite',
   'EE_T1_009',
   'tache_1',
-  1,
+  25,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous avez vu une annonce en ligne offrant de l’aide aux personnes qui veulent apprendre le français, en les mettant en contact avec des partenaires pour pratiquer et améliorer leur niveau. Vous rédigez un courriel pour répondre, en vous présentant et en disant pourquoi vous voulez pratiquer le français .',
@@ -319,7 +319,7 @@ Vous avez vu une annonce en ligne offrant de l’aide aux personnes qui veulent 
   'expression_ecrite',
   'EE_T2_009',
   'tache_2',
-  2,
+  26,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous avez assisté à une fête de famille. Vous envoyez un message à vos amis pour leur parler de cette fête et expliquer ce que vous avez préféré .',
@@ -329,7 +329,7 @@ Vous avez assisté à une fête de famille. Vous envoyez un message à vos amis 
   'expression_ecrite',
   'EE_T3_009',
   'tache_3',
-  3,
+  27,
   'Thème du débat : « Villes sans voitures : avantages et précautions »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -346,7 +346,7 @@ Beaucoup de villes lancent des projets visant à interdire la circulation automo
   'expression_ecrite',
   'EE_T1_010',
   'tache_1',
-  1,
+  28,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Votre ami(e) veut visiter la région où vous vivez. Écrivez-lui un message pour lui proposer quelques lieux intéressants à découvrir .',
@@ -356,7 +356,7 @@ Votre ami(e) veut visiter la région où vous vivez. Écrivez-lui un message pou
   'expression_ecrite',
   'EE_T2_010',
   'tache_2',
-  2,
+  29,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous avez assisté récemment à un cours de sport dans une salle de votre ville. Écrivez un article sur votre blog afin de partager votre expérience et donner votre opinion sur cette salle .',
@@ -366,7 +366,7 @@ Vous avez assisté récemment à un cours de sport dans une salle de votre ville
   'expression_ecrite',
   'EE_T3_010',
   'tache_3',
-  3,
+  30,
   'Thème du débat : « Repas livrés au bureau : avantages et limites »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -383,7 +383,7 @@ Néanmoins, ce système présente des limites. En cas de nombreuses commandes, l
   'expression_ecrite',
   'EE_T1_011',
   'tache_1',
-  1,
+  31,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous souhaitez organiser une fête et souhaitez inviter vos amis tout en leur demandant un coup de main pour la préparation (lieu, date, thème, etc.). Rédigez un message en ce sens .',
@@ -393,7 +393,7 @@ Vous souhaitez organiser une fête et souhaitez inviter vos amis tout en leur de
   'expression_ecrite',
   'EE_T2_011',
   'tache_2',
-  2,
+  32,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous avez participé à une compétition sportive et souhaitez partager votre expérience sur un site internet. Décrivez le déroulement de l’événement (lieu, date, organisation) et donnez votre avis sur votre participation .',
@@ -403,7 +403,7 @@ Vous avez participé à une compétition sportive et souhaitez partager votre ex
   'expression_ecrite',
   'EE_T3_011',
   'tache_3',
-  3,
+  33,
   'Thème du débat : « Les menus sans viande dans les cantines scolaires »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -420,7 +420,7 @@ La suppression de la viande dans les menus scolaires ne fait pas l’unanimité.
   'expression_ecrite',
   'EE_T1_012',
   'tache_1',
-  1,
+  34,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 « Je souhaite acheter un vélo en bon état à un prix abordable. Contactez-moi par mail : [email&#160;protected] » 
@@ -431,7 +431,7 @@ La suppression de la viande dans les menus scolaires ne fait pas l’unanimité.
   'expression_ecrite',
   'EE_T2_012',
   'tache_2',
-  2,
+  35,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous rédigez un message à vos amis pour partager votre expérience d’emploi saisonnier réalisé pendant les vacances d’été.',
@@ -441,7 +441,7 @@ Vous rédigez un message à vos amis pour partager votre expérience d’emploi 
   'expression_ecrite',
   'EE_T3_012',
   'tache_3',
-  3,
+  36,
   'Thème du débat : « Transports en commun : bénéfices et contraintes »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -458,7 +458,7 @@ Document B :
   'expression_ecrite',
   'EE_T1_013',
   'tache_1',
-  1,
+  37,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Votre ami Cédric ne connaît pas le Château de Chombony, où aura lieu votre mariage. Décrivez-lui ce lieu en précisant son emplacement, ses caractéristiques et les moyens de transport pour s’y rendre .',
@@ -468,7 +468,7 @@ Votre ami Cédric ne connaît pas le Château de Chombony, où aura lieu votre m
   'expression_ecrite',
   'EE_T2_013',
   'tache_2',
-  2,
+  38,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Partagez votre expérience d’apprentissage d’une langue étrangère sur un forum en ligne, en évoquant les difficultés rencontrées, les progrès réalisés et les stratégies qui vous ont aidé.',
@@ -478,7 +478,7 @@ Partagez votre expérience d’apprentissage d’une langue étrangère sur un f
   'expression_ecrite',
   'EE_T3_013',
   'tache_3',
-  3,
+  39,
   'Thème du débat : « Cuisinier Amateur Ou Cuisinier Professionnel ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -495,7 +495,7 @@ Certains passionnés de cuisine se forment grâce à internet et deviennent popu
   'expression_ecrite',
   'EE_T1_014',
   'tache_1',
-  1,
+  40,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous préparez la célébration de votre anniversaire. Vous écrivez à vos amis pour les inviter. Vous leur présentez le déroulement de la soirée et leur demandez de participer à l’organisation .',
@@ -505,7 +505,7 @@ Vous préparez la célébration de votre anniversaire. Vous écrivez à vos amis
   'expression_ecrite',
   'EE_T2_014',
   'tache_2',
-  2,
+  41,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous avez pris part à une compétition culinaire. Sur votre site web, vous rédigez un petit article pour décrire le déroulement de la journée. Vous précisez les raisons pour lesquelles cette expérience vous a plu ou non .',
@@ -515,7 +515,7 @@ Vous avez pris part à une compétition culinaire. Sur votre site web, vous réd
   'expression_ecrite',
   'EE_T3_014',
   'tache_3',
-  3,
+  42,
   'Thème du débat : « Étudiants et travail saisonnier »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -532,7 +532,7 @@ Pour quelles raisons de nombreux étudiants travaillent-ils durant les vacances 
   'expression_ecrite',
   'EE_T1_015',
   'tache_1',
-  1,
+  43,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous souhaitez organiser un week-end avec vos proches le mois prochain. Vous envoyez un message pour leur expliquer votre plan, en décrivant le lieu, le moyen de transport et les activités prévues .',
@@ -542,8 +542,10 @@ Vous souhaitez organiser un week-end avec vos proches le mois prochain. Vous env
   'expression_ecrite',
   'EE_T2_015',
   'tache_2',
-  2,
+  44,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+COURRIER DES LECTEURS
 
 Partir un an à l’étranger et tout quitter : est-ce une bonne ou une mauvaise idée ? 
  Exprimez votre opinion sur le site voyage.internaute.fr avec des exemples tirés de votre expérience personnelle .',
@@ -553,7 +555,7 @@ Partir un an à l’étranger et tout quitter : est-ce une bonne ou une mauvaise
   'expression_ecrite',
   'EE_T3_015',
   'tache_3',
-  3,
+  45,
   'Thème du débat : « Le rôle du travail »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -570,7 +572,7 @@ Le travail fait partie de notre identité sociale. Lorsqu’on rencontre quelqu�
   'expression_ecrite',
   'EE_T1_016',
   'tache_1',
-  1,
+  46,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Rédigez un courriel en réponse à une annonce de recherche de vélo. Présentez votre vélo, décrivez son état, proposez un prix et fixez un rendez-vous pour un essai .',
@@ -580,7 +582,7 @@ Rédigez un courriel en réponse à une annonce de recherche de vélo. Présente
   'expression_ecrite',
   'EE_T2_016',
   'tache_2',
-  2,
+  47,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Rédigez un message sur un forum pour partager votre expérience d’une journée à la campagne avec vos amis. Décrivez les moments marquants, les activités réalisées et ce que vous avez particulièrement apprécié .',
@@ -590,7 +592,7 @@ Rédigez un message sur un forum pour partager votre expérience d’une journé
   'expression_ecrite',
   'EE_T3_016',
   'tache_3',
-  3,
+  48,
   'Thème du débat : « Les sévérité des parents envers les enfants »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -607,7 +609,7 @@ Certains parents hésitent à être trop stricts, de peur que cela freine l’é
   'expression_ecrite',
   'EE_T1_017',
   'tache_1',
-  1,
+  49,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Envoyez un courriel à vos amis pour les inviter à fêter votre anniversaire dans un restaurant. Incluez toutes les informations nécessaires comme le lieu, la date, le menu, les prix, et demandez-leur de confirmer leur présence .',
@@ -617,7 +619,7 @@ Envoyez un courriel à vos amis pour les inviter à fêter votre anniversaire da
   'expression_ecrite',
   'EE_T2_017',
   'tache_2',
-  2,
+  50,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Sur votre blog, expliquez les raisons qui vous ont poussé à quitter la ville pour vous installer à la campagne. Présentez les avantages de votre nouvelle vie rurale.',
@@ -629,7 +631,7 @@ INSERT INTO public.questions (epreuve, reference, tache, ordre, texte, actif) VA
   'expression_ecrite',
   'EE_T3_017',
   'tache_3',
-  3,
+  51,
   'Thème du débat : « Caméras de surveillance à l''école : pour ou contre ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -646,7 +648,7 @@ Je m''oppose à l''installation des caméras de surveillance dans nos écoles à
   'expression_ecrite',
   'EE_T1_018',
   'tache_1',
-  1,
+  52,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Rédiger un message en réponse à un ami qui demande des informations sur une salle de sport réputée pour sa qualité.',
@@ -656,7 +658,7 @@ Rédiger un message en réponse à un ami qui demande des informations sur une s
   'expression_ecrite',
   'EE_T2_018',
   'tache_2',
-  2,
+  53,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Rédiger un message décrivant une expérience avec les formations en ligne, en mettant en avant les points positifs et les éventuels défis rencontrés.',
@@ -666,7 +668,7 @@ Rédiger un message décrivant une expérience avec les formations en ligne, en 
   'expression_ecrite',
   'EE_T3_018',
   'tache_3',
-  3,
+  54,
   'Thème du débat : « Produits faits maison : avantages et limites »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -683,7 +685,7 @@ La fabrication de produits biologiques à domicile présente certains défis. De
   'expression_ecrite',
   'EE_T1_019',
   'tache_1',
-  1,
+  55,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Invitez votre ami(e) à venir passer les vacances chez vous. Dans votre message, décrivez les sites touristiques et les endroits intéressants à découvrir dans votre ville .',
@@ -693,7 +695,7 @@ Invitez votre ami(e) à venir passer les vacances chez vous. Dans votre message,
   'expression_ecrite',
   'EE_T2_019',
   'tache_2',
-  2,
+  56,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous avez été sélectionné(e) pour un concours où le prix est un séjour de deux semaines dans votre ville favorite. Le thème du concours était “Mon artiste préféré”. Rédigez un article de blog pour parler de l’artiste que vous aimez le plus .',
@@ -703,7 +705,7 @@ Vous avez été sélectionné(e) pour un concours où le prix est un séjour de 
   'expression_ecrite',
   'EE_T3_019',
   'tache_3',
-  3,
+  57,
   'Thème du débat : « Chasse aux animaux : une pratique à soutenir ou à rejeter ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -720,7 +722,7 @@ Bernard (Journaliste de la FRM) : « La chasse est pratiquée pour diverses rai
   'expression_ecrite',
   'EE_T1_020',
   'tache_1',
-  1,
+  58,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 « Bonjour, 
@@ -733,7 +735,7 @@ Bernard (Journaliste de la FRM) : « La chasse est pratiquée pour diverses rai
   'expression_ecrite',
   'EE_T2_020',
   'tache_2',
-  2,
+  59,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous avez consulté une discussion sur Internet à propos des formations en ligne. Rédigez un message pour partager votre expérience personnelle (cours de langue, formation professionnelle, etc.) et exprimer ce que vous avez aimé et moins apprécié .',
@@ -743,7 +745,7 @@ Vous avez consulté une discussion sur Internet à propos des formations en lign
   'expression_ecrite',
   'EE_T3_020',
   'tache_3',
-  3,
+  60,
   'Thème du débat : « Les Produits Faits Maison : Pour Ou Contre ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -760,7 +762,7 @@ Cependant, la fabrication de produits biologiques à domicile comporte des risqu
   'expression_ecrite',
   'EE_T1_021',
   'tache_1',
-  1,
+  61,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous prévoyez de vous déménager à Nice. Vous envoyez un message à une agence immobilière afin de trouver un appartement. Précisez vos besoins (surface, budget, nombre de pièces, quartier, etc.) .',
@@ -770,7 +772,7 @@ Vous prévoyez de vous déménager à Nice. Vous envoyez un message à une agenc
   'expression_ecrite',
   'EE_T2_021',
   'tache_2',
-  2,
+  62,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous avez récemment entamé des cours dans une école de langues. Rédigez un message à vos amis pour leur parler de votre première semaine et partager vos impressions sur les cours, les enseignants et l’atmosphère .',
@@ -780,7 +782,7 @@ Vous avez récemment entamé des cours dans une école de langues. Rédigez un m
   'expression_ecrite',
   'EE_T3_021',
   'tache_3',
-  3,
+  63,
   'Thème du débat : « Caméras de surveillance : sécurité ou limites ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -797,7 +799,7 @@ Selon certaines recherches, la vidéosurveillance est onéreuse et peu performan
   'expression_ecrite',
   'EE_T1_022',
   'tache_1',
-  1,
+  64,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Rédigez un message destiné à vos amis afin de les convier à votre anniversaire et de leur présenter le programme de la fête.',
@@ -807,7 +809,7 @@ Rédigez un message destiné à vos amis afin de les convier à votre anniversai
   'expression_ecrite',
   'EE_T2_022',
   'tache_2',
-  2,
+  65,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Donnez votre avis en commentaire sous une publication Facebook concernant les études à l’étranger en mentionnant les points positifs et négatifs de cette expérience.',
@@ -817,7 +819,7 @@ Donnez votre avis en commentaire sous une publication Facebook concernant les é
   'expression_ecrite',
   'EE_T3_022',
   'tache_3',
-  3,
+  66,
   'Thème du débat : « Technologie et enfants »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -827,15 +829,7 @@ Document A :
 Les élèves du primaire ont la possibilité d’utiliser la technologie pour chercher des vidéos liées à leurs leçons étudiés en classe ou pour s’exercer avec des jeux qui développent leurs compétences en mathématiques, en lecture et en saisie au clavier.
 
 Document B :
-Aujourd’hui, les technologies poussent les enfants à rester inactifs, ce qui inquiète beaucoup les parents. Cela limite les jeux créatifs, les échanges sociales directes et l’activité physique. Pourquoi ne pas encourager vos enfants à poser leurs appareils en essayant des activités ludiques ?',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_023',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+Aujourd’hui, les technologies poussent les enfants à rester inactifs, ce qui inquiète beaucoup les parents. Cela limite les jeux créatifs, les échanges sociales directes et l’activité physique. Pourquoi ne pas encourager vos enfants à poser leurs appareils en essayant des activités ludiques ?
 
 « Bonjour, 
  Je souhaite commencer le sport dans une salle. Est-ce que tu pourrais me donner des informations sur les salles de sport près de chez nous ? 
@@ -845,74 +839,19 @@ Aujourd’hui, les technologies poussent les enfants à rester inactifs, ce qui 
 ),
 (
   'expression_ecrite',
-  'EE_T2_023',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+  'EE_T1_023',
+  'tache_1',
+  67,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous écrivez une réponse à Laura dans laquelle vous décrivez une salle de sport que vous connaissez et vous précisez les renseignements utiles (lieu, types de cours, prix, etc.) .',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T3_023',
-  'tache_3',
-  3,
-  'Thème du débat : « Lecture et enfants : encourager sans forcer »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Un concours en ligne invite les participants à raconter leur plus belle fête.
-
-Document B :
-Vous participez à ce concours. Dans votre texte, vous racontez comment cette fête s’est déroulée (anniversaire, fête culturelle, etc.) et vous précisez ce que vous en retenez .',
-  true
-),
-(
-  'expression_ecrite',
   'EE_T1_024',
   'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Obliger les enfants à lire n’est pas une bonne solution. Lire est une pratique particulière. Quand un enfant aime le sport, on ne le contraint pas, on essaie de le motiver. Il en va de même pour la lecture, selon Laurence T., pédopsychiatre et experte de l’enfance. Elle affirme que « l’amour de la lecture ne peut pas être imposé ».',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_024',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Lire avec ses enfants est une activité agréable et bénéfique. Elle contribue au développement des enfants, car une lecture régulière leur permet d’apprendre de nouveaux mots. Elle les aide également à mieux écouter et à se familiariser avec les mots écrits. Ce moment est idéal pour partager du plaisir en famille, de manière détendue et ludique. Les parents doivent essayer de lire des histoires à leurs enfants dès leur jeune âge, même après une journée fatigante. Cinq à dix minutes par jour sont suffisantes pour leur donner le goût de la lecture durablement.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_024',
-  'tache_3',
-  3,
-  'Thème du débat : « Le rôle du travail »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Vous souhaitez organiser un week-end avec vos proches le mois prochain. Vous envoyez un message pour leur expliquer votre plan, en décrivant le lieu, le moyen de transport et les activités prévues .
-
-Document B :
-COURRIER DES LECTEURS 
- Partir un an à l’étranger et tout quitter : est-ce une bonne ou une mauvaise idée ?',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_025',
-  'tache_1',
-  1,
+  68,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 C''est bientôt l''anniversaire de votre meilleur(e) ami(e). Vous écrivez un message à votre groupe d''amis pour leur proposer de faire un cadeau en commun. Vous décrivez le cadeau que vous aimeriez faire et vous leur expliquez comment ils peuvent participer .',
@@ -920,9 +859,9 @@ C''est bientôt l''anniversaire de votre meilleur(e) ami(e). Vous écrivez un me
 ),
 (
   'expression_ecrite',
-  'EE_T2_025',
+  'EE_T2_023',
   'tache_2',
-  2,
+  69,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 « Cher collègue, 
@@ -933,9 +872,9 @@ C''est bientôt l''anniversaire de votre meilleur(e) ami(e). Vous écrivez un me
 ),
 (
   'expression_ecrite',
-  'EE_T3_025',
+  'EE_T3_023',
   'tache_3',
-  3,
+  70,
   'Thème du débat : « L''éducation des enfants »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -946,15 +885,7 @@ Document A :
  Marion.
 
 Document B :
-Certains parents qui ne veulent pas être trop sévères ont peu de contrôle sur leurs enfants. Ils ont peur que leurs enfants, privés de leur liberté, soient malheureux et manquent de personnalité. Ces parents acceptent donc toutes les demandes de leurs enfants. Cette situation aura peu de conséquences pour les enfants jusqu''à l''adolescence. Cependant, à l''âge adulte, ils auront des difficultés pour vivre en société car ils auront du mal à accepter les règles.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_026',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+Certains parents qui ne veulent pas être trop sévères ont peu de contrôle sur leurs enfants. Ils ont peur que leurs enfants, privés de leur liberté, soient malheureux et manquent de personnalité. Ces parents acceptent donc toutes les demandes de leurs enfants. Cette situation aura peu de conséquences pour les enfants jusqu''à l''adolescence. Cependant, à l''âge adulte, ils auront des difficultés pour vivre en société car ils auront du mal à accepter les règles.
 
 « Bonjour, bonne nouvelle ! 
  J’ai enfin obtenu mon visa pour le Canada. Mon arrivée est prévue pour le 3 mars. Pourrais-tu m’aider à trouver un hôtel pour ma première semaine sur place ? 
@@ -964,148 +895,83 @@ Certains parents qui ne veulent pas être trop sévères ont peu de contrôle su
 ),
 (
   'expression_ecrite',
-  'EE_T2_026',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+  'EE_T1_025',
+  'tache_1',
+  71,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous avez réservé un hôtel pour Matthias et lui envoyez un courriel contenant une description détaillée de l’établissement ainsi que toutes les informations essentielles, telles que son emplacement, le prix et les services proposés .',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T3_026',
+  'EE_T2_024',
+  'tache_2',
+  72,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Vous avez passé une soirée agréable avec des amis en assistant à un spectacle (film, pièce de théâtre, concert, etc.) que vous avez adoré. Vous en parlez sur votre blog en expliquant ce qui vous a particulièrement marqué .',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_024',
   'tache_3',
-  3,
+  73,
   'Thème du débat : « Les Relations Amicales Au Travail : Pour Ou Contre ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
 • Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
 
 Document A :
-Vous avez passé une soirée agréable avec des amis en assistant à un spectacle (film, pièce de théâtre, concert, etc.) que vous avez adoré. Vous en parlez sur votre blog en expliquant ce qui vous a particulièrement marqué .
+Les amitiés entre collègues au travail peuvent être très avantageuses. Elles contribuent à instaurer un environnement de travail agréable et une atmosphère positive au sein de l’équipe. Avoir des amis parmi ses collègues permet de solidifier les relations professionnelles et d’instaurer un esprit de camaraderie. Cela peut améliorer la communication, favoriser une collaboration plus étroite et faciliter la résolution des problèmes. En outre, partager des moments conviviaux en dehors du bureau, comme des déjeuners ou des sorties, permet de renforcer les liens et de créer une dynamique de groupe forte.
 
 Document B :
-Les amitiés entre collègues au travail peuvent être très avantageuses. Elles contribuent à instaurer un environnement de travail agréable et une atmosphère positive au sein de l’équipe. Avoir des amis parmi ses collègues permet de solidifier les relations professionnelles et d’instaurer un esprit de camaraderie. Cela peut améliorer la communication, favoriser une collaboration plus étroite et faciliter la résolution des problèmes. En outre, partager des moments conviviaux en dehors du bureau, comme des déjeuners ou des sorties, permet de renforcer les liens et de créer une dynamique de groupe forte.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_027',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
 Il est essentiel de trouver un juste équilibre entre amitié et professionnalisme au travail. Des amitiés trop proches peuvent parfois engendrer des tensions ou des conflits, surtout lorsqu’il s’agit de prendre des décisions professionnelles. Par ailleurs, des amitiés exclusives entre certains collègues peuvent marginaliser les autres, ce qui peut affecter la cohésion et la collaboration au sein de l’équipe. Il est donc crucial de poser des limites claires et de s’assurer que les amitiés ne compromettent pas le professionnalisme, la hiérarchie ou la productivité dans l’organisation.',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T2_027',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Vous souhaitez organiser un week-end avec vos proches le mois prochain. Vous envoyez un message pour leur expliquer votre plan, en décrivant le lieu, le moyen de transport et les activités prévues.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_027',
-  'tache_3',
-  3,
-  'Thème du débat : « Le rôle du travail »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Partir un an à l’étranger et tout quitter : est-ce une bonne ou une mauvaise idée ? 
- Exprimez votre opinion sur le site voyage.internaute.fr avec des exemples tirés de votre expérience personnelle .
-
-Document B :
-Le travail occupe une place importante dans notre vie : dès l’enfance, on nous demande : « Que veux-tu devenir plus tard ? ». Même s’il peut apporter de la satisfaction, il est souvent source de fatigue et peut donner l’impression d’être coincé dans une routine. Aujourd’hui, beaucoup de personnes constatent un déséquilibre entre leur vie professionnelle et leur vie personnelle. Il devient nécessaire de réfléchir à la place du travail dans notre société. Certains pensent qu’en travaillant moins, on pourrait profiter de davantage de temps libre, être plus heureux et mieux vivre.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_028',
+  'EE_T1_026',
   'tache_1',
-  1,
+  74,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Le travail fait partie de notre identité sociale. Lorsqu’on rencontre quelqu’un pour la première fois, on demande souvent : « Que faites-vous dans la vie ? », ce qui montre l’importance du travail dans la perception de soi. Selon le spécialiste Jean-Daniel Remond, la vie professionnelle contribue à se construire : elle permet de rencontrer des gens, de créer des réseaux personnels et professionnels, de se sentir utile et même de se faire des amis. Même si certains décident de quitter leur emploi, pour la plupart, travailler est essentiel pour exister. Le travail reste donc crucial pour l’équilibre personnel et collectif.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_028',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Mehdi vient de s’installer en ville et souhaite connaître les transports disponibles. Rédigez-lui un message expliquant les différentes options, les prix et les abonnements possibles .',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T3_028',
+  'EE_T2_025',
+  'tache_2',
+  75,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Vous rédigez un article de blog pour montrer votre admiration envers une personne célèbre ou non. Vous décrivez ses actions et expliquez pourquoi elle vous inspire .',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_025',
   'tache_3',
-  3,
+  76,
   'Thème du débat : « Colocation : bénéfices et inconvénients »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
 • Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
 
 Document A :
-Vous rédigez un article de blog pour montrer votre admiration envers une personne célèbre ou non. Vous décrivez ses actions et expliquez pourquoi elle vous inspire .
+La colocation offre de nombreux avantages. Partager un appartement avec d’autres permet de diminuer le loyer, les charges et les dépenses communes. Elle favorise également les rencontres et les échanges culturels. Habiter avec d’autres personnes permet de rencontrer des individus différents, de nouer des amitiés et de vivre des expériences intéressantes.
 
 Document B :
-La colocation offre de nombreux avantages. Partager un appartement avec d’autres permet de diminuer le loyer, les charges et les dépenses communes. Elle favorise également les rencontres et les échanges culturels. Habiter avec d’autres personnes permet de rencontrer des individus différents, de nouer des amitiés et de vivre des expériences intéressantes.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_029',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
 La colocation présente aussi des inconvénients. Les différences de personnalité et de mode de vie peuvent provoquer des tensions. La répartition des tâches ménagères et des responsabilités peut engendrer des conflits. De plus, la colocation réduit parfois l’intimité et l’espace personnel. Pour que la cohabitation se passe bien, il est important d’avoir une communication claire et respectueuse et de fixer des règles partagées.',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T2_029',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Votre ami Cédric a été invité à votre mariage au Château de Chombony, mais il ignore où se trouve le château. Rédigez un message pour lui expliquer la localisation (situation, accès, transport, etc.) .',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_029',
-  'tache_3',
-  3,
-  'Thème du débat : « Cuisiner pour le plaisir ou comme métier ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Vous publiez un message sur un forum pour partager votre vécu et vos impressions dans l’apprentissage d’une langue étrangère.
-
-Document B :
-Les passionnés de cuisine arrivent à préparer quelques plats, mais ils manquent généralement des techniques et de l’expérience des chefs. Maîtriser l’art culinaire nécessite apprentissage et pratique approfondie.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_030',
+  'EE_T1_027',
   'tache_1',
-  1,
+  77,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous venez de participer à un entretien pour un emploi. Rédigez un message afin de remercier la personne qui vous a accueilli(e). Vous devez rappeler brièvement les circonstances et montrer votre motivation pour le poste .',
@@ -1113,9 +979,9 @@ Vous venez de participer à un entretien pour un emploi. Rédigez un message afi
 ),
 (
   'expression_ecrite',
-  'EE_T2_030',
+  'EE_T2_026',
   'tache_2',
-  2,
+  78,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous habitez en ville ou à la campagne. Sur votre blog, partagez votre expérience et comparez les points positifs et négatifs, en donnant votre avis personnel .',
@@ -1123,9 +989,9 @@ Vous habitez en ville ou à la campagne. Sur votre blog, partagez votre expérie
 ),
 (
   'expression_ecrite',
-  'EE_T3_030',
+  'EE_T3_026',
   'tache_3',
-  3,
+  79,
   'Thème du débat : « Femmes et hommes : vers l’égalité »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -1140,9 +1006,9 @@ Malgré les avancées réalisées, certains problèmes restent présents. Les in
 ),
 (
   'expression_ecrite',
-  'EE_T1_031',
+  'EE_T1_028',
   'tache_1',
-  1,
+  80,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous souhaitez modifier la décoration de votre appartement (meubles, couleurs, accessoires, etc.). Vous rédigez un message à un(e) ami(e) pour lui présenter votre projet et lui demander son aide .',
@@ -1150,9 +1016,9 @@ Vous souhaitez modifier la décoration de votre appartement (meubles, couleurs, 
 ),
 (
   'expression_ecrite',
-  'EE_T2_031',
+  'EE_T2_027',
   'tache_2',
-  2,
+  81,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 « École de musique ! 
@@ -1163,9 +1029,9 @@ Vous souhaitez modifier la décoration de votre appartement (meubles, couleurs, 
 ),
 (
   'expression_ecrite',
-  'EE_T3_031',
+  'EE_T3_027',
   'tache_3',
-  3,
+  82,
   'Thème du débat : « Faire ses courses : entre grandes surfaces et commerces de proximité »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -1175,599 +1041,16 @@ Document A :
 Faire ses courses au supermarché est avantageux, puisqu’on y trouve une grande diversité de produits au même endroit. Vous avez la possibilité de garer votre voiture et de passer d’un rayon à l’autre pour acheter ce dont vous avez besoin : fruits, légumes, fromages, viandes, boissons. De plus, plusieurs marques sont proposées pour chaque produit, avec des offres promotionnelles régulières.
 
 Document B :
-ASSOCIATION POUR LA DÉFENSE DES COMMERCES DE PROXIMITÉ',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_032',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+ASSOCIATION POUR LA DÉFENSE DES COMMERCES DE PROXIMITÉ
 
 L’initiative « Février sans supermarché » vise à limiter le pouvoir des supermarchés et à soutenir la survie des petits commerces en améliorant leurs ventes. Le principe est simple : ne pas faire ses courses dans les grandes surfaces durant un mois et privilégier les épiceries de quartier. Les clients en retirent des avantages, comme des produits plus frais et de qualité, ainsi que des moments d’échange avec leurs voisins.',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T2_032',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-« Je souhaite acheter un vélo fiable et pas cher. Merci de me contacter par mail : [email&#160;protected] ». 
- Vous possédez un vélo à vendre. Rédigez un courriel pour présenter votre vélo, fixer un prix et donner une date pour l’essayer .',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_032',
-  'tache_3',
-  3,
-  'Thème du débat : « Autorité parentale et autonomie des enfants »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Vous revenez d’une journée passée à la campagne avec vos amis. Vous publiez un message sur votre forum pour partager votre expérience et décrire ce que vous avez aimé (activités, paysages, animaux, etc.) .
-
-Document B :
-Bientôt 22 ans, je vis encore chez mes parents. Bien que majeure, je subis toujours l’autorité de mes parents. Quand j’étais plus jeune, je ne pouvais pas passer la nuit ailleurs et devais rentrer avant 21h. Aujourd’hui, je peux rester dehors plus longtemps, mais ma mère ne cesse de téléphoner pour savoir où je suis.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_033',
+  'EE_T1_029',
   'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Parfois, les parents ont peur d’être trop stricts avec leurs enfants. Ils redoutent qu’un excès d’autorité empêche leurs enfants de s’épanouir et nuise à leur personnalité plus tard. Même si, par amour, les parents acceptent toutes les demandes de leurs enfants, cela peut avoir des effets négatifs à l’âge adulte. En effet, vivre en société implique de respecter certaines règles.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_033',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Rédigez un message afin de convier vos amis à une célébration de fin d’année.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_033',
-  'tache_3',
-  3,
-  'Thème du débat : « L’interdiction des voitures en ville »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Vous avez effectué un séjour au Canada grâce à une agence de voyages. Rédigez un commentaire pour décrire l’expérience que vous avez vécue pendant ce voyage .
-
-Document B :
-Face à des niveaux de pollution très élevés observés dans plusieurs régions du monde, certaines villes ont décidé d’interdire la circulation des voitures dans les centres urbains. La capitale norvégienne, Oslo, a récemment choisi cette mesure et en tire un bilan positif, estimant qu’elle profite à tous. Avec le temps, les accidents diminueront, la consommation de pétrole reculera et la qualité de l’air s’améliorera.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_034',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-De nombreuses villes lancent des projets visant à interdire les voitures en milieu urbain sans disposer des moyens et des infrastructures indispensables pour assurer la réussite de ce changement. Certes, la réduction du nombre de voitures permet de diminuer la pollution, mais en contrepartie, il est nécessaire de prévoir de grands parkings, de développer davantage les transports en commun (métros et bus) et d’accorder des autorisations spéciales à certains professionnels (police, services d’urgence, livreurs, etc.).',
-  true
-);
-
-INSERT INTO public.questions (epreuve, reference, tache, ordre, texte, actif) VALUES
-(
-  'expression_ecrite',
-  'EE_T2_034',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Vous écrivez à un(e) ami(e) qui veut suivre des cours de langue dans votre école. Donnez-lui toutes les informations nécessaires pour l’aider à prendre sa décision (emplacement, prix, types de cours disponible, etc.) .',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_034',
-  'tache_3',
-  3,
-  'Thème du débat : « Animaux de compagnie pour enfants »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Vous faites partie d’une association qui soutient les personnes âgées. Écrivez un article pour un blog afin de raconter votre expérience et motiver d’autres personnes à s’engager .
-
-Document B :
-Donner un animal de compagnie à un enfant comporte de nombreux bienfaits, comme le montrent de nombreux psychologues. Pour les enfants qui n’ont pas de frères ou de sœurs, l’animal devient un compagnon et leur évite la solitude. Grâce à lui, l’enfant gagne en confiance et apprend que l’animal est un être vivant qui mérite attention et respect. Avec sa présence, l’enfant se sent en sécurité et peut devenir plus autonome sans l’aide constante de ses parents.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_035',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-De nombreux enfants demandent un jour ou l’autre à leurs parents un animal, souvent un chien ou un chat. Même si vous souhaitez faire plaisir à votre enfant, il est important de bien réfléchir avant d’adopter un animal. Celui-ci devient un membre de la famille et implique un engagement sur plusieurs années. Avoir un animal coûte souvent cher et demande beaucoup de responsabilités. Ce n’est pas un jouet que l’on peut jeter quand l’enfant ne s’en occupe plus.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_035',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Un nouveau restaurant a récemment ouvert dans votre quartier. Vous envoyez un message à un(e) ami(e) pour lui suggérer d’y aller ensemble. Vous donnez des détails (cuisine proposée, tarifs, ambiance, décoration, etc.) .',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_035',
-  'tache_3',
-  3,
-  'Thème du débat : « Vivre en colocation à l’âge adulte »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Vous avez découvert une ville que vous ne connaissiez pas auparavant. Vous souhaitez partager cette expérience. Vous publiez un message sur un site Internet consacré aux voyages. Vous racontez votre séjour et expliquez ce que vous avez aimé et ce que vous avez moins apprécié dans cette ville .
-
-Document B :
-La vie en colocation demande de bien s’entendre et de suivre des règles communes. On ne peut pas toujours mettre la musique à un volume élevé, inviter tous ses amis ou laisser la cuisine en désordre. Chaque personne a des comportements qui peuvent agacer les autres. Il est donc nécessaire d’établir des règles claires et de les respecter ensemble. Discuter avec ses colocataires lorsqu’un souci se présente est très important. Une bonne organisation et la communication permettent une colocation réussie.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_036',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Vivre en colocation à l’âge adulte ? C’est un choix pratique pour avoir un logement plus spacieux à moindre coût. Vous avez uniquement votre chambre, tandis que la cuisine, le salon et la salle de bain sont communs. Pourtant, il est possible de vivre dans une maison avec jardin ou un grand appartement en centre-ville. En divisant le loyer et les frais avec vos colocataires, vous dépensez beaucoup moins que pour un logement individuel. Ainsi, malgré le partage des espaces, la colocation permet d’accéder à des logements plus abordables.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_036',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Vous êtes arrivé récemment dans un nouveau pays. Vous envoyez un message à vos amis pour expliquer votre arrivée et ce que vous ressentez au début .',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_036',
-  'tache_3',
-  3,
-  'Thème du débat : « La télévision dans la société : atouts et risques »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Vous souhaitez trouver un(e) camarade pour pour faire du sport. Vous écrivez un message sur le site des étudiants de votre école en précisant vos horaires libres .
-
-Document B :
-La télévision est un moyen de communication et de distraction très présent dans la société actuelle. Son impact est évident sur les personnes et sur la culture en général. Elle permet de transmettre des informations, de proposer différents programmes de divertissement et de diffuser la culture. Présente dans beaucoup de foyers, elle reste une source d’information et de loisirs accessible à tous. Grâce à sa large audience, la télévision joue un rôle essentiel dans le partage des connaissances et la sensibilisation aux questions sociales.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_037',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Vous voulez convier vos amis à visiter un lieu touristique que vous appréciez beaucoup. Dans un message chaleureux, vous présentez ce lieu, dites ce que vous aimez et proposez une date, un horaire et un hébergement pour cette sortie .',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_037',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Vous avez participé à un festival (musique, cinéma, gastronomie, etc.), mais vous avez été déçu par cette expérience. Vous rédigez un article sur votre blog pour dire ce qui ne vous a pas satisfait .',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_037',
-  'tache_3',
-  3,
-  'Thème du débat : « Ville ou campagne : deux modes de vie »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-À mon avis, vivre en ville permet de profiter de nombreuses activités de loisirs. Aller au cinéma, dîner au restaurant ou faire les magasins est très facile. Tout est à proximité, donc on n’a pas besoin de se déplacer longtemps pour se divertir. On peut marcher un peu ou prendre un taxi si nécessaire. La ville offre également une grande variété d’activités culturelles comme les musées, le théâtre ou l’opéra, pour que chacun trouve son bonheur.
-
-Document B :
-Il y a peu de temps, j’ai choisi de m’installer à la campagne après avoir quitté la ville, car je voulais vivre dans un environnement plus naturel et tranquille. Maintenant, plutôt que de sortir au restaurant ou dans les bars, j’invite mes amis à la maison pour partager un verre sur la terrasse ou organiser un barbecue. Le prix des logements a également été un élément important de mon choix. À la campagne, les maisons coûtent beaucoup moins cher qu’en ville. Avec le même budget, j’ai pu acheter une grande maison avec un jardin, ce qui n’aurait pas été possible en zone urbaine.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_038',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Vous prévoyez une sortie culturelle dans votre ville. Vous envoyez un message à vos amis pour les convier et leur fournir tous les détails utiles (jour, endroit, programme des activités, etc.) .',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_038',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Vous avez pris part à une soirée dédiée à l’écologie à l’université pour la protection de la planète. Vous rédigez un article sur votre blog pour partager votre expérience et dire pourquoi cette soirée vous a intéressé(e) .',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_038',
-  'tache_3',
-  3,
-  'Thème du débat : « Devoirs à domicile : bienfaits et critiques »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-D’après certaines associations de parents d’élèves, les devoirs à domicile sont bénéfiques car ils permettent aux élèves de gérer leur temps seuls. Pour les parents, les devoirs représentent une occasion de se rapprocher de l’école chaque jour. Même si ce n’est pas toujours facile après une journée de travail, ils aiment ce temps passé avec leurs enfants, qui se sentent valorisés par l’intérêt que leurs parents leur montrent.
-
-Document B :
-Nous nous opposons depuis longtemps aux devoirs à la maison pour différentes raisons. Leur efficacité pour améliorer les résultats scolaires n’a jamais été prouvée de manière certaine. De nombreux parents n’ont pas le temps ou ne savent pas comment aider leurs enfants. De plus, les élèves qui ont compris le cours perdent du temps à refaire des exercices, tandis que ceux qui ne sont pas aidés restent en difficulté. C’est pour cela que nous estimons qu’il faudrait abolir les devoirs à domicile.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_039',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Vous pratiquez un sport au sein d’un club et vous avez gagné une compétition. Rédigez un courriel à vos amis pour leur parler de cet événement et leur annoncer votre succès .',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_039',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Le site « colocation.com » recherche des récits de personnes ayant vécu en colocation. Vous avez déjà habité avec des amis en colocation. Vous partagez votre vécu et exprimez votre opinion sur cette manière de se loger .',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_039',
-  'tache_3',
-  3,
-  'Thème du débat : « Villes et environnement : impacts et réalités »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-De nos jours, les villes s’agrandissent sans cesse. Ce phénomène affecte malheureusement l’environnement. Plus une ville se développe, plus ses effets sur la nature et sur l’homme sont néfastes. L’un des exemples les plus visibles est la déforestation. Les arbres et les espaces verts retiennent le carbone. Quand ils sont abattus pour construire des immeubles ou des routes, on détruit des zones importantes pour le stockage du carbone.
-
-Document B :
-Plus de la moitié des habitants de la planète vivent dans des villes, et dans les pays riches, huit habitants sur dix sont citadins. La vie urbaine constitue donc un enjeu écologique majeur. On affirme souvent que les villes actuelles ne respectent pas l’environnement et que leur développement augmente la pollution. Cependant, il faut relativiser : les villes ne sont pas toujours aussi polluantes qu’on l’imagine. Par exemple, un habitant de la ville consomme souvent moins d’énergie qu’une personne à la campagne.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_040',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Vous envoyez un message à votre ami(e) afin de l’informer des préparatifs de votre déménagement dans votre nouveau logement et de lui demander son aide (date, lieu, étapes, etc.).',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_040',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Vous avez pris part à un concours qui offre la possibilité de gagner un séjour de deux semaines dans votre ville favorite. Le thème du concours est « Mon artiste préféré ». Vous rédigez un article sur votre blog pour présenter l’artiste que vous aimez le plus .',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_040',
-  'tache_3',
-  3,
-  'Thème du débat : « Objets connectés : progrès ou danger ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Les objets connectés rendent le quotidien plus pratique. Il s’agit d’appareils que vous contrôlez à distance à l’aide d’un téléphone ou d’Internet, par exemple le chauffage ou l’ouverture des portes. Les montres et bracelets connectés permettent également d’observer vos activités. Un programme peut mesurer vos pas afin de vous motiver à faire plus d’exercice. Leur rôle est particulièrement utile dans le secteur de la santé, car certains objets rappellent les consultations médicales ou la prise de médicaments.
-
-Document B :
-On pense qu’il existe environ 50 milliards d’objets connectés à travers le monde : alarmes, télévisions, caméras de sécurité, volets ou détecteurs de fumée. Toutefois, ce développement entraîne des risques liés à la sécurité. Un hacker peut contrôler un objet connecté en peu de temps. Par exemple, un cambrioleur pourrait vérifier, à l’aide de caméras connectées, si une maison est vide. Il est également possible de pirater le système d’un véhicule connecté et de le diriger à distance.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_041',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Dans le cadre d’un dossier consacré aux habitants, le journal « Bienvenue » vous demande d’écrire un article. Installé(e) récemment dans la ville, vous devez d’abord vous présenter, puis décrire vos lieux favoris .',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_041',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Après avoir participé au concert de votre chanteur préféré, vous rédigez un article sur votre blog afin de raconter ce moment et de donner envie à vos proches et aux lecteurs de venir à son prochain concert .',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_041',
-  'tache_3',
-  3,
-  'Thème du débat : « Les jeux vidéo : entre risques et bienfaits »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-De l’enfance jusqu’à l’adolescence, les enfants jouent souvent aux jeux vidéo et, avec le temps, cela peut provoquer des idées négatives et des comportements violents. Une étude récente réalisée auprès de jeunes de 9 à 18 ans qui jouent régulièrement montre que les jeux vidéo violents augmentent fortement l’agressivité. D’après Diego Gentil, ce phénomène serait inévitable, même avec un contrôle parental.
-
-Document B :
-On parle souvent des aspects négatifs des jeux vidéo, pourtant ils peuvent aussi avoir des effets positifs sur le cerveau et la santé en général. Par exemple, ils permettent de développer certaines capacités mentales comme l’attention, l’imagination et l’analyse. Cela s’explique par le fait que, lorsque vous jouez, vous devez réfléchir en permanence et résoudre des problèmes.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_042',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-« Salut, 
- J’espère que tu vas bien. 
- Dis-moi, que penses-tu de ta nouvelle université ? Est-ce que l’ambiance avec les étudiants est bonne ? Comment trouves-tu les professeurs ? 
- À très bientôt. 
- Martin » 
- Vous écrivez un message à Martin dans lequel vous présentez votre université (les professeurs, les étudiants, les activités, etc.) .',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_042',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Vous avez choisi d’arrêter d’utiliser votre réseau social favori (Facebook, Instagram, etc.). Vous adressez un message à vos amis pour leur expliquer cette expérience et les raisons de votre choix .',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_042',
-  'tache_3',
-  3,
-  'Thème du débat : « Faut-il mettre une photo sur son CV ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-De nos jours, certains candidats choisissent de mettre une photo sur leur CV, alors que d’autres préfèrent ne pas en mettre. Il faudrait interdire cette pratique pour éviter toute forme de discrimination ou d’injustice. Selon une étude menée par des spécialistes du recrutement, la photo n’a pas de réelle utilité. Les résultats indiquent que les employeurs accordent plus d’attention à l’expérience professionnelle (32 %) et aux diplômes (15 %) qu’au physique. Seuls 2 % des recruteurs commencent par regarder la photo. Cette donnée est surprenante, compte tenu de l’importance donnée à l’apparence par certaines personnes.
-
-Document B :
-L’utilisation d’une photo sur le CV est un sujet qui divise les recruteurs. Certains estiment que la photo aide à se faire une idée du candidat avant la rencontre. Elle peut également faciliter la mémorisation d’un candidat quand beaucoup de CV sont reçus. D’autres pensent que tout dépend du métier : pour les postes liés à l’accueil, par exemple, la photo peut être appropriée. Cependant, elle doit toujours être professionnelle pour créer une impression positive.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_043',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Vous venez d’obtenir un nouveau travail. Vous envoyez un message à votre ami(e) francophone pour l’informer. Vous décrivez votre fonction, vos collègues et le lieu où vous travaillez .',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_043',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-« Salut à tous, 
- J’ai 19 ans et je prépare mon départ pour étudier dans un autre pays. Je voudrais connaître vos expériences et vos avis si vous avez déjà étudié loin de chez vous. 
- Merci d’avance ! 
- Alice » 
- Vous avez passé une année d’études à l’étranger. Vous répondez au message publié sur le forum. Vous décrivez votre séjour, vous dites si vous avez apprécié cette expérience et vous expliquez pourquoi .',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_043',
-  'tache_3',
-  3,
-  'Thème du débat : « Aider les sans-abri : dons ou actions concrètes ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Chaque hiver, je consacre un peu de mon temps et de mon argent pour aider les personnes sans-abri qui souffrent du froid. Pour moi, il est important de penser à ceux qui sont dans le besoin. Je trouve essentiel de donner quelques dollars à ces personnes ou aux associations qui les soutiennent. De plus, cette action me fait sentir utile, au moins une fois par an ! C’est un geste de solidarité que chacun peut réaliser.
-
-Document B :
-Au lieu de donner de l’argent aux personnes défavorisées, il serait préférable de repenser notre façon de vivre. C’est pour cela que je préfère m’investir chaque jour dans une association de mon quartier, où je fais du bénévolat. Les sans-abri ont besoin d’un logement et d’un emploi, pas seulement d’argent. Il faut les aider à devenir indépendants. C’est l’objectif des associations qui aident les personnes dans la rue à trouver un travail. Donner de l’argent seul n’est pas utile, cela ne fait qu’apaiser notre conscience.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_044',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Vous êtes arrivé récemment dans un nouveau pays. Vous envoyez un message à vos amis pour expliquer votre arrivée et ce que vous ressentez au début .',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_044',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Vous souhaitez trouver un(e) camarade pour pour faire du sport. Vous écrivez un message sur le site des étudiants de votre école en précisant vos horaires libres .',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_044',
-  'tache_3',
-  3,
-  'Thème du débat : « La télévision dans la société : atouts et risques »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-La télévision est un moyen de communication et de distraction très présent dans la société actuelle. Son impact est évident sur les personnes et sur la culture en général. Elle permet de transmettre des informations, de proposer différents programmes de divertissement et de diffuser la culture. Présente dans beaucoup de foyers, elle reste une source d’information et de loisirs accessible à tous. Grâce à sa large audience, la télévision joue un rôle essentiel dans le partage des connaissances et la sensibilisation aux questions sociales.
-
-Document B :
-La télévision présente aussi certains aspects négatifs. Certains programmes peuvent transmettre des stéréotypes, des idées fausses ou des valeurs discutables. En outre, passer trop de temps devant la télévision peut diminuer le temps consacré à d’autres activités plus utiles, comme la lecture, les échanges sociaux ou le sport. Il est donc nécessaire de faire attention et de limiter le temps passé devant la télévision, surtout pour les enfants, afin de garder un bon équilibre entre apprentissage et loisirs.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_045',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Un nouveau restaurant a récemment ouvert dans votre quartier. Vous envoyez un message à un(e) ami(e) pour lui suggérer d’y aller ensemble. Vous donnez des détails (cuisine proposée, tarifs, ambiance, décoration, etc.) .',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_045',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Vous avez découvert une ville que vous ne connaissiez pas auparavant. Vous souhaitez partager cette expérience. Vous publiez un message sur un site Internet consacré aux voyages. Vous racontez votre séjour et expliquez ce que vous avez aimé et ce que vous avez moins apprécié dans cette ville .',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_045',
-  'tache_3',
-  3,
-  'Thème du débat : « Vivre en colocation à l’âge adulte »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-La vie en colocation demande de bien s’entendre et de suivre des règles communes. On ne peut pas toujours mettre la musique à un volume élevé, inviter tous ses amis ou laisser la cuisine en désordre. Chaque personne a des comportements qui peuvent agacer les autres. Il est donc nécessaire d’établir des règles claires et de les respecter ensemble. Discuter avec ses colocataires lorsqu’un souci se présente est très important. Une bonne organisation et la communication permettent une colocation réussie.
-
-Document B :
-Vivre en colocation à l’âge adulte ? C’est un choix pratique pour avoir un logement plus spacieux à moindre coût. Vous avez uniquement votre chambre, tandis que la cuisine, le salon et la salle de bain sont communs. Pourtant, il est possible de vivre dans une maison avec jardin ou un grand appartement en centre-ville. En divisant le loyer et les frais avec vos colocataires, vous dépensez beaucoup moins que pour un logement individuel. Ainsi, malgré le partage des espaces, la colocation permet d’accéder à des logements plus abordables.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_046',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Vous écrivez à un(e) ami(e) qui veut suivre des cours de langue dans votre école. Donnez-lui toutes les informations nécessaires pour l’aider à prendre sa décision (emplacement, prix, types de cours disponible, etc.) .',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_046',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Vous faites partie d’une association qui soutient les personnes âgées. Écrivez un article pour un blog afin de raconter votre expérience et motiver d’autres personnes à s’engager .',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_046',
-  'tache_3',
-  3,
-  'Thème du débat : « Animaux de compagnie pour enfants »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Donner un animal de compagnie à un enfant comporte de nombreux bienfaits, comme le montrent de nombreux psychologues. Pour les enfants qui n’ont pas de frères ou de sœurs, l’animal devient un compagnon et leur évite la solitude. Grâce à lui, l’enfant gagne en confiance et apprend que l’animal est un être vivant qui mérite attention et respect. Avec sa présence, l’enfant se sent en sécurité et peut devenir plus autonome sans l’aide constante de ses parents.
-
-Document B :
-De nombreux enfants demandent un jour ou l’autre à leurs parents un animal, souvent un chien ou un chat. Même si vous souhaitez faire plaisir à votre enfant, il est important de bien réfléchir avant d’adopter un animal. Celui-ci devient un membre de la famille et implique un engagement sur plusieurs années. Avoir un animal coûte souvent cher et demande beaucoup de responsabilités. Ce n’est pas un jouet que l’on peut jeter quand l’enfant ne s’en occupe plus.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_047',
-  'tache_3',
-  3,
-  'Thème du débat : « Faire ses courses : entre grandes surfaces et commerces de proximité »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Faire ses courses au supermarché est avantageux, puisqu’on y trouve une grande diversité de produits au même endroit. Vous avez la possibilité de garer votre voiture et de passer d’un rayon à l’autre pour acheter ce dont vous avez besoin : fruits, légumes, fromages, viandes, boissons. De plus, plusieurs marques sont proposées pour chaque produit, avec des offres promotionnelles régulières.
-
-Document B :
-ASSOCIATION POUR LA DÉFENSE DES COMMERCES DE PROXIMITÉ 
- L’initiative « Février sans supermarché » vise à limiter le pouvoir des supermarchés et à soutenir la survie des petits commerces en améliorant leurs ventes. Le principe est simple : ne pas faire ses courses dans les grandes surfaces durant un mois et privilégier les épiceries de quartier. Les clients en retirent des avantages, comme des produits plus frais et de qualité, ainsi que des moments d’échange avec leurs voisins.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_047',
-  'tache_1',
-  1,
+  83,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 « Je souhaite acheter un vélo fiable et pas cher. Merci de me contacter par mail : [email&#160;protected] ». 
@@ -1776,9 +1059,9 @@ ASSOCIATION POUR LA DÉFENSE DES COMMERCES DE PROXIMITÉ
 ),
 (
   'expression_ecrite',
-  'EE_T2_047',
+  'EE_T2_028',
   'tache_2',
-  2,
+  84,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous revenez d’une journée passée à la campagne avec vos amis. Vous publiez un message sur votre forum pour partager votre expérience et décrire ce que vous avez aimé (activités, paysages, animaux, etc.) .',
@@ -1786,9 +1069,9 @@ Vous revenez d’une journée passée à la campagne avec vos amis. Vous publiez
 ),
 (
   'expression_ecrite',
-  'EE_T3_048',
+  'EE_T3_028',
   'tache_3',
-  3,
+  85,
   'Thème du débat : « Autorité parentale et autonomie des enfants »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -1803,9 +1086,394 @@ Parfois, les parents ont peur d’être trop stricts avec leurs enfants. Ils red
 ),
 (
   'expression_ecrite',
-  'EE_T1_048',
+  'EE_T1_030',
   'tache_1',
-  1,
+  86,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Vous écrivez à un(e) ami(e) qui veut suivre des cours de langue dans votre école. Donnez-lui toutes les informations nécessaires pour l’aider à prendre sa décision (emplacement, prix, types de cours disponible, etc.) .',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_029',
+  'tache_2',
+  87,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Vous faites partie d’une association qui soutient les personnes âgées. Écrivez un article pour un blog afin de raconter votre expérience et motiver d’autres personnes à s’engager .',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_029',
+  'tache_3',
+  88,
+  'Thème du débat : « Animaux de compagnie pour enfants »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+Donner un animal de compagnie à un enfant comporte de nombreux bienfaits, comme le montrent de nombreux psychologues. Pour les enfants qui n’ont pas de frères ou de sœurs, l’animal devient un compagnon et leur évite la solitude. Grâce à lui, l’enfant gagne en confiance et apprend que l’animal est un être vivant qui mérite attention et respect. Avec sa présence, l’enfant se sent en sécurité et peut devenir plus autonome sans l’aide constante de ses parents.
+
+Document B :
+De nombreux enfants demandent un jour ou l’autre à leurs parents un animal, souvent un chien ou un chat. Même si vous souhaitez faire plaisir à votre enfant, il est important de bien réfléchir avant d’adopter un animal. Celui-ci devient un membre de la famille et implique un engagement sur plusieurs années. Avoir un animal coûte souvent cher et demande beaucoup de responsabilités. Ce n’est pas un jouet que l’on peut jeter quand l’enfant ne s’en occupe plus.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_031',
+  'tache_1',
+  89,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Un nouveau restaurant a récemment ouvert dans votre quartier. Vous envoyez un message à un(e) ami(e) pour lui suggérer d’y aller ensemble. Vous donnez des détails (cuisine proposée, tarifs, ambiance, décoration, etc.) .',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_030',
+  'tache_2',
+  90,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Vous avez découvert une ville que vous ne connaissiez pas auparavant. Vous souhaitez partager cette expérience. Vous publiez un message sur un site Internet consacré aux voyages. Vous racontez votre séjour et expliquez ce que vous avez aimé et ce que vous avez moins apprécié dans cette ville .',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_030',
+  'tache_3',
+  91,
+  'Thème du débat : « Vivre en colocation à l’âge adulte »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+La vie en colocation demande de bien s’entendre et de suivre des règles communes. On ne peut pas toujours mettre la musique à un volume élevé, inviter tous ses amis ou laisser la cuisine en désordre. Chaque personne a des comportements qui peuvent agacer les autres. Il est donc nécessaire d’établir des règles claires et de les respecter ensemble. Discuter avec ses colocataires lorsqu’un souci se présente est très important. Une bonne organisation et la communication permettent une colocation réussie.
+
+Document B :
+Vivre en colocation à l’âge adulte ? C’est un choix pratique pour avoir un logement plus spacieux à moindre coût. Vous avez uniquement votre chambre, tandis que la cuisine, le salon et la salle de bain sont communs. Pourtant, il est possible de vivre dans une maison avec jardin ou un grand appartement en centre-ville. En divisant le loyer et les frais avec vos colocataires, vous dépensez beaucoup moins que pour un logement individuel. Ainsi, malgré le partage des espaces, la colocation permet d’accéder à des logements plus abordables.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_032',
+  'tache_1',
+  92,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Vous êtes arrivé récemment dans un nouveau pays. Vous envoyez un message à vos amis pour expliquer votre arrivée et ce que vous ressentez au début .',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_031',
+  'tache_2',
+  93,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Vous souhaitez trouver un(e) camarade pour pour faire du sport. Vous écrivez un message sur le site des étudiants de votre école en précisant vos horaires libres .',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_031',
+  'tache_3',
+  94,
+  'Thème du débat : « La télévision dans la société : atouts et risques »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+La télévision est un moyen de communication et de distraction très présent dans la société actuelle. Son impact est évident sur les personnes et sur la culture en général. Elle permet de transmettre des informations, de proposer différents programmes de divertissement et de diffuser la culture. Présente dans beaucoup de foyers, elle reste une source d’information et de loisirs accessible à tous. Grâce à sa large audience, la télévision joue un rôle essentiel dans le partage des connaissances et la sensibilisation aux questions sociales.
+
+Document B :
+La télévision présente aussi certains aspects négatifs. Certains programmes peuvent transmettre des stéréotypes, des idées fausses ou des valeurs discutables. En outre, passer trop de temps devant la télévision peut diminuer le temps consacré à d’autres activités plus utiles, comme la lecture, les échanges sociaux ou le sport. Il est donc nécessaire de faire attention et de limiter le temps passé devant la télévision, surtout pour les enfants, afin de garder un bon équilibre entre apprentissage et loisirs.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_033',
+  'tache_1',
+  95,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Vous voulez convier vos amis à visiter un lieu touristique que vous appréciez beaucoup. Dans un message chaleureux, vous présentez ce lieu, dites ce que vous aimez et proposez une date, un horaire et un hébergement pour cette sortie .',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_032',
+  'tache_2',
+  96,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Vous avez participé à un festival (musique, cinéma, gastronomie, etc.), mais vous avez été déçu par cette expérience. Vous rédigez un article sur votre blog pour dire ce qui ne vous a pas satisfait .',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_032',
+  'tache_3',
+  97,
+  'Thème du débat : « Ville ou campagne : deux modes de vie »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+À mon avis, vivre en ville permet de profiter de nombreuses activités de loisirs. Aller au cinéma, dîner au restaurant ou faire les magasins est très facile. Tout est à proximité, donc on n’a pas besoin de se déplacer longtemps pour se divertir. On peut marcher un peu ou prendre un taxi si nécessaire. La ville offre également une grande variété d’activités culturelles comme les musées, le théâtre ou l’opéra, pour que chacun trouve son bonheur.
+
+Document B :
+Il y a peu de temps, j’ai choisi de m’installer à la campagne après avoir quitté la ville, car je voulais vivre dans un environnement plus naturel et tranquille. Maintenant, plutôt que de sortir au restaurant ou dans les bars, j’invite mes amis à la maison pour partager un verre sur la terrasse ou organiser un barbecue. Le prix des logements a également été un élément important de mon choix. À la campagne, les maisons coûtent beaucoup moins cher qu’en ville. Avec le même budget, j’ai pu acheter une grande maison avec un jardin, ce qui n’aurait pas été possible en zone urbaine.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_034',
+  'tache_1',
+  98,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Vous prévoyez une sortie culturelle dans votre ville. Vous envoyez un message à vos amis pour les convier et leur fournir tous les détails utiles (jour, endroit, programme des activités, etc.) .',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_033',
+  'tache_2',
+  99,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Vous avez pris part à une soirée dédiée à l’écologie à l’université pour la protection de la planète. Vous rédigez un article sur votre blog pour partager votre expérience et dire pourquoi cette soirée vous a intéressé(e) .',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_033',
+  'tache_3',
+  100,
+  'Thème du débat : « Devoirs à domicile : bienfaits et critiques »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+D’après certaines associations de parents d’élèves, les devoirs à domicile sont bénéfiques car ils permettent aux élèves de gérer leur temps seuls. Pour les parents, les devoirs représentent une occasion de se rapprocher de l’école chaque jour. Même si ce n’est pas toujours facile après une journée de travail, ils aiment ce temps passé avec leurs enfants, qui se sentent valorisés par l’intérêt que leurs parents leur montrent.
+
+Document B :
+Nous nous opposons depuis longtemps aux devoirs à la maison pour différentes raisons. Leur efficacité pour améliorer les résultats scolaires n’a jamais été prouvée de manière certaine. De nombreux parents n’ont pas le temps ou ne savent pas comment aider leurs enfants. De plus, les élèves qui ont compris le cours perdent du temps à refaire des exercices, tandis que ceux qui ne sont pas aidés restent en difficulté. C’est pour cela que nous estimons qu’il faudrait abolir les devoirs à domicile.',
+  true
+);
+
+INSERT INTO public.questions (epreuve, reference, tache, ordre, texte, actif) VALUES
+(
+  'expression_ecrite',
+  'EE_T1_035',
+  'tache_1',
+  101,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Vous pratiquez un sport au sein d’un club et vous avez gagné une compétition. Rédigez un courriel à vos amis pour leur parler de cet événement et leur annoncer votre succès .',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_034',
+  'tache_2',
+  102,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Le site « colocation.com » recherche des récits de personnes ayant vécu en colocation. Vous avez déjà habité avec des amis en colocation. Vous partagez votre vécu et exprimez votre opinion sur cette manière de se loger .',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_034',
+  'tache_3',
+  103,
+  'Thème du débat : « Villes et environnement : impacts et réalités »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+De nos jours, les villes s’agrandissent sans cesse. Ce phénomène affecte malheureusement l’environnement. Plus une ville se développe, plus ses effets sur la nature et sur l’homme sont néfastes. L’un des exemples les plus visibles est la déforestation. Les arbres et les espaces verts retiennent le carbone. Quand ils sont abattus pour construire des immeubles ou des routes, on détruit des zones importantes pour le stockage du carbone.
+
+Document B :
+Plus de la moitié des habitants de la planète vivent dans des villes, et dans les pays riches, huit habitants sur dix sont citadins. La vie urbaine constitue donc un enjeu écologique majeur. On affirme souvent que les villes actuelles ne respectent pas l’environnement et que leur développement augmente la pollution. Cependant, il faut relativiser : les villes ne sont pas toujours aussi polluantes qu’on l’imagine. Par exemple, un habitant de la ville consomme souvent moins d’énergie qu’une personne à la campagne.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_036',
+  'tache_1',
+  104,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Vous envoyez un message à votre ami(e) afin de l’informer des préparatifs de votre déménagement dans votre nouveau logement et de lui demander son aide (date, lieu, étapes, etc.).',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_035',
+  'tache_2',
+  105,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Vous avez pris part à un concours qui offre la possibilité de gagner un séjour de deux semaines dans votre ville favorite. Le thème du concours est « Mon artiste préféré ». Vous rédigez un article sur votre blog pour présenter l’artiste que vous aimez le plus .',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_035',
+  'tache_3',
+  106,
+  'Thème du débat : « Objets connectés : progrès ou danger ? »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+Les objets connectés rendent le quotidien plus pratique. Il s’agit d’appareils que vous contrôlez à distance à l’aide d’un téléphone ou d’Internet, par exemple le chauffage ou l’ouverture des portes. Les montres et bracelets connectés permettent également d’observer vos activités. Un programme peut mesurer vos pas afin de vous motiver à faire plus d’exercice. Leur rôle est particulièrement utile dans le secteur de la santé, car certains objets rappellent les consultations médicales ou la prise de médicaments.
+
+Document B :
+On pense qu’il existe environ 50 milliards d’objets connectés à travers le monde : alarmes, télévisions, caméras de sécurité, volets ou détecteurs de fumée. Toutefois, ce développement entraîne des risques liés à la sécurité. Un hacker peut contrôler un objet connecté en peu de temps. Par exemple, un cambrioleur pourrait vérifier, à l’aide de caméras connectées, si une maison est vide. Il est également possible de pirater le système d’un véhicule connecté et de le diriger à distance.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_037',
+  'tache_1',
+  107,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Dans le cadre d’un dossier consacré aux habitants, le journal « Bienvenue » vous demande d’écrire un article. Installé(e) récemment dans la ville, vous devez d’abord vous présenter, puis décrire vos lieux favoris .',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_036',
+  'tache_2',
+  108,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Après avoir participé au concert de votre chanteur préféré, vous rédigez un article sur votre blog afin de raconter ce moment et de donner envie à vos proches et aux lecteurs de venir à son prochain concert .',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_036',
+  'tache_3',
+  109,
+  'Thème du débat : « Les jeux vidéo : entre risques et bienfaits »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+De l’enfance jusqu’à l’adolescence, les enfants jouent souvent aux jeux vidéo et, avec le temps, cela peut provoquer des idées négatives et des comportements violents. Une étude récente réalisée auprès de jeunes de 9 à 18 ans qui jouent régulièrement montre que les jeux vidéo violents augmentent fortement l’agressivité. D’après Diego Gentil, ce phénomène serait inévitable, même avec un contrôle parental.
+
+Document B :
+On parle souvent des aspects négatifs des jeux vidéo, pourtant ils peuvent aussi avoir des effets positifs sur le cerveau et la santé en général. Par exemple, ils permettent de développer certaines capacités mentales comme l’attention, l’imagination et l’analyse. Cela s’explique par le fait que, lorsque vous jouez, vous devez réfléchir en permanence et résoudre des problèmes.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_038',
+  'tache_1',
+  110,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+« Salut, 
+ J’espère que tu vas bien. 
+ Dis-moi, que penses-tu de ta nouvelle université ? Est-ce que l’ambiance avec les étudiants est bonne ? Comment trouves-tu les professeurs ? 
+ À très bientôt. 
+ Martin » 
+ Vous écrivez un message à Martin dans lequel vous présentez votre université (les professeurs, les étudiants, les activités, etc.) .',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_037',
+  'tache_2',
+  111,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Vous avez choisi d’arrêter d’utiliser votre réseau social favori (Facebook, Instagram, etc.). Vous adressez un message à vos amis pour leur expliquer cette expérience et les raisons de votre choix .',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_037',
+  'tache_3',
+  112,
+  'Thème du débat : « Faut-il mettre une photo sur son CV ? »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+De nos jours, certains candidats choisissent de mettre une photo sur leur CV, alors que d’autres préfèrent ne pas en mettre. Il faudrait interdire cette pratique pour éviter toute forme de discrimination ou d’injustice. Selon une étude menée par des spécialistes du recrutement, la photo n’a pas de réelle utilité. Les résultats indiquent que les employeurs accordent plus d’attention à l’expérience professionnelle (32 %) et aux diplômes (15 %) qu’au physique. Seuls 2 % des recruteurs commencent par regarder la photo. Cette donnée est surprenante, compte tenu de l’importance donnée à l’apparence par certaines personnes.
+
+Document B :
+L’utilisation d’une photo sur le CV est un sujet qui divise les recruteurs. Certains estiment que la photo aide à se faire une idée du candidat avant la rencontre. Elle peut également faciliter la mémorisation d’un candidat quand beaucoup de CV sont reçus. D’autres pensent que tout dépend du métier : pour les postes liés à l’accueil, par exemple, la photo peut être appropriée. Cependant, elle doit toujours être professionnelle pour créer une impression positive.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_039',
+  'tache_1',
+  113,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Vous venez d’obtenir un nouveau travail. Vous envoyez un message à votre ami(e) francophone pour l’informer. Vous décrivez votre fonction, vos collègues et le lieu où vous travaillez .',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_038',
+  'tache_2',
+  114,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+« Salut à tous, 
+ J’ai 19 ans et je prépare mon départ pour étudier dans un autre pays. Je voudrais connaître vos expériences et vos avis si vous avez déjà étudié loin de chez vous. 
+ Merci d’avance ! 
+ Alice » 
+ Vous avez passé une année d’études à l’étranger. Vous répondez au message publié sur le forum. Vous décrivez votre séjour, vous dites si vous avez apprécié cette expérience et vous expliquez pourquoi .',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_038',
+  'tache_3',
+  115,
+  'Thème du débat : « Aider les sans-abri : dons ou actions concrètes ? »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+Chaque hiver, je consacre un peu de mon temps et de mon argent pour aider les personnes sans-abri qui souffrent du froid. Pour moi, il est important de penser à ceux qui sont dans le besoin. Je trouve essentiel de donner quelques dollars à ces personnes ou aux associations qui les soutiennent. De plus, cette action me fait sentir utile, au moins une fois par an ! C’est un geste de solidarité que chacun peut réaliser.
+
+— Charlotte, 45 ans
+
+Document B :
+Au lieu de donner de l’argent aux personnes défavorisées, il serait préférable de repenser notre façon de vivre. C’est pour cela que je préfère m’investir chaque jour dans une association de mon quartier, où je fais du bénévolat. Les sans-abri ont besoin d’un logement et d’un emploi, pas seulement d’argent. Il faut les aider à devenir indépendants. C’est l’objectif des associations qui aident les personnes dans la rue à trouver un travail. Donner de l’argent seul n’est pas utile, cela ne fait qu’apaiser notre conscience.
+
+— Arthur, 54 ans',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_040',
+  'tache_1',
+  116,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Votre ami Thomas vous écrit ce message : 
@@ -1818,9 +1486,9 @@ Votre ami Thomas vous écrit ce message :
 ),
 (
   'expression_ecrite',
-  'EE_T2_048',
+  'EE_T2_039',
   'tache_2',
-  2,
+  117,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous avez participé à un festival de films. Vous en avez regardé plusieurs. Sur votre site personnel, vous présentez le film que vous avez le plus apprécié et vous justifiez votre préférence .',
@@ -1828,9 +1496,9 @@ Vous avez participé à un festival de films. Vous en avez regardé plusieurs. S
 ),
 (
   'expression_ecrite',
-  'EE_T3_049',
+  'EE_T3_039',
   'tache_3',
-  3,
+  118,
   'Thème du débat : « Les maisons de retraite : deux visions différentes »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -1845,9 +1513,9 @@ Les maisons de retraite sont souvent mal perçues, pourtant elles sont une solut
 ),
 (
   'expression_ecrite',
-  'EE_T1_049',
+  'EE_T1_041',
   'tache_1',
-  1,
+  119,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 « Bonjour, 
@@ -1859,9 +1527,9 @@ Les maisons de retraite sont souvent mal perçues, pourtant elles sont une solut
 ),
 (
   'expression_ecrite',
-  'EE_T2_049',
+  'EE_T2_040',
   'tache_2',
-  2,
+  120,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 INFOS FAMILLES : Accueillir une personne âgée chez soi : comment s’organiser ? 
@@ -1870,9 +1538,9 @@ INFOS FAMILLES : Accueillir une personne âgée chez soi : comment s’organiser
 ),
 (
   'expression_ecrite',
-  'EE_T3_050',
+  'EE_T3_040',
   'tache_3',
-  3,
+  121,
   'Thème du débat : « Apprendre une langue en ligne »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -1887,9 +1555,9 @@ On pourrait croire que l’apprentissage d’une langue en ligne est facile, mai
 ),
 (
   'expression_ecrite',
-  'EE_T1_050',
+  'EE_T1_042',
   'tache_1',
-  1,
+  122,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous arrivez à la fin de votre séjour professionnel à l’étranger et voulez célébrer votre départ. Vous envoyez un courriel à vos collègues pour les inviter à dîner au restaurant. Vous expliquez votre projet et précisez les détails pratiques (lieu, date, heure, etc.) .',
@@ -1897,21 +1565,19 @@ Vous arrivez à la fin de votre séjour professionnel à l’étranger et voulez
 ),
 (
   'expression_ecrite',
-  'EE_T2_050',
+  'EE_T2_041',
   'tache_2',
-  2,
+  123,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous avez découvert une nouvelle pratique sportive. Sur votre blog, vous partagez ce que vous avez ressenti et montrez en quoi ce sport peut être bénéfique pour tout le monde .',
   true
-);
-
-INSERT INTO public.questions (epreuve, reference, tache, ordre, texte, actif) VALUES
+),
 (
   'expression_ecrite',
-  'EE_T3_051',
+  'EE_T3_041',
   'tache_3',
-  3,
+  124,
   'Thème du débat : « Animaux de compagnie au bureau : pour ou contre ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -1927,9 +1593,9 @@ Document B :
 ),
 (
   'expression_ecrite',
-  'EE_T1_051',
+  'EE_T1_043',
   'tache_1',
-  1,
+  125,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous avez récemment emménagé dans une nouvelle ville. Vous envoyez un message à un(e) ami(e) pour lui raconter votre nouveau cadre de vie (voisinage, commerces, ambiance, etc.) .',
@@ -1937,9 +1603,9 @@ Vous avez récemment emménagé dans une nouvelle ville. Vous envoyez un message
 ),
 (
   'expression_ecrite',
-  'EE_T2_051',
+  'EE_T2_042',
   'tache_2',
-  2,
+  126,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous avez participé à une activité organisée pour la « Journée mondiale du nettoyage de notre planète ». Vous et d’autres volontaires avez collecté des déchets dans un espace public (plage, forêt, rue, etc.). Vous racontez votre expérience à vos amis et expliquez l’intérêt de ce type d’initiative .',
@@ -1947,9 +1613,9 @@ Vous avez participé à une activité organisée pour la « Journée mondiale du
 ),
 (
   'expression_ecrite',
-  'EE_T3_052',
+  'EE_T3_042',
   'tache_3',
-  3,
+  127,
   'Thème du débat : « La publicité alimentaire ciblant les enfants. »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -1960,14 +1626,16 @@ Beaucoup trouvent la publicité agaçante, mais à mon avis, elle est très util
  — Lucien, 28 ans
 
 Document B :
-Nous sommes entourés de publicité tous les jours : journaux, radios, télévisions, smartphones, Internet… Par exemple, les émissions télévisées sont souvent coupées par des pubs, ce qui peut être irritant. Recevoir des kilos de publicité chaque année dans la boîte aux lettres n’est pas non plus bon pour l’environnement ! Selon moi, il serait utile de créer une loi pour limiter les publicités à la télévision et par courrier. Des publicités plus discrètes seraient mieux reçues.',
+Nous sommes entourés de publicité tous les jours : journaux, radios, télévisions, smartphones, Internet… Par exemple, les émissions télévisées sont souvent coupées par des pubs, ce qui peut être irritant. Recevoir des kilos de publicité chaque année dans la boîte aux lettres n’est pas non plus bon pour l’environnement ! Selon moi, il serait utile de créer une loi pour limiter les publicités à la télévision et par courrier. Des publicités plus discrètes seraient mieux reçues.
+
+— Alma, 35 ans',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T1_052',
+  'EE_T1_044',
   'tache_1',
-  1,
+  128,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous préparez votre déménagement et vos amis ont accepté de vous aider. Vous rédigez un message groupé pour leur donner toutes les informations pratiques : lieux, horaires, durée, trajet et tâches à réaliser .',
@@ -1975,9 +1643,9 @@ Vous préparez votre déménagement et vos amis ont accepté de vous aider. Vous
 ),
 (
   'expression_ecrite',
-  'EE_T2_052',
+  'EE_T2_043',
   'tache_2',
-  2,
+  129,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Inscrivez-vous à notre concours pour avoir la chance de gagner un voyage pour deux dans la ville que vous souhaitez. Écrivez un article sur le thème : « Mon artiste préféré(e) ». Vous devez expliquer votre choix et raconter la vie de cet(te) artiste .',
@@ -1985,9 +1653,9 @@ Inscrivez-vous à notre concours pour avoir la chance de gagner un voyage pour d
 ),
 (
   'expression_ecrite',
-  'EE_T3_053',
+  'EE_T3_043',
   'tache_3',
-  3,
+  130,
   'Thème du débat : « Objets Connectés »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -2002,9 +1670,9 @@ On estime qu’il y aurait 50 milliards d’objets intelligents dans le monde, t
 ),
 (
   'expression_ecrite',
-  'EE_T1_053',
+  'EE_T1_045',
   'tache_1',
-  1,
+  131,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous venez d’emménager dans un nouvel appartement et vous cherchez un(e) colocataire. Vous rédigez une annonce en donnant toutes les informations sur le logement (emplacement, superficie, loyer, etc.) et en décrivant la personne avec qui vous souhaiteriez partager l’appartement (caractère, habitudes, mode de vie, etc.) .',
@@ -2012,9 +1680,9 @@ Vous venez d’emménager dans un nouvel appartement et vous cherchez un(e) colo
 ),
 (
   'expression_ecrite',
-  'EE_T2_053',
+  'EE_T2_044',
   'tache_2',
-  2,
+  132,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous avez récemment débuté une nouvelle activité de loisir, comme un sport ou la danse. Rédigez un article sur votre blog pour partager votre expérience .',
@@ -2022,9 +1690,9 @@ Vous avez récemment débuté une nouvelle activité de loisir, comme un sport o
 ),
 (
   'expression_ecrite',
-  'EE_T3_054',
+  'EE_T3_044',
   'tache_3',
-  3,
+  133,
   'Thème du débat : « L''accès gratuit aux musées »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -2039,9 +1707,9 @@ Rendre les musées totalement gratuits est une fausse bonne idée, car cela fait
 ),
 (
   'expression_ecrite',
-  'EE_T1_054',
+  'EE_T1_046',
   'tache_1',
-  1,
+  134,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Rédigez un message à un ami pour l’inviter à une rencontre avec un écrivain organisée par la bibliothèque de votre ville.',
@@ -2049,9 +1717,9 @@ Rédigez un message à un ami pour l’inviter à une rencontre avec un écrivai
 ),
 (
   'expression_ecrite',
-  'EE_T2_054',
+  'EE_T2_045',
   'tache_2',
-  2,
+  135,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Rédigez un article de blog relatant votre expérience lors de l’événement « La Semaine du Goût », auquel vous avez participé.',
@@ -2059,9 +1727,9 @@ Rédigez un article de blog relatant votre expérience lors de l’événement �
 ),
 (
   'expression_ecrite',
-  'EE_T3_055',
+  'EE_T3_045',
   'tache_3',
-  3,
+  136,
   'Thème du débat : « Art urbain ou vandalisme ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -2076,9 +1744,9 @@ Chaque année, certaines villes investissent des sommes importantes pour lutter 
 ),
 (
   'expression_ecrite',
-  'EE_T1_055',
+  'EE_T1_047',
   'tache_1',
-  1,
+  137,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 « Salut ! 
@@ -2090,9 +1758,9 @@ Chaque année, certaines villes investissent des sommes importantes pour lutter 
 ),
 (
   'expression_ecrite',
-  'EE_T2_055',
+  'EE_T2_046',
   'tache_2',
-  2,
+  138,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Rédigez une lettre de réclamation pour exprimer votre insatisfaction à l’égard des services fournis par une agence de voyage suite à une organisation défaillante de votre séjour.',
@@ -2100,9 +1768,9 @@ Rédigez une lettre de réclamation pour exprimer votre insatisfaction à l’é
 ),
 (
   'expression_ecrite',
-  'EE_T3_056',
+  'EE_T3_046',
   'tache_3',
-  3,
+  139,
   'Thème du débat : « La restauration rapide »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -2117,9 +1785,9 @@ Bernard «Je soutiens la restauration rapide. Je travaille pour une chaîne cél
 ),
 (
   'expression_ecrite',
-  'EE_T1_056',
+  'EE_T1_048',
   'tache_1',
-  1,
+  140,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous voulez aller à un festival de films dans votre ville. Rédigez un message à un ami pour lui proposer de vous accompagner. Indiquez clairement les détails de l’événement (films, horaires, dates et prix) .',
@@ -2127,9 +1795,9 @@ Vous voulez aller à un festival de films dans votre ville. Rédigez un message 
 ),
 (
   'expression_ecrite',
-  'EE_T2_056',
+  'EE_T2_047',
   'tache_2',
-  2,
+  141,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous êtes allé à un festival de cinéma et vous avez regardé un film qui vous a laissé une forte impression. Rédigez un message à vos amis pour partager votre expérience et leur donner votre avis sur ce film .',
@@ -2137,9 +1805,9 @@ Vous êtes allé à un festival de cinéma et vous avez regardé un film qui vou
 ),
 (
   'expression_ecrite',
-  'EE_T3_057',
+  'EE_T3_047',
   'tache_3',
-  3,
+  142,
   'Thème du débat : « Maisons de retraite ou maintien à domicile ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -2148,15 +1816,19 @@ Vous êtes allé à un festival de cinéma et vous avez regardé un film qui vou
 Document A :
 Les maisons de retraite représentent une solution adaptée pour les personnes âgées. Elles y bénéficient de soins appropriés et d’un encadrement professionnel. En plus, elles ont la possibilité de participer à diverses activités qui leur permettent de garder une vie sociale et d’éviter la solitude. Dans certains cas, c’est mieux que de rester seules chez elles.
 
+(Sophie, infirmière)
+
 Document B :
-Les maisons de retraite peuvent priver les personnes âgées de la présence de leur famille et donner l’impression d’être abandonné. De plus, les conditions de vie ne sont pas toujours satisfaisantes et certains établissements manquent parfois de personnel compétent. Selon moi, l’aide à domicile est une meilleure solution pour vieillir auprès de ses proches.',
+Les maisons de retraite peuvent priver les personnes âgées de la présence de leur famille et donner l’impression d’être abandonné. De plus, les conditions de vie ne sont pas toujours satisfaisantes et certains établissements manquent parfois de personnel compétent. Selon moi, l’aide à domicile est une meilleure solution pour vieillir auprès de ses proches.
+
+(Jean, retraité)',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T1_057',
+  'EE_T1_049',
   'tache_1',
-  1,
+  143,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Parc de loisirs : « J’ai hâte de profiter de cette journée avec toi demain ! Peux-tu me dire quelles activités sont au programme ? ». Écrivez un message pour répondre à votre ami(e) .',
@@ -2164,9 +1836,9 @@ Parc de loisirs : « J’ai hâte de profiter de cette journée avec toi demain 
 ),
 (
   'expression_ecrite',
-  'EE_T2_057',
+  'EE_T2_048',
   'tache_2',
-  2,
+  144,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Rédigez un message à vos amis pour partager votre expérience lors d’un salon du livre, en décrivant les conférences, les expositions et les échanges avec les écrivains.',
@@ -2174,9 +1846,9 @@ Rédigez un message à vos amis pour partager votre expérience lors d’un salo
 ),
 (
   'expression_ecrite',
-  'EE_T3_058',
+  'EE_T3_048',
   'tache_3',
-  3,
+  145,
   'Thème du débat : « Faut-il faire ses courses chez les producteurs locaux ou au supermarché ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -2191,9 +1863,9 @@ Alice, citadine, préfère faire ses courses au supermarché en raison de la lar
 ),
 (
   'expression_ecrite',
-  'EE_T1_058',
+  'EE_T1_050',
   'tache_1',
-  1,
+  146,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous souhaitez participer à un festival de cinéma local. Vous envoyez un message à votre ami(e) pour l’inviter à vous accompagner et lui fournir tous les détails nécessaires sur l’événement (films à l’affiche, dates, horaires, prix, etc.) .',
@@ -2201,9 +1873,9 @@ Vous souhaitez participer à un festival de cinéma local. Vous envoyez un messa
 ),
 (
   'expression_ecrite',
-  'EE_T2_058',
+  'EE_T2_049',
   'tache_2',
-  2,
+  147,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous avez hébergé un(e) étudiant(e) étranger(e) pendant une semaine. Vous racontez cette expérience sur votre blog et expliquez les raisons pour lesquelles vous l’avez appréciée .',
@@ -2211,9 +1883,9 @@ Vous avez hébergé un(e) étudiant(e) étranger(e) pendant une semaine. Vous ra
 ),
 (
   'expression_ecrite',
-  'EE_T3_059',
+  'EE_T3_049',
   'tache_3',
-  3,
+  148,
   'Thème du débat : « Restauration rapide »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -2228,9 +1900,9 @@ Les experts expliquent que consommer régulièrement des repas dans des fast-foo
 ),
 (
   'expression_ecrite',
-  'EE_T1_059',
+  'EE_T1_051',
   'tache_1',
-  1,
+  149,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Envoyez un message à vos amis pour les inviter à passer un week-end chez vous et pratiquer ensemble des activités sportives.',
@@ -2238,19 +1910,21 @@ Envoyez un message à vos amis pour les inviter à passer un week-end chez vous 
 ),
 (
   'expression_ecrite',
-  'EE_T2_059',
+  'EE_T2_050',
   'tache_2',
-  2,
+  150,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Rédigez un article pour votre blog afin d’expliquer pourquoi vous avez choisi de modifier votre alimentation et vos habitudes de repas.',
   true
-),
+);
+
+INSERT INTO public.questions (epreuve, reference, tache, ordre, texte, actif) VALUES
 (
   'expression_ecrite',
-  'EE_T3_060',
+  'EE_T3_050',
   'tache_3',
-  3,
+  151,
   'Thème du débat : « Sieste au travail »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -2265,9 +1939,9 @@ Même si les bienfaits de la micro-sieste ont été prouvés scientifiquement, c
 ),
 (
   'expression_ecrite',
-  'EE_T1_060',
+  'EE_T1_052',
   'tache_1',
-  1,
+  152,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 « Bonjour ! 
@@ -2278,9 +1952,9 @@ Même si les bienfaits de la micro-sieste ont été prouvés scientifiquement, c
 ),
 (
   'expression_ecrite',
-  'EE_T2_060',
+  'EE_T2_051',
   'tache_2',
-  2,
+  153,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Tout recommencer ailleurs ? 
@@ -2290,9 +1964,9 @@ Tout recommencer ailleurs ?
 ),
 (
   'expression_ecrite',
-  'EE_T3_061',
+  'EE_T3_051',
   'tache_3',
-  3,
+  154,
   'Thème du débat : « Productivité et confort au travail »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -2307,9 +1981,9 @@ Document B :
 ),
 (
   'expression_ecrite',
-  'EE_T1_061',
+  'EE_T1_053',
   'tache_1',
-  1,
+  155,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous comptez partir en vacances avec vos amis et vous avez repéré un hôtel intéressant. Vous rédigez un message pour leur donner des détails sur cet hôtel (emplacement, tarif, services, etc.) et vous leur suggérez de faire la réservation.',
@@ -2317,9 +1991,9 @@ Vous comptez partir en vacances avec vos amis et vous avez repéré un hôtel in
 ),
 (
   'expression_ecrite',
-  'EE_T2_061',
+  'EE_T2_052',
   'tache_2',
-  2,
+  156,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous avez commencé un emploi à l’étranger. Vous écrivez un message à vos amis pour leur parler de cette nouvelle expérience professionnelle et leur dire ce que vous avez le plus apprécié .',
@@ -2327,9 +2001,9 @@ Vous avez commencé un emploi à l’étranger. Vous écrivez un message à vos 
 ),
 (
   'expression_ecrite',
-  'EE_T3_062',
+  'EE_T3_052',
   'tache_3',
-  3,
+  157,
   'Thème du débat : « Jeux vidéo : un loisir utile ou dangereux ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -2344,9 +2018,9 @@ Durant trois ans, des chercheurs ont observé des enfants de 8 à 17 ans pour é
 ),
 (
   'expression_ecrite',
-  'EE_T1_062',
+  'EE_T1_054',
   'tache_1',
-  1,
+  158,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 «Salut. 
@@ -2359,9 +2033,9 @@ Durant trois ans, des chercheurs ont observé des enfants de 8 à 17 ans pour é
 ),
 (
   'expression_ecrite',
-  'EE_T2_062',
+  'EE_T2_053',
   'tache_2',
-  2,
+  159,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous avez travaillé deux jours dans une ferme. Vous écrivez un message à vos amis et vous leur racontez comment se sont passées ces journées (les tâches quotidiennes, les animaux, les découvertes, etc.). Vous donnez votre avis sur cette expérience .',
@@ -2369,9 +2043,9 @@ Vous avez travaillé deux jours dans une ferme. Vous écrivez un message à vos 
 ),
 (
   'expression_ecrite',
-  'EE_T3_063',
+  'EE_T3_053',
   'tache_3',
-  3,
+  160,
   'Thème du débat : « L''art urbain »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -2386,9 +2060,9 @@ Certaines villes dépensent chaque année une somme d''argent importante pour lu
 ),
 (
   'expression_ecrite',
-  'EE_T1_063',
+  'EE_T1_055',
   'tache_1',
-  1,
+  161,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous désirez changer l’aspect de votre logement (mobilier, couleurs, décorations, etc.). Vous écrivez à un(e) ami(e) pour partager votre projet et solliciter son assistance .',
@@ -2396,9 +2070,9 @@ Vous désirez changer l’aspect de votre logement (mobilier, couleurs, décorat
 ),
 (
   'expression_ecrite',
-  'EE_T2_063',
+  'EE_T2_054',
   'tache_2',
-  2,
+  162,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 « VENEZ VISITER NOTRE ÉCOLE DE MUSIQUE ! 
@@ -2409,9 +2083,9 @@ Vous désirez changer l’aspect de votre logement (mobilier, couleurs, décorat
 ),
 (
   'expression_ecrite',
-  'EE_T3_064',
+  'EE_T3_054',
   'tache_3',
-  3,
+  163,
   'Thème du débat : « Parents exigeants ou permissifs. »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -2426,9 +2100,9 @@ Certains parents choisissent de ne pas être trop sévères et laissent beaucoup
 ),
 (
   'expression_ecrite',
-  'EE_T1_064',
+  'EE_T1_056',
   'tache_1',
-  1,
+  164,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 « Je cherche à acheter un vélo bien entretenu et à un prix raisonnable. 
@@ -2438,9 +2112,9 @@ Certains parents choisissent de ne pas être trop sévères et laissent beaucoup
 ),
 (
   'expression_ecrite',
-  'EE_T2_064',
+  'EE_T2_055',
   'tache_2',
-  2,
+  165,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous venez de passer une journée à la campagne. De retour à la maison, vous rédigez un article sur votre blog pour parler de cette expérience à vos amis. Vous décrivez ce que vous avez aimé durant cette journée (l’endroit, activités, animaux, etc.).',
@@ -2448,9 +2122,9 @@ Vous venez de passer une journée à la campagne. De retour à la maison, vous r
 ),
 (
   'expression_ecrite',
-  'EE_T3_065',
+  'EE_T3_055',
   'tache_3',
-  3,
+  166,
   'Thème du débat : « Petits commerces vs grandes surfaces : où faire ses courses ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -2466,9 +2140,9 @@ Association pour soutenir les petits commerces.
 ),
 (
   'expression_ecrite',
-  'EE_T1_065',
+  'EE_T1_057',
   'tache_1',
-  1,
+  167,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous avez récemment déménagé dans une autre ville. Rédigez un message à un(e) ami(e) pour lui parler de votre nouveau lieu de résidence (quartier, habitants, magasins, etc.) .',
@@ -2476,9 +2150,9 @@ Vous avez récemment déménagé dans une autre ville. Rédigez un message à un
 ),
 (
   'expression_ecrite',
-  'EE_T2_065',
+  'EE_T2_056',
   'tache_2',
-  2,
+  168,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous avez pris part à une activité organisée pour la « Journée mondiale du nettoyage de notre planète ». Avec d’autres volontaires, vous avez aidé à nettoyer un espace public (rue, plage, forêt, etc.). Vous décrivez cette journée à vos amis et parlez de son importance .',
@@ -2486,9 +2160,9 @@ Vous avez pris part à une activité organisée pour la « Journée mondiale du 
 ),
 (
   'expression_ecrite',
-  'EE_T3_066',
+  'EE_T3_056',
   'tache_3',
-  3,
+  169,
   'Thème du débat : « La publicité : utile ou gênante ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -2505,9 +2179,9 @@ Document B :
 ),
 (
   'expression_ecrite',
-  'EE_T1_066',
+  'EE_T1_058',
   'tache_1',
-  1,
+  170,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 « Salut, 
@@ -2519,9 +2193,9 @@ Document B :
 ),
 (
   'expression_ecrite',
-  'EE_T2_066',
+  'EE_T2_057',
   'tache_2',
-  2,
+  171,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 INFOS FAMILLES 
@@ -2531,9 +2205,9 @@ INFOS FAMILLES
 ),
 (
   'expression_ecrite',
-  'EE_T3_067',
+  'EE_T3_057',
   'tache_3',
-  3,
+  172,
   'Thème du débat : « Cours de langue en ligne »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -2548,9 +2222,9 @@ Apprendre une langue sur Internet paraît facile, mais ce n’est pas à la port
 ),
 (
   'expression_ecrite',
-  'EE_T1_067',
+  'EE_T1_059',
   'tache_1',
-  1,
+  173,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Votre ami Thomas vous a écrit : 
@@ -2560,14 +2234,12 @@ Votre ami Thomas vous a écrit :
  À bientôt ! » 
  Écrivez-lui pour lui présenter une fête célèbre dans votre pays.',
   true
-);
-
-INSERT INTO public.questions (epreuve, reference, tache, ordre, texte, actif) VALUES
+),
 (
   'expression_ecrite',
-  'EE_T2_067',
+  'EE_T2_058',
   'tache_2',
-  2,
+  174,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous êtes allé à un festival de cinéma. Vous avez regardé plusieurs œuvres. Sur votre blog, parlez du film que vous avez le plus apprécié et justifiez votre préférence .',
@@ -2575,9 +2247,9 @@ Vous êtes allé à un festival de cinéma. Vous avez regardé plusieurs œuvres
 ),
 (
   'expression_ecrite',
-  'EE_T3_068',
+  'EE_T3_058',
   'tache_3',
-  3,
+  175,
   'Thème du débat : « Maisons de retraite : pour ou contre ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -2592,9 +2264,9 @@ Beaucoup de personnes critiquent les maisons de retraite, mais c’est pourtant 
 ),
 (
   'expression_ecrite',
-  'EE_T1_068',
+  'EE_T1_060',
   'tache_1',
-  1,
+  176,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous organisez un week-end entre amis le mois prochain. Rédigez un message pour leur expliquer le programme (lieu, transport, activités, etc.) .',
@@ -2602,9 +2274,9 @@ Vous organisez un week-end entre amis le mois prochain. Rédigez un message pour
 ),
 (
   'expression_ecrite',
-  'EE_T2_068',
+  'EE_T2_059',
   'tache_2',
-  2,
+  177,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 COURRIER DES LECTEURS 
@@ -2614,9 +2286,9 @@ COURRIER DES LECTEURS
 ),
 (
   'expression_ecrite',
-  'EE_T3_069',
+  'EE_T3_059',
   'tache_3',
-  3,
+  178,
   'Thème du débat : « Le travail : un bénéfice ou un frein ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -2631,46 +2303,9 @@ Certaines personnes ont décidé de quitter leur emploi pour adopter un autre st
 ),
 (
   'expression_ecrite',
-  'EE_T1_069',
+  'EE_T1_061',
   'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Mehdi vient de s’installer en ville et souhaite connaître les transports disponibles. Rédigez-lui un message expliquant les différentes options, les prix et les abonnements possibles .',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_069',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Vous rédigez un article de blog pour montrer votre admiration envers une personne célèbre ou non. Vous décrivez ses actions et expliquez pourquoi elle vous inspire .',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_070',
-  'tache_3',
-  3,
-  'Thème du débat : « Colocation : bénéfices et inconvénients »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-La colocation offre de nombreux avantages. Partager un appartement avec d’autres permet de diminuer le loyer, les charges et les dépenses communes. Elle favorise également les rencontres et les échanges culturels. Habiter avec d’autres personnes permet de rencontrer des individus différents, de nouer des amitiés et de vivre des expériences intéressantes.
-
-Document B :
-La colocation présente aussi des inconvénients. Les différences de personnalité et de mode de vie peuvent provoquer des tensions. La répartition des tâches ménagères et des responsabilités peut engendrer des conflits. De plus, la colocation réduit parfois l’intimité et l’espace personnel. Pour que la cohabitation se passe bien, il est important d’avoir une communication claire et respectueuse et de fixer des règles partagées.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_070',
-  'tache_1',
-  1,
+  179,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous désirez inviter vos amis à explorer un site touristique que vous trouvez intéressant. Rédigez un message détaillant votre plan de sortie (lieu, dates, hébergement, etc.) .',
@@ -2678,9 +2313,9 @@ Vous désirez inviter vos amis à explorer un site touristique que vous trouvez 
 ),
 (
   'expression_ecrite',
-  'EE_T2_070',
+  'EE_T2_060',
   'tache_2',
-  2,
+  180,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous avez participé à un festival (musique, cinéma, gastronomie…) qui ne vous a pas satisfait. Rédigez un article sur votre site pour partager votre expérience et les raisons de votre insatisfaction .',
@@ -2688,9 +2323,9 @@ Vous avez participé à un festival (musique, cinéma, gastronomie…) qui ne vo
 ),
 (
   'expression_ecrite',
-  'EE_T3_071',
+  'EE_T3_060',
   'tache_3',
-  3,
+  181,
   'Thème du débat : « Ville ou campagne : choisir son cadre de vie »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -2705,9 +2340,9 @@ La vie rurale n’est pas adaptée à tous. Les commerces, loisirs et services e
 ),
 (
   'expression_ecrite',
-  'EE_T1_071',
+  'EE_T1_062',
   'tache_1',
-  1,
+  182,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous prévoyez d''habiter à Nice. Rédigez un message à une agence immobilière pour rechercher un appartement ou une maison. Précisez vos critères (superficie, prix, localisation, nombre de chambres, etc.)',
@@ -2715,9 +2350,9 @@ Vous prévoyez d''habiter à Nice. Rédigez un message à une agence immobilièr
 ),
 (
   'expression_ecrite',
-  'EE_T2_071',
+  'EE_T2_061',
   'tache_2',
-  2,
+  183,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Un Salon du livre a eu lieu dans votre ville. Vous y avez assisté et participé aux activités (conférences, expositions, rencontres avec des écrivains, etc.). Rédigez un message à vos amis pour raconter expérience et partager votre avis sur cet événement.',
@@ -2725,9 +2360,9 @@ Un Salon du livre a eu lieu dans votre ville. Vous y avez assisté et participé
 ),
 (
   'expression_ecrite',
-  'EE_T3_072',
+  'EE_T3_061',
   'tache_3',
-  3,
+  184,
   'Thème du débat : « Privilégier la ferme ou le supermarché pour ses courses ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -2742,9 +2377,9 @@ Pour mes courses, je me rends toujours au supermarché, c’est ma préférence.
 ),
 (
   'expression_ecrite',
-  'EE_T2_072',
+  'EE_T2_062',
   'tache_2',
-  2,
+  185,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Rédigez un article sur un forum pour expliquer les raisons qui vous ont poussé à modifier votre manière de vous alimenter.',
@@ -2752,9 +2387,9 @@ Rédigez un article sur un forum pour expliquer les raisons qui vous ont poussé
 ),
 (
   'expression_ecrite',
-  'EE_T3_073',
+  'EE_T3_062',
   'tache_3',
-  3,
+  186,
   'Thème du débat : « Sieste au travail »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -2769,9 +2404,9 @@ Même si la sieste au travail présente de nombreux bénéfices, il n’est pas 
 ),
 (
   'expression_ecrite',
-  'EE_T1_072',
+  'EE_T1_063',
   'tache_1',
-  1,
+  187,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous avez trouvé un appartement intéressant et comptez déménager. Informez un ami par écrit en lui donnant toutes les détails essentiels (type de logement, localisation et prix) .',
@@ -2779,9 +2414,9 @@ Vous avez trouvé un appartement intéressant et comptez déménager. Informez u
 ),
 (
   'expression_ecrite',
-  'EE_T2_073',
+  'EE_T2_063',
   'tache_2',
-  2,
+  188,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous avez assisté avec un ami à un festival de musique gratuit organisé dans votre ville. Écrivez un article de blog pour partager votre expérience et vos impressions .',
@@ -2789,9 +2424,9 @@ Vous avez assisté avec un ami à un festival de musique gratuit organisé dans 
 ),
 (
   'expression_ecrite',
-  'EE_T3_074',
+  'EE_T3_063',
   'tache_3',
-  3,
+  189,
   'Thème du débat : « Jeunes et emploi : faut-il privilégier diplôme ou expérience ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -2806,9 +2441,9 @@ On parle souvent de dirigeants célèbres qui ont réussi sans suivre de cursus 
 ),
 (
   'expression_ecrite',
-  'EE_T1_073',
+  'EE_T1_064',
   'tache_1',
-  1,
+  190,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Rédigez un courriel à votre ami francophone afin de solliciter son soutien pour trouver un logement. Pensez à préciser les informations essentielles (genre de logement, budget, date) .',
@@ -2816,9 +2451,9 @@ Rédigez un courriel à votre ami francophone afin de solliciter son soutien pou
 ),
 (
   'expression_ecrite',
-  'EE_T2_074',
+  'EE_T2_064',
   'tache_2',
-  2,
+  191,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Votre établissement vous a confié la mission d’organiser une journée d’accueil pour les nouveaux étudiants francophones. Écrivez un courriel à leur intention en précisant toutes les informations utiles pour le bon déroulement de cette rencontre .',
@@ -2826,9 +2461,9 @@ Votre établissement vous a confié la mission d’organiser une journée d’ac
 ),
 (
   'expression_ecrite',
-  'EE_T3_075',
+  'EE_T3_064',
   'tache_3',
-  3,
+  192,
   'Thème du débat : « Vivre en ville ou à la campagne »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -2843,9 +2478,9 @@ Récemment, j’ai choisi de quitter la vie urbaine pour m’installer à la cam
 ),
 (
   'expression_ecrite',
-  'EE_T1_074',
+  'EE_T1_065',
   'tache_1',
-  1,
+  193,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous occupez un grand appartement et recherchez un colocataire. Racontez la manière dont vous imaginez la colocation et présentez les particularités de votre logement .',
@@ -2853,9 +2488,9 @@ Vous occupez un grand appartement et recherchez un colocataire. Racontez la mani
 ),
 (
   'expression_ecrite',
-  'EE_T2_075',
+  'EE_T2_065',
   'tache_2',
-  2,
+  194,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Une compagnie de théâtre est venue dans votre ville et vous avez assisté à l’une de ses représentations. Écrivez un article de blog pour raconter cette expérience .',
@@ -2863,9 +2498,9 @@ Une compagnie de théâtre est venue dans votre ville et vous avez assisté à l
 ),
 (
   'expression_ecrite',
-  'EE_T3_076',
+  'EE_T3_065',
   'tache_3',
-  3,
+  195,
   'Thème du débat : « Publicité et enfants : est-ce bénéfique ou nocif ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -2880,9 +2515,9 @@ Un travail de recherche parue dans une revue scientifique montre que les enfants
 ),
 (
   'expression_ecrite',
-  'EE_T1_075',
+  'EE_T1_066',
   'tache_1',
-  1,
+  196,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous avez décidé d''offrir un voyage à votre ami pour son anniversaire. Écrivez un message pour lui expliquer ce que vous avez préparé : la destination, les dates et les autres détails du voyage .',
@@ -2890,9 +2525,9 @@ Vous avez décidé d''offrir un voyage à votre ami pour son anniversaire. Écri
 ),
 (
   'expression_ecrite',
-  'EE_T2_076',
+  'EE_T2_066',
   'tache_2',
-  2,
+  197,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Un internaute exprime des inquiétudes concernant son départ pour étudier à l''étranger. Partagez votre expérience personnelle sur les défis rencontrés, les solutions trouvées et les bénéfices tirés de cette expérience .',
@@ -2900,9 +2535,9 @@ Un internaute exprime des inquiétudes concernant son départ pour étudier à l
 ),
 (
   'expression_ecrite',
-  'EE_T3_077',
+  'EE_T3_066',
   'tache_3',
-  3,
+  198,
   'Thème du débat : « Réduction du temps de travail »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -2917,9 +2552,9 @@ Réduire les heures de travail peut aider les entreprises en réduisant l''absen
 ),
 (
   'expression_ecrite',
-  'EE_T1_076',
+  'EE_T1_067',
   'tache_1',
-  1,
+  199,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Répondez au courriel de votre ami Lucas en lui fournissant des détails sur les nouveaux locaux de votre entreprise : emplacement, aménagement des pièces, équipements disponibles, etc.',
@@ -2927,19 +2562,21 @@ Répondez au courriel de votre ami Lucas en lui fournissant des détails sur les
 ),
 (
   'expression_ecrite',
-  'EE_T2_077',
+  'EE_T2_067',
   'tache_2',
-  2,
+  200,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Partagez votre expérience lors de l''événement « Une semaine sans voiture », incluant les dates, le lieu et les activités proposées, tout en donnant votre avis sur cette initiative.',
   true
-),
+);
+
+INSERT INTO public.questions (epreuve, reference, tache, ordre, texte, actif) VALUES
 (
   'expression_ecrite',
-  'EE_T3_078',
+  'EE_T3_067',
   'tache_3',
-  3,
+  201,
   'Thème du débat : « Impact des vêtements de marque sur les enfants »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -2954,9 +2591,9 @@ Les enfants grandissent rapidement, ce qui rend leurs vêtements trop petits apr
 ),
 (
   'expression_ecrite',
-  'EE_T1_077',
+  'EE_T1_068',
   'tache_1',
-  1,
+  202,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous êtes locataire d’un appartement qui vous semble trop grand. Rédigez une annonce dans un journal pour trouver un colocataire, en indiquant la superficie, le profil recherché et le montant du loyer, entre autres détails .',
@@ -2964,9 +2601,9 @@ Vous êtes locataire d’un appartement qui vous semble trop grand. Rédigez une
 ),
 (
   'expression_ecrite',
-  'EE_T3_079',
+  'EE_T3_068',
   'tache_3',
-  3,
+  203,
   'Thème du débat : « L''accès gratuit aux musées : avantage ou inconvénient ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -2981,9 +2618,9 @@ Rendre les musées gratuits est une excellente initiative, car cela permet à to
 ),
 (
   'expression_ecrite',
-  'EE_T1_078',
+  'EE_T1_069',
   'tache_1',
-  1,
+  204,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Rédigez un message à un ami pour l’informer de votre déménagement et lui demander son aide, en précisant la date, le lieu et le déroulement du programme.',
@@ -2991,9 +2628,9 @@ Rédigez un message à un ami pour l’informer de votre déménagement et lui d
 ),
 (
   'expression_ecrite',
-  'EE_T2_078',
+  'EE_T2_068',
   'tache_2',
-  2,
+  205,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Rédigez un article de blog sur votre artiste préféré dans le cadre d’un concours dont le thème est « Mon artiste préféré », permettant de gagner un séjour de deux semaines dans votre ville favorite.',
@@ -3001,9 +2638,9 @@ Rédigez un article de blog sur votre artiste préféré dans le cadre d’un co
 ),
 (
   'expression_ecrite',
-  'EE_T3_080',
+  'EE_T3_069',
   'tache_3',
-  3,
+  206,
   'Thème du débat : « L’art urbain : Pour ou contre ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -3018,9 +2655,9 @@ Document B :
 ),
 (
   'expression_ecrite',
-  'EE_T2_079',
+  'EE_T2_069',
   'tache_2',
-  2,
+  207,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous avez publié une annonce en ligne pour louer votre appartement. Rédigez un courriel afin de fournir des informations sur le logement et le quartier .',
@@ -3028,9 +2665,9 @@ Vous avez publié une annonce en ligne pour louer votre appartement. Rédigez un
 ),
 (
   'expression_ecrite',
-  'EE_T1_079',
+  'EE_T1_070',
   'tache_1',
-  1,
+  208,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Rédigez un message à votre ami Cédric pour lui fournir des instructions concernant l’entretien de votre maison et de votre jardin pendant votre absence.',
@@ -3038,9 +2675,9 @@ Rédigez un message à votre ami Cédric pour lui fournir des instructions conce
 ),
 (
   'expression_ecrite',
-  'EE_T3_081',
+  'EE_T3_070',
   'tache_3',
-  3,
+  209,
   'Thème du débat : « La restauration rapide »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -3055,9 +2692,9 @@ La consommation fréquente de restauration rapide peut avoir des effets néfaste
 ),
 (
   'expression_ecrite',
-  'EE_T1_080',
+  'EE_T1_071',
   'tache_1',
-  1,
+  210,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Rédigez un email pour inviter un ami à passer une journée avec vous, en incluant les informations essentielles telles que le lieu, la date, l''heure, et les activités prévues pour la journée.',
@@ -3065,9 +2702,9 @@ Rédigez un email pour inviter un ami à passer une journée avec vous, en inclu
 ),
 (
   'expression_ecrite',
-  'EE_T2_080',
+  'EE_T2_070',
   'tache_2',
-  2,
+  211,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Après avoir participé à une journée de formation au sein de votre entreprise, rédigez un message à publier sur le forum interne. Partagez votre expérience avec vos collègues .',
@@ -3075,9 +2712,9 @@ Après avoir participé à une journée de formation au sein de votre entreprise
 ),
 (
   'expression_ecrite',
-  'EE_T3_082',
+  'EE_T3_071',
   'tache_3',
-  3,
+  212,
   'Thème du débat : « La colocation : entre avantages et inconvénients »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -3092,9 +2729,9 @@ Vivre en colocation est une expérience bien différente de la vie en famille. C
 ),
 (
   'expression_ecrite',
-  'EE_T1_081',
+  'EE_T1_072',
   'tache_1',
-  1,
+  213,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous avez reçu un message d’un ami Alex qui vous demande des nouvelles de votre nouvelle université. Vous lui répondre en décrivant brièvement votre environnement universitaire .',
@@ -3102,9 +2739,9 @@ Vous avez reçu un message d’un ami Alex qui vous demande des nouvelles de vot
 ),
 (
   'expression_ecrite',
-  'EE_T2_081',
+  'EE_T2_071',
   'tache_2',
-  2,
+  214,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous avez décidé d’arrêter d’utiliser votre réseau social préféré (comme Instagram, Facebook, etc.). Dans un texte adressé à vos amis ou vos lecteurs, vous racontez cette expérience .',
@@ -3112,9 +2749,9 @@ Vous avez décidé d’arrêter d’utiliser votre réseau social préféré (co
 ),
 (
   'expression_ecrite',
-  'EE_T3_083',
+  'EE_T3_072',
   'tache_3',
-  3,
+  215,
   'Thème du débat : « Photo sur le CV : pour ou contre ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -3129,9 +2766,9 @@ La présence d’une photo sur le CV fait débat chez les employeurs. Certains e
 ),
 (
   'expression_ecrite',
-  'EE_T1_082',
+  'EE_T1_073',
   'tache_1',
-  1,
+  216,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous venez d’obtenir un nouveau poste et souhaitez annoncer la nouvelle à votre amie francophone. Décrivez votre travail, vos collègues et votre environnement professionnel .',
@@ -3139,9 +2776,9 @@ Vous venez d’obtenir un nouveau poste et souhaitez annoncer la nouvelle à vot
 ),
 (
   'expression_ecrite',
-  'EE_T2_082',
+  'EE_T2_072',
   'tache_2',
-  2,
+  217,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Une étudiante de 19 ans souhaite partir à l’étranger pour ses études et demande des témoignages sur un forum. Vous répondez en partageant votre propre expérience d’un séjour à l’étranger, en expliquant les défis et les bénéfices que vous en avez tirés .',
@@ -3149,9 +2786,9 @@ Une étudiante de 19 ans souhaite partir à l’étranger pour ses études et de
 ),
 (
   'expression_ecrite',
-  'EE_T3_084',
+  'EE_T3_073',
   'tache_3',
-  3,
+  218,
   'Thème du débat : « L’aide aux personnes en difficulté »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -3166,9 +2803,9 @@ Paul, 63 ans, pense que donner de l’argent ne suffit pas pour aider réellemen
 ),
 (
   'expression_ecrite',
-  'EE_T1_083',
+  'EE_T1_074',
   'tache_1',
-  1,
+  219,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous habitez dans une nouvelle ville depuis un mois. Écrivez un message à votre ami Léo pour lui raconter comment se passe votre nouvelle vie : votre appartement, votre quartier, la ville en général, et ce que vous aimez y faire .',
@@ -3176,21 +2813,19 @@ Vous habitez dans une nouvelle ville depuis un mois. Écrivez un message à votr
 ),
 (
   'expression_ecrite',
-  'EE_T2_083',
+  'EE_T2_073',
   'tache_2',
-  2,
+  220,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous avez participé à une fête traditionnelle dans votre pays ou à l’étranger. Parlez-en dans votre blog et expliquez pourquoi elle vous a plu .',
   true
-);
-
-INSERT INTO public.questions (epreuve, reference, tache, ordre, texte, actif) VALUES
+),
 (
   'expression_ecrite',
-  'EE_T3_085',
+  'EE_T3_074',
   'tache_3',
-  3,
+  221,
   'Thème du débat : « Les Zoos : Outils de Conservation ou Prisons pour Animaux ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -3205,9 +2840,9 @@ Le texte dit que les zoos ont beaucoup d’avantages. Ils aident à protéger le
 ),
 (
   'expression_ecrite',
-  'EE_T1_084',
+  'EE_T1_075',
   'tache_1',
-  1,
+  222,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Votre anniversaire approche. Vos amis vous posent des questions sur les cadeaux que vous voulez. Vous répondez par un message en expliquant que vous aimeriez recevoir des vêtements, et vous donnez les détails .',
@@ -3215,9 +2850,9 @@ Votre anniversaire approche. Vos amis vous posent des questions sur les cadeaux 
 ),
 (
   'expression_ecrite',
-  'EE_T2_084',
+  'EE_T2_074',
   'tache_2',
-  2,
+  223,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Le site www.manger-international.com lance un appel à témoignages. 
@@ -3228,9 +2863,9 @@ Le site www.manger-international.com lance un appel à témoignages.
 ),
 (
   'expression_ecrite',
-  'EE_T3_086',
+  'EE_T3_075',
   'tache_3',
-  3,
+  224,
   'Thème du débat : « Les Jeux Vidéo : Bienfaits Cognitifs ou Risque de Dépendance ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -3245,9 +2880,9 @@ Les jeux vidéo, qu''ils soient joués sur console ou sur ordinateur, à domicil
 ),
 (
   'expression_ecrite',
-  'EE_T1_085',
+  'EE_T1_076',
   'tache_1',
-  1,
+  225,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Le journal « Bienvenue » souhaite publier un article sur les nouveaux habitants de la ville. Rédigez un message dans lequel vous vous présentez et décrivez vos endroits favoris dans la ville .',
@@ -3255,9 +2890,9 @@ Le journal « Bienvenue » souhaite publier un article sur les nouveaux habita
 ),
 (
   'expression_ecrite',
-  'EE_T2_085',
+  'EE_T2_075',
   'tache_2',
-  2,
+  226,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous avez assisté à un concert incroyable ? Écrivez un article pour raconter ce que vous avez vécu et invitez vos amis à découvrir cet artiste en live !',
@@ -3265,9 +2900,9 @@ Vous avez assisté à un concert incroyable ? Écrivez un article pour raconter 
 ),
 (
   'expression_ecrite',
-  'EE_T3_087',
+  'EE_T3_076',
   'tache_3',
-  3,
+  227,
   'Thème du débat : « Les Bienfaits Cognitifs des Jeux Vidéo »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -3282,9 +2917,9 @@ On évoque souvent les effets néfastes des jeux vidéo, mais il ne faut pas oub
 ),
 (
   'expression_ecrite',
-  'EE_T1_086',
+  'EE_T1_077',
   'tache_1',
-  1,
+  228,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous envisagez de partir en week-end avec vos amis le mois prochain. Rédigez un message pour leur présenter votre projet, incluant le lieu, les moyens de transport et les activités prévues .',
@@ -3292,9 +2927,9 @@ Vous envisagez de partir en week-end avec vos amis le mois prochain. Rédigez un
 ),
 (
   'expression_ecrite',
-  'EE_T2_086',
+  'EE_T2_076',
   'tache_2',
-  2,
+  229,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Participez à la discussion sur le site “voyage.internaute.fr” en répondant à la question : est-ce une bonne ou une mauvaise idée de tout quitter pour voyager pendant un an ? Partagez votre point de vue en vous appuyant sur des exemples tirés de votre propre expérience .',
@@ -3302,9 +2937,9 @@ Participez à la discussion sur le site “voyage.internaute.fr” en répondant
 ),
 (
   'expression_ecrite',
-  'EE_T3_088',
+  'EE_T3_077',
   'tache_3',
-  3,
+  230,
   'Thème du débat : « Le Travail : Favorable Ou Défavorable ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -3319,9 +2954,9 @@ Certaines personnes ont pris la décision de ne plus travailler pour changer leu
 ),
 (
   'expression_ecrite',
-  'EE_T3_089',
+  'EE_T3_078',
   'tache_3',
-  3,
+  231,
   'Thème du débat : « Les produits faits maison : un choix judicieux ou un risque ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -3336,9 +2971,9 @@ Malgré ses avantages, la fabrication de produits bio à domicile présente cert
 ),
 (
   'expression_ecrite',
-  'EE_T1_087',
+  'EE_T1_078',
   'tache_1',
-  1,
+  232,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Votre ami(e) souhaite visiter votre région. Rédigez-lui un message pour lui recommander quelques lieux intéressants à découvrir .',
@@ -3346,9 +2981,9 @@ Votre ami(e) souhaite visiter votre région. Rédigez-lui un message pour lui re
 ),
 (
   'expression_ecrite',
-  'EE_T2_087',
+  'EE_T2_077',
   'tache_2',
-  2,
+  233,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous avez récemment suivi un cours de sport dans une salle. Rédigez un article de blog pour raconter votre expérience et donner votre avis sur l’établissement .',
@@ -3356,9 +2991,9 @@ Vous avez récemment suivi un cours de sport dans une salle. Rédigez un article
 ),
 (
   'expression_ecrite',
-  'EE_T3_090',
+  'EE_T3_079',
   'tache_3',
-  3,
+  234,
   'Thème du débat : « La livraison de repas au bureau : pratique ou problématique ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -3373,9 +3008,9 @@ Ahmed, 40 ans : La livraison de repas séduit de plus en plus de consommateurs, 
 ),
 (
   'expression_ecrite',
-  'EE_T1_088',
+  'EE_T1_079',
   'tache_1',
-  1,
+  235,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous avez trouvé une annonce en ligne pour louer un appartement. Écrivez un courriel pour demander des informations sur l’appartement (logement et quartier) .',
@@ -3383,9 +3018,9 @@ Vous avez trouvé une annonce en ligne pour louer un appartement. Écrivez un co
 ),
 (
   'expression_ecrite',
-  'EE_T2_088',
+  'EE_T2_078',
   'tache_2',
-  2,
+  236,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous avez participé à un programme dans une école de langue. Rédigez un article sur votre site pour raconter cette expérience .',
@@ -3393,9 +3028,9 @@ Vous avez participé à un programme dans une école de langue. Rédigez un arti
 ),
 (
   'expression_ecrite',
-  'EE_T3_091',
+  'EE_T3_080',
   'tache_3',
-  3,
+  237,
   'Thème du débat : « Caméras de surveillance : utile ou excessive ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -3411,9 +3046,9 @@ Certaines études montrent que la vidéosurveillance est coûteuse et peu effica
 ),
 (
   'expression_ecrite',
-  'EE_T1_089',
+  'EE_T1_080',
   'tache_1',
-  1,
+  238,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous partez en vacances avec des amis et avez trouvé un hôtel. Écrivez-leur pour décrire l’hôtel : son emplacement, son tarif, ses équipements, et suggérez-leur de réserver cet hôtel .',
@@ -3421,9 +3056,9 @@ Vous partez en vacances avec des amis et avez trouvé un hôtel. Écrivez-leur p
 ),
 (
   'expression_ecrite',
-  'EE_T2_089',
+  'EE_T2_079',
   'tache_2',
-  2,
+  239,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous travaillez désormais à l’étranger. Écrivez à vos amis pour leur parler de cette nouvelle expérience professionnelle et de ce que vous avez particulièrement apprécié dans ce nouveau contexte .',
@@ -3431,9 +3066,9 @@ Vous travaillez désormais à l’étranger. Écrivez à vos amis pour leur parl
 ),
 (
   'expression_ecrite',
-  'EE_T3_092',
+  'EE_T3_081',
   'tache_3',
-  3,
+  240,
   'Thème du débat : « Impact des Jeux Vidéo sur les Enfants »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -3448,9 +3083,9 @@ Une étude menée sur une période de trois ans auprès d''enfants de 8 à 17 an
 ),
 (
   'expression_ecrite',
-  'EE_T1_090',
+  'EE_T1_081',
   'tache_1',
-  1,
+  241,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Rédigez un message destiné à un ami pour lui proposer de faire du sport ensemble.',
@@ -3458,9 +3093,9 @@ Rédigez un message destiné à un ami pour lui proposer de faire du sport ensem
 ),
 (
   'expression_ecrite',
-  'EE_T2_090',
+  'EE_T2_080',
   'tache_2',
-  2,
+  242,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Rédigez un article destiné à un blog dans lequel vous relatez votre expérience universitaire à l’étranger.',
@@ -3468,9 +3103,9 @@ Rédigez un article destiné à un blog dans lequel vous relatez votre expérien
 ),
 (
   'expression_ecrite',
-  'EE_T3_093',
+  'EE_T3_082',
   'tache_3',
-  3,
+  243,
   'Thème du débat : « Uniforme Scolaire »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -3485,9 +3120,9 @@ Le port de l’uniforme scolaire favorise un sentiment d’appartenance à l’�
 ),
 (
   'expression_ecrite',
-  'EE_T1_091',
+  'EE_T1_082',
   'tache_1',
-  1,
+  244,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Votre ami vous demande des informations sur votre école de langue. Vous devez lui répondre, en détaillant votre expérience dans cette école .',
@@ -3495,9 +3130,9 @@ Votre ami vous demande des informations sur votre école de langue. Vous devez l
 ),
 (
   'expression_ecrite',
-  'EE_T2_091',
+  'EE_T2_081',
   'tache_2',
-  2,
+  245,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Rédiger un article pour le journal de l’entreprise sur un pique-nique entre collègues.',
@@ -3505,9 +3140,9 @@ Rédiger un article pour le journal de l’entreprise sur un pique-nique entre c
 ),
 (
   'expression_ecrite',
-  'EE_T3_094',
+  'EE_T3_083',
   'tache_3',
-  3,
+  246,
   'Thème du débat : « La question de la consommation de viande »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -3524,9 +3159,9 @@ Alain :
 ),
 (
   'expression_ecrite',
-  'EE_T1_092',
+  'EE_T1_083',
   'tache_1',
-  1,
+  247,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous avez découvert un nouveau restaurant. Écrivez un message à votre ami pour décrire l’ambiance, la décoration, les plats et le service .',
@@ -3534,9 +3169,9 @@ Vous avez découvert un nouveau restaurant. Écrivez un message à votre ami pou
 ),
 (
   'expression_ecrite',
-  'EE_T2_092',
+  'EE_T2_082',
   'tache_2',
-  2,
+  248,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Partagez dans un blog votre expérience d''apprentissage d''une langue étrangère.',
@@ -3544,9 +3179,9 @@ Partagez dans un blog votre expérience d''apprentissage d''une langue étrangè
 ),
 (
   'expression_ecrite',
-  'EE_T3_095',
+  'EE_T3_084',
   'tache_3',
-  3,
+  249,
   'Thème du débat : « Végétarisme : Un Choix à Réfléchir »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -3561,19 +3196,21 @@ Le végétarisme ne convient pas à tout le monde. Certaines personnes ont besoi
 ),
 (
   'expression_ecrite',
-  'EE_T1_093',
+  'EE_T1_084',
   'tache_1',
-  1,
+  250,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous venez d’emménager dans une nouvelle ville. Rédigez un message pour inviter une amie à venir passer les vacances chez vous .',
   true
-),
+);
+
+INSERT INTO public.questions (epreuve, reference, tache, ordre, texte, actif) VALUES
 (
   'expression_ecrite',
-  'EE_T2_093',
+  'EE_T2_083',
   'tache_2',
-  2,
+  251,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Dans un article de blog, exprimez votre opinion sur l’installation d’une télévision dans une chambre.',
@@ -3581,9 +3218,9 @@ Dans un article de blog, exprimez votre opinion sur l’installation d’une té
 ),
 (
   'expression_ecrite',
-  'EE_T3_096',
+  'EE_T3_085',
   'tache_3',
-  3,
+  252,
   'Thème du débat : « L''impact des grands événements sportifs »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -3598,9 +3235,9 @@ Organiser de grands événements sportifs engendre des coûts importants pour l'
 ),
 (
   'expression_ecrite',
-  'EE_T1_094',
+  'EE_T1_085',
   'tache_1',
-  1,
+  253,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous avez découvert une plateforme en ligne mettant en relation des personnes souhaitant apprendre le français avec des partenaires linguistiques. Rédigez un courriel pour vous présenter et expliquer votre motivation à pratiquer cette langue .',
@@ -3608,9 +3245,9 @@ Vous avez découvert une plateforme en ligne mettant en relation des personnes s
 ),
 (
   'expression_ecrite',
-  'EE_T2_094',
+  'EE_T2_084',
   'tache_2',
-  2,
+  254,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous avez récemment assisté à une fête de famille. Rédigez un message à vos amis pour leur raconter l’événement et partager ce qui vous a le plus marqué .',
@@ -3618,9 +3255,9 @@ Vous avez récemment assisté à une fête de famille. Rédigez un message à vo
 ),
 (
   'expression_ecrite',
-  'EE_T3_097',
+  'EE_T3_086',
   'tache_3',
-  3,
+  255,
   'Thème du débat : « Interdiction de la circulation en zones urbaines : Avantages et défis »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -3635,9 +3272,9 @@ Si l’interdiction des voitures en zone urbaine a des avantages, elle pose auss
 ),
 (
   'expression_ecrite',
-  'EE_T3_098',
+  'EE_T3_087',
   'tache_3',
-  3,
+  256,
   'Thème du débat : « Les menus sans viande dans les cantines scolaires »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -3652,9 +3289,9 @@ L''idée de supprimer la viande des cantines est loin de faire l''unanimité et 
 ),
 (
   'expression_ecrite',
-  'EE_T1_095',
+  'EE_T1_086',
   'tache_1',
-  1,
+  257,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Rédigez un courriel à vos amis pour les convier à une fête d’anniversaire surprise organisée en l’honneur de votre meilleur ami. Mentionnez les détails essentiels : lieu, date, heure et toute autre information importante .',
@@ -3662,9 +3299,9 @@ Rédigez un courriel à vos amis pour les convier à une fête d’anniversaire 
 ),
 (
   'expression_ecrite',
-  'EE_T2_095',
+  'EE_T2_085',
   'tache_2',
-  2,
+  258,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous avez pris part à une brocante dans votre ville, où vous avez vendu ou acheté des objets d’occasion. Sur votre blog personnel, partagez votre expérience en expliquant pourquoi vous avez apprécié cette activité .',
@@ -3672,9 +3309,9 @@ Vous avez pris part à une brocante dans votre ville, où vous avez vendu ou ach
 ),
 (
   'expression_ecrite',
-  'EE_T3_099',
+  'EE_T3_088',
   'tache_3',
-  3,
+  259,
   'Thème du débat : « Les vols à bas prix »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -3689,9 +3326,9 @@ J''ai décidé de ne plus emprunter les compagnies aériennes low-cost. Après r
 ),
 (
   'expression_ecrite',
-  'EE_T3_100',
+  'EE_T3_089',
   'tache_3',
-  3,
+  260,
   'Thème du débat : « Caméras de surveillance à l''école : pour ou contre ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -3706,9 +3343,9 @@ Je suis défavorable à l’installation de caméras de surveillance dans les é
 ),
 (
   'expression_ecrite',
-  'EE_T3_101',
+  'EE_T3_090',
   'tache_3',
-  3,
+  261,
   'Thème du débat : « Impact des vêtements de marque sur les enfants »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -3723,9 +3360,9 @@ Les enfants grandissent à une vitesse fulgurante, ce qui fait que leurs vêteme
 ),
 (
   'expression_ecrite',
-  'EE_T3_102',
+  'EE_T3_091',
   'tache_3',
-  3,
+  262,
   'Thème du débat : « Réduction du temps de travail »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -3740,9 +3377,9 @@ La diminution du temps de travail peut représenter un atout pour les entreprise
 ),
 (
   'expression_ecrite',
-  'EE_T1_096',
+  'EE_T1_087',
   'tache_1',
-  1,
+  263,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous organisez bientôt votre fête d’anniversaire. Écrivez un message à vos amis pour les inviter et leur expliquer ce que vous avez prévu (lieu, activités, ambiance, etc.) .',
@@ -3750,9 +3387,9 @@ Vous organisez bientôt votre fête d’anniversaire. Écrivez un message à vos
 ),
 (
   'expression_ecrite',
-  'EE_T2_096',
+  'EE_T2_086',
   'tache_2',
-  2,
+  264,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Une personne a publié sur Facebook un message au sujet des études à l’étranger. Rédigez un commentaire pour partager votre opinion en donnant les points positifs et négatifs de cette expérience .',
@@ -3760,9 +3397,9 @@ Une personne a publié sur Facebook un message au sujet des études à l’étra
 ),
 (
   'expression_ecrite',
-  'EE_T3_103',
+  'EE_T3_092',
   'tache_3',
-  3,
+  265,
   'Thème du débat : « Les enfants face aux nouvelles technologies »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -3777,9 +3414,9 @@ Les technologies modernes encouragent une attitude passive chez les enfants, ce 
 ),
 (
   'expression_ecrite',
-  'EE_T1_097',
+  'EE_T1_088',
   'tache_1',
-  1,
+  266,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous pratiquez un sport dans un club et vous venez de gagner une compétition. Écrivez un courriel à vos amis pour leur raconter ce qui s’est passé et partager votre joie .',
@@ -3787,9 +3424,9 @@ Vous pratiquez un sport dans un club et vous venez de gagner une compétition. �
 ),
 (
   'expression_ecrite',
-  'EE_T2_097',
+  'EE_T2_087',
   'tache_2',
-  2,
+  267,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous avez déjà vécu en colocation avec des amis. Le site « colocation.com » cherche des témoignages. Raconter votre expérience de colocation et dire ce que vous en pensez .',
@@ -3797,9 +3434,9 @@ Vous avez déjà vécu en colocation avec des amis. Le site « colocation.com »
 ),
 (
   'expression_ecrite',
-  'EE_T3_104',
+  'EE_T3_093',
   'tache_3',
-  3,
+  268,
   'Thème du débat : « L’agrandissement des villes »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -3814,9 +3451,9 @@ La majorité de la population mondiale vit aujourd’hui en zone urbaine, en par
 ),
 (
   'expression_ecrite',
-  'EE_T1_098',
+  'EE_T1_089',
   'tache_1',
-  1,
+  269,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Votre ami(e) désire explorer la région dans laquelle vous vivez. Rédigez-lui un message en lui suggérant des lieux intéressants à découvrir .',
@@ -3824,21 +3461,19 @@ Votre ami(e) désire explorer la région dans laquelle vous vivez. Rédigez-lui 
 ),
 (
   'expression_ecrite',
-  'EE_T2_098',
+  'EE_T2_088',
   'tache_2',
-  2,
+  270,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Rédigez un article de blog dans lequel vous racontez votre participation à un cours de sport dans une salle. Décrivez votre expérience, donnez votre avis sur la salle et partagez vos impressions sur l’ambiance, l’équipement et l’encadrement .',
   true
-);
-
-INSERT INTO public.questions (epreuve, reference, tache, ordre, texte, actif) VALUES
+),
 (
   'expression_ecrite',
-  'EE_T3_105',
+  'EE_T3_094',
   'tache_3',
-  3,
+  271,
   'Thème du débat : « Faut-il se faire livrer les repas au travail ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -3853,9 +3488,9 @@ La popularité croissante de cette pratique n’est pas sans inconvénients. En 
 ),
 (
   'expression_ecrite',
-  'EE_T3_106',
+  'EE_T3_095',
   'tache_3',
-  3,
+  272,
   'Thème du débat : « Caméras de surveillance : utile ou excessive ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -3866,15 +3501,9 @@ Avec l’essor des caméras dans les villes, la vidéosurveillance devient de pl
  Toutefois, ils acceptent cette surveillance uniquement dans les lieux publics : rues, magasins, transports en commun. En revanche, ils sont opposés à l’idée d’être observés par leur employeur. En France, la surveillance au travail reste très limitée.
 
 Document B :
-D’après plusieurs enquêtes, la vidéosurveillance est onéreuse et son efficacité contestée. Comme les caméras sont visibles, elles ne permettent pas d''empêcher efficacement les délits tels que les vols, les violences urbaines ou la consommation de drogues. De surcroît, leur gestion est complexe : une étude menée en Allemagne indique qu’il faut mobiliser jusqu’à sept personnes pour exploiter les images provenant d’une seule caméra.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_099',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+D’après plusieurs enquêtes, la vidéosurveillance est onéreuse et son efficacité contestée. Comme les caméras sont visibles, elles ne permettent pas d''empêcher efficacement les délits tels que les vols, les violences urbaines ou la consommation de drogues. De surcroît, leur gestion est complexe : une étude menée en Allemagne indique qu’il faut mobiliser jusqu’à sept personnes pour exploiter les images provenant d’une seule caméra.
+
+Bonjour,
 
 Je viens bientôt en vacances dans ta région. Est-ce que tu peux me conseiller une visite à faire pendant mon voyage ? 
  Merci beaucoup. 
@@ -3883,39 +3512,51 @@ Je viens bientôt en vacances dans ta région. Est-ce que tu peux me conseiller 
 ),
 (
   'expression_ecrite',
-  'EE_T2_099',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+  'EE_T1_090',
+  'tache_1',
+  273,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous répondez à votre ami Mathieu. Vous décrivez un lieu à visiter dans votre région .',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T3_107',
+  'EE_T2_089',
+  'tache_2',
+  274,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Bonjour, 
+ Vous avez pris des cours dans notre salle de sport. 
+ Donnez-nous votre avis sur notre site Internet ! 
+ www.masalledesport.org
+
+Sur le site Internet de la salle de sport, vous répondez à ce message. Vous racontez cette expérience et vous donnez votre avis .',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_096',
   'tache_3',
-  3,
+  275,
   'Thème du débat : « Livraison de repas »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
 • Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
 
 Document A :
-Bonjour, 
- Vous avez pris des cours dans notre salle de sport. 
- Donnez-nous votre avis sur notre site Internet ! 
- www.masalledesport.org
+Céline, 25 ans : La livraison de repas permet de gagner du temps. Par exemple, quand on travaille, on peut se faire livrer un repas au bureau sans se déplacer. On perd moins de temps pendant la pause déjeuner, on rentre donc plus tôt chez soi. Généralement, cela offre plus de choix : si un de nos collègues veut commander une pizza mais que nous souhaitons manger des sushis, plus de disputes, il suffit de commander des plats dans différents restaurants. L’autre avantage de ce nouveau mode de consommation est qu’il est disponible à toute heure. En effet, on trouve toujours des restaurants qui restent ouverts 24 heures sur 24.
 
 Document B :
-Sur le site Internet de la salle de sport, vous répondez à ce message. Vous racontez cette expérience et vous donnez votre avis .',
+Ahmed, 40 ans : La livraison de repas plaît de plus en plus aux consommateurs qui n’ont pas le temps ou l’envie de cuisiner. Toutefois, ce service présente des inconvénients écologiques. Les repas sont souvent livrés en scooter ou en voiture, qui sont des modes de transports polluants. Cette habitude a aussi des conséquences négatives sur la vie sociale. Quand on mange des repas livrés au bureau ou à domicile, on a tendance à rester enfermé et à voir les mêmes personnes. Pourtant, il est important de sortir prendre l’air et, pourquoi pas, de rencontrer d’autres personnes.',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T1_100',
+  'EE_T1_091',
   'tache_1',
-  1,
+  276,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Votre ami Mehdi vient d’arriver dans votre ville et cherche des informations sur les moyens de transport. Écrivez-lui un message pour lui fournir toutes les informations utiles, telles que les options de transport disponibles, les tarifs, les abonnements, etc .',
@@ -3923,9 +3564,9 @@ Votre ami Mehdi vient d’arriver dans votre ville et cherche des informations s
 ),
 (
   'expression_ecrite',
-  'EE_T2_100',
+  'EE_T2_090',
   'tache_2',
-  2,
+  277,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Rédigez un article de blog pour exprimer votre admiration envers une personnalité, qu’elle soit célèbre ou non. Mettez en avant ses actions spécifiques et expliquez pourquoi vous l’appréciez .',
@@ -3933,9 +3574,9 @@ Rédigez un article de blog pour exprimer votre admiration envers une personnali
 ),
 (
   'expression_ecrite',
-  'EE_T3_108',
+  'EE_T3_097',
   'tache_3',
-  3,
+  278,
   'Thème du débat : « Vivre En Colocation »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -3950,9 +3591,9 @@ La colocation peut comporter des inconvénients. Des désaccords peuvent surveni
 ),
 (
   'expression_ecrite',
-  'EE_T1_101',
+  'EE_T1_092',
   'tache_1',
-  1,
+  279,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Rédigez un courriel à vos amis pour les inviter à une fête d’anniversaire surprise en précisant les détails de l’événement (lieu, date, heure, et organisation) .',
@@ -3960,9 +3601,9 @@ Rédigez un courriel à vos amis pour les inviter à une fête d’anniversaire 
 ),
 (
   'expression_ecrite',
-  'EE_T2_101',
+  'EE_T2_091',
   'tache_2',
-  2,
+  280,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Rédigez un article sur votre blog personnel pour partager votre expérience lors d’une brocante. Expliquez ce qui vous a plu, que ce soit la découverte d’objets uniques, l’ambiance ou les échanges avec les participants .',
@@ -3970,9 +3611,9 @@ Rédigez un article sur votre blog personnel pour partager votre expérience lor
 ),
 (
   'expression_ecrite',
-  'EE_T3_109',
+  'EE_T3_098',
   'tache_3',
-  3,
+  281,
   'Thème du débat : « Les billets d’avion à prix réduits »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -3987,9 +3628,9 @@ Après y avoir longuement pensé, j’ai choisi de ne plus voyager avec les comp
 ),
 (
   'expression_ecrite',
-  'EE_T1_102',
+  'EE_T1_093',
   'tache_1',
-  1,
+  282,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Rédigez un message à un(e) ami(e) pour lui parler de votre projet de rénovation de votre appartement. Décrivez les changements que vous souhaitez faire et demandez-lui son aide ou ses conseils .',
@@ -3997,9 +3638,9 @@ Rédigez un message à un(e) ami(e) pour lui parler de votre projet de rénovati
 ),
 (
   'expression_ecrite',
-  'EE_T2_102',
+  'EE_T2_092',
   'tache_2',
-  2,
+  283,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Rédigez un message à vos amis pour partager votre expérience lors d’un événement organisé par une école de musique. Décrivez les activités proposées et donnez votre avis sur cette journée .',
@@ -4007,9 +3648,9 @@ Rédigez un message à vos amis pour partager votre expérience lors d’un év�
 ),
 (
   'expression_ecrite',
-  'EE_T3_110',
+  'EE_T3_099',
   'tache_3',
-  3,
+  284,
   'Thème du débat : « Faire ses courses : épiceries locales ou supermarchés ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -4025,9 +3666,9 @@ Soutenir les petits commerces : le défi « Février sans supermarché »
 ),
 (
   'expression_ecrite',
-  'EE_T3_111',
+  'EE_T3_100',
   'tache_3',
-  3,
+  285,
   'Thème du débat : « Sévérité parentale : atout ou frein ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -4042,9 +3683,9 @@ Les parents redoutent parfois d’être trop stricts avec leurs enfants, craigna
 ),
 (
   'expression_ecrite',
-  'EE_T3_112',
+  'EE_T3_101',
   'tache_3',
-  3,
+  286,
   'Thème du débat : « Les produits faits maison : un choix judicieux ou un risque ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -4059,9 +3700,9 @@ Bien que fabriquer soi-même des produits bio soit une option intéressante, cel
 ),
 (
   'expression_ecrite',
-  'EE_T1_103',
+  'EE_T1_094',
   'tache_1',
-  1,
+  287,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 France Télévisions réalise un reportage sur le sport amateur et invite les passionnés à partager leur expérience en tant que sportifs sur francetélévision.fr.',
@@ -4069,9 +3710,9 @@ France Télévisions réalise un reportage sur le sport amateur et invite les pa
 ),
 (
   'expression_ecrite',
-  'EE_T2_103',
+  'EE_T2_093',
   'tache_2',
-  2,
+  288,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Rédiger un message à des amis pour raconter un séjour dans une belle région du pays, en décrivant l’expérience vécue et en expliquant les raisons de son appréciation .',
@@ -4079,9 +3720,9 @@ Rédiger un message à des amis pour raconter un séjour dans une belle région 
 ),
 (
   'expression_ecrite',
-  'EE_T3_113',
+  'EE_T3_102',
   'tache_3',
-  3,
+  289,
   'Thème du débat : « Écoles privées ou publiques : quel choix faire ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -4096,9 +3737,9 @@ L’accès aux collèges privés reste limité aux familles pouvant assumer les 
 ),
 (
   'expression_ecrite',
-  'EE_T1_104',
+  'EE_T1_095',
   'tache_1',
-  1,
+  290,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Rédiger un e-mail au service client pour signaler la réception d’un objet endommagé après une commande en ligne, en décrivant le problème et en précisant la solution souhaitée .',
@@ -4106,9 +3747,9 @@ Rédiger un e-mail au service client pour signaler la réception d’un objet en
 ),
 (
   'expression_ecrite',
-  'EE_T2_104',
+  'EE_T2_094',
   'tache_2',
-  2,
+  291,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Rédiger un article sur la visite d’une exposition dédiée à un artiste préféré, en partageant les impressions et en décrivant les œuvres découvertes .',
@@ -4116,9 +3757,9 @@ Rédiger un article sur la visite d’une exposition dédiée à un artiste pré
 ),
 (
   'expression_ecrite',
-  'EE_T3_114',
+  'EE_T3_103',
   'tache_3',
-  3,
+  292,
   'Thème du débat : « Les devoirs à domicile : un atout ou une contrainte ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -4133,9 +3774,9 @@ Nous remettons en question l’utilité des devoirs à domicile, car ils ne gara
 ),
 (
   'expression_ecrite',
-  'EE_T3_115',
+  'EE_T3_104',
   'tache_3',
-  3,
+  293,
   'Thème du débat : « Les nouvelles technologies à l’école : un atout ou un risque ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -4150,9 +3791,9 @@ Sara : L’usage excessif des technologies dans l’enseignement me laisse perpl
 ),
 (
   'expression_ecrite',
-  'EE_T1_105',
+  'EE_T1_096',
   'tache_1',
-  1,
+  294,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Rédiger une réponse à un courriel d’un ami demandant des informations sur les nouveaux locaux de votre entreprise, en décrivant leur emplacement, l’aménagement des espaces et les équipements disponibles .',
@@ -4160,9 +3801,9 @@ Rédiger une réponse à un courriel d’un ami demandant des informations sur l
 ),
 (
   'expression_ecrite',
-  'EE_T2_105',
+  'EE_T2_095',
   'tache_2',
-  2,
+  295,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Rédiger un témoignage sur votre participation à l’événement “Une semaine sans voiture”, en partageant votre expérience, vos impressions et les activités auxquelles vous avez pris part .',
@@ -4170,9 +3811,9 @@ Rédiger un témoignage sur votre participation à l’événement “Une semain
 ),
 (
   'expression_ecrite',
-  'EE_T3_116',
+  'EE_T3_105',
   'tache_3',
-  3,
+  296,
   'Thème du débat : « L’attrait des grandes marques vestimentaires »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -4187,9 +3828,9 @@ La croissance rapide des enfants fait que leurs vêtements deviennent vite trop 
 ),
 (
   'expression_ecrite',
-  'EE_T1_106',
+  'EE_T1_097',
   'tache_1',
-  1,
+  297,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Rédiger un message à un ami intéressé par des cours de langue dans votre école, en lui fournissant des informations utiles sur les programmes proposés, les tarifs et le lieu .',
@@ -4197,9 +3838,9 @@ Rédiger un message à un ami intéressé par des cours de langue dans votre éc
 ),
 (
   'expression_ecrite',
-  'EE_T2_106',
+  'EE_T2_096',
   'tache_2',
-  2,
+  298,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Rédiger un article de blog partageant votre expérience au sein d’une association d’aide aux personnes âgées, en mettant en avant son impact et en encourageant d’autres personnes à s’engager .',
@@ -4207,9 +3848,9 @@ Rédiger un article de blog partageant votre expérience au sein d’une associa
 ),
 (
   'expression_ecrite',
-  'EE_T3_117',
+  'EE_T3_106',
   'tache_3',
-  3,
+  299,
   'Thème du débat : « Les animaux de compagnie sont-ils bénéfiques pour les enfants ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -4224,19 +3865,21 @@ Il est fréquent qu’un enfant réclame un animal de compagnie, notamment un ch
 ),
 (
   'expression_ecrite',
-  'EE_T1_107',
+  'EE_T1_098',
   'tache_1',
-  1,
+  300,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Rédiger un message en réponse à un ami qui souhaite commencer le sport et cherche une salle adaptée à ses besoins.',
   true
-),
+);
+
+INSERT INTO public.questions (epreuve, reference, tache, ordre, texte, actif) VALUES
 (
   'expression_ecrite',
-  'EE_T2_107',
+  'EE_T2_097',
   'tache_2',
-  2,
+  301,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Rédiger un message racontant un événement marquant auquel vous avez participé, en mettant en avant les moments forts et les émotions ressenties .',
@@ -4244,9 +3887,9 @@ Rédiger un message racontant un événement marquant auquel vous avez particip�
 ),
 (
   'expression_ecrite',
-  'EE_T3_118',
+  'EE_T3_107',
   'tache_3',
-  3,
+  302,
   'Thème du débat : « Les bienfaits de la lecture pour les plus jeunes »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -4261,9 +3904,9 @@ La lecture a toujours été un héritage transmis de génération en génératio
 ),
 (
   'expression_ecrite',
-  'EE_T3_119',
+  'EE_T3_108',
   'tache_3',
-  3,
+  303,
   'Thème du débat : « L''usage des nouvelles technologies en milieu scolaire : avantages et inconvénients »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -4278,9 +3921,9 @@ Sara : Je suis partagée sur l’intégration poussée des technologies dans l�
 ),
 (
   'expression_ecrite',
-  'EE_T3_120',
+  'EE_T3_109',
   'tache_3',
-  3,
+  304,
   'Thème du débat : « Les Travaux Scolaires à Domicile »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -4295,9 +3938,9 @@ Depuis longtemps, nous contestons les devoirs à la maison pour diverses raisons
 ),
 (
   'expression_ecrite',
-  'EE_T3_121',
+  'EE_T3_110',
   'tache_3',
-  3,
+  305,
   'Thème du débat : « Faut-il choisir une école privée ou publique ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -4312,9 +3955,9 @@ Dans les établissements privés, la présence d’élèves issus de milieux dé
 ),
 (
   'expression_ecrite',
-  'EE_T3_122',
+  'EE_T3_111',
   'tache_3',
-  3,
+  306,
   'Thème du débat : « Produits Maison : Une Alternative Intéressante ou une Contrainte ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -4329,9 +3972,9 @@ La production de produits biologiques maison n’est pas sans inconvénients. Un
 ),
 (
   'expression_ecrite',
-  'EE_T1_108',
+  'EE_T1_099',
   'tache_1',
-  1,
+  307,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Les enseignants de votre quartier projettent d''organiser une rencontre pour guider leurs élèves dans le choix de leur futur métier. Rédigez un courriel pour leur exposer les atouts de votre profession .',
@@ -4339,9 +3982,9 @@ Les enseignants de votre quartier projettent d''organiser une rencontre pour gui
 ),
 (
   'expression_ecrite',
-  'EE_T2_108',
+  'EE_T2_098',
   'tache_2',
-  2,
+  308,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Rédigez un message à votre ami(e) pour l''inviter à venir avec vous au concert de votre artiste favori, en lui fournissant toutes les informations nécessaires (heure, prix des billets, lieu, etc.) .',
@@ -4349,9 +3992,9 @@ Rédigez un message à votre ami(e) pour l''inviter à venir avec vous au concer
 ),
 (
   'expression_ecrite',
-  'EE_T3_123',
+  'EE_T3_112',
   'tache_3',
-  3,
+  309,
   'Thème du débat : « Location Courte Durée »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -4366,9 +4009,9 @@ Dans les zones touristiques, la location courte durée peut parfois être coûte
 ),
 (
   'expression_ecrite',
-  'EE_T1_109',
+  'EE_T1_100',
   'tache_1',
-  1,
+  310,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous souhaitez célébrer votre anniversaire dans un restaurant et avez invité vos amis. Vous leur écrivez un courriel pour leur fournir toutes les informations nécessaires telles que le lieu, la date, le menu, les prix, et vous leur demandez de confirmer leur présence .',
@@ -4376,9 +4019,9 @@ Vous souhaitez célébrer votre anniversaire dans un restaurant et avez invité 
 ),
 (
   'expression_ecrite',
-  'EE_T2_109',
+  'EE_T2_099',
   'tache_2',
-  2,
+  311,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Après avoir quitté la ville, vous vous êtes installé à la campagne. Sur votre blog, vous expliquez les raisons de ce choix et mettez en avant les bienfaits de votre nouvelle vie .',
@@ -4386,9 +4029,9 @@ Après avoir quitté la ville, vous vous êtes installé à la campagne. Sur vot
 ),
 (
   'expression_ecrite',
-  'EE_T3_124',
+  'EE_T3_113',
   'tache_3',
-  3,
+  312,
   'Thème du débat : « La question des caméras de surveillance dans les écoles : Pour ou contre cette mesure ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -4403,9 +4046,9 @@ Je suis contre l''usage des caméras de surveillance dans les écoles à Montré
 ),
 (
   'expression_ecrite',
-  'EE_T1_110',
+  'EE_T1_101',
   'tache_1',
-  1,
+  313,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Écrivez un message à votre ami pour encourager à intégrer le sport dans son quotidien.',
@@ -4413,9 +4056,9 @@ Je suis contre l''usage des caméras de surveillance dans les écoles à Montré
 ),
 (
   'expression_ecrite',
-  'EE_T2_110',
+  'EE_T2_100',
   'tache_2',
-  2,
+  314,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Racontez votre séjour académique à l’étranger à travers un article de blog.',
@@ -4423,9 +4066,9 @@ Racontez votre séjour académique à l’étranger à travers un article de blo
 ),
 (
   'expression_ecrite',
-  'EE_T3_125',
+  'EE_T3_114',
   'tache_3',
-  3,
+  315,
   'Thème du débat : « Tenue uniforme à l''école »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -4440,9 +4083,9 @@ L’uniforme scolaire prive les élèves de la possibilité de se distinguer par
 ),
 (
   'expression_ecrite',
-  'EE_T1_111',
+  'EE_T1_102',
   'tache_1',
-  1,
+  316,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Envoyez un courriel à votre ami Lucas pour lui présenter les nouveaux locaux de votre entreprise en précisant leur localisation, l’organisation des espaces et les équipements mis à disposition.',
@@ -4450,9 +4093,9 @@ Envoyez un courriel à votre ami Lucas pour lui présenter les nouveaux locaux d
 ),
 (
   'expression_ecrite',
-  'EE_T2_111',
+  'EE_T2_101',
   'tache_2',
-  2,
+  317,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Partagez votre expérience lors de l’événement “Une semaine sans voiture”. Décrivez son organisation, les dates, le lieu ainsi que les activités proposées, et donnez votre avis sur cette initiative.',
@@ -4460,9 +4103,9 @@ Partagez votre expérience lors de l’événement “Une semaine sans voiture�
 ),
 (
   'expression_ecrite',
-  'EE_T3_126',
+  'EE_T3_115',
   'tache_3',
-  3,
+  318,
   'Thème du débat : « Les Habits de Marques Réputées »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -4477,9 +4120,9 @@ Les enfants grandissent à une telle vitesse que leurs vêtements deviennent vit
 ),
 (
   'expression_ecrite',
-  'EE_T3_127',
+  'EE_T3_116',
   'tache_3',
-  3,
+  319,
   'Thème du débat : « La restauration express »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -4494,21 +4137,19 @@ La restauration express est nocive pour la santé, car elle engendre des problè
 ),
 (
   'expression_ecrite',
-  'EE_T1_112',
+  'EE_T1_103',
   'tache_1',
-  1,
+  320,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Ali t’a envoyé un message pour savoir comment se passe ton nouveau travail et si tu en es satisfait(e). Tu lui réponds en décrivant ton emploi (lieu, ambiance, collègues, etc.) et en partageant tes impressions.',
   true
-);
-
-INSERT INTO public.questions (epreuve, reference, tache, ordre, texte, actif) VALUES
+),
 (
   'expression_ecrite',
-  'EE_T2_112',
+  'EE_T2_102',
   'tache_2',
-  2,
+  321,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vivre avec une personne âgée : Comment faire ? 
@@ -4517,9 +4158,9 @@ Vivre avec une personne âgée : Comment faire ?
 ),
 (
   'expression_ecrite',
-  'EE_T3_128',
+  'EE_T3_117',
   'tache_3',
-  3,
+  322,
   'Thème du débat : « Les cours de langues en ligne »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -4534,9 +4175,9 @@ Bien que les cours en ligne semblent être une solution idéale, ils ne convienn
 ),
 (
   'expression_ecrite',
-  'EE_T1_113',
+  'EE_T1_104',
   'tache_1',
-  1,
+  323,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous avez mis en ligne une offre de location pour votre appartement montréalais. Rédigez un email à l’attention d’un candidat locataire potentiel en y intégrant les détails essentiels : spécificités du logement, prix de la location, avantages du secteur géographique, etc .',
@@ -4544,9 +4185,9 @@ Vous avez mis en ligne une offre de location pour votre appartement montréalais
 ),
 (
   'expression_ecrite',
-  'EE_T2_113',
+  'EE_T2_103',
   'tache_2',
-  2,
+  324,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous avez récemment débuté vos études à l’université de Montréal. Rédigez un message à votre ami pour lui partager votre expérience de la première semaine, en donnant votre avis sur l’université et les cours .',
@@ -4554,9 +4195,9 @@ Vous avez récemment débuté vos études à l’université de Montréal. Rédi
 ),
 (
   'expression_ecrite',
-  'EE_T3_129',
+  'EE_T3_118',
   'tache_3',
-  3,
+  325,
   'Thème du débat : « Les bienfaits des animaux de compagnie pour les enfants »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -4571,9 +4212,9 @@ De nombreux enfants expriment un jour le désir d’avoir un animal de compagnie
 ),
 (
   'expression_ecrite',
-  'EE_T1_114',
+  'EE_T1_105',
   'tache_1',
-  1,
+  326,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Rédigez un message à votre ami(e) dans lequel vous détaillez le programme de vos prochaines vacances, en précisant la destination, les dates et les activités prévues.',
@@ -4581,9 +4222,9 @@ Rédigez un message à votre ami(e) dans lequel vous détaillez le programme de 
 ),
 (
   'expression_ecrite',
-  'EE_T2_114',
+  'EE_T2_104',
   'tache_2',
-  2,
+  327,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Rédigez un article de blog relatant un événement récent auquel vous avez assisté, que ce soit un festival, une cérémonie, une fête, etc.',
@@ -4591,9 +4232,9 @@ Rédigez un article de blog relatant un événement récent auquel vous avez ass
 ),
 (
   'expression_ecrite',
-  'EE_T3_130',
+  'EE_T3_119',
   'tache_3',
-  3,
+  328,
   'Thème du débat : « Le cyclisme urbain »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -4608,9 +4249,9 @@ Circuler à vélo en milieu urbain comporte des risques non négligeables, comme
 ),
 (
   'expression_ecrite',
-  'EE_T1_115',
+  'EE_T1_106',
   'tache_1',
-  1,
+  329,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Envoyez un message à votre ami(e) pour lui partager les détails de votre entretien d’embauche, comme l’entreprise, le salaire proposé, le type de poste, etc.',
@@ -4618,668 +4259,427 @@ Envoyez un message à votre ami(e) pour lui partager les détails de votre entre
 ),
 (
   'expression_ecrite',
-  'EE_T2_115',
+  'EE_T2_105',
   'tache_2',
-  2,
+  330,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
-« Remportez deux billets pour la destination de votre choix avec la compagnie Air Tropiques. Partagez votre plus beau voyage sur notre forum. »',
+« Jeu concours : »
+
+« Remportez deux billets pour la destination de votre choix avec la compagnie Air Tropiques. Partagez votre plus beau voyage sur notre forum. »
+
+Rédigez un message sur le forum d''Air Tropiques dans lequel vous décrivez votre voyage le plus mémorable (date, destination, activités, etc.) et expliquez en quoi cette expérience a été particulièrement spéciale pour vous.',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T3_131',
+  'EE_T3_120',
   'tache_3',
-  3,
+  331,
   'Thème du débat : « L''enseignement à domicile »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
 • Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
 
 Document A :
-Rédigez un message sur le forum d''Air Tropiques dans lequel vous décrivez votre voyage le plus mémorable (date, destination, activités, etc.) et expliquez en quoi cette expérience a été particulièrement spéciale pour vous.
+Les raisons qui poussent les parents à choisir la scolarisation à domicile sont multiples. Ce mode d''enseignement permet d''adopter une approche pédagogique plus personnalisée, offrant la possibilité de consacrer davantage de temps aux difficultés spécifiques de l''enfant ou de lui proposer, de temps à autre, des activités éducatives ludiques. Ainsi, l''enfant peut gérer son apprentissage à son propre rythme, approfondir les sujets qui le passionnent et ne pas subir la pression des progrès inégaux de ses camarades. De plus, l''instruction à domicile présente un autre avantage : une évolution différente, caractérisée par l''absence de notes parfois décourageantes, un suivi continu des connaissances et l''élimination du stress lié aux évaluations et aux devoirs.
 
 Document B :
-Les raisons qui poussent les parents à choisir la scolarisation à domicile sont multiples. Ce mode d''enseignement permet d''adopter une approche pédagogique plus personnalisée, offrant la possibilité de consacrer davantage de temps aux difficultés spécifiques de l''enfant ou de lui proposer, de temps à autre, des activités éducatives ludiques. Ainsi, l''enfant peut gérer son apprentissage à son propre rythme, approfondir les sujets qui le passionnent et ne pas subir la pression des progrès inégaux de ses camarades. De plus, l''instruction à domicile présente un autre avantage : une évolution différente, caractérisée par l''absence de notes parfois décourageantes, un suivi continu des connaissances et l''élimination du stress lié aux évaluations et aux devoirs.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_116',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
 Choisir la scolarisation à domicile constitue un défi important et comporte plusieurs inconvénients à considérer avant de se lancer. En effet, cette approche demande un investissement considérable en temps et une organisation rigoureuse, sans oublier les coûts associés. Les familles doivent assumer l''achat du matériel, des livres, des manuels et financer les sorties éducatives, et il est fréquent que l’un des parents doive interrompre son activité professionnelle. En conséquence, l’école à domicile revient généralement plus cher qu’une éducation dans le secteur public. De plus, l’enfant n’a pas l’opportunité de côtoyer quotidiennement des camarades, ce qui limite ses interactions sociales par rapport à un environnement scolaire classique.',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T2_116',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Parc de loisirs : J’ai hâte de profiter de cette journée avec toi demain ! Peux-tu me dire quelles activités sont au programme ? Écrivez un message pour répondre à votre ami(e) .',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_132',
-  'tache_3',
-  3,
-  'Thème du débat : « Faut-il faire ses courses chez les producteurs locaux ou au supermarché ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Vous avez publié une annonce en ligne pour louer votre appartement. Rédigez un courriel afin de fournir des informations sur le logement et le quartier .
-
-Document B :
-Jean, installé à la campagne, préfère acheter ses produits alimentaires directement à la ferme pour leur qualité, même si cela lui coûte un peu plus cher.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_117',
+  'EE_T1_107',
   'tache_1',
-  1,
+  332,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Camille, citadine, préfère faire ses courses au supermarché en raison de la large gamme de produits et des prix accessibles.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_117',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Bernard t’informe qu’il va bientôt habiter dans ton quartier et qu’il cherche un bon marché pour faire ses courses. Tu lui réponds en lui décrivant un marché que tu apprécies particulièrement, en précisant son emplacement, ses horaires et les produits qu’on peut y trouver.',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T3_133',
-  'tache_3',
-  3,
-  'Thème du débat : « Le livre papier ou le livre numérique ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Tu fais partie d’une association de quartier qui organise des activités pour les enfants (soutien scolaire, sorties, jeux, etc.). Sur le site internet de l’association, tu partages ton expérience et expliques en quoi ce type d’initiative est bénéfique.
-
-Document B :
-Depuis plusieurs années, de nombreux lecteurs ont choisi d’opter pour les livres numériques plutôt que les bibliothèques traditionnelles. Selon eux, cet outil est avant tout économique : il permet de réduire la consommation de papier et son coût est généralement inférieur à celui des livres imprimés. De plus, les livres numériques offrent des options qui facilitent l’accès à la lecture, notamment pour les personnes malvoyantes grâce à l’ajustement de la taille du texte.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_118',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Le livre papier sera-t-il remplacé par son équivalent numérique ? Pour la majorité des lecteurs, la réponse est non. Le format papier possède un charme particulier : le plaisir de tourner les pages, l’odeur du livre, qu’il soit neuf ou ancien, et la possibilité d’écrire une dédicace lorsqu’on l’offre à quelqu’un. En revanche, le livre numérique peut sembler impersonnel et demande certaines compétences informatiques, ce qui peut constituer un frein pour certains.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_118',
+  'EE_T2_106',
   'tache_2',
-  2,
+  333,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Barbara t''a envoyé un message pour savoir où elle pourrait déjeuner en plein air ce week-end. Tu lui réponds en décrivant un lieu agréable (parc, jardin, terrasse, etc.) et ses caractéristiques.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_134',
-  'tache_3',
-  3,
-  'Thème du débat : « L’utilisation du plastique : Faut-il continuer à l’utiliser ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Vous avez récemment visité un nouveau pays pendant vos vacances. Sur un site internet, vous partagez votre expérience en détaillant votre séjour et en exprimant votre opinion sur ce pays.
-
-Document B :
-Franck défend une utilisation restreinte du plastique, soulignant son importance dans des domaines tels que l’alimentation et la médecine. Il met en avant le rôle essentiel du plastique dans la conservation des produits alimentaires et la stérilisation des équipements médicaux. Bien qu’il prône une gestion responsable et le recyclage, il admet que certains usages sont inévitables dans la société moderne.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_119',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Amicha s’oppose fermement à l’utilisation du plastique en raison de ses impacts environnementaux dévastateurs. Elle souligne la pollution des océans et la destruction des écosystèmes causée par les déchets plastiques. Selon elle, il est urgent d’adopter des alternatives écologiques et durables pour protéger l’environnement et la santé publique.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_119',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Rédigez un message à publier dans le journal de votre université afin de rechercher un partenaire avec qui pratiquer une activité sportive.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_135',
-  'tache_3',
-  3,
-  'Thème du débat : « Rôle De La Télévision Dans L’éducation Des Enfants. »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Rédigez un article de blog dans lequel vous racontez votre arrivée dans un pays étranger. Partagez vos premières impressions, vos découvertes et vos éventuelles difficultés d’adaptation .
-
-Document B :
-La télévision est un média largement présent dans notre société. Elle influence à la fois les individus et la culture en général. En plus de diffuser des informations, elle propose divers programmes de divertissement et contribue à la transmission de la culture. Présente dans de nombreux foyers, elle constitue une source accessible de savoir et de loisirs. Grâce à sa large audience, la télévision joue un rôle essentiel dans l’éducation, la diffusion des connaissances et la sensibilisation aux enjeux sociaux.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_120',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-La télévision présente aussi certains inconvénients. Certains programmes peuvent diffuser des stéréotypes, des préjugés ou des valeurs discutables. De plus, un temps d’écran excessif peut limiter d’autres activités enrichissantes comme la lecture, les interactions sociales ou le sport. Il est donc essentiel de contrôler l’exposition à la télévision, surtout pour les enfants, afin de maintenir un équilibre entre apprentissage et divertissement.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_120',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Votre ami(e) souhaite découvrir votre région. Rédigez un message pour lui recommander des sites intéressants à visiter .',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_136',
-  'tache_3',
-  3,
-  'Thème du débat : « Livraison Des Repas Au Bureau : Pour Ou Contre ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Rédigez un article de blog dans lequel vous racontez votre participation à un cours de sport dans une salle. Décrivez votre expérience, donnez votre avis sur la salle et partagez vos impressions sur l’ambiance, l’équipement et l’encadrement .
-
-Document B :
-La livraison de repas en entreprise offre un gain de temps considérable aux employés. Ils n’ont plus besoin de quitter leur lieu de travail pour chercher de quoi manger. De plus, les économies réalisées en temps et en énergie permettent d’améliorer la productivité. Les repas étant directement disponibles, il est possible de les consommer après une réunion ou une conférence, sans interrompre une tâche importante. Cette solution est particulièrement adaptée aux entreprises à forte activité, où la présence continue des employés est essentielle.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_121',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Bien que la livraison de repas en entreprise présente des avantages, elle comporte aussi certains inconvénients. Avec la forte demande, les services de livraison peuvent être débordés certains jours, entraînant des retards et du stress lié à l’attente. De plus, rester trop longtemps à son poste de travail sans faire de pause peut entraîner une fatigue accrue pour les employés. L’absence de coupure avec l’environnement professionnel peut nuire au bien-être et à la concentration. Il est donc essentiel de prévoir des moments de pause pour se détendre et préserver un bon équilibre entre travail et repos.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_121',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Vous avez invité votre ami Cédric à votre mariage au Château de Chombony, mais il vous a répondu qu’il ne connaît pas ce château. Décrivez-lui le lieu en précisant son emplacement, les transports à prendre, et d’autres informations utiles.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_137',
-  'tache_3',
-  3,
-  'Thème du débat : « Cuisinier Amateur Ou Cuisinier Professionnel ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Sur votre blog, partagez votre expérience d’apprentissage d’une langue étrangère. Rédigez un message sur un forum internet en racontant votre parcours et les défis rencontrés en apprenant cette langue.
-
-Document B :
-Les amateurs réussissent certaines recettes, mais il leur manque souvent les compétences et les techniques nécessaires. C’est pourquoi la formation et l’expérience sont indispensables pour devenir un véritable cuisinier.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_122',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Il évoque les cuisiniers ayant appris leur métier sur internet et qui ont gagné en popularité sur les réseaux sociaux. Il raconte également l’histoire d’une amatrice devenue professionnelle, qui a écrit plusieurs livres de cuisine destinés aux passionnés de cuisine à domicile.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_122',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Votre ami Mehdi vient d''arriver dans votre ville et cherche des informations sur les moyens de transport. Écrivez-lui un message pour lui fournir toutes les informations utiles, telles que les options de transport disponibles, les tarifs, les abonnements, etc .',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_138',
-  'tache_3',
-  3,
-  'Thème du débat : « Vivre En Colocation »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Rédigez un article de blog pour exprimer votre admiration envers une personnalité, qu''elle soit célèbre ou non. Mettez en avant ses actions spécifiques et expliquez pourquoi vous l''appréciez tant .
-
-Document B :
-Vivre en colocation présente de nombreux avantages. Partager un logement avec d''autres permet de réduire les dépenses, comme le loyer, les factures et autres charges. En outre, cela favorise les interactions sociales et les échanges culturels. La colocation offre l''opportunité de rencontrer des personnes de divers horizons, de tisser des liens d''amitié et de vivre des expériences enrichissantes.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_123',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-La colocation comporte toutefois certains défis. Les différences de personnalité et de mode de vie entre colocataires peuvent parfois provoquer des tensions. La répartition des responsabilités et des tâches ménagères peut aussi être un point de friction. En outre, la colocation peut restreindre l’intimité et l’espace personnel. Il est essentiel d''établir une communication claire et respectueuse, ainsi que des règles de vie partagées, afin de garantir une cohabitation harmonieuse.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_123',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Vous avez l’intention de partir en week-end avec vos amis le mois prochain. Vous leur envoyez un message pour leur présenter votre projet, en détaillant le lieu, les moyens de transport et les activités prévues .',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_139',
-  'tache_3',
-  3,
-  'Thème du débat : « Le Travail : Favorable ou Défavorable ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Abandonner tout pour partir en voyage pendant un an : est-ce une bonne ou une mauvaise décision ?
-
-Document B :
-Répondez sur notre site Internet à l''adresse : ''voyage.internaute.fr''. Rédigez un message pour répondre à la question en partageant des exemples tirés de votre propre expérience.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_124',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Le travail occupe une place centrale dans nos vies. Dès l’enfance, on nous pose fréquemment la question : « Que veux-tu faire quand tu seras grand ? ». Le travail devrait être associé à la réussite et à l’épanouissement, mais il est souvent perçu comme une source de fatigue et de contraintes. De nos jours, beaucoup estiment que nous passons trop peu de temps avec nos proches. Il devient urgent de repenser la place du travail dans notre société. Certains pensent que réduire nos heures de travail offrirait plus de temps libre pour mieux profiter de la vie.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_124',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Certaines personnes ont choisi de quitter leur emploi pour adopter un mode de vie différent. Cependant, de nos jours, le travail est souvent perçu comme un élément essentiel de notre existence. La question « Que fais-tu dans la vie ? » revient fréquemment lors des premières rencontres, soulignant que l’emploi fait partie intégrante de notre identité. Selon l''expert Jean-Daniel Remond, la vie en entreprise joue un rôle clé. Les interactions quotidiennes, les réseaux sociaux, les amitiés, le sentiment d’utilité, ainsi que les défis rencontrés, contribuent à façonner notre personnalité et notre identité.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_140',
-  'tache_3',
-  3,
-  'Thème du débat : « Les Relations Amicales Au Travail »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-« Bonjour, bonne nouvelle ! J’ai enfin obtenu mon visa pour le Canada. Mon arrivée est prévue pour le 3 mars. Pourrais-tu m’aider à trouver un hôtel pour ma première semaine sur place ? Merci beaucoup pour ton aide ! »
-
-Document B :
-Vous avez réservé un hôtel pour Matthias et lui envoyez un courriel contenant une description détaillée de l’établissement ainsi que toutes les informations essentielles, telles que son emplacement, le prix et les services proposés.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_125',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Vous avez passé une soirée agréable avec des amis en assistant à un spectacle (film, pièce de théâtre, concert, etc.) que vous avez adoré. Vous en parlez sur votre blog en expliquant ce qui vous a particulièrement marqué .',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_125',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Les amitiés entre collègues au travail peuvent être très avantageuses. Elles contribuent à instaurer un environnement de travail agréable et une atmosphère positive au sein de l’équipe. Avoir des amis parmi ses collègues permet de solidifier les relations professionnelles et d’instaurer un esprit de camaraderie. Cela peut améliorer la communication, favoriser une collaboration plus étroite et faciliter la résolution des problèmes. En outre, partager des moments conviviaux en dehors du bureau, comme des déjeuners ou des sorties, permet de renforcer les liens et de créer une dynamique de groupe forte.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_141',
-  'tache_3',
-  3,
-  'Thème du débat : « Choix entre manger à l’extérieur ou chez soi »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Il est essentiel de trouver un juste équilibre entre amitié et professionnalisme au travail. Des amitiés trop proches peuvent parfois engendrer des tensions ou des conflits, surtout lorsqu’il s''agit de prendre des décisions professionnelles. Par ailleurs, des amitiés exclusives entre certains collègues peuvent marginaliser les autres, ce qui peut affecter la cohésion et la collaboration au sein de l’équipe. Il est donc crucial de poser des limites claires et de s’assurer que les amitiés ne compromettent pas le professionnalisme, la hiérarchie ou la productivité dans l’organisation.
-
-Document B :
-Léa t''a envoyé un message pour te proposer un pique-nique samedi prochain et te demander si tu connais un endroit agréable pour les enfants et les adultes. Tu réponds en acceptant son invitation et en lui suggérant un lieu adapté pour le pique-nique, en décrivant les caractéristiques de l''endroit et en expliquant les activités possibles sur place.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_126',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Aaron et Perla t''ont envoyé un message pour te dire qu''ils viendront visiter ton pays pendant leurs vacances en janvier. Ils cherchent à découvrir des sites historiques et des plats typiques. Tu leur réponds en leur faisant des suggestions, en justifiant ton choix par ton propre vécu et en partageant des endroits et des expériences de tes dernières vacances.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_126',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Aïcha, une jeune célibataire de 28 ans, préfère dîner à l’extérieur plutôt que de manger seule à la maison. Elle apprécie la possibilité de sortir à tout moment à Lyon et de partager des repas conviviaux avec ses amis, ce qui est impossible dans son petit appartement. Elle note aussi que peu de gens de sa génération prennent le temps de cuisiner.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_142',
-  'tache_3',
-  3,
-  'Thème du débat : « Le livre papier ou le livre numérique ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Laura, une mère de famille de 45 ans, explique que manger au restaurant est souvent trop coûteux pour elle. Bien qu’elle aimerait parfois éviter la cuisine, le budget familial l''empêche. Elle critique également la qualité des plats au restaurant et préfère savoir exactement ce qu’elle mange en préparant les repas chez elle.
-
-Document B :
-Bernard t’informe qu’il va bientôt habiter dans ton quartier et qu’il cherche un bon marché pour faire ses courses. Tu lui réponds en lui décrivant un marché que tu apprécies particulièrement, en précisant son emplacement, ses horaires et les produits qu’on peut y trouver.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_127',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Tu fais partie d’une association de quartier qui organise des activités pour les enfants (soutien scolaire, sorties, jeux, etc.). Sur le site internet de l’association, tu partages ton expérience et expliques en quoi ce type d’initiative est bénéfique.',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T2_127',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Depuis plusieurs années, de nombreux lecteurs ont choisi d’opter pour les livres numériques plutôt que les bibliothèques traditionnelles. Selon eux, cet outil est avant tout économique : il permet de réduire la consommation de papier et son coût est généralement inférieur à celui des livres imprimés. De plus, les livres numériques offrent des options qui facilitent l’accès à la lecture, notamment pour les personnes malvoyantes grâce à l’ajustement de la taille du texte.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_143',
+  'EE_T3_121',
   'tache_3',
-  3,
-  'Thème du débat : « L’utilisation du plastique : Faut-il continuer à l’utiliser ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Le livre papier sera-t-il remplacé par son équivalent numérique ? Pour la majorité des lecteurs, la réponse est non. Le format papier possède un charme particulier : le plaisir de tourner les pages, l’odeur du livre, qu’il soit neuf ou ancien, et la possibilité d’écrire une dédicace lorsqu’on l’offre à quelqu’un. En revanche, le livre numérique peut sembler impersonnel et demande certaines compétences informatiques, ce qui peut constituer un frein pour certains.
-
-Document B :
-Barbara t''a envoyé un message pour savoir où elle pourrait déjeuner en plein air ce week-end. Tu lui réponds en décrivant un lieu agréable (parc, jardin, terrasse, etc.) et ses caractéristiques.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_128',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Vous avez récemment visité un nouveau pays pendant vos vacances. Sur un site internet, vous partagez votre expérience en détaillant votre séjour et en exprimant votre opinion sur ce pays.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_128',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Franck défend une utilisation restreinte du plastique, soulignant son importance dans des domaines tels que l’alimentation et la médecine. Il met en avant le rôle essentiel du plastique dans la conservation des produits alimentaires et la stérilisation des équipements médicaux. Bien qu’il prône une gestion responsable et le recyclage, il admet que certains usages sont inévitables dans la société moderne.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_144',
-  'tache_3',
-  3,
-  'Thème du débat : « Les cours de langues en ligne »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Amicha s’oppose fermement à l’utilisation du plastique en raison de ses impacts environnementaux dévastateurs. Elle souligne la pollution des océans et la destruction des écosystèmes causée par les déchets plastiques. Selon elle, il est urgent d’adopter des alternatives écologiques et durables pour protéger l’environnement et la santé publique.
-
-Document B :
-Ali t’a envoyé un message pour savoir comment se passe ton nouveau travail et si tu en es satisfait(e). Tu lui réponds en décrivant ton emploi (lieu, ambiance, collègues, etc.) et en partageant tes impressions.',
-  true
-);
-
-INSERT INTO public.questions (epreuve, reference, tache, ordre, texte, actif) VALUES
-(
-  'expression_ecrite',
-  'EE_T1_129',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Vivre avec une personne âgée : Comment faire ? 
- Un site internet cherche des témoignages sur cette expérience. Tu racontes comment tu as vécu cette situation et ce que tu en as retenu.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_129',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Grâce à Internet, il est tout à fait possible d’apprendre une langue en ligne et d’obtenir de bons résultats. Contrairement aux formations classiques, ces cours offrent une grande flexibilité : on peut étudier à n’importe quel moment de la journée, sans avoir à se déplacer. Cet apprentissage à distance permet non seulement un gain de temps, mais aussi des économies financières.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_145',
-  'tache_3',
-  3,
-  'Thème du débat : « La restauration rapide »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Bien que les cours en ligne semblent être une solution idéale, ils ne conviennent pas à tout le monde. Il est nécessaire d’avoir une connexion Internet stable et un équipement adapté (ordinateur, smartphone, tablette). De plus, apprendre seul demande une grande autonomie et une discipline rigoureuse. Sans professeur ni camarades de classe pour motiver, il est facile de perdre son enthousiasme et d’abandonner rapidement.
-
-Document B :
-Tu aimerais assister à un festival de cinéma organisé dans ta ville. Tu écris un message à ton ami(e) pour lui proposer de t’accompagner. Tu lui donnes toutes les informations nécessaires sur l’événement, notamment les films projetés, les dates et horaires, ainsi que les tarifs d’entrée.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_130',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Tu as accueilli un(e) étudiant(e) étranger(e) chez toi pendant une semaine. Sur ton blog, tu partages cette expérience en racontant comment s’est déroulée cette semaine et en expliquant pourquoi tu l’as appréciée.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_130',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Les établissements de restauration rapide se démarquent par leur engagement à offrir une gamme de plats équilibrés tout en respectant scrupuleusement les normes d’hygiène. En permettant aux clients de composer eux-mêmes leur menu, ces restaurants leur donnent la responsabilité de leurs choix alimentaires tout en répondant à leurs préférences.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_146',
-  'tache_3',
-  3,
-  'Thème du débat : « L’éducation des enfants »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Selon les experts, une consommation régulière de repas dans les fast-foods présente un danger pour la santé. Ces établissements proposent souvent les mêmes aliments : frites, hamburgers et boissons sucrées. Ces produits sont très caloriques et dépassent les apports recommandés pour un repas. De plus, la plupart des emballages sont en plastique, ce qui contribue à une augmentation des déchets nuisibles à l’environnement.
-
-Document B :
-Ton ami(e) va bientôt célébrer son anniversaire. Tu écris un message à tes amis pour leur proposer d’acheter un cadeau commun.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_131',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-La direction d’une école de musique recherche un lieu pouvant accueillir une fête rassemblant 100 personnes. Tu écris un courriel pour leur signaler que tu as trouvé un endroit adapté, en précisant le lieu, les tarifs et les services proposés.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_131',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-J’ai bientôt 22 ans et je vis toujours chez mes parents. Même si je suis majeure, ils restent très stricts avec moi. Lorsque j’étais plus jeune, je ne pouvais ni dormir chez des amis ni rentrer après 21h. Aujourd’hui, bien que j’aie plus de liberté, ma mère continue de m’appeler sans cesse jusqu’à ce que je sois rentrée.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_147',
-  'tache_3',
-  3,
-  'Thème du débat : « La gratuité des musées : Pour ou Contre ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Certains parents craignent d’être trop autoritaires avec leurs enfants. Ils ont peur qu’un excès de discipline nuise à leur épanouissement et freine leur développement personnel. Cependant, une éducation trop permissive peut aussi avoir des effets négatifs. En grandissant, un enfant habitué à obtenir tout ce qu’il veut pourrait rencontrer des difficultés à respecter les règles de la vie en société.
-
-Document B :
-Tu loues un appartement qui est trop grand pour toi. Tu rédiges une annonce dans un journal pour trouver un colocataire en mentionnant la superficie du logement, le type de colocataire recherché et le prix du loyer.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_132',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Tu viens de commencer une nouvelle activité de loisir (sport, danse, etc.). Sur ton blog, tu partages ton ressenti et ton expérience.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_132',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Lorsque l’accès aux musées est gratuit, l’affluence peut être excessive, ce qui altère la qualité de la visite. De plus, les musées risquent de perdre une partie de leurs ressources financières, impactant ainsi l’entretien des œuvres. Une alternative serait d’instaurer un tarif réduit pour rendre la culture accessible tout en préservant les finances des musées.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_148',
-  'tache_3',
-  3,
+  334,
   'Thème du débat : « Le livre papier ou le livre numérique ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
 • Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
 
 Document A :
-Rendre l’entrée des musées gratuite est une excellente initiative, car cela permet à tous, indépendamment de leur situation économique, d’accéder à la culture. Grâce à cette mesure, j’ai eu l’occasion de visiter plusieurs musées sans me soucier du coût. Cette gratuité favorise la transmission du patrimoine culturel et enrichit les connaissances du public.
+Depuis plusieurs années, de nombreux lecteurs ont choisi d’opter pour les livres numériques plutôt que les bibliothèques traditionnelles. Selon eux, cet outil est avant tout économique : il permet de réduire la consommation de papier et son coût est généralement inférieur à celui des livres imprimés. De plus, les livres numériques offrent des options qui facilitent l’accès à la lecture, notamment pour les personnes malvoyantes grâce à l’ajustement de la taille du texte.
 
 Document B :
-Bernard t’informe qu’il va bientôt habiter dans ton quartier et qu’il cherche un bon marché pour faire ses courses. Tu lui réponds en lui décrivant un marché que tu apprécies particulièrement, en précisant son emplacement, ses horaires et les produits qu’on peut y trouver.',
+Le livre papier sera-t-il remplacé par son équivalent numérique ? Pour la majorité des lecteurs, la réponse est non. Le format papier possède un charme particulier : le plaisir de tourner les pages, l’odeur du livre, qu’il soit neuf ou ancien, et la possibilité d’écrire une dédicace lorsqu’on l’offre à quelqu’un. En revanche, le livre numérique peut sembler impersonnel et demande certaines compétences informatiques, ce qui peut constituer un frein pour certains.',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T3_149',
+  'EE_T1_108',
+  'tache_1',
+  335,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Barbara t''a envoyé un message pour savoir où elle pourrait déjeuner en plein air ce week-end. Tu lui réponds en décrivant un lieu agréable (parc, jardin, terrasse, etc.) et ses caractéristiques.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_107',
+  'tache_2',
+  336,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Vous avez récemment visité un nouveau pays pendant vos vacances. Sur un site internet, vous partagez votre expérience en détaillant votre séjour et en exprimant votre opinion sur ce pays.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_122',
   'tache_3',
-  3,
+  337,
+  'Thème du débat : « L’utilisation du plastique : Faut-il continuer à l’utiliser ? »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+Franck défend une utilisation restreinte du plastique, soulignant son importance dans des domaines tels que l’alimentation et la médecine. Il met en avant le rôle essentiel du plastique dans la conservation des produits alimentaires et la stérilisation des équipements médicaux. Bien qu’il prône une gestion responsable et le recyclage, il admet que certains usages sont inévitables dans la société moderne.
+
+Document B :
+Amicha s’oppose fermement à l’utilisation du plastique en raison de ses impacts environnementaux dévastateurs. Elle souligne la pollution des océans et la destruction des écosystèmes causée par les déchets plastiques. Selon elle, il est urgent d’adopter des alternatives écologiques et durables pour protéger l’environnement et la santé publique.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_109',
+  'tache_1',
+  338,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Rédigez un message à publier dans le journal de votre université afin de rechercher un partenaire avec qui pratiquer une activité sportive.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_108',
+  'tache_2',
+  339,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Rédigez un article de blog dans lequel vous racontez votre arrivée dans un pays étranger. Partagez vos premières impressions, vos découvertes et vos éventuelles difficultés d’adaptation .',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_123',
+  'tache_3',
+  340,
+  'Thème du débat : « Rôle De La Télévision Dans L’éducation Des Enfants. »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+La télévision est un média largement présent dans notre société. Elle influence à la fois les individus et la culture en général. En plus de diffuser des informations, elle propose divers programmes de divertissement et contribue à la transmission de la culture. Présente dans de nombreux foyers, elle constitue une source accessible de savoir et de loisirs. Grâce à sa large audience, la télévision joue un rôle essentiel dans l’éducation, la diffusion des connaissances et la sensibilisation aux enjeux sociaux.
+
+Document B :
+La télévision présente aussi certains inconvénients. Certains programmes peuvent diffuser des stéréotypes, des préjugés ou des valeurs discutables. De plus, un temps d’écran excessif peut limiter d’autres activités enrichissantes comme la lecture, les interactions sociales ou le sport. Il est donc essentiel de contrôler l’exposition à la télévision, surtout pour les enfants, afin de maintenir un équilibre entre apprentissage et divertissement.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_110',
+  'tache_1',
+  341,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Votre ami(e) souhaite découvrir votre région. Rédigez un message pour lui recommander des sites intéressants à visiter .',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_124',
+  'tache_3',
+  342,
+  'Thème du débat : « Livraison Des Repas Au Bureau : Pour Ou Contre ? »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+La livraison de repas en entreprise offre un gain de temps considérable aux employés. Ils n’ont plus besoin de quitter leur lieu de travail pour chercher de quoi manger. De plus, les économies réalisées en temps et en énergie permettent d’améliorer la productivité. Les repas étant directement disponibles, il est possible de les consommer après une réunion ou une conférence, sans interrompre une tâche importante. Cette solution est particulièrement adaptée aux entreprises à forte activité, où la présence continue des employés est essentielle.
+
+Document B :
+Bien que la livraison de repas en entreprise présente des avantages, elle comporte aussi certains inconvénients. Avec la forte demande, les services de livraison peuvent être débordés certains jours, entraînant des retards et du stress lié à l’attente. De plus, rester trop longtemps à son poste de travail sans faire de pause peut entraîner une fatigue accrue pour les employés. L’absence de coupure avec l’environnement professionnel peut nuire au bien-être et à la concentration. Il est donc essentiel de prévoir des moments de pause pour se détendre et préserver un bon équilibre entre travail et repos.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_111',
+  'tache_1',
+  343,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Vous avez invité votre ami Cédric à votre mariage au Château de Chombony, mais il vous a répondu qu’il ne connaît pas ce château. Décrivez-lui le lieu en précisant son emplacement, les transports à prendre, et d’autres informations utiles.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_109',
+  'tache_2',
+  344,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Sur votre blog, partagez votre expérience d’apprentissage d’une langue étrangère. Rédigez un message sur un forum internet en racontant votre parcours et les défis rencontrés en apprenant cette langue.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_125',
+  'tache_3',
+  345,
+  'Thème du débat : « Cuisinier Amateur Ou Cuisinier Professionnel ? »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+Les amateurs réussissent certaines recettes, mais il leur manque souvent les compétences et les techniques nécessaires. C’est pourquoi la formation et l’expérience sont indispensables pour devenir un véritable cuisinier.
+
+Document B :
+Il évoque les cuisiniers ayant appris leur métier sur internet et qui ont gagné en popularité sur les réseaux sociaux. Il raconte également l’histoire d’une amatrice devenue professionnelle, qui a écrit plusieurs livres de cuisine destinés aux passionnés de cuisine à domicile.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_126',
+  'tache_3',
+  346,
+  'Thème du débat : « Vivre En Colocation »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+Vivre en colocation présente de nombreux avantages. Partager un logement avec d''autres permet de réduire les dépenses, comme le loyer, les factures et autres charges. En outre, cela favorise les interactions sociales et les échanges culturels. La colocation offre l''opportunité de rencontrer des personnes de divers horizons, de tisser des liens d''amitié et de vivre des expériences enrichissantes.
+
+Document B :
+La colocation comporte toutefois certains défis. Les différences de personnalité et de mode de vie entre colocataires peuvent parfois provoquer des tensions. La répartition des responsabilités et des tâches ménagères peut aussi être un point de friction. En outre, la colocation peut restreindre l’intimité et l’espace personnel. Il est essentiel d''établir une communication claire et respectueuse, ainsi que des règles de vie partagées, afin de garantir une cohabitation harmonieuse.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_112',
+  'tache_1',
+  347,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Vous avez l’intention de partir en week-end avec vos amis le mois prochain. Vous leur envoyez un message pour leur présenter votre projet, en détaillant le lieu, les moyens de transport et les activités prévues .',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_110',
+  'tache_2',
+  348,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+COURRIER DES LECTEURS
+
+Abandonner tout pour partir en voyage pendant un an : est-ce une bonne ou une mauvaise décision ?
+
+Répondez sur notre site Internet à l''adresse : ''voyage.internaute.fr''. Rédigez un message pour répondre à la question en partageant des exemples tirés de votre propre expérience.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_127',
+  'tache_3',
+  349,
+  'Thème du débat : « Le Travail : Favorable ou Défavorable ? »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+Le travail occupe une place centrale dans nos vies. Dès l’enfance, on nous pose fréquemment la question : « Que veux-tu faire quand tu seras grand ? ». Le travail devrait être associé à la réussite et à l’épanouissement, mais il est souvent perçu comme une source de fatigue et de contraintes. De nos jours, beaucoup estiment que nous passons trop peu de temps avec nos proches. Il devient urgent de repenser la place du travail dans notre société. Certains pensent que réduire nos heures de travail offrirait plus de temps libre pour mieux profiter de la vie.
+
+Document B :
+Certaines personnes ont choisi de quitter leur emploi pour adopter un mode de vie différent. Cependant, de nos jours, le travail est souvent perçu comme un élément essentiel de notre existence. La question « Que fais-tu dans la vie ? » revient fréquemment lors des premières rencontres, soulignant que l’emploi fait partie intégrante de notre identité. Selon l''expert Jean-Daniel Remond, la vie en entreprise joue un rôle clé. Les interactions quotidiennes, les réseaux sociaux, les amitiés, le sentiment d’utilité, ainsi que les défis rencontrés, contribuent à façonner notre personnalité et notre identité.
+
+« Bonjour, bonne nouvelle ! J’ai enfin obtenu mon visa pour le Canada. Mon arrivée est prévue pour le 3 mars. Pourrais-tu m’aider à trouver un hôtel pour ma première semaine sur place ? Merci beaucoup pour ton aide ! »
+
+Matthias.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_113',
+  'tache_1',
+  350,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Léa t''a envoyé un message pour te proposer un pique-nique samedi prochain et te demander si tu connais un endroit agréable pour les enfants et les adultes. Tu réponds en acceptant son invitation et en lui suggérant un lieu adapté pour le pique-nique, en décrivant les caractéristiques de l''endroit et en expliquant les activités possibles sur place.',
+  true
+);
+
+INSERT INTO public.questions (epreuve, reference, tache, ordre, texte, actif) VALUES
+(
+  'expression_ecrite',
+  'EE_T2_111',
+  'tache_2',
+  351,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Aaron et Perla t''ont envoyé un message pour te dire qu''ils viendront visiter ton pays pendant leurs vacances en janvier. Ils cherchent à découvrir des sites historiques et des plats typiques. Tu leur réponds en leur faisant des suggestions, en justifiant ton choix par ton propre vécu et en partageant des endroits et des expériences de tes dernières vacances.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_128',
+  'tache_3',
+  352,
+  'Thème du débat : « Choix entre manger à l’extérieur ou chez soi »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+Aïcha, une jeune célibataire de 28 ans, préfère dîner à l’extérieur plutôt que de manger seule à la maison. Elle apprécie la possibilité de sortir à tout moment à Lyon et de partager des repas conviviaux avec ses amis, ce qui est impossible dans son petit appartement. Elle note aussi que peu de gens de sa génération prennent le temps de cuisiner.
+
+Document B :
+Laura, une mère de famille de 45 ans, explique que manger au restaurant est souvent trop coûteux pour elle. Bien qu’elle aimerait parfois éviter la cuisine, le budget familial l''empêche. Elle critique également la qualité des plats au restaurant et préfère savoir exactement ce qu’elle mange en préparant les repas chez elle.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_114',
+  'tache_1',
+  353,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Tu aimerais assister à un festival de cinéma organisé dans ta ville. Tu écris un message à ton ami(e) pour lui proposer de t’accompagner. Tu lui donnes toutes les informations nécessaires sur l’événement, notamment les films projetés, les dates et horaires, ainsi que les tarifs d’entrée.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_112',
+  'tache_2',
+  354,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Tu as accueilli un(e) étudiant(e) étranger(e) chez toi pendant une semaine. Sur ton blog, tu partages cette expérience en racontant comment s’est déroulée cette semaine et en expliquant pourquoi tu l’as appréciée.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_129',
+  'tache_3',
+  355,
+  'Thème du débat : « La restauration rapide »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+Les établissements de restauration rapide se démarquent par leur engagement à offrir une gamme de plats équilibrés tout en respectant scrupuleusement les normes d’hygiène. En permettant aux clients de composer eux-mêmes leur menu, ces restaurants leur donnent la responsabilité de leurs choix alimentaires tout en répondant à leurs préférences.
+
+Document B :
+Selon les experts, une consommation régulière de repas dans les fast-foods présente un danger pour la santé. Ces établissements proposent souvent les mêmes aliments : frites, hamburgers et boissons sucrées. Ces produits sont très caloriques et dépassent les apports recommandés pour un repas. De plus, la plupart des emballages sont en plastique, ce qui contribue à une augmentation des déchets nuisibles à l’environnement.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_115',
+  'tache_1',
+  356,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Ton ami(e) va bientôt célébrer son anniversaire. Tu écris un message à tes amis pour leur proposer d’acheter un cadeau commun.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_113',
+  'tache_2',
+  357,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+La direction d’une école de musique recherche un lieu pouvant accueillir une fête rassemblant 100 personnes. Tu écris un courriel pour leur signaler que tu as trouvé un endroit adapté, en précisant le lieu, les tarifs et les services proposés.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_130',
+  'tache_3',
+  358,
+  'Thème du débat : « L’éducation des enfants »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+J’ai bientôt 22 ans et je vis toujours chez mes parents. Même si je suis majeure, ils restent très stricts avec moi. Lorsque j’étais plus jeune, je ne pouvais ni dormir chez des amis ni rentrer après 21h. Aujourd’hui, bien que j’aie plus de liberté, ma mère continue de m’appeler sans cesse jusqu’à ce que je sois rentrée.
+
+Document B :
+Certains parents craignent d’être trop autoritaires avec leurs enfants. Ils ont peur qu’un excès de discipline nuise à leur épanouissement et freine leur développement personnel. Cependant, une éducation trop permissive peut aussi avoir des effets négatifs. En grandissant, un enfant habitué à obtenir tout ce qu’il veut pourrait rencontrer des difficultés à respecter les règles de la vie en société.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_116',
+  'tache_1',
+  359,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Tu loues un appartement qui est trop grand pour toi. Tu rédiges une annonce dans un journal pour trouver un colocataire en mentionnant la superficie du logement, le type de colocataire recherché et le prix du loyer.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_114',
+  'tache_2',
+  360,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Tu viens de commencer une nouvelle activité de loisir (sport, danse, etc.). Sur ton blog, tu partages ton ressenti et ton expérience.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_131',
+  'tache_3',
+  361,
+  'Thème du débat : « La gratuité des musées : Pour ou Contre ? »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+Lorsque l’accès aux musées est gratuit, l’affluence peut être excessive, ce qui altère la qualité de la visite. De plus, les musées risquent de perdre une partie de leurs ressources financières, impactant ainsi l’entretien des œuvres. Une alternative serait d’instaurer un tarif réduit pour rendre la culture accessible tout en préservant les finances des musées.
+
+Document B :
+Rendre l’entrée des musées gratuite est une excellente initiative, car cela permet à tous, indépendamment de leur situation économique, d’accéder à la culture. Grâce à cette mesure, j’ai eu l’occasion de visiter plusieurs musées sans me soucier du coût. Cette gratuité favorise la transmission du patrimoine culturel et enrichit les connaissances du public.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_132',
+  'tache_3',
+  362,
   'Thème du débat : « Les vols à bas prix »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -5294,9 +4694,9 @@ Récemment, j’ai décidé de ne plus utiliser les compagnies aériennes low-co
 ),
 (
   'expression_ecrite',
-  'EE_T1_133',
+  'EE_T1_117',
   'tache_1',
-  1,
+  363,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous venez de décrocher un nouveau travail et souhaitez annoncer la nouvelle à votre amie francophone. Décrivez votre poste, votre environnement de travail et vos collègues .',
@@ -5304,9 +4704,9 @@ Vous venez de décrocher un nouveau travail et souhaitez annoncer la nouvelle à
 ),
 (
   'expression_ecrite',
-  'EE_T2_133',
+  'EE_T2_115',
   'tache_2',
-  2,
+  364,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Julie, une étudiante de 19 ans, s’apprête à partir à l’étranger pour poursuivre ses études et recherche des témoignages sur un forum. Ayant déjà étudié à l’étranger, vous partagez votre expérience et expliquez si vous avez aimé ou non votre séjour, en justifiant votre réponse .',
@@ -5314,9 +4714,9 @@ Julie, une étudiante de 19 ans, s’apprête à partir à l’étranger pour po
 ),
 (
   'expression_ecrite',
-  'EE_T3_150',
+  'EE_T3_133',
   'tache_3',
-  3,
+  365,
   'Thème du débat : « l''aide aux personnes pauvres. »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -5331,9 +4731,9 @@ Pierre, 65 ans, estime que donner de l’argent n’est pas une solution durable
 ),
 (
   'expression_ecrite',
-  'EE_T1_134',
+  'EE_T1_118',
   'tache_1',
-  1,
+  366,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Votre ami Mehdi vient de s’installer dans votre ville et cherche des informations sur les moyens de transport disponibles. Rédigez un message pour lui donner des détails sur les types de transport, les abonnements et les tarifs .',
@@ -5341,9 +4741,9 @@ Votre ami Mehdi vient de s’installer dans votre ville et cherche des informati
 ),
 (
   'expression_ecrite',
-  'EE_T2_134',
+  'EE_T2_116',
   'tache_2',
-  2,
+  367,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Exprimez votre admiration pour une personnalité (célèbre ou non) en rédigeant un article de blog qui met en avant ses actions marquantes et explique pourquoi elle vous inspire .',
@@ -5351,9 +4751,9 @@ Exprimez votre admiration pour une personnalité (célèbre ou non) en rédigean
 ),
 (
   'expression_ecrite',
-  'EE_T3_151',
+  'EE_T3_134',
   'tache_3',
-  3,
+  368,
   'Thème du débat : « Vivre en colocation : avantages et inconvénients »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -5368,9 +4768,9 @@ Toutefois, cohabiter avec d’autres personnes peut également entraîner des te
 ),
 (
   'expression_ecrite',
-  'EE_T1_135',
+  'EE_T1_119',
   'tache_1',
-  1,
+  369,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Votre ami Cédric est invité à votre mariage, qui se déroulera au Château de Chombony, mais il ne connaît pas cet endroit. Rédigez un message pour lui fournir des informations sur ce lieu, sa localisation et les moyens de transport pour s’y rendre .',
@@ -5378,9 +4778,9 @@ Votre ami Cédric est invité à votre mariage, qui se déroulera au Château de
 ),
 (
   'expression_ecrite',
-  'EE_T2_135',
+  'EE_T2_117',
   'tache_2',
-  2,
+  370,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Sur un forum en ligne, partagez votre expérience de l’apprentissage d’une langue étrangère. Expliquez les défis que vous avez rencontrés, les méthodes qui vous ont aidé et les bénéfices que vous en avez tirés .',
@@ -5388,9 +4788,9 @@ Sur un forum en ligne, partagez votre expérience de l’apprentissage d’une l
 ),
 (
   'expression_ecrite',
-  'EE_T3_152',
+  'EE_T3_135',
   'tache_3',
-  3,
+  371,
   'Thème du débat : « Cuisinier amateur ou professionnel ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -5405,9 +4805,9 @@ Certains autodidactes passionnés de cuisine ont réussi à se faire un nom sur 
 ),
 (
   'expression_ecrite',
-  'EE_T1_136',
+  'EE_T1_120',
   'tache_1',
-  1,
+  372,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Votre amie Anna prévoit de passer un week-end dans votre ville et souhaite des informations sur les transports pour explorer les environs. Rédigez-lui un message détaillant les différentes options disponibles .',
@@ -5415,9 +4815,9 @@ Votre amie Anna prévoit de passer un week-end dans votre ville et souhaite des 
 ),
 (
   'expression_ecrite',
-  'EE_T2_136',
+  'EE_T2_118',
   'tache_2',
-  2,
+  373,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous avez récemment assisté à une fête de quartier entre voisins. Sur votre blog, partagez votre expérience et expliquez ce qui vous a plu dans cet événement .',
@@ -5425,9 +4825,9 @@ Vous avez récemment assisté à une fête de quartier entre voisins. Sur votre 
 ),
 (
   'expression_ecrite',
-  'EE_T3_153',
+  'EE_T3_136',
   'tache_3',
-  3,
+  374,
   'Thème du débat : « L’installation de distributeurs automatiques dans les écoles : Pour ou contre ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -5442,9 +4842,9 @@ D’autres estiment que la présence de distributeurs dans les écoles favorise 
 ),
 (
   'expression_ecrite',
-  'EE_T1_137',
+  'EE_T1_121',
   'tache_1',
-  1,
+  375,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Votre amie Léa vous invite à un pique-nique et vous demande si vous connaissez un endroit agréable où l’organiser. Acceptez l’invitation et proposez un lieu, en décrivant les activités possibles sur place .',
@@ -5452,9 +4852,9 @@ Votre amie Léa vous invite à un pique-nique et vous demande si vous connaissez
 ),
 (
   'expression_ecrite',
-  'EE_T2_137',
+  'EE_T2_119',
   'tache_2',
-  2,
+  376,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Aaron et Perla prévoient de visiter votre pays pendant leurs vacances et souhaitent découvrir des sites historiques ainsi que des spécialités culinaires locales. Répondez-leur en leur proposant des lieux et des plats à essayer, en vous basant sur vos propres expériences de voyage .',
@@ -5462,9 +4862,9 @@ Aaron et Perla prévoient de visiter votre pays pendant leurs vacances et souhai
 ),
 (
   'expression_ecrite',
-  'EE_T3_154',
+  'EE_T3_137',
   'tache_3',
-  3,
+  377,
   'Thème du débat : « Manger au restaurant ou cuisiner chez soi ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -5479,9 +4879,9 @@ Laura, mère de famille, considère que manger au restaurant est un luxe diffici
 ),
 (
   'expression_ecrite',
-  'EE_T1_138',
+  'EE_T1_122',
   'tache_1',
-  1,
+  378,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Votre ami Bernard s’installe bientôt dans votre quartier et cherche un bon marché pour faire ses courses. Répondez-lui en lui décrivant un marché que vous aimez bien, en précisant son emplacement, ses horaires et les types de produits qu’il propose .',
@@ -5489,9 +4889,9 @@ Votre ami Bernard s’installe bientôt dans votre quartier et cherche un bon ma
 ),
 (
   'expression_ecrite',
-  'EE_T2_138',
+  'EE_T2_120',
   'tache_2',
-  2,
+  379,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous faites partie d’une association qui organise diverses activités pour les enfants du quartier (soutien scolaire, sorties, jeux, etc.). Sur le site de l’association, racontez votre expérience et expliquez en quoi ce type d’initiative est bénéfique .',
@@ -5499,9 +4899,9 @@ Vous faites partie d’une association qui organise diverses activités pour les
 ),
 (
   'expression_ecrite',
-  'EE_T3_155',
+  'EE_T3_138',
   'tache_3',
-  3,
+  380,
   'Thème du débat : « Livre papier ou livre numérique ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -5516,9 +4916,9 @@ Malgré les avancées technologiques, de nombreux lecteurs restent attachés aux
 ),
 (
   'expression_ecrite',
-  'EE_T1_139',
+  'EE_T1_123',
   'tache_1',
-  1,
+  381,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Votre amie Barbara souhaite déjeuner en plein air ce week-end et vous demande des suggestions. Répondez-lui en lui proposant un endroit agréable, comme un parc ou une terrasse, en décrivant son ambiance et les options disponibles .',
@@ -5526,9 +4926,9 @@ Votre amie Barbara souhaite déjeuner en plein air ce week-end et vous demande d
 ),
 (
   'expression_ecrite',
-  'EE_T2_139',
+  'EE_T2_121',
   'tache_2',
-  2,
+  382,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Lors de vos dernières vacances, vous avez visité un nouveau pays. Sur un site internet, racontez votre expérience et partagez votre avis sur la destination .',
@@ -5536,9 +4936,9 @@ Lors de vos dernières vacances, vous avez visité un nouveau pays. Sur un site 
 ),
 (
   'expression_ecrite',
-  'EE_T3_156',
+  'EE_T3_139',
   'tache_3',
-  3,
+  383,
   'Thème du débat : « L’impact du plastique : Pour ou contre ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -5553,9 +4953,9 @@ Cependant, le plastique est un matériau essentiel dans plusieurs domaines, nota
 ),
 (
   'expression_ecrite',
-  'EE_T1_140',
+  'EE_T1_124',
   'tache_1',
-  1,
+  384,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Votre ami Ali vous demande comment se passe votre nouveau travail et si vous en êtes satisfait(e). Répondez-lui en lui décrivant votre poste, votre lieu de travail, l’ambiance avec vos collègues et vos impressions générales .',
@@ -5563,9 +4963,9 @@ Votre ami Ali vous demande comment se passe votre nouveau travail et si vous en 
 ),
 (
   'expression_ecrite',
-  'EE_T2_140',
+  'EE_T2_122',
   'tache_2',
-  2,
+  385,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Le site « Infos Familles » recherche des témoignages sur la cohabitation avec une personne âgée. Vous avez déjà vécu cette expérience et décidez de partager votre ressenti en expliquant les aspects positifs et les défis rencontrés .',
@@ -5573,9 +4973,9 @@ Le site « Infos Familles » recherche des témoignages sur la cohabitation avec
 ),
 (
   'expression_ecrite',
-  'EE_T3_157',
+  'EE_T3_140',
   'tache_3',
-  3,
+  386,
   'Thème du débat : « Les cours de langues en ligne : avantages et inconvénients »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -5590,9 +4990,9 @@ Toutefois, apprendre une langue en ligne n’est pas adapté à tout le monde. I
 ),
 (
   'expression_ecrite',
-  'EE_T1_141',
+  'EE_T1_125',
   'tache_1',
-  1,
+  387,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Votre ami(e) souhaite visiter la région où vous habitez. Écrivez-lui un message pour lui suggérer des lieux intéressants à découvrir et expliquez pourquoi ils valent le détour.',
@@ -5600,9 +5000,9 @@ Votre ami(e) souhaite visiter la région où vous habitez. Écrivez-lui un messa
 ),
 (
   'expression_ecrite',
-  'EE_T2_141',
+  'EE_T2_123',
   'tache_2',
-  2,
+  388,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous avez récemment participé à un cours de sport dans une salle de fitness. Sur votre blog, racontez cette expérience et donnez votre avis sur les équipements et l’ambiance de la salle .',
@@ -5610,9 +5010,9 @@ Vous avez récemment participé à un cours de sport dans une salle de fitness. 
 ),
 (
   'expression_ecrite',
-  'EE_T3_158',
+  'EE_T3_141',
   'tache_3',
-  3,
+  389,
   'Thème du débat : « Livraison de repas au bureau : pour ou contre ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -5627,9 +5027,9 @@ Cependant, cette habitude peut avoir des effets négatifs. En ne quittant pas le
 ),
 (
   'expression_ecrite',
-  'EE_T1_142',
+  'EE_T1_126',
   'tache_1',
-  1,
+  390,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Rédigez une annonce pour le journal de votre université afin de trouver un partenaire avec qui pratiquer une activité sportive. Mentionnez le sport, votre niveau et vos disponibilités .',
@@ -5637,9 +5037,9 @@ Rédigez une annonce pour le journal de votre université afin de trouver un par
 ),
 (
   'expression_ecrite',
-  'EE_T2_142',
+  'EE_T2_124',
   'tache_2',
-  2,
+  391,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous avez récemment déménagé dans un pays étranger et souhaitez partager vos premières impressions. Rédigez un article de blog décrivant votre adaptation, votre découverte de la culture locale et les défis que vous avez rencontrés .',
@@ -5647,9 +5047,9 @@ Vous avez récemment déménagé dans un pays étranger et souhaitez partager vo
 ),
 (
   'expression_ecrite',
-  'EE_T3_159',
+  'EE_T3_142',
   'tache_3',
-  3,
+  392,
   'Thème du débat : « L’impact de la télévision sur l’éducation des enfants »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -5664,9 +5064,9 @@ La télévision peut également présenter certains inconvénients. Les émissio
 ),
 (
   'expression_ecrite',
-  'EE_T1_143',
+  'EE_T1_127',
   'tache_1',
-  1,
+  393,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Votre amie Barbara cherche un endroit agréable pour déjeuner en plein air ce week-end. Répondez-lui en lui proposant un lieu, en décrivant l’environnement et les activités possibles à proximité .',
@@ -5674,9 +5074,9 @@ Votre amie Barbara cherche un endroit agréable pour déjeuner en plein air ce w
 ),
 (
   'expression_ecrite',
-  'EE_T2_143',
+  'EE_T2_125',
   'tache_2',
-  2,
+  394,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous avez visité un pays étranger pendant vos vacances et souhaitez partager votre expérience. Rédigez un article sur un site de voyage, décrivant ce que vous avez aimé et donnant votre opinion sur la destination .',
@@ -5684,9 +5084,9 @@ Vous avez visité un pays étranger pendant vos vacances et souhaitez partager v
 ),
 (
   'expression_ecrite',
-  'EE_T3_160',
+  'EE_T3_143',
   'tache_3',
-  3,
+  395,
   'Thème du débat : « L’utilisation du plastique : bénéfices et dangers »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -5701,9 +5101,9 @@ Malgré ses avantages, le plastique représente un danger majeur pour l’enviro
 ),
 (
   'expression_ecrite',
-  'EE_T1_144',
+  'EE_T1_128',
   'tache_1',
-  1,
+  396,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Votre ami Bernard va bientôt habiter dans votre quartier et souhaite connaître un marché intéressant pour faire ses courses. Répondez-lui en lui décrivant un marché que vous appréciez, en précisant son emplacement, ses horaires et les produits disponibles .',
@@ -5711,9 +5111,9 @@ Votre ami Bernard va bientôt habiter dans votre quartier et souhaite connaître
 ),
 (
   'expression_ecrite',
-  'EE_T2_144',
+  'EE_T2_126',
   'tache_2',
-  2,
+  397,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous êtes membre d’une association de quartier qui propose des activités aux enfants, telles que l’aide aux devoirs, les sorties et les jeux. Sur le site internet de l’association, racontez votre expérience et expliquez pourquoi ce type d’initiative est bénéfique pour la communauté .',
@@ -5721,9 +5121,9 @@ Vous êtes membre d’une association de quartier qui propose des activités aux
 ),
 (
   'expression_ecrite',
-  'EE_T3_161',
+  'EE_T3_144',
   'tache_3',
-  3,
+  398,
   'Thème du débat : « Livre papier ou livre numérique ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -5738,31 +5138,31 @@ Cependant, le livre papier conserve une place privilégiée pour beaucoup de lec
 ),
 (
   'expression_ecrite',
-  'EE_T1_145',
+  'EE_T1_129',
   'tache_1',
-  1,
+  399,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous êtes locataire d’un appartement trop grand pour vous et souhaitez trouver un colocataire. Rédigez une annonce mentionnant la superficie, le prix et le type de colocataire recherché .',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_127',
+  'tache_2',
+  400,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Vous venez de commencer un nouveau loisir (sport, danse, etc.) et souhaitez en parler sur votre blog. Décrivez votre expérience et partagez votre avis sur cette activité .',
   true
 );
 
 INSERT INTO public.questions (epreuve, reference, tache, ordre, texte, actif) VALUES
 (
   'expression_ecrite',
-  'EE_T2_145',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Vous venez de commencer un nouveau loisir (sport, danse, etc.) et souhaitez en parler sur votre blog. Décrivez votre expérience et partagez votre avis sur cette activité .',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_162',
+  'EE_T3_145',
   'tache_3',
-  3,
+  401,
   'Thème du débat : « Faut-il rendre les musées gratuits ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -5777,9 +5177,9 @@ Permettre l’accès gratuit aux musées est une excellente initiative pour enco
 ),
 (
   'expression_ecrite',
-  'EE_T1_146',
+  'EE_T1_130',
   'tache_1',
-  1,
+  402,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Votre ami Cédric est invité à votre mariage, qui se déroulera au Château de Chombony, mais il ne connaît pas cet endroit. Envoyez-lui un message pour lui fournir des détails sur le lieu, son emplacement et les moyens de transport disponibles pour s’y rendre .',
@@ -5787,9 +5187,9 @@ Votre ami Cédric est invité à votre mariage, qui se déroulera au Château de
 ),
 (
   'expression_ecrite',
-  'EE_T2_146',
+  'EE_T2_128',
   'tache_2',
-  2,
+  403,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Sur un forum en ligne, partagez votre expérience d’apprentissage d’une langue étrangère. Expliquez les difficultés que vous avez rencontrées, les méthodes qui vous ont aidé et les bénéfices que vous en avez tirés .',
@@ -5797,9 +5197,9 @@ Sur un forum en ligne, partagez votre expérience d’apprentissage d’une lang
 ),
 (
   'expression_ecrite',
-  'EE_T3_163',
+  'EE_T3_146',
   'tache_3',
-  3,
+  404,
   'Thème du débat : « Cuisinier amateur ou professionnel ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -5814,9 +5214,9 @@ Certains autodidactes se sont fait un nom grâce aux réseaux sociaux, où ils p
 ),
 (
   'expression_ecrite',
-  'EE_T1_147',
+  'EE_T1_131',
   'tache_1',
-  1,
+  405,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Répondez au courriel de votre ami Lucas pour lui donner des informations sur les nouveaux locaux de votre entreprise (lieu, disposition des pièces, équipements, etc.)',
@@ -5824,9 +5224,9 @@ Répondez au courriel de votre ami Lucas pour lui donner des informations sur le
 ),
 (
   'expression_ecrite',
-  'EE_T2_147',
+  'EE_T2_129',
   'tache_2',
-  2,
+  406,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous avez assisté à un événement intitulé « Une semaine sans voiture ». Racontez votre expérience et donnez votre impression sur cette initiative. Décrivez le déroulement de l’événement (dates, lieu, activités proposées).',
@@ -5834,9 +5234,9 @@ Vous avez assisté à un événement intitulé « Une semaine sans voiture ». R
 ),
 (
   'expression_ecrite',
-  'EE_T3_164',
+  'EE_T3_147',
   'tache_3',
-  3,
+  407,
   'Thème du débat : « Les Vêtements De Marque: Pour Ou Contre ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -5851,9 +5251,9 @@ Les enfants grandissent très vite et les vêtements sont portés pendant une co
 ),
 (
   'expression_ecrite',
-  'EE_T1_148',
+  'EE_T1_132',
   'tache_1',
-  1,
+  408,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Écrivez un message à votre ami pour le convaincre à pratiquer une activité physique.',
@@ -5861,9 +5261,9 @@ Les enfants grandissent très vite et les vêtements sont portés pendant une co
 ),
 (
   'expression_ecrite',
-  'EE_T2_148',
+  'EE_T2_130',
   'tache_2',
-  2,
+  409,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Écrivez un article de blog sur votre expérience d’études à l’étranger (séjour, activités,…)',
@@ -5871,9 +5271,9 @@ Les enfants grandissent très vite et les vêtements sont portés pendant une co
 ),
 (
   'expression_ecrite',
-  'EE_T3_165',
+  'EE_T3_148',
   'tache_3',
-  3,
+  410,
   'Thème du débat : « Uniforme Scolaire ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -5888,9 +5288,9 @@ Le port de l’uniforme étouffe et écrase la personnalité des garçons. Ils n
 ),
 (
   'expression_ecrite',
-  'EE_T1_149',
+  'EE_T1_133',
   'tache_1',
-  1,
+  411,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous souhaitez fêter votre anniversaire dans un restaurant. Vous invitez vos amis. Vous leur écrivez un courriel pour leur donner toutes les informations nécessaires (lieu, date, menu, prix…) et vous leur demandez une réponse.',
@@ -5898,9 +5298,9 @@ Vous souhaitez fêter votre anniversaire dans un restaurant. Vous invitez vos am
 ),
 (
   'expression_ecrite',
-  'EE_T2_149',
+  'EE_T2_131',
   'tache_2',
-  2,
+  412,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous avez quitté la ville afin de vous installer à la campagne. Sur votre blog, vous expliquez pourquoi vous avez fait ce choix et vous présentez les avantages de votre nouvelle vie.',
@@ -5908,9 +5308,9 @@ Vous avez quitté la ville afin de vous installer à la campagne. Sur votre blog
 ),
 (
   'expression_ecrite',
-  'EE_T3_166',
+  'EE_T3_149',
   'tache_3',
-  3,
+  413,
   'Thème du débat : « Les Caméras De Surveillance A L’école : Pour Ou Contre ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -5925,9 +5325,9 @@ Je suis opposé à l’installation des caméras de surveillance dans nos école
 ),
 (
   'expression_ecrite',
-  'EE_T1_150',
+  'EE_T1_134',
   'tache_1',
-  1,
+  414,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Les professeurs de votre quartier veulent organiser une rencontre avec leurs élèves pour les orienter dans le choix de leurs futures professions, vous leur écrivez un mail pour leur donner les avantages de votre profession.',
@@ -5935,9 +5335,9 @@ Les professeurs de votre quartier veulent organiser une rencontre avec leurs él
 ),
 (
   'expression_ecrite',
-  'EE_T2_150',
+  'EE_T2_132',
   'tache_2',
-  2,
+  415,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Écrivez un courriel à votre ami pour l’inviter à vous accompagner au concert de votre musicien préféré en lui précisant tous les détails (heure, tarif, lieu…)',
@@ -5945,9 +5345,9 @@ Les professeurs de votre quartier veulent organiser une rencontre avec leurs él
 ),
 (
   'expression_ecrite',
-  'EE_T3_167',
+  'EE_T3_150',
   'tache_3',
-  3,
+  416,
   'Thème du débat : « Location Courte Durée ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -5962,9 +5362,9 @@ La location courte durée peut parfois être coûteuse, en particulier dans les 
 ),
 (
   'expression_ecrite',
-  'EE_T1_151',
+  'EE_T1_135',
   'tache_1',
-  1,
+  417,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Écrivez un message dans le journal de votre université pour rechercher un partenaire avec qui faire du sport.',
@@ -5972,9 +5372,9 @@ La location courte durée peut parfois être coûteuse, en particulier dans les 
 ),
 (
   'expression_ecrite',
-  'EE_T2_151',
+  'EE_T2_133',
   'tache_2',
-  2,
+  418,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Écrivez dans un article de blog pour raconter votre arrivée dans un pays étranger en donnant vos impressions.',
@@ -5982,9 +5382,9 @@ La location courte durée peut parfois être coûteuse, en particulier dans les 
 ),
 (
   'expression_ecrite',
-  'EE_T3_168',
+  'EE_T3_151',
   'tache_3',
-  3,
+  419,
   'Thème du débat : « Rôle De La Télévision Dans L’éducation Des Enfants. »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -5999,9 +5399,9 @@ La télévision peut également présenter certains inconvénients. Les émissio
 ),
 (
   'expression_ecrite',
-  'EE_T1_152',
+  'EE_T1_136',
   'tache_1',
-  1,
+  420,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Un nouveau restaurant vient d’ouvrir près de chez vous. Vous écrivez à un(e) ami(e) pour lui proposer d’y aller avec vous. Vous décrivez le restaurant (cuisine, prix, décoration, etc.).',
@@ -6009,9 +5409,9 @@ Un nouveau restaurant vient d’ouvrir près de chez vous. Vous écrivez à un(e
 ),
 (
   'expression_ecrite',
-  'EE_T2_152',
+  'EE_T2_134',
   'tache_2',
-  2,
+  421,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous avez visité une ville que vous ne connaissiez pas. Vous avez envie de partager votre découverte. Vous postez un message sur un site Internet dédié aux voyages. Racontez votre expérience et expliquez ce qui vous a plu et ce qui vous a déplu dans la ville.',
@@ -6019,9 +5419,9 @@ Vous avez visité une ville que vous ne connaissiez pas. Vous avez envie de part
 ),
 (
   'expression_ecrite',
-  'EE_T3_169',
+  'EE_T3_152',
   'tache_3',
-  3,
+  422,
   'Thème du débat : « Vie en colocation entre adultes. »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -6036,9 +5436,9 @@ Document B :
 ),
 (
   'expression_ecrite',
-  'EE_T1_153',
+  'EE_T1_137',
   'tache_1',
-  1,
+  423,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Écrivez un message à votre ami(e) qui souhaite suivre des cours de langue dans votre école. Donnez les détails spécifiques pour aider votre ami(e) à faire son choix. (lieu, tarifs, types de cours disponible, etc.).',
@@ -6046,9 +5446,9 @@ Document B :
 ),
 (
   'expression_ecrite',
-  'EE_T2_153',
+  'EE_T2_135',
   'tache_2',
-  2,
+  424,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous travaillez dans une association qui aident les personnes âgées. Rédigez un un article de blog pour raconter vos expériences et convaincre d’autres personnes de rejoindre l’association.',
@@ -6056,9 +5456,9 @@ Vous travaillez dans une association qui aident les personnes âgées. Rédigez 
 ),
 (
   'expression_ecrite',
-  'EE_T3_170',
+  'EE_T3_153',
   'tache_3',
-  3,
+  425,
   'Thème du débat : « Les animaux de compagnie pour les enfants, pour ou contre ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -6073,9 +5473,9 @@ Beaucoup d’enfants demandent, un jour ou l’autre, un animal à leurs parents
 ),
 (
   'expression_ecrite',
-  'EE_T1_154',
+  'EE_T1_138',
   'tache_1',
-  1,
+  426,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Écrivez un message pour inviter vos amis à une fête de fin d’année.',
@@ -6083,9 +5483,9 @@ Beaucoup d’enfants demandent, un jour ou l’autre, un animal à leurs parents
 ),
 (
   'expression_ecrite',
-  'EE_T2_154',
+  'EE_T2_136',
   'tache_2',
-  2,
+  427,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous avez passé des vacances au Canada par le biais d’une agence de voyage. Écrivez un commentaire pour raconter votre expérience que vous avez vécue durant ce voyage.',
@@ -6093,9 +5493,9 @@ Vous avez passé des vacances au Canada par le biais d’une agence de voyage. �
 ),
 (
   'expression_ecrite',
-  'EE_T3_171',
+  'EE_T3_154',
   'tache_3',
-  3,
+  428,
   'Thème du débat : « Limitation Des Voitures Dans Les Centres-Villes. »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -6110,9 +5510,9 @@ Beaucoup de villes se lancent dans des projets d’interdiction de voitures en z
 ),
 (
   'expression_ecrite',
-  'EE_T1_155',
+  'EE_T1_139',
   'tache_1',
-  1,
+  429,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 le journal ” Bienvenue” compte publier un article qui parle des habitants de notre ville. Écrivez nous un message qui sera diffusé dans ce numéro. Vous êtes récemment installé dans cette ville, et il vous est demandé de vous présenter et décrire ensuite tous vos lieux préférés au sein de cette ville.',
@@ -6120,9 +5520,9 @@ le journal ” Bienvenue” compte publier un article qui parle des habitants de
 ),
 (
   'expression_ecrite',
-  'EE_T2_155',
+  'EE_T2_137',
   'tache_2',
-  2,
+  430,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous venez d’assister au concert de votre artiste favori. Vous écrivez un article sur votre blog personnel, pour partager cette expérience et inciter vos amis et les autres à assister à son prochain concert.',
@@ -6130,9 +5530,9 @@ Vous venez d’assister au concert de votre artiste favori. Vous écrivez un art
 ),
 (
   'expression_ecrite',
-  'EE_T3_172',
+  'EE_T3_155',
   'tache_3',
-  3,
+  431,
   'Thème du débat : « Les Jeux Vidéo : Pour ou contre ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -6142,360 +5542,240 @@ Document A :
 Les enfants, jusqu’à l’âge de l’adolescence, jouent d’une manière régulière aux jeux vidéo et à force, ils peuvent développer des pensée négatives et des comportements agressifs. En effet, une étude récente, menée sur des enfants âgés de 9 à 18 ans jouant fréquemment aux jeux vidéo, a révélé que le fait de jouer à des jeux de violence augmente considérablement un comportement agressif. Et selon Diego Gentil, ce phénomène est inévitable quelque soit le degré de vigilance des parents!
 
 Document B :
-On parle tout le temps des effets négatifs des jeux vidéo, mais ces derniers peuvent également avoir quelques avantages pour le fonctionnement du cerveau et pour la santé d’une manière générale. si on prend, par exemple, leur rapport pour le cerveau, les jeux vidéo permettent d’améliorer plusieurs fonctions cognitives telles que l’amélioration de la concentration, de la création et de la capacité d’analyse. Ceci peut paraitre évident, dans la mesure où lorsqu’on y joue, on doit toujours trouver.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_156',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+On parle tout le temps des effets négatifs des jeux vidéo, mais ces derniers peuvent également avoir quelques avantages pour le fonctionnement du cerveau et pour la santé d’une manière générale. si on prend, par exemple, leur rapport pour le cerveau, les jeux vidéo permettent d’améliorer plusieurs fonctions cognitives telles que l’amélioration de la concentration, de la création et de la capacité d’analyse. Ceci peut paraitre évident, dans la mesure où lorsqu’on y joue, on doit toujours trouver.
 
-Je cherche un vélo en bon état et bon marché. Contactez-moi par courriel',
+Je cherche un vélo en bon état et bon marché. Contactez-moi par courriel
+
+[email&#160;protected]',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T2_156',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+  'EE_T1_140',
+  'tache_1',
+  432,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous avez un vélo à vendre. Vous écrivez un courriel pour décrire votre vélo et proposer un prix. Vous lui donnez un rendez-vous pour essayer le vélo.',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T3_173',
+  'EE_T2_138',
+  'tache_2',
+  433,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Écrivez un message à vos amis pour leur partager votre expérience de travail temporaire effectué durant les vacances d’été.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_156',
   'tache_3',
-  3,
+  434,
   'Thème du débat : « La gratuité des transports en commun : pour ou contre ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
 • Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
 
 Document A :
-Écrivez un message à vos amis pour leur partager votre expérience de travail temporaire effectué durant les vacances d’été.
+Les transports en commun gratuits, c’est une très bonne idée. Cela permet de diminuer le nombre de voitures en ville et d’éviter les bouchons. C’est aussi une bonne mesure pour réduire la pollution et donc les risques de maladies respiratoires. Dans ma ville, il y a des transports en commun gratuits. On observe que les gens utilisent plus souvent les transports publics depuis que la gratuité est en place. Cette mesure a aussi profité aux commerçants : les gens reviennent faire leurs achats dans le centre-ville et vont moins dans les hypermarchés.
 
 Document B :
-Les transports en commun gratuits, c’est une très bonne idée. Cela permet de diminuer le nombre de voitures en ville et d’éviter les bouchons. C’est aussi une bonne mesure pour réduire la pollution et donc les risques de maladies respiratoires. Dans ma ville, il y a des transports en commun gratuits. On observe que les gens utilisent plus souvent les transports publics depuis que la gratuité est en place. Cette mesure a aussi profité aux commerçants : les gens reviennent faire leurs achats dans le centre-ville et vont moins dans les hypermarchés.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_157',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
 L’idée n’est pas bonne. D’une part, cela coûterait cher aux villes. Or, il me semble que la ville de Toulouse a d’autres problèmes à régler en priorité. Par exemple, il faudrait d’abord réaménager les espaces verts, cela profiterait à tout le monde. D’autre part, il vaudrait mieux réorganiser les transports publics au lieu de les rendre gratuits. Aujourd’hui, les gens préfèrent prendre leur voiture parce que la ville manque de transports publics dans certains quartiers éloignés. Enfin, selon moi, il faut garder les transports publics payants. Les gens respecteront davantage les équipements s’ils participent à leur financement en payant un titre de transport.',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T2_157',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+  'EE_T1_141',
+  'tache_1',
+  435,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous avez lu une annonce sur un site internet qui propose l’aide aux personnes qui souhaitent apprendre le français et les aider à trouver des personnes avec lesquelles elles peuvent pratiquer le français et qui leur permettront d’améliorer leur niveau. Envoyez un courriel pour répondre à cette annonce tout en vous présentant et en expliquant pourquoi vouloir pratiquer cette langue.',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T3_174',
-  'tache_3',
-  3,
-  'Thème du débat : « L’Interdiction des Voitures dans les Centres-Villes »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Vous avez été invité(e) à une fête en famille. Vous envoyez un message à vos amis pour raconter cette fête. Vous expliquez ce que vous avez le plus aimé.
-
-Document B :
-Avec des taux de pollution alarmantes constatés dans plusieurs endroits dans le monde, plusieurs villes ont réussi leur pari d’interdire la circulation de voitures en zones urbaines. La capitale de la Norvège, Oslo, a récemment opté pour cette solution et s’en félicite estimant que c’est une décision bénéfique pour tout le monde. Après un certain temps, les accidents diminueront, la dépendance au pétrole baissera et la qualité d’air sera meilleure.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_158',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Beaucoup de villes se lancent dans des projets d’interdiction de voitures en zone urbaine sans mettre en place les outils et les infrastructures nécessaires pour réussir cette transition. Certes, en diminuant les voitures, on aura moins d’embouteillages, de stress et surtout un air beaucoup moins pollué, mais en contrepartie, il faut prévoir entre- autres de gigantesques parkings pour garer les voitures, opter davantage pour le transport en commun (métros et bus) et prévoir des autorisations de circulation pour certains corps de métiers (comme la police, les urgentistes, les livreurs, …)',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_175',
-  'tache_3',
-  3,
-  'Thème du débat : « Les Jeux Vidéo : Pour ou contre ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Vous venez d’assister au concert de votre artiste favori. Vous écrivez un article sur votre blog personnel, pour partager cette expérience et inciter vos amis et les autres à assister à son prochain concert.
-
-Document B :
-Les enfants, jusqu’à l’âge de l’adolescence, jouent d’une manière régulière aux jeux vidéo et à force, ils peuvent développer des pensée négatives et des comportements agressifs. En effet, une étude récente, menée sur des enfants âgés de 9 à 18 ans jouant fréquemment aux jeux vidéo, a révélé que le fait de jouer à des jeux de violence augmente considérablement un comportement agressif. Et selon Diego Gentil, ce phénomène est inévitable quelque soit le degré de vigilance des parents!',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_159',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-On parle tout le temps des effets négatifs des jeux vidéo, mais ces derniers peuvent également avoir quelques avantages pour le fonctionnement du cerveau et pour la santé d’une manière générale. si on prend, par exemple, leur rapport pour le cerveau, les jeux vidéo permettent d’améliorer plusieurs fonctions cognitives telles que l’amélioration de la concentration, de la création et de la capacité d’analyse. Ceci peut paraitre évident, dans la mesure où lorsqu’on y joue, on doit toujours trouver.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_158',
+  'EE_T2_139',
   'tache_2',
-  2,
+  436,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Vous avez été invité(e) à une fête en famille. Vous envoyez un message à vos amis pour raconter cette fête. Vous expliquez ce que vous avez le plus aimé.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_142',
+  'tache_1',
+  437,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 écrivez un email pour répondre à votre ami(e) qui va passer le Week-end dans votre ville. Il faut décrire les moyens de transports.',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T3_176',
+  'EE_T2_140',
+  'tache_2',
+  438,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Vous avez assisté à une fete entre voisins dans votre quartier. Dans votre blog décrivez cet événement et racontez pourquoi vous l’avez aimé.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_157',
   'tache_3',
-  3,
+  439,
   'Thème du débat : « les distributeurs de boissons dans les lycées: Pour ou contre ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
 • Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
 
 Document A :
-Vous avez assisté à une fete entre voisins dans votre quartier. Dans votre blog décrivez cet événement et racontez pourquoi vous l’avez aimé.
+Je suis en faveur des distributeurs de boissons dans les lycées. Premièrement, ils offrent une commodité supplémentaire pour les élèves, notamment pour ceux qui n’ont pas le temps de passer à la cafétéria pendant les pauses. Deuxièmement, s’ils sont bien gérés, ces distributeurs peuvent offrir une gamme de boissons saines, comme de l’eau, du jus de fruits pur et des boissons aux fruits sans sucre ajouté. Ces distributeurs peuvent être une source de revenus supplémentaire pour l’école, qui peut être réinvestie dans l’amélioration des infrastructures ou des programmes scolaires.
 
 Document B :
-Je suis en faveur des distributeurs de boissons dans les lycées. Premièrement, ils offrent une commodité supplémentaire pour les élèves, notamment pour ceux qui n’ont pas le temps de passer à la cafétéria pendant les pauses. Deuxièmement, s’ils sont bien gérés, ces distributeurs peuvent offrir une gamme de boissons saines, comme de l’eau, du jus de fruits pur et des boissons aux fruits sans sucre ajouté. Ces distributeurs peuvent être une source de revenus supplémentaire pour l’école, qui peut être réinvestie dans l’amélioration des infrastructures ou des programmes scolaires.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_160',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
 Je suis contre l’installation de distributeurs de boissons dans les lycées. Ma principale préoccupation est liée à la santé des élèves. Malheureusement, beaucoup de ces distributeurs sont remplis de boissons sucrées et de sodas qui contribuent à l’obésité infantile et à d’autres problèmes de santé comme le diabète. Même les jus de fruits, qui peuvent sembler sains, contiennent souvent beaucoup de sucre. Les écoles devraient être des lieux qui encouragent des habitudes alimentaires saines et je crains que la présence de ces distributeurs n’encourage une consommation excessive de boissons sucrées.',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T2_159',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+  'EE_T1_143',
+  'tache_1',
+  440,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous voulez organiser une visite culturelle dans votre ville. Vous envoyez un message pour inviter vos amis. Vous leur donner toutes les informations nécessaires (activités, date, lieu, etc.).',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T3_177',
+  'EE_T2_141',
+  'tache_2',
+  441,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Vous avez assisté à une soirée écologique pour protéger la planète qui avait lieu dans votre université. Racontez-là dans votre blog et expliquez pourquoi vous l’avez aimée.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_158',
   'tache_3',
-  3,
+  442,
   'Thème du débat : « Les Devoirs À La Maison »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
 • Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
 
 Document A :
-Vous avez assisté à une soirée écologique pour protéger la planète qui avait lieu dans votre université. Racontez-là dans votre blog et expliquez pourquoi vous l’avez aimée.
+Selon des associations des parents d’élèves, les devoirs à la maison sont utiles, car ils permettent aux élèves d’apprendre à organiser leur temps de manière autonome. Pour les parents, les devoirs sont lien quotidien avec l’école. Même s’il est parfois difficile de suivre les devoirs après une journée de travail fatigant, ils apprécient ce moment partagé avec leurs enfants parce que ceux-ci sont contents que leurs parents s’intéressent à eux. C’est valorisant !
 
 Document B :
-Selon des associations des parents d’élèves, les devoirs à la maison sont utiles, car ils permettent aux élèves d’apprendre à organiser leur temps de manière autonome. Pour les parents, les devoirs sont lien quotidien avec l’école. Même s’il est parfois difficile de suivre les devoirs après une journée de travail fatigant, ils apprécient ce moment partagé avec leurs enfants parce que ceux-ci sont contents que leurs parents s’intéressent à eux. C’est valorisant !',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_161',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
 Nous protestons depuis longtemps contre les devoirs à la maison pour plusieurs raisons. Personne ne jamais prouve leur utilité pour améliorer les résultats des élèves. Beaucoup de parents ont peu de temps pour encadrer les devoirs de leurs enfants et certains parents ne savent pas le faire. Quant aux élèves, ceux qui ont réussi les exercices en classe perdent leurs temps à faire à la maison. Ceux qui ne sont pas aidés à la maison ne réussissent toujours pas, ils sont défavorisés. C’est pourquoi nous pensons qu’il faut supprimer les devoirs à la maison.',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T2_160',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+  'EE_T1_144',
+  'tache_1',
+  443,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Écrivez un courriel à vos amis pour les inviter à un anniversaire surpris pour votre meilleure ami(e), et proposez de lui offrir un cadeau commun (lieu cadeau, activités, etc.).',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T3_178',
+  'EE_T2_142',
+  'tache_2',
+  444,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Votre direction est à la recherche d’une salle pour la fête de fin d’année, capable d’accueillir 100 invités. Rédigez un message à la direction pour leur dire que vous avez trouvé un local idéal. (Lieu, tarifs et services etc.…)',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_159',
   'tache_3',
-  3,
+  445,
   'Thème du débat : « La sévérité des parents envers leurs enfants : approches divergentes »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
 • Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
 
 Document A :
-Votre direction est à la recherche d’une salle pour la fête de fin d’année, capable d’accueillir 100 invités. Rédigez un message à la direction pour leur dire que vous avez trouvé un local idéal. (Lieu, tarifs et services etc.…)
+Une étude menée par le Centre de recherche sur la parentalité de l’Université de Toronto en juin dernier a révélé que la majorité des parents adoptent des approches plus bienveillantes envers leurs enfants qu’auparavant. Cette étude a examiné un échantillon représentatif de mille familles dans différentes régions du pays et a montré que les parents encouragent une communication ouverte avec leurs enfants et adoptent des approches moins autoritaires.
 
 Document B :
-Une étude menée par le Centre de recherche sur la parentalité de l’Université de Toronto en juin dernier a révélé que la majorité des parents adoptent des approches plus bienveillantes envers leurs enfants qu’auparavant. Cette étude a examiné un échantillon représentatif de mille familles dans différentes régions du pays et a montré que les parents encouragent une communication ouverte avec leurs enfants et adoptent des approches moins autoritaires.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_162',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
 Un article d’opinion paru dans un magazine populaire en mars 2023 présente des témoignages de parents qui ont recours à des méthodes de discipline plus strictes, telles que des privations de liberté, des punitions corporelles et des critiques constantes. Certains parents estiment que ces approches sont nécessaires pour aider leurs enfants à développer leur responsabilité et leur discipline dans un monde de plus en plus compétitif. Cependant, de nombreux experts en éducation considèrent ces méthodes comme inappropriées et préconisent des approches plus positives et coopératives pour guider les enfants vers un comportement approprié.',
   true
-);
-
-INSERT INTO public.questions (epreuve, reference, tache, ordre, texte, actif) VALUES
+),
 (
   'expression_ecrite',
-  'EE_T2_161',
+  'EE_T2_143',
   'tache_2',
-  2,
+  446,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
-Répondez au courriel de votre ami Lucas pour lui donner des informations sur les nouveaux locaux de votre entreprise (lieu, disposition des pièces, équipements, etc.)',
+Vous avez passé une journée à la campagne avec vos amis. À votre retour, vous écrivez un message sur votre forum pour raconter à vos amis comment cette journée s’est passée. Vous expliquez ce que vous avez aimé (activités, lieu, animaux, etc…).',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T3_179',
+  'EE_T3_160',
   'tache_3',
-  3,
-  'Thème du débat : « Les Vêtements De Marque: Pour Ou Contre ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Vous avez assisté à un événement intitulé « Une semaine sans voiture ». Racontez votre expérience et donnez votre impression sur cette initiative. Décrivez le déroulement de l’événement (dates, lieu, activités proposées).
-
-Document B :
-Les vêtements de marques sont très importants pour les enfants et les adolescents. C''est un moyen de s''exprimer et de se rattacher à un groupe social. Cette attirance pour les marques est très présente chez les adolescents qui se cherchent et montrent leurs personnalités. Les enfants aiment également porter des vêtements de marques avec des images des dessins animés qu''ils regardent ou des logos qu''ils apprécient.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_163',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Les enfants grandissent très vite et les vêtements sont portés pendant une courte période. Ainsi, les vêtements deviennent rapidement trop petits. Mais il y a aussi le fait que les enfants usent assez rapidement les vêtements en jouant à l''extérieur avec les copains, en s''amusant dans l''herbe ou à l''air de jeux. Les habits sont très vite sales ou troués.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_162',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-« Je cherche un vélo en bon état et bon marché. Contactez-moi par courriel : [email&#160;protected] »',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_180',
-  'tache_3',
-  3,
+  447,
   'Thème du débat : « Les sévérité des parents envers les enfants »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
 • Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
 
 Document A :
-Vous avez un vélo à vendre. Vous écrivez un courriel pour décrire votre vélo et proposer un prix. Vous lui Donnez un RDV pour essayer le vélo.
+Je vais bientôt avoir 22 ans et j’habite toujours chez mes parents. Mon père et ma mère restent autoritaires avec moi, même si je suis majeure. Quand j’étais mineure, je n’avais pas le droit de dormir dehors, ni même de dépasser 21h lorsque je sortais avec des amies. Maintenant, peu de choses ont changé ; certes, j’ai le droit de veiller plus tard la nuit, mais ma mère ne cesse de m’appeler sur mon téléphone portable jusqu’à ce que je sois de retour.
 
 Document B :
-Vous avez passé une journée à la campagne avec vos amis. À votre retour, vous écrivez un message sur votre forum pour raconter à vos amis comment cette journée s’est passée. Vous expliquez ce que vous avez aimé (activités, lieu, animaux, etc…).',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_164',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Je vais bientôt avoir 22 ans et j’habite toujours chez mes parents. Mon père et ma mère restent autoritaires avec moi, même si je suis majeure. Quand j’étais mineure, je n’avais pas le droit de dormir dehors, ni même de dépasser 21h lorsque je sortais avec des amies. Maintenant, peu de choses ont changé ; certes, j’ai le droit de veiller plus tard la nuit, mais ma mère ne cesse de m’appeler sur mon téléphone portable jusqu’à ce que je sois de retour.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_163',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
 Les parents ont parfois peur d’être trop sévères avec leurs enfants. Ils craignent, qu’à cause d’un excès d’autorité, leurs enfants ne s’épanouissent pas et manquent plus tard de personnalité. Même si les parents acceptent, par amour, tout ce dont leurs enfants demandent, cela pourrait avoir des effets négatifs lorsqu’ils passent à l’âge adulte. En effet, pour vivre en communauté, il y a certaines règles à respecter.',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T3_181',
-  'tache_3',
-  3,
-  'Thème du débat : « Faut-il faire ses courses dans des petits magasins ou dans des supermarchés ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Vous voulez changer la décoration de votre appartement (meubles, peinture, objets, etc.). Vous écrivez un message à un(e) ami(e). Vous lui décrivez votre projet et vous lui demandez de vous aider.
-
-Document B :
-Cours Gratuits, Concerts, Jeux.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_165',
+  'EE_T1_145',
   'tache_1',
-  1,
+  448,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
-Rendez-Vous Vendredi, À partir de 9 Heures »',
+Vous voulez changer la décoration de votre appartement (meubles, peinture, objets, etc.). Vous écrivez un message à un(e) ami(e). Vous lui décrivez votre projet et vous lui demandez de vous aider.',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T2_164',
+  'EE_T2_144',
   'tache_2',
-  2,
+  449,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+« école De Musique !
+
+Cours Gratuits, Concerts, Jeux.
+
+Rendez-Vous Vendredi, À partir de 9 Heures »
 
 Vous avez participé à cet événement. Vous écrivez à vos amis pour raconter votre expérience et vous donnez votre opinion sur cette journée.',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T3_182',
+  'EE_T3_161',
   'tache_3',
-  3,
-  'Thème du débat : « Les Vols A Bas Prix »
+  450,
+  'Thème du débat : « Faut-il faire ses courses dans des petits magasins ou dans des supermarchés ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
 • Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
@@ -6504,51 +5784,55 @@ Document A :
 Le supermarché est très pratique ; on y trouve une grande variété de produits, tous à portée de main. Vous pouvez garer votre voiture dans le parking et faire le tour des rayons pour acheter tout ce dont vous avez besoin : fruits, légumes, fromages, viandes, boissons… De plus, les supermarchés offrent plusieurs marques pour un même produit, tout en proposant régulièrement des promotions et des remises.
 
 Document B :
-ASSOCIATION POUR LA SAUVEGARDE DES PETITS COMMERCES',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_166',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+ASSOCIATION POUR LA SAUVEGARDE DES PETITS COMMERCES
 
 Le défi « Février sans supermarché » a été créé pour limiter la superpuissance des supermarchés et, par conséquent, permettre aux petits commerces de survivre et de réaliser des chiffres d’affaires plus conséquents. Ce défi consiste à boycotter les supermarchés pendant une durée d’un mois, en faisant toutes ses courses dans les épiceries de quartier. Le client aura tout à gagner : il bénéficiera non seulement de produits frais de meilleure qualité, mais aura également l’opportunité de papoter avec les voisins.',
   true
-),
+);
+
+INSERT INTO public.questions (epreuve, reference, tache, ordre, texte, actif) VALUES
 (
   'expression_ecrite',
-  'EE_T2_165',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+  'EE_T1_146',
+  'tache_1',
+  451,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Écrivez un courriel à vos amis pour les inviter à un anniversaire surprise de votre meilleur(e) ami(e). (Lieu, date, horaire, etc.).',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T3_183',
+  'EE_T2_145',
+  'tache_2',
+  452,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Vous avez participé à une brocante (achat / vente de produits d’occasion) dans votre ville. Sur votre blog personnel, racontez pourquoi vous avez aimé cette activité.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_162',
   'tache_3',
-  3,
-  'Thème du débat : « Prise de position / Débat »
+  453,
+  'Thème du débat : « Les Vols A Bas Prix »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
 • Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
 
 Document A :
-Vous avez participé à une brocante (achat / vente de produits d’occasion) dans votre ville. Sur votre blog personnel, racontez pourquoi vous avez aimé cette activité.
+Je fais souvent mes voyages avec des compagnies aériennes à bas prix. Les compagnies Low-cost mettent à disposition des prix inférieurs à ceux proposés par les compagnies aériennes régulières. Cela me coûte des fois moins chère que de voyager en voiture ou en train. Avec ces tarifs-là, vous en doutez qu’il y a un hic, en effet, vous n’aurez le droit à aucun service à bord (ni aliments, ni boissons). Je dirais donc, que le low-cost n’est surtout pas fait pour les vols long courrier.
 
 Document B :
-Je fais souvent mes voyages avec des compagnies aériennes à bas prix. Les compagnies Low-cost mettent à disposition des prix inférieurs à ceux proposés par les compagnies aériennes régulières. Cela me coûte des fois moins chère que de voyager en voiture ou en train. Avec ces tarifs-là, vous en doutez qu’il y a un hic, en effet, vous n’aurez le droit à aucun service à bord (ni aliments, ni boissons). Je dirais donc, que le low-cost n’est surtout pas fait pour les vols long courrier.',
+Récemment, j’ai pris la décision de ne plus voyager avec les compagnies aériennes à bas prix. En effet, j’ai longuement réfléchi afin de prendre ma décision, mais ce choix était évident : des sièges inconfortables, des conditions de travail pénibles et surtout des avions vétustes qui remettent en cause la sécurité ! Dès lors, pour certains voyages, je vais opter pour la voiture ou même le train, ce dernier permet même de découvrir de jolis paysages. Quant aux longs trajets, vaut mieux prendre un vol en compagnie régulière.',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T1_167',
+  'EE_T1_147',
   'tache_1',
-  1,
+  454,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Votre ami souhaite commencer à faire du sport. Rédigez un message pour lui recommander une salle de sport située dans votre quartier (localisation, tarifs, types d’activités, etc.).',
@@ -6556,9 +5840,9 @@ Votre ami souhaite commencer à faire du sport. Rédigez un message pour lui rec
 ),
 (
   'expression_ecrite',
-  'EE_T2_166',
+  'EE_T2_146',
   'tache_2',
-  2,
+  455,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous avez participé à un événement qui vous a marqué (anniversaire, mariage, etc.). Racontez votre souvenir en décrivant ce qui vous a le plus marqué.',
@@ -6566,9 +5850,9 @@ Vous avez participé à un événement qui vous a marqué (anniversaire, mariage
 ),
 (
   'expression_ecrite',
-  'EE_T3_184',
+  'EE_T3_163',
   'tache_3',
-  3,
+  456,
   'Thème du débat : « La Lecture Pour Les Enfants »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -6583,9 +5867,9 @@ L’amour de la lecture se transmet de génération en génération bien que, ce
 ),
 (
   'expression_ecrite',
-  'EE_T1_168',
+  'EE_T1_148',
   'tache_1',
-  1,
+  457,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous avez passé un week-end à la campagne.  Écrivez un message à votre ami(e) pour lui décrire ce qui s’est passé.',
@@ -6593,19 +5877,9 @@ Vous avez passé un week-end à la campagne.  Écrivez un message à votre ami(
 ),
 (
   'expression_ecrite',
-  'EE_T2_167',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Votre direction est à la recherche d’une salle pour la fête de fin d’année, capable d’accueillir 100 invités.  Rédigez un message à la direction pour leur dire que vous avez trouvé un local idéal. (lieu, tarifs, services, etc.).',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_185',
+  'EE_T3_164',
   'tache_3',
-  3,
+  458,
   'Thème du débat : « Utilisation Des Nouvelles Technologies Dans Les Écoles : Pour Ou Contre ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -6620,9 +5894,9 @@ Inas : Je suis sceptique quant à l’usage intensif des technologies dans l’e
 ),
 (
   'expression_ecrite',
-  'EE_T1_169',
+  'EE_T1_149',
   'tache_1',
-  1,
+  459,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous avez commandé un objet sur Internet et après réception du colis, vous constatez que l’objet est cassé.  Rédigez un e-mail au service clientèle pour signaler le problème, décrivez le dommage de l’objet et précisez ce que vous attendez comme solution.',
@@ -6630,9 +5904,9 @@ Vous avez commandé un objet sur Internet et après réception du colis, vous co
 ),
 (
   'expression_ecrite',
-  'EE_T2_168',
+  'EE_T2_147',
   'tache_2',
-  2,
+  460,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous avez visité une exposition de votre artiste préféré. Rédigez un article exprimant votre expérience lors de la visite.  Décrivez ce que vous avez vu et vos impressions.',
@@ -6640,26 +5914,9 @@ Vous avez visité une exposition de votre artiste préféré. Rédigez un articl
 ),
 (
   'expression_ecrite',
-  'EE_T3_186',
-  'tache_3',
-  3,
-  'Thème du débat : « Les Devoirs À La Maison. »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Selon des associations des parents d’élèves, les devoirs à la maison sont utiles, car ils permettent aux élèves d’apprendre à organiser leur temps de manière autonome. Pour les parents, les devoirs sont lien quotidien avec l’école. Même s’il est parfois difficile de suivre les devoirs après une journée de travail fatigant, ils apprécient ce moment partagé avec leurs enfants parce que ceux-ci sont contents que leurs parents s’intéressent à eux. C’est valorisant !
-
-Document B :
-Nous protestons depuis longtemps contre les devoirs à la maison pour plusieurs raisons. Personne ne jamais prouve leur utilité pour améliorer les résultats des élèves. Beaucoup de parents ont peu de temps pour encadrer les devoirs de leurs enfants et certains parents ne savent pas le faire. Quant aux élèves, ceux qui ont réussi les exercices en classe perdent leurs temps à faire à la maison. Ceux qui ne sont pas aidés à la maison ne réussissent toujours pas, ils sont défavorisés. C’est pourquoi nous pensons qu’il faut supprimer les devoirs à la maison.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_170',
+  'EE_T1_150',
   'tache_1',
-  1,
+  461,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 France Télévision prépare un reportage sur le sport amateur. 
@@ -6668,9 +5925,9 @@ France Télévision prépare un reportage sur le sport amateur.
 ),
 (
   'expression_ecrite',
-  'EE_T2_169',
+  'EE_T2_148',
   'tache_2',
-  2,
+  462,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous avez passé des vacances dans une belle région de votre pays.  Vous écrivez un message à vos amis dans lequel vous décrivez votre expérience, vous expliquer pourquoi vous avez beaucoup aimé ce séjour.',
@@ -6678,9 +5935,9 @@ Vous avez passé des vacances dans une belle région de votre pays.  Vous écri
 ),
 (
   'expression_ecrite',
-  'EE_T3_187',
+  'EE_T3_165',
   'tache_3',
-  3,
+  463,
   'Thème du débat : « Les Écoles Privées Ou Publiques ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -6695,9 +5952,9 @@ Dans les collèges privés, il y a peu d’élèves de milieux sociaux défavori
 ),
 (
   'expression_ecrite',
-  'EE_T1_171',
+  'EE_T1_151',
   'tache_1',
-  1,
+  464,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 “Salut, j’ai appris que tu vas à une salle de sport et qu’elle est magnifique. Peux-tu m’en dire plus “.  Écrivez un message pour répondre à votre ami concernant ce sujet.',
@@ -6705,9 +5962,9 @@ Dans les collèges privés, il y a peu d’élèves de milieux sociaux défavori
 ),
 (
   'expression_ecrite',
-  'EE_T2_170',
+  'EE_T2_149',
   'tache_2',
-  2,
+  465,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous avez lu sur un forum un débat concernant les formations en ligne. Écrivez un message en décrivant votre expérience (cours de langue, formation professionnelle, etc.).  Donnez votre avis sur ce que vous avez aimé et ce que vous n’en avez pas.',
@@ -6715,4058 +5972,116 @@ Vous avez lu sur un forum un débat concernant les formations en ligne. Écrive
 ),
 (
   'expression_ecrite',
-  'EE_T3_188',
-  'tache_3',
-  3,
-  'Thème du débat : « Les Vêtements De Grande Marque »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Les vêtements de marques sont très importants pour les enfants et les adolescents. C’est un moyen de s’exprimer et de se rattacher à un groupe social. Cette attirance pour les marques est très présente chez les adolescents qui se cherchent et montrent leurs personnalités. Les enfants aiment également porter des vêtements de marques avec des images des dessins animés qu’ils regardent ou des logos qu’ils apprécient.
-
-Document B :
-Les enfants grandissent très vite et les vêtements sont portés pendant une courte période. Ainsi, les vêtements deviennent rapidement trop petits.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_172',
+  'EE_T1_152',
   'tache_1',
-  1,
+  466,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
-Mais il y a aussi le fait que les enfants usent assez rapidement les vêtements en jouant à l’extérieur avec les copains, en s’amusant dans l’herbe ou à l’air de jeux. Les habits sont très vite sales ou troués.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_171',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Vous souhaitez fêter votre anniversaire dans un restaurant. Vous invitez vos amis.  Vous leur écrivez un courriel pour leur donner toutes les informations nécessaires (lieu, date, menu, prix…) et vous leur demandez une réponse.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_189',
-  'tache_3',
-  3,
-  'Thème du débat : « Les Caméras De Surveillance à L''école : Pour ou Contre ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Vous avez quitté la ville afin de vous installer à la campagne.  Sur votre blog, vous expliquez pourquoi vous avez fait ce choix et vous présentez les avantages de votre nouvelle vie.
-
-Document B :
-Dans l’école où j’enseigne à Montréal, les caméras de surveillance sont omniprésentes. Leur présence permet de dissuader les élèves de commettre des actes de violence. Les enseignants, les parents et la majorité des élèves les acceptent volontiers, car ils se sentent rassurés quant à la sécurité des enfants et que cela permet aux enseignants de travailler dans de bonnes conditions. Toutefois, certains élèves considèrent que cela porte atteinte à leur vie privée.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_173',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Je suis opposé à l’installation des caméras de surveillance dans nos écoles à Montréal. Les résultats obtenus dans les pays où ce système est utilisé ne sont pas convaincants. Les personnes mal intentionnées peuvent facilement contourner les caméras, qui sont très visibles. Les problèmes de discipline dans une école peuvent être résolus en améliorant la communication entre les enseignants, l’administration et les élèves. Il est également nécessaire de faire respecter et expliquer les règles de l’école par tous, plutôt que de recourir aux caméras.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_172',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-C’est bientôt l’anniversaire de votre amie Flavie. Vous voulez lui offrir un voyage et écrivez à votre amie Flavie.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_190',
-  'tache_3',
-  3,
-  'Thème du débat : « Les Caméras De Surveillance à L''école : Pour ou Contre ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-–  Expliquez votre projet.
-
-Document B :
 – Décrivez le programme du voyage (activités, destination, logement, etc.).',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T1_174',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Vous avez lu ce message sur un site internet :',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_173',
+  'EE_T2_150',
   'tache_2',
-  2,
+  467,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
+Vous avez lu ce message sur un site internet :
+
 Je suis étudiante et je vais partir étudier un an à l’étranger. Mais, j’ai un peu peur. Qui a déjà fait cela ? 
- Justine.',
+ Justine.
+
+Vous répondez à Justine : 
+ – Racontez un séjour d’étude que vous avez fait dans un pays étranger. 
+ – Expliquez pourquoi cette expérience a été positive ou négative pour vous',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T3_191',
+  'EE_T3_166',
   'tache_3',
-  3,
+  468,
   'Thème du débat : « Les Caméras De Surveillance à L''école : Pour ou Contre ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
 • Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
 
 Document A :
-Vous répondez à Justine : 
- – Racontez un séjour d’étude que vous avez fait dans un pays étranger. 
- – Expliquez pourquoi cette expérience a été positive ou négative pour vous
+Maman d’une petite fille, Anna témoigne :
+
+« Lorsque je travaillais 5 jours par semaine, j’utilisais mon temps de repos pour faire des tâches ménagères : rangement, nettoyage, lessives, etc. Je devais aussi faire les courses le samedi, au moment où il y a le plus de monde ! Maintenant, j’ai plus de temps libre. Je profite de ma fille et je peux faire des activités qui me plaisent. Je ne voudrais pas travailler de nouveau 5 jours par semaine. »
 
 Document B :
-Maman d’une petite fille, Anna témoigne :',
+Jack, 45 ans, donne son avis :
+
+« La réduction du temps de travail hebdomadaire n’est pas une bonne idée. La quantité de travail ne diminue pas, et le nombre de réunions non plus. On doit donc tout faire plus vite ! Selon moi, cette organisation du temps de travail est beaucoup plus fatigante. La réduction du temps de travail peut avoir des conséquences très négatives. »',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T1_175',
+  'EE_T1_153',
   'tache_1',
-  1,
+  469,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
-« Lorsque je travaillais 5 jours par semaine, j’utilisais mon temps de repos pour faire des tâches ménagères : rangement, nettoyage, lessives, etc. Je devais aussi faire les courses le samedi, au moment où il y a le plus de monde ! Maintenant, j’ai plus de temps libre. Je profite de ma fille et je peux faire des activités qui me plaisent. Je ne voudrais pas travailler de nouveau 5 jours par semaine. »',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_174',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Jack, 45 ans, donne son avis :',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_192',
-  'tache_3',
-  3,
-  'Thème du débat : « Livraison Des Repas Au Bureau : Pour Ou Contre ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-« La réduction du temps de travail hebdomadaire n’est pas une bonne idée. La quantité de travail ne diminue pas, et le nombre de réunions non plus. On doit donc tout faire plus vite ! Selon moi, cette organisation du temps de travail est beaucoup plus fatigante. La réduction du temps de travail peut avoir des conséquences très négatives. »
-
-Document B :
 Vous avez récemment déménagé dans une nouvelle ville. Invitez votre amie à venir passer les vacances chez vous.',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T1_176',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+  'EE_T2_151',
+  'tache_2',
+  470,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Que pensez-vous de l’installation d’une télévision dans la chambre ? Partagez votre avis dans un article de blog.',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T2_175',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Yannick : 
- D’après moi, l’État devrait organiser de grands événements sportifs comme les Jeux Olympiques, la Coupe du Monde ou la Coupe d’Afrique. Ces compétitions sont des occasions uniques de mettre en valeur notre culture et d’attirer l’attention du monde entier. Elles favorisent aussi l’économie en créant des emplois et en modernisant les infrastructures, ce qui profite à long terme à toute la population.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_193',
+  'EE_T3_167',
   'tache_3',
-  3,
-  'Thème du débat : « Rôle De La Télévision Dans L''éducation Des Enfants. »
+  471,
+  'Thème du débat : « Les Caméras De Surveillance à L''école : Pour ou Contre ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
 • Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
 
 Document A :
-Karim : 
- Il faut dire que ces grands événements sportifs représentent des dépenses considérables pour l’État. Au lieu d’investir dans des compétitions coûteuses, je pense que les fonds publics devraient être prioritairement alloués à des secteurs essentiels comme la santé et l’éducation. De plus, de nombreux pays ayant accueilli ces événements se sont retrouvés endettés, sans bénéfices réels pour leurs citoyens.
+Yannick : 
+ D’après moi, l’État devrait organiser de grands événements sportifs comme les Jeux Olympiques, la Coupe du Monde ou la Coupe d’Afrique. Ces compétitions sont des occasions uniques de mettre en valeur notre culture et d’attirer l’attention du monde entier. Elles favorisent aussi l’économie en créant des emplois et en modernisant les infrastructures, ce qui profite à long terme à toute la population.
 
 Document B :
+Karim : 
+ Il faut dire que ces grands événements sportifs représentent des dépenses considérables pour l’État. Au lieu d’investir dans des compétitions coûteuses, je pense que les fonds publics devraient être prioritairement alloués à des secteurs essentiels comme la santé et l’éducation. De plus, de nombreux pays ayant accueilli ces événements se sont retrouvés endettés, sans bénéfices réels pour leurs citoyens.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_154',
+  'tache_1',
+  472,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
 votre ami(e) veut découvrir la région dans laquelle vous habitez. Écrivez lui un message pour lui proposer des sites à visiter.',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T1_177',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+  'EE_T2_152',
+  'tache_2',
+  473,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous avez participé à un cours de sport dans une salle. Écrivez un article de blog parlant de cette expérience et en exprimant également votre avis par rapport à cette salle.',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T2_176',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Grâce à la livraison en entreprise, les employés bénéficieront d’un gain de temps notable. Il n’est plus question d’aller sortir loin du lieu de travail pour trouver de quoi manger. En complément, l’argent et l’énergie économisée permettent d’être encore plus efficace au travail. Sans pour autant mettre fin à une session importante liée au travail, le repas sera déjà prêt et pourra attendre la fin d’une conférence, d’une réunion ou d’un rendez-vous. Il s’agit d’une véritable solution dédiée aux entreprises ayant une activité intense et qui requiert la présence continue de leurs employés. 
- Et en ce qui concerne les inconvénients ?',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_194',
+  'EE_T3_168',
   'tache_3',
-  3,
-  'Thème du débat : « Cuisinier Amateur Ou Cuisinier Professionnel ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Cette pratique révèle souvent des inconvénients à cause de sa notoriété montante. Certains jours, il arrive que les responsables de livraisons peuvent être envahis par un grand nombre de livraisons à faire et cela risque de générer des perturbations liées au stress de l’attente. De même pour les employés, une trop longue heure de travail peut causer un état de fatigue si ce dernier ne quittera pas son bureau pour le repas. Dans tous les cas, il est recommandé de toujours marquer des temps de pause lors des durs labeurs.
-
-Document B :
-Écrivez un message dans le journal de votre université pour rechercher un partenaire avec qui faire du sport.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_178',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Écrivez dans un article de blog pour raconter votre arrivée dans un pays étranger en donnant vos impressions.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_177',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-La télévision est un outil de communication et de divertissement largement répandu dans notre société moderne. Son influence est incontestable, tant sur les individus que sur la culture en général. Elle permet de diffuser des informations, d’offrir des divertissements variés et de favoriser la diffusion de la culture. La télévision est présente dans de nombreux foyers et constitue une source d’information et de divertissement accessibles à tous. Grâce à sa portée et à sa capacité à toucher un large public, la télévision joue un rôle important dans la transmission des connaissances et la sensibilisation aux enjeux sociaux.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_195',
-  'tache_3',
-  3,
-  'Thème du débat : « Vivre En Colocation »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-La télévision peut également présenter certains inconvénients. Les émissions télévisées peuvent parfois véhiculer des stéréotypes, des préjugés et des valeurs discutables. De plus, le temps passé devant la télévision peut réduire le temps consacré à d’autres activités plus enrichissantes, telles que la lecture, les interactions sociales ou la pratique d’un sport. Il est important de faire preuve de discernement et de réguler l’exposition à la télévision, en particulier pour les enfants, afin de préserver un équilibre sain entre les différentes formes d’apprentissage et de divertissement.
-
-Document B :
-Vous avez invité votre ami Cédric à votre mariage au Château de Chombony et il vous a répondu qu’il ne connait pas ce château.  Décrivez à votre ami (lieu, localisation, transports, etc.).',
-  true
-);
-
-INSERT INTO public.questions (epreuve, reference, tache, ordre, texte, actif) VALUES
-(
-  'expression_ecrite',
-  'EE_T1_179',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Dans votre blog, Racontez votre expérience de l’apprentissage d’une langue étrangère  (vous écrivez sur un forum internet en racontant votre expérience en apprenant une langue étrangère) .',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_178',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Les amateurs ont fait des recettes réussies, mais ils manquent toujours des compétences et des technique, c’est pourquoi la formations et l’expérience sont nécessaires pour être un vrai cuisinier.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_196',
-  'tache_3',
-  3,
-  'Thème du débat : « Le Travail : Favorable ou Défavorable ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Il parle des cuisiniers qui ont appris le métier de cuisiniers sur internet et qui ont le buzz sur les réseaux sociaux il raconte aussi l’histoire d’une amatrice qui est devenue professionnelle et qui a rédigé plusieurs livres sur la cuisine pour les amateurs de cuisine à la maison.
-
-Document B :
-Votre ami Mehdi vient de d’emménager dans votre ville et cherche des renseignements sur les moyens de transports. Écrivez un message en lui donnant les informations nécessaires (types de transport, abonnement, tarif, etc.)',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_180',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Exprimez votre admiration pour une personnalité, célèbre ou non, en vous appuyant sur ses actions spécifiques.  Rédigez un article de blog en détaillant les actions remarquables de cette personne et expliquez pourquoi vous l’aimez.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_179',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-La vie en colocation offre de nombreux avantages. Partager un logement avec d’autres personnes permet de réduire les dépenses, que ce soit le loyer, les factures ou les frais généraux. De plus, cela favorise les interactions sociales et les échanges culturels. Vivre avec des colocataires permet de rencontrer des individus de différents horizons, de nouer des amitiés et de partager des expériences enrichissantes.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_197',
-  'tache_3',
-  3,
-  'Thème du débat : « Les Relations Amicales Au Travail »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-La colocation peut cependant présenter des défis. Les différences de personnalité et de mode de vie entre les colocataires peuvent entraîner des tensions. La gestion des responsabilités et des tâches ménagères peut également être source de conflits. De plus, la colocation peut limiter l’intimité et l’espace personnel. Il est important d’établir une communication ouverte et respectueuse, ainsi que des règles de vie commune, pour favoriser une cohabitation harmonieuse.
-
-Document B :
-Vous voulez partir en week-end avec vos amis le mois prochain. Vous leur écrivez un message pour décrire votre projet (lieu, transport, activités, etc.).',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_181',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Tout quitter pour partir en voyage pendant un an: bonne ou mauvaise idée ?',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_180',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Répondez sur notre site Internet : “voyage.internaute.fr”. Vous écrivez un message sur ce site internet, vous répondez à la question posée en prenant des exemples de votre vie personnelle.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_198',
-  'tache_3',
-  3,
-  'Thème du débat : « L''interdiction des voitures en ville. »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Le travail est au centre de notre vie. Dès l’enfance, on entend souvent la question: «Qu’est-ce que tu veux faire quand tu seras grand ? ». Le travail devrait être synonyme de réussite et de satisfaction, mais il est trop souvent synonyme de fatigue et d’emprisonnement. Aujourd’hui, beaucoup pensent que l’on ne passe pas assez de temps avec sa famille, ses amis. Il est urgent de revoir la place occupée par le travail dans notre société. Certains pensent que travailler moins permettrait d’avoir plus de temps libre pour mieux vivre.
-
-Document B :
-Certaines personnes ont décidé d’arrêter de travailler pour changer de mode de vie. Pourtant, aujourd’hui, travailler, c’est exister La question : «Qu’est-ce que tu fais dans la vie ?» revient souvent lors d’une première rencontre. Elle prouve que l’emploi fait partie de notre identité. D’après le spécialiste Jean-Daniel Remond, la vie en entreprise est très importante. Les contacts quotidiens, les réseaux, les amitiés, l’impression d’être utile, mais aussi les difficultés, tout cela contribue à construire notre personnalité et notre identité.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_182',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-“Bonjour, ça y est, j’ai obtenu mon visa pour le Canada. Je vais arriver le 3 mars. Est-ce que tu pourras m’aider à trouver un hôtel pour la première semaine ? Merci d’avance pour ton aide.”',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_181',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Vous avez trouvé un hôtel pour Matthias. Vous lui écrivez un courriel. Dans ce message vous décrivez l’hôtel et vous lui donnez toutes les informations utiles (situation, tarif…).',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_199',
-  'tache_3',
-  3,
-  'Thème du débat : « l''utilisation du plastique, pour ou contre »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Vous êtes allés voir un spectacle (film, pièce de théâtre, concert, etc.) avec des amis. Vous l’avez aimé. Sur votre blog, vous racontez votre soirée et vous expliquez pourquoi vous avez aimé le spectacle.
-
-Document B :
-Les amitiés entre collègues au travail peuvent être extrêmement bénéfiques. Elles favorisent un climat de travail agréable et une ambiance positive au sein de l’équipe. Avoir des amis parmi ses collègues permet de renforcer les liens professionnels et de créer un sentiment de camaraderie. Cela peut contribuer à une meilleure communication, une collaboration plus étroite et une résolution plus efficace des problèmes. De plus, partager des moments de convivialité en dehors du travail, comme des déjeuners ou des activités après le bureau peut renforcer les liens et créer une dynamique de groupe solide.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_183',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Il est important de trouver un équilibre entre amitié et professionnalisme au travail. Les amitiés excessivement proches peuvent parfois créer des tensions ou des conflits lorsque des décisions professionnelles doivent être prises. De plus, les amitiés exclusives entre certains collègues peuvent exclure les autres membres de l’équipe, ce qui peut nuire à la cohésion et à la collaboration. Il est essentiel de maintenir des limites claires et de veiller à ce que les amitiés ne compromettent pas le professionnalisme, la hiérarchie ou la productivité au sein de l’organisation.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_182',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Vous voulez communiquer avec quelqu’un en français en toute convivialité. Vous écrivez un courriel à cette adresse(&#8230;) pour qu''on vous propose quelqu’un (centre d’intérêt, présentez vous&#8230;)',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_200',
-  'tache_3',
-  3,
-  'Thème du débat : « Le livre papier ou le livre numérique? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Écrivez un message à vos amis pour leur raconter à propos d''une fête à laquelle vous avez assisté en famille.
-
-Document B :
-Le dernier exemple vient d’Oslo, la capitale norvégienne. Une responsable du projet annonce : « Ce sera mieux pour les piétons, les cyclistes, les commerces. Mieux pour tout le monde ». Moins de voitures, c’est la reconquête de la ville par ses habitants. Les bénéfices pour la qualité de l’air et pour l’économie locale seront garantis.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_184',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Il faut réfléchir avant d’interdire les voitures en ville. II est vrai que l’idée d’une ville sans circulation et beaucoup moins polluée est tentante. Mais la réalisation de cette idée coûte cher. De plus, où se gareront les voitures interdites de circulation au centre-ville ? II faut aussi bien préciser que les véhicules professionnels que conduisent les policiers, les pompiers, les ambulanciers, les livreurs auront le droit de circuler. Enfin, pour que les habitants puissent se déplacer facilement il faut développer les transports en commun.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_183',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Je cherche un endroit pour déjeuner en plein air ce week-end. Qu’est-ce que tu me propose ?',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_201',
-  'tache_3',
-  3,
-  'Thème du débat : « Habitudes alimentaires pour ou contre? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Vous répondez à votre amie Barbara. Vous décrivez le lieu (parc, jardin, terrasse, etc.)
-
-Document B :
-Vous avez visité un nouveau pays pendant vos vacances. Sur un site internes, vous racontez votre expérience et vous donnez votre opinion sur ce pays.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_185',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Franck soutient l’utilisation limitée du plastique, soulignant son importance dans de nombreux secteurs, notamment médical et alimentaire. Pour lui, le plastique est vital pour la conservation des aliments et la stérilisation des équipements médicaux. Il prône une utilisation responsable et le recyclage, mais reconnaît que certains usages du plastique sont indispensables pour la société moderne.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_184',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Amicha s’oppose fermement à l’utilisation du plastique, mettant en avant son impact environnemental dévastateur. Elle argue que les déchets plastiques polluent les océans et les écosystèmes, causant des dommages irréparables. Amicha milite pour des alternatives écologiques et durables, insistant sur l’urgence de renoncer au plastique pour protéger l’environnement et la santé publique.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_202',
-  'tache_3',
-  3,
-  'Thème du débat : « Prise de position / Débat »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Je vais bientôt vivre dans ton quartier. Je cherche un endroit sympathique pour faire mes courses. Est-ce que tu connais un marché intéressant ?
-
-Document B :
-Merci d’avance et à bientôt !',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_186',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Vous répondez à votre ami Bernard. Dans votre message, vous décrivez un marché de votre quartier que vous aimez bien (lieu, horaires, produits, etc.)',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_185',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Vous faites partie d’une association de quartier qui propose des activités aux enfants (aide aux devoirs, sorties, jeux, etc.) Sur votre site internet, vous racontez votre expérience et vous expliquez pourquoi ce type d’association est utile.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_203',
-  'tache_3',
-  3,
-  'Thème du débat : « Prise de position / Débat »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Depuis plusieurs années maintenant, de nombreux lecteurs ont décidé de remplacer la bibliothèque traditionnelle par des livres numériques. Selon eux, l’avantage est avant tout économique. D’une part, le livre numérique permet d’économiser du papier, d’autre part la version numérique d’un livre est généralement moins chère que la version papier. Les livres numériques ont un autre avantage : ils permettent une ouverture sur le monde pour les personnes en situation de handicap. Certaines options, comme la possibilité d’augmenter la taille des lettres, facilitent la lecture pour les personnes malvoyantes.
-
-Document B :
-Le livre numérique remplacera-t-il le livre papier ? « Non », répondront la plupart des lecteurs. Le livre papier est un beau support. Quel plaisir de le prêter aux gens qu’on aime ou de l’offrir en glissant un petit mot dedans ! Le livre papier a une histoire, l’odeur du neuf ou de l’ancien… Il transmet beaucoup d’émotions alors que le livre numérique à un côté un peu impersonnel. De plus, les livres numériques demandent de posséder un minimum de connaissances en informatique, ce qui peut être une difficulté pour certaines personnes.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_187',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-le texte affirme que les zoos ont beaucoup d’avantages, même pour les animaux en la voie de disparition, les animaux sont bien soignées dans les zoos. Les études montrent que le nombre de reproduction a augmenté grâce aux zoos et ils peuvent sauver la vie des animaux.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_186',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-le texte a montré qu’il ne faut pas mettre les animaux sauvages dans les zoos parce que ce n’est pas leur environnement. C’est un prison pour eux. On trouve des ours polaires dans un zoo dont la température est de 15 degrés. Les animaux ont besoin de la nature et de la liberté.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_204',
-  'tache_3',
-  3,
-  'Thème du débat : « Les parcs zoologiques : Pour ou contre ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-www.manger-international.com 
- Ce mois-ci, nous nous intéressons aux habitudes alimentaires dans le 
- monde. Racontez-nous comment mangent les habitants de votre pays ! 
- Les 10 premiers témoignages seront publiés sur notre site !
-
-Document B :
-Vous avez lu cette annonce Vous écrivez un article pour les lecteurs du site www.manger-international.com Vous expliquez comment mangent les habitants de votre pays et vous indiquez quelles habitudes 
- vous plaisent ou vous déplaisent, et pourquoi',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_188',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Beaucoup de gens pensent encore que les jeux vidéo nous rendent bêtes. Pourtant de nombreuses études prouvent le contraire. Ainsi, selon une de ces études, les utilisateurs de jeux de course développeraient leur sens de l’orientation, leur mémoire et la précision de leurs mouvements. D’autres études montrent clairement une amélioration de la rapidité et de la concentration de tous les joueurs. Et c’est sans parler des jeux d’entraînement destinés aux personnes âgées pour consolider la mémoire et la vivacité d’esprit… Bref, c’est scientifique, le jeu vidéo rend plus intelligent !',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_187',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Les jeux vidéo, sur console ou sur ordinateur, chez soi ou en salle, seul, avec des amis ou en ligne avec des inconnus, peuvent provoquer une dépendance chez certaines personnes. On parle d’addiction quand le jeu vidéo devient le principal (ou l’unique) centre d’intérêt, à la place d’autres activités (relationnelle, professionnelle, scolaire, loisirs, sport…). Cette dépendance est particulièrement préoccupante lors de l’adolescence, période importante où les jeux vidéo peuvent avoir un impact négatif sur les résultats scolaires.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_205',
-  'tache_3',
-  3,
-  'Thème du débat : « Jeux vidéo. »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Tout quitter pour partir en voyage pendant un an: bonne ou mauvaise idée ?
-
-Document B :
-Répondez sur notre site Internet : “voyage.internaute.fr”. Vous écrivez un message sur ce site internet, vous répondez à la question posée en prenant des exemples de votre vie personnelle.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_189',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Le travail est au centre de notre vie. Dès l’enfance, on entend souvent la question: «Qu’est-ce que tu veux faire quand tu seras grand ? ». Le travail devrait être synonyme de réussite et de satisfaction, mais il est trop souvent synonyme de fatigue et d’emprisonnement. Aujourd’hui, beaucoup pensent que l’on ne passe pas assez de temps avec sa famille, ses amis. Il est urgent de revoir la place occupée par le travail dans notre société. Certains pensent que travailler moins permettrait d’avoir plus de temps libre pour mieux vivre.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_188',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Certaines personnes ont décidé d’arrêter de travailler pour changer de mode de vie. Pourtant, aujourd’hui, travailler, c’est exister La question : «Qu’est-ce que tu fais dans la vie ?» revient souvent lors d’une première rencontre. Elle prouve que l’emploi fait partie de notre identité. D’après le spécialiste Jean-Daniel Remond, la vie en entreprise est très importante. Les contacts quotidiens, les réseaux, les amitiés, l’impression d’être utile, mais aussi les difficultés, tout cela contribue à construire notre personnalité et notre identité.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_206',
-  'tache_3',
-  3,
-  'Thème du débat : « Le Travail : Favorable ou Défavorable ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Je fais souvent mes voyages avec des compagnies aériennes à bas prix. Les compagnies Low-cost mettent à disposition des prix inférieurs à ceux proposés par les compagnies aériennes régulières. Cela me coûte des fois moins chère que de voyager en voiture ou en train. Avec ces tarifs-là, vous en doutez qu’il y a un hic, en effet, vous n’aurez le droit à aucun service à bord (ni aliments, ni boissons). Je dirais donc, que le low-cost n’est surtout pas fait pour les vols long courrier.
-
-Document B :
-Récemment, j’ai pris la décision de ne plus voyager avec les compagnies aériennes à bas prix. En effet, j’ai longuement réfléchi afin de prendre ma décision, mais ce choix était évident : des sièges inconfortables, des conditions de travail pénibles et surtout des avions vétustes qui remettent en cause la sécurité ! Dès lors, pour certains voyages, je vais opter pour la voiture ou même le train, ce dernier permet même de découvrir de jolis paysages. Quant aux longs trajets, vaut mieux prendre un vol en compagnie régulière.ç',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_190',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Je fais souvent mes voyages avec des compagnies aériennes à bas prix. Les compagnies Low-cost mettent à disposition des prix inférieurs à ceux proposés par les compagnies aériennes régulières. Cela me coûte des fois moins chère que de voyager en voiture ou en train. Avec ces tarifs-là, vous en doutez qu’il y a un hic, en effet, vous n’aurez le droit à aucun service à bord (ni aliments, ni boissons). Je dirais donc, que le low-cost n’est surtout pas fait pour les vols long courrier.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_189',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Récemment, j’ai pris la décision de ne plus voyager avec les compagnies aériennes à bas prix. En effet, j’ai longuement réfléchi afin de prendre ma décision, mais ce choix était évident : des sièges inconfortables, des conditions de travail pénibles et surtout des avions vétustes qui remettent en cause la sécurité ! Dès lors, pour certains voyages, je vais opter pour la voiture ou même le train, ce dernier permet même de découvrir de jolis paysages. Quant aux longs trajets, vaut mieux prendre un vol en compagnie régulière.ç',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_207',
-  'tache_3',
-  3,
-  'Thème du débat : « vols à bas prix »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-loDe plus en plus d’écoles décident de mettre en place un menu sans viande dans les cantines, au moins deux fois par semaine. Certaines études ont montré que les enfants consomment trop de protéines animales. C’est donc une question de santé : les écoles ont choisi de remplacer la viande par d’autres produits (soja, céréales, légumes), moins gras et utiles à la croissance des enfants. Ces menus sans viandes à la cantine reviennent moins cher aux familles. Cette idée plaît beaucoup aux parents comme aux enfants.
-
-Document B :
-La décision de supprimer la viande dans les cantines ne plaît pas à tout le monde. En effet, c’est un produit cher : la cantine est le seul endroit où les enfants de familles en difficulté peuvent manger. Les producteurs locaux de viande sont également mécontents : une partie de leur production est réservée aux cantines, il s’agit donc d’une perte financière. Enfin, beaucoup d’enfants interrogés déclarent tout de même préférer les steaks de bœuf aux steaks de soja qui, selon eux, ont peu de goût.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_191',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Avec des taux de pollution alarmantes constatés dans plusieurs endroits dans le monde, plusieurs villes ont réussi leur pari d’interdire la circulation de voitures en zones urbaines. La capitale de la Norvège, Oslo, a récemment opté pour cette solution et s’en félicite estimant que c’est une décision bénéfique pour tout le monde. Après un certain temps, les accidents diminueront, la dépendance au pétrole baissera et la qualité d’air sera meilleure.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_208',
-  'tache_3',
-  3,
-  'Thème du débat : « vols à bas prix »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Je suis vraiment intéressé à l’idée de voyager et de découvrir un autre pays. Peux-tu me parler un peu de ton pays et de sa culture ?
-
-Document B :
-Écrivez un message à votre ami Marc, qui veut voyager et découvrir un autre pays, pour lui parler de votre pays et de sa culture (lieux, sites touristiques, monuments, etc). »',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_192',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Certains postes sont majoritairement occupés par des hommes. Au Québec, l’égalité entre les femmes et les hommes est respectée, les femmes peuvent les métiers réservés aux hommes tel que les postes de direction.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_190',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Malgré les efforts pour imposer la parité à tous les postes dans les entreprises et les collectivités, il y a, dans les faits, des métiers où les femmes sont largement majoritaires tels que : les sage-femmes. De plus, les femmes ne doivent pas faire les métiers d’homme, car ils doivent prendre soin de ses enfants.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_209',
-  'tache_3',
-  3,
-  'Thème du débat : « deux opinions sur les menus sans viande aux cantines scolaires. »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Tout quitter pour partir en voyage pendant un an: bonne ou mauvaise idée ?
-
-Document B :
-Répondez sur notre site Internet : “voyage.internaute.fr”. Vous écrivez un message sur ce site internet, vous répondez à la question posée en prenant des exemples de votre vie personnelle.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_210',
-  'tache_3',
-  3,
-  'Thème du débat : « limitation des voitures dans les centres-villes (pour ou contre) »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Opinion 1 : Alexandre, un conseiller d’orientation
-
-Document B :
-“Je suis fermement pour le travail des jeunes pendant les vacances. C’est une excellente occasion d’acquérir des compétences pratiques, d’apprendre à travailler en équipe et de découvrir différentes industries. Les jeunes peuvent gagner de l’argent qu’ils peuvent économiser pour l’avenir ou utiliser pour financer des activités ou des loisirs. De plus, le fait d’avoir une expérience de travail sur leur CV peut leur donner un avantage lorsqu’ils postulent pour des emplois ou des stages à l’avenir. Les vacances d’été sont longues et il y a amplement de temps pour se reposer et travailler.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_193',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Opinion 2 : Élise, une psychologue pour adolescents',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_191',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-“Je suis contre l’idée que les jeunes doivent travailler pendant leurs vacances. Les adolescents sont déjà sous une énorme pression pendant l’année scolaire avec les études, les examens et les activités parascolaires. Les vacances doivent être une période pour eux de se détendre, de se décompresser et de poursuivre des intérêts personnels. Les forcer à travailler pourrait contribuer au stress et à l’épuisement. Il est également important pour les jeunes de disposer de temps non structuré pour explorer leur créativité, passer du temps avec leurs amis et leur famille, et tout simplement être des enfants. Le travail peut attendre.”',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_211',
-  'tache_3',
-  3,
-  'Thème du débat : « restauration rapide, pour ou contre ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Parc de loisirs : “J’ai hâte de passer la journée avec toi demain. S’il te plaît, dis-moi, quelle activité nous pourrons faire ?”
-
-Document B :
-Répondez à votre ami pour lui décrire la sortie (horaires,',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_194',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-transport, billet, activités)',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_192',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-écrivez un message à vos amis pour leur raconter votre expérience lors d’un salon du livre (conférence, expositions et rencontre avec les auteurs…)',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_212',
-  'tache_3',
-  3,
-  'Thème du débat : « deux avis sur l''uniforme scolaire »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Jean qui vit à la compagne favorise l’achat des produits alimentaires directement à la ferme pour la bonne qualité quitte à payer un peu plus cher.
-
-Document B :
-Camille qui vit dans la ville préfère faire ses courses au supermarché pour la variété qu’il propose et pour les prix abordables.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_195',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-écrivez un message à votre ami pour lui raconter votre entretien d’embauche',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_193',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-“Gagnez deux billets pour la destination de votre choix avec la compagnie Air Tropiques. Racontez votre plus beau voyage sur notre forum”',
-  true
-);
-
-INSERT INTO public.questions (epreuve, reference, tache, ordre, texte, actif) VALUES
-(
-  'expression_ecrite',
-  'EE_T3_213',
-  'tache_3',
-  3,
-  'Thème du débat : « deux avis sur les jeux vidéos »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Les raisons qui poussent les parents à opter pour la scolarisation à domicile sont nombreuses. Elle donne la possibilité d’adopter une pédagogie plus individualisée. On peut passer plus de temps sur les points sur lesquels l’enfant bute ou lui proposer, à l’occasion, des jeux éducatifs. L’enfant gère son apprentissage à son rythme, il creuse les sujets qui le passionnent et ne subit pas la pression des autres élèves qui peuvent avancer plus au moins vite que lui. Autre avantage de l’instruction en famille, une évolution différente. Avec l’école à la maison, pas de notes qui peuvent parfois être décourageantes, mais un contrôle continu des connaissances, pas de stress dû aux évaluations et aux devoirs.
-
-Document B :
-Le choix de la scolarisation à domicile représente un véritable défi et donc, quelques inconvénients à prendre en compte avant de se lancer. La scolarisation à domicile nécessite beaucoup de temps, une bonne organisation et elle a aussi un coût. Tout le matériel, les livres, les manuels, et les sorties sont à la charge des familles, et l’un des deux parents est souvent amené à mettre entre parenthèses son emploi. Au total, l’école à domicile coûte généralement plus cher qu’une scolarisation dans le public. De plus, l’enfant ne côtoie pas de camarades au quotidien, car l’école à domicile ne permet pas à l’enfant d’entrer en interaction avec d’autres enfants comme il le ferait dans un cadre scolaire classique.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_196',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-écrivez un message à votre ami pour lui décrire le programme de vos prochaines vacances',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_194',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-écrivez un article de blog sur un événement auquel vous avez assisté dernièrement (fête, festival, …)',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_214',
-  'tache_3',
-  3,
-  'Thème du débat : « Égalité Homme/Femme en Milieu de Travail. »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Quand on parle de vélo, on pense systématiquement à deux choses: sport et loisir. On oublie souvent que c’est avant tout un mode de déplacement personnel et professionnel. En ville, c’est un moyen de transport rapide et déstressant puisqu’il permet d’éviter les interminables embouteillages aux heures de pointe. Se rendre au travail tout en faisant du sport, histoire de joindre l’utile à l’agréable.
-
-Document B :
-Avec tous les accidents de la route observés annuellement, sortir son vélo pour se déplacer avec en ville peut être très dangereux. En effet, avec la densité importante de véhicules, le non-respect du Code de la route et le manque de pistes cyclables, pratiquer du vélo en zone urbaine présente de vrais risques d’accident. De plus, faire du vélo de nos jours, c’est s’exposer à des gaz d’échappement toxiques et nocifs pour la santé humaine (notamment le monoxyde de carbone…).',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_197',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Vous avez mis en ligne une annonce pour la location de votre appartement. Écrivez un courriel à une personne intéressée pour lui donner les informations sur l’appartement et le quartier',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_195',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Vous venez de commencer les cours à l’université à Montréal, écrivez un message à votre ami pour lui raconter votre première semaine à l’université',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_198',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Vous faites du sport dans un club. Vous venez de remporter une compétition vous écrivez un courriel à vos amis pour leur raconter cet évènement sportif et annoncer votre réussite sportive.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_196',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Le site « colocation.com » recherche des témoignes sur vos expériences de colocation. Vous avez déjà habité en colocation avec des amis. Vous racontez votre expérience aux membres du site internet. Vous donnez votre opinion sur ce mode de logement.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_215',
-  'tache_3',
-  3,
-  'Thème du débat : « Le travail des étudiants pendant les vacances: Pour ou contre ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Dans nos jours, les villes grossissent toujours plus. Malheureusement, ce phénomène a un impact fort sur l’environnement. Car plus une ville grossisse, plus elle a des effets négatifs sur la nature et donc, ensuite, sur l’homme. L’effet négatif le plus visible est la déforestation, qui augmente les végétaux qui retiennent le carbone. Donc, quand on les supprime pour construire des bâtiments ou des rues, on supprime de espaces verts capables de retenir des millions de tonnes de carbone.
-
-Document B :
-Plus, de la moitié de l’humanité vit en ville (huit habitants sur dix dans les pays riches) la vie urbaine est donc le principal enjeu écologique. On entend souvent dire que l’organisation actuelle des villes n’est pas écologique. Et que le grossissement des villes ne fait qu’augmenter le problème. Pourtant, il faut se méfier des apparences : les villes ne sont pas toujours aussi antiécologique qu’on l’imagine. Par exemple, la consommation d’énergie d’un citadin est moins importante que celle d’un habitant de la campagne.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_199',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Vous voulez organiser une visite culturelle dans votre ville. Vous envoyez un message pour inviter vos amis. Vous leur donner toutes les informations nécessaires (activités, date, lieu, etc.).',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_197',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Vous avez assisté à une soirée écologique pour protéger la planète qui avait lieu dans votre université. Racontez-là dans votre blog et expliquez pourquoi vous l’avez aimée.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_200',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Ecrivez un message à votre ami(e) pour lui faire part de votre programme de déménagement vers votre nouveau logement, en demandant son aide ( date, lieu, programme)',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_198',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Vous avez participé à un concours pour gagner un séjour de deux semaines dans votre ville préféré. Le thème de ce concours est “Mon artiste préféré“. Écrivez un article de blog pour parler de votre artiste préféré.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_216',
-  'tache_3',
-  3,
-  'Thème du débat : « L''école à domicile, pour ou contre? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Les objets connectés facilitent notre vie quotidienne. Ce sont des objets ou des équipements pilotés à distance à l’aide d’un téléphone portable ou par Internet, comme le système de chauffage ou la fermeture des portes. De plus, avec une montre ou un bracelet connecté, toutes nos activités peuvent être analysées. Un logiciel va mesurer le nombre de nos pas pour nous inciter à faire davantage d’exercice. Un domaine où l’on comprend mieux leur utilité est celui de la surveillance de la santé. Certains objets agissent comme un carnet de santé, toujours prêts à vous rappeler un rendez-vous chez le médecin ou des médicaments à prendre.
-
-Document B :
-Il y aurait 50 milliards d’objets connectés dans le monde : l’alarme, le téléviseur, la caméra de surveillance, les volets, le détecteur de fumée. etc. Face à cette évolution, la question de la sécurité se pose. En effet, un pirate informatique peut prendre le contrôle d’un objet connecté en quelques minutes. Ou encore, un cambrioleur pourrait vérifier grâce aux caméras de surveillance connectées d’une habitation que les occupants sont absents. Il est aussi possible d’entrer dans le système connecté d’une voiture, et d’en prendre les commandes à distance.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_201',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Vous partez en voyage et vous laissez votre appartement à un ami qui veut venir rester chez-vous pendant vos vacances. Vous lui envoyez un message pour décrire votre appartement (immeuble, logement, accès…).',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_199',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Les avantages penser à l’avenir, avoir les vêtements propres être en confort surtout que les argents n’est pas tjrs suffisante, Vivre avec ces parents pendant la période des études permet aux jeunes d’économiser les frais de logement, des plats faits maison et une certaine stabilité psychique, teste les adolescents qui vivent avec leurs parents lui permettent d’économiser son argent pour des projets de vie(il paye pas ni le loyer ni la nourriture) (pour ne pas payer le loyer qui coûte chers, le ménage est fait, les vêtements est propres).. favorise que les jeunes vivent avec leurs parents avec le témoin de deux jeunes, la jeune fille disait que le Loyer est très chère et étudier loin de chez soi revient plus chère, Le deuxième jeune trouve que vivre avec ses parents est plus bénéfique pour lui par exemple: la bouffe est bonne, vêtements toujours propres et y a pas de place pour la solitude.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_217',
-  'tache_3',
-  3,
-  'Thème du débat : « Vivre chez ses parents, pour ou contre ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Les inconvénients manque de liberté, Vivre seuls leur permet d’être indépendant, les adolescents qui vivent Avec leurs parents s’ennuient car leurs parents décident à leur place et se sont toujours de pondant des parents […] un avis d’un certain monsieur qui à 25 et il a perdu son job, donc il était dans l’obligation de rentrer vivre avec ces parents, et maintenant il a perdu son espace d’intimitée … contre la vie des jeunes avec leurs parent, un témoignage d’un jeune qui considère revenir chez ces parents c’est avoir revenir en arrières.
-
-Document B :
-Ecrivez un message à vos amis pour les inviter à votre anniversaire et leur raconter comment va se dérouler votre fête.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_202',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Répondez en commentaire à une publication sur Facebook au sujet des études à l’étranger en citant les avantages et les inconvénients de cette expérience',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_200',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Les enfants de l’école primaire peuvent utiliser la technologie pour trouver des vidéos sur les sujets qu’ils ont étudiés à l’école ou pour jouer à des jeux qui améliorent leur aisance en mathématiques, leur compréhension de la lecture ou leurs compétences en dactylographie.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_218',
-  'tache_3',
-  3,
-  'Thème du débat : « Les nouvelles technologies pour les enfants »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Les nouvelles technologies encouragent les enfants à être sédentaires. C’est une préoccupation majeure pour les parents. Cela ne mène à aucun jeu libre créatif, à aucune interaction sociale face à face, conduisant à aucun effort physique! Pourquoi ne pas essayer certaines de ces activités amusantes pour encourager vos enfants à ranger leurs appareils ?
-
-Document B :
-Votre ami veut se mettre au sport. Vous lui envoyez un message pour lui conseiller une salle de sport situé dans votre quartier (localisation, prix, type d’activités, etc…)',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_203',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Vous avez participé à un événement qui vous a marqué  (anniversaire, mariage, etc…). Racontez votre souvenir',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_201',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Avec l’avancée technologique et les produits high-tech qui envahissent de plus en plus notre quotidien, nos enfants oublient la lecture et s’intéressent davantage aux jeux vidéo, aux sports, à la musique… Contrairement à nous les adultes, dont beaucoup d’entre-nous ont lu des milliers de pages, la génération actuelle est toujours occupée par les réseaux sociaux et le gaming ou prennent du plaisir à pratiquer du sport qui attirent davantage de jeunes grâce aux stars internationales du football, du tennis, de l’athlétisme… alors avec tout ça, pourquoi devons-nous forcer les enfants à lire un bouquin ? Et comme le dit un proverbe, ‘’ le goût de la lecture ne peut pas s’imposer’’… il faut laisser l’enfant choisir ce qu’il veut lire et surtout ne pas l’obliger à lire quand il n’a pas envie.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_219',
-  'tache_3',
-  3,
-  'Thème du débat : « La lecture pour les enfants »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-L’amour de la lecture se transmet de génération en génération bien que, ces dernières années, on ne trouve plus beaucoup de bouquins entre les mains des enfants, laissant la place aux smartphones et aux tablettes. En apprenant à lire régulièrement, l’enfant acquiert le langage plus aisément tout en développant sa capacité d’audition et de concentration. De plus, et pour prendre du plaisir ensemble, les parents peuvent consacrer quotidiennement 10 minutes à leurs enfants pour lire des bouquins ; une activité qui renforcera à coup sûr la complicité parent/enfant.
-
-Document B :
-Vous faites du sport dans un club. Vous venez de remporter une compétition Vous écrivez un courriel à vos amis pour leur raconter cet évènement sportif et annoncer votre réussite sportive',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_204',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-<< Le site «colocation.com» recherche des témoignes sur vos expériences de colocation. Écrivez-nous ! >>',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_202',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Dans nos jours, les villes grossissent toujours plus. Malheureusement, ce phénomène a un impact fort sur l’environnement. Car plus une ville grossis, plus elle a des effets négatifs sur la nature et donc, ensuite, sur l’homme. L’effet négatif le plus visible est la déforestation, qui augmente le végétaux qui retiennent le carbone. Donc, quand on les supprime pour construire des bâtiments ou des rues,on supprime de espaces verts capables de retenir des millions de tonnes de carbone.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_220',
-  'tache_3',
-  3,
-  'Thème du débat : « Le grossissement des villes »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Plus de la moitié de l’humanité vit en ville (huit habitants sur dix dans les pays riches) la vie urbaine est donc le principal enjeu écologique.On entend souvent dire que l’organisation actuelle des villes n’est pas écologique, et que le grossissement des villes ne fait qu’augmenter le problème. Pourtant, il faut se méfier des apparences : les villes ne sont pas toujours aussi antiécologique qu’on l’imagine. Par exemple, la consommation d’énergie d’un citadin est moins importante que celle d’un habitant de la campagne.
-
-Document B :
-Les professeurs de l''école de votre quartier souhaitent présenter différents métiers aux élèves. Vous voulez participer à ce projet pour parler de votre expérience. Vous leur écrivez. Vous décrivez votre profession (activités, collègues, etc.). Vous expliquez pourquoi vous trouvez votre métier intéressant.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_205',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-De plus en plus de gens louent leur logement ou une chambre à des voyageurs, pour gagner un revenu supplémentaire ou pour rencontrer de nouvelles personnes. Ce système, basé sur la confiance, permet aux visiteurs de se loger en payant moins cher que dans un hôtel. De plus, si le propriétaire est d''accord, ils peuvent même utiliser la cuisine et éviter d''aller au restaurant! La personne qui les accueille peut leur servir de guide et les conseiller sur les visites à faire. C''est un échange précieux pour tout le monde!',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_203',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-L''année dernière, j''ai loué mon appartement à un couple de touristes pour leurs vacances d''une semaine à Marseille. C''était une très mauvaise expérience qui m''a fait changer d''avis sur ce mode de location! Ils sont arrivés en retard et j''ai dû les attendre pour leur donner la clé. Ils ont fait beaucoup de bruit et dérangé mes voisins. En plus, ils ont quitté mon appartement sans faire la vaisselle et en laissant leurs déchets. J''ai passé trois heures à nettoyer.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_221',
-  'tache_3',
-  3,
-  'Thème du débat : « Louer son appartement à des inconnus, est-ce une bonne idée ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Je cherche un vélo en bon état et bon marché. Contactez-moi par courriel
-
-Document B :
-Vous avez un vélo à vendre.  Vous écrivez un courriel pour décrire votre vélo et proposer un prix. Vous lui donnez un rendez-vous pour essayer le vélo.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_206',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Les transports en commun gratuits, c’est une très bonne idée. Cela permet de diminuer le nombre de voitures en ville et d’éviter les bouchons. C’est aussi une bonne mesure pour réduire la pollution et donc les risques de maladies respiratoires. Dans ma ville, il y a des transports en commun gratuits. On observe que les gens utilisent plus souvent les transports publics depuis que la gratuité est en place. Cette mesure a aussi profité aux commerçants : les gens reviennent faire leurs achats dans le centre-ville et vont moins dans les hypermarchés.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_207',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Les enfants, jusqu’à l’âge de l’adolescence, jouent d’une manière régulière aux jeux vidéo et à force, ils peuvent développer des pensée négatives et des comportements agressifs. En effet, une étude récente, menée sur des enfants âgés de 9 à 18 ans jouant fréquemment aux jeux vidéo, a révélé que le fait de jouer à des jeux de violence augmente considérablement un comportement agressif. Et selon Diego Gentil, ce phénomène est inévitable quelque soit le degré de vigilance des parents!',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_222',
-  'tache_3',
-  3,
-  'Thème du débat : « L’interdiction des Voitures dans les Centres-Villes »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Répondez au courriel de votre ami Lucas pour lui donner des informations sur les nouveaux locaux de votre entreprise (lieu, disposition des pièces, équipements, etc.).
-
-Document B :
-Vous avez assisté à un événement intitulé “Une semaine sans voiture”. Racontez votre expérience et donnez votre impression sur cette initiative. Décrivez le déroulement de l’événement (dates, lieu, activités proposées).',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_208',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Les vêtements de marques sont très importants pour les enfants et les adolescents. C’est un moyen de s’exprimer et de se rattacher à un groupe social. Cette attirance pour les marques est très présente chez les adolescents qui se cherchent et montrent leurs personnalités. Les enfants aiment également porter des vêtements de marques avec des images des dessins animés qu’ils regardent ou des logos qu’ils apprécient.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_204',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Les enfants grandissent très vite et les vêtements sont portés pendant une courte période. Ainsi, les vêtements deviennent rapidement trop petits.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_223',
-  'tache_3',
-  3,
-  'Thème du débat : « Les Jeux Vidéo : Pour ou contre ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Mais il y a aussi le fait que les enfants usent assez rapidement les vêtements en jouant à l’extérieur avec les copains, en s’amusant dans l’herbe ou à l’air de jeux. Les habits sont très vite sales ou troués.
-
-Document B :
-Vous avez publié une annonce pour la location de votre appartement. Rédigez un courriel à une personne intéressée en lui fournissant des informations sur l’appartement ainsi que sur le quartier.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_209',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Écrivez un courriel à vos amis pour les inviter à un anniversaire surpris de votre meilleur ami. (Lieu, date, horaire, etc.).',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_205',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Vous avez participé à une brocante (achat / vente de produits d’occasion) dans votre ville. Sur votre blog personnel, racontez pourquoi vous avez aimé cette activité.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_210',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Vous voulez changer la décoration de votre appartement (meubles, peinture, objets, etc.). Vous écrivez un message à un(e) ami(e). Vous lui décrivez votre projet et vous lui demandez de vous aider.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_206',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Cours Gratuits, Concerts, Jeux. 
- Rendez-Vous Vendredi, À partir de 9 Heures »',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_224',
-  'tache_3',
-  3,
-  'Thème du débat : « Faut-il faire ses courses dans des petits magasins ou dans des supermarchés ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Vous avez participé à cet évènement. Vous écrivez à vos amis pour raconter votre expérience et vous donnez votre opinion sur cette journée.
-
-Document B :
-Le supermarché est très pratique ; on y trouve une grande variété de produits, tous à portée de main. Vous pouvez garer votre voiture dans le parking et faire le tour des rayons pour acheter tout ce dont vous avez besoin : fruits, légumes, fromages, viandes, boissons… De plus, les supermarchés offrent plusieurs marques pour un même produit, tout en proposant régulièrement des promotions et des remises.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_211',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-ASSOCIATION POUR LA SAUVEGARDE DES PETITS COMMERCES',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_225',
-  'tache_3',
-  3,
-  'Thème du débat : « Les sévérité des parents envers les enfants »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-« Je cherche un vélo en bon état et bon marché. Contactez- 
- moi par courriel :  [email&#160;protected]
-
-Document B :
-Vous avez un vélo à vendre. Vous écrivez un courriel pour 
- décrire votre vélo et proposer un prix. Vous lui Donnez un RDV 
- pour essayer le vélo.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_212',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Vous avez passé une journée à la campagne avec vos amis. À votre retour, vous écrivez un message sur votre forum pour raconter à vos amis comment cette journée s’est passée.  Vous expliquez ce que vous avez aimé (activités, lieu, animaux, etc…).',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_226',
-  'tache_3',
-  3,
-  'Thème du débat : « Les Vêtements de Grandes Marques »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Les parents ont parfois peur d’être trop sévères avec leurs enfants. Ils craignent, qu’à cause d’un excès d’autorité, leurs enfants ne s’épanouissent pas et manquent plus tard de personnalité. Même si les parents acceptent, par amour, tout ce dont leurs enfants demandent, cela pourrait avoir des effets négatifs lorsqu’ils passent à l’âge adulte. En effet, pour vivre en communauté, il y a certaines règles à respecter.
-
-Document B :
-Répondez au courriel de votre ami Lucas pour lui donner des informations sur les nouveaux locaux de votre entreprise  (lieu, disposition des pièces, équipements, etc.).',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_213',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Vous avez assisté à un événement intitulé “Une semaine sans voiture”.  Racontez votre expérience et donnez votre impression sur cette initiative. Décrivez le déroulement de l’événement (dates, lieu, activités proposées).',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_227',
-  'tache_3',
-  3,
-  'Thème du débat : « Les animaux de compagnie pour les enfants »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Les enfants grandissent très vite et les vêtements sont portés pendant une courte période. Ainsi, les vêtements deviennent rapidement trop petits.
-
-Document B :
-Mais il y a aussi le fait que les enfants usent assez rapidement les vêtements en jouant à l’extérieur avec les copains, en s’amusant dans l’herbe ou à l’air de jeux. Les habits sont très vite sales ou troués.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_214',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Vous avez publié une annonce pour la location de votre appartement.  Rédigez un courriel à une personne intéressée en lui fournissant des informations sur l’appartement ainsi que sur le quartier.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_215',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-L’anniversaire de votre ami approche à grands pas et vous avez décidé de lui offrir un voyage comme cadeau.  Rédigez un message pour l’informer des préparations que vous avez faites (destination, dates, préparatifs, etc).',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_207',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Un internaute a publié le message suivant : « Je vais partir étudier un an à l’étranger et j’ai peur ». Rédigez une réponse pour partager votre expérience personnelle. Parlez des défis que vous avez rencontrés, des solutions que vous as trouvées, et des bénéfices que vous avez tirés de cette expérience.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_228',
-  'tache_3',
-  3,
-  'Thème du débat : « La réduction du temps de travail »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Vous souhaitez assister à un festival de cinéma dans votre ville. Vous écrivez un message à votre ami(e) pour lui proposer de venir avec vous. Vous lui donnez toutes les informations nécessaires sur févènement (films, dates et horaires, tarifs, etc.).
-
-Document B :
-Vous avez accueilli un étudiant étranger pendant une semaine chez vous. Sur votre blog, vous écrivez un article pour raconter cette semaine. Vous expliquez pourquoi vous avez aimé cette expérience.',
-  true
-);
-
-INSERT INTO public.questions (epreuve, reference, tache, ordre, texte, actif) VALUES
-(
-  'expression_ecrite',
-  'EE_T1_216',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Les restaurants rapides se distinguent par leur engagement à proposer une variété de plats équilibrés, respectant strictement les normes d’hygiène. En laissant aux clients la liberté de composer leur propre menu, ces établissements les responsabilisent dans leurs choix alimentaires, tout en satisfaisant leurs préférences gustatives.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_208',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Les spécialistes affirment que manger régulièrement dans des restaurants de fast-food, qui proposent de la restauration rapide, est dangereux pour la santé. La nourriture servie est souvent la même : frites, hamburgers et boissons sucrées. Ces aliments contiennent une grande quantité de calories, bien trop pour un seul repas. De plus, la plupart des produits dans ces restaurants sont emballés dans du plastique. Par conséquent, manger dans un fast-food augmente la production de déchets plastiques, ce qui est nuisible pour l’environnement.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_217',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Écrivez un message à vos amis pour leur raconter votre expérience lors d’un salon du livre (conférence, expositions et rencontre avec les auteurs…).',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_209',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Jean qui vit à la compagne favorise l’achat des produits alimentaires directement à la ferme pour la bonne qualité quitte à payer un peu plus cher.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_229',
-  'tache_3',
-  3,
-  'Thème du débat : « Faire Ses Courses Alimentaires Chez Les Producteurs Locaux Ou Au Supermarché »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Camille qui vit dans la ville préfère faire ses courses au supermarché pour la variété qu’il propose et pour les prix abordables.
-
-Document B :
-Vous avez passé un week-end à la campagne. Écrivez un message à votre ami(e) pour lui décrire ce qui s’est passé.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_218',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Votre direction est à la recherche d’une salle pour la fête de fin d’année, capable d’accueillir 100 invités. Rédigez un message à la direction pour leur dire que vous avez trouvé un local idéal. (lieu, tarifs, services, etc.).',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_210',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Jean : Je suis fermement convaincu que l’intégration des nouvelles technologies dans les écoles est cruciale pour préparer les élèves à un avenir numérique. Je pense que l’usage des tablettes et des ordinateurs stimule non seulement l’engagement des élèves mais enrichit également leur expérience éducative en leur offrant un accès facile à une variété de ressources, encourageant ainsi leur créativité et autonomie.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_230',
-  'tache_3',
-  3,
-  'Thème du débat : « Utilisation Des Nouvelles Technologies Dans Les Écoles : Pour Ou Contre ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Sara : Je suis sceptique quant à l’usage intensif des technologies dans l’enseignement. Je crois que cela peut réduire les interactions humaines essentielles et favoriser une dépendance préoccupante aux écrans. À mon avis, les méthodes d’enseignement traditionnelles et le contact direct entre enseignants et élèves restent indispensables pour un développement équilibré et complet des compétences des jeunes.
-
-Document B :
-Rédigez un message pour inviter votre ami à passer ses vacances dans votre ville.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_219',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Vous avez participé à un concours pour gagner un séjour de deux semaines dans votre ville préféré. Le thème de ce concours est “Mon artiste préféré”.  Écrivez un article de blog pour parler de votre article préféré.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_211',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-“Je suis de ceux qui n’arrivent pas à comprendre comment l’on peut prendre du plaisir à tuer des animaux. Je suis de ceux qui n’arrivent pas à comprendre comment on peut prétendre aimer la nature alors qu’on la détruit”',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_231',
-  'tache_3',
-  3,
-  'Thème du débat : « La Chasse Aux Animaux : Pour Ou Contre ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-“Les gens chassent pour différentes raisons : la subsistance, le commerce, la conversation et l’aménagement de la faune, la protection de la propriété, l’exercice, le loisir et le prestige.”
-
-Document B :
-David, Journaliste de la FRM.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_220',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-La bibliothèque de votre ville organise une rencontre avec un écrivain.  Écrivez un message à votre ami(e) pour l’inviter à cet événement.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_212',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Vous avez participé à un événement nommé “La semaine du goût”.  Écrivez un article de blog pour raconter cette expérience.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_232',
-  'tache_3',
-  3,
-  'Thème du débat : « L’art Urbain : Pour Ou Contre ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Grâce à l’art, la curiosité des citadins est attisée dans l’espace urbain. Que ce soit par une peinture ou un spectacle de rue, l’atmosphère éphémère ainsi créée offre une interaction entre des artistes peu connus et un public hétéroclite, parfois peu habitué à côtoyer cette forme d’art. Les villes d’aujourd’hui n’ont plus la même vocation que celles d’hier. Plus qu’un lieu de résidence, la ville se réinvente, s’enrichit de la diversité de sa population, s’agence différemment et s’ouvre sur le monde. Les espaces verts se créent et les murs se parent de couleurs grâce au street art. Cela débouche sur des lieux où la qualité de vie est privilégiée, tout en respectant la nature et l’environnement.
-
-Document B :
-Mais à une plus large échelle, cela n’est pas aussi évident. Les graffitis peuvent être perçus comme une dégradation de la communauté, une pollution visuelle ou une preuve de la rupture sociale. On les considère comme du vandalisme qui défigure les biens publics. Le débat sur les avantages et les inconvénients des graffitis fait rage parmi les artistes, les législateurs et les membres de la communauté.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_221',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Vous allez déménager. Des amis ont accepté de vous aider.  Vous leur écrivez un message collectif pour leur expliquer comment le déménagement va se passer (lieux, horaires, durée, trajet, tâches à faire, etc.)',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_213',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Participez à notre concours pour gagner un séjour pour deux personnes dans la ville de votre choix. Rédigez un article sur le thème : « La vie de mon artiste préféré(e) ».',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_233',
-  'tache_3',
-  3,
-  'Thème du débat : « Les Objets Connectés : Pour Ou Contre ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Vous participez à ce concours. Vous expliquez pourquoi vous avez choisi cet(te) artiste et vous racontez sa vie.
-
-Document B :
-Les objets connectés facilitent notre vie quotidienne. Ce sont des objets ou des équipements pilotés à distance à l’aide d’un téléphone portable ou par Internet, comme le système de chauffage ou la fermeture des portes. De plus, avec une montre ou un bracelet connecté, toutes nos activités peuvent être analysées. Un logiciel va mesurer le nombre de nos pas pour nous inciter à faire davantage d’exercice. Un domaine où l’on comprend mieux leur utilité est celui de la surveillance de la santé. Certains objets agissent comme un carnet de santé, toujours prêts à vous rappeler un rendez-vous chez le médecin ou des médicaments à prendre.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_222',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Il y aurait 50 milliards d’objets connectés dans le monde : l’alarme, le téléviseur, la caméra de surveillance, les volets, le détecteur de fumée, etc. Face à cette évolution, la question de la sécurité se pose. En effet, un pirate informatique peut prendre le contrôle d’un objet connecté en quelques minutes. Ou encore, un cambrioleur pourrait vérifier grâce aux caméras de surveillance connectées d’une habitation si les occupants sont absents. Il est aussi possible d’entrer dans le système connecté d’une voiture et d’en prendre les commandes à distance.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_214',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Votre ami Cédric a accepté de garder votre maison et jardin pendant vos vacances.  Écrivez un message pour lui dire ce qu’il doit faire.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_234',
-  'tache_3',
-  3,
-  'Thème du débat : « La Restauration Rapide »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Vous faites une réclamation par rapport aux mauvaises prestations d’une agence de voyages suite à un voyage mal organisé.  Exprimez votre mécontentement.
-
-Document B :
-Les restaurants rapides proposent des plats équilibrés et variés, et ils respectent les normes d’hygiène et les variétés de produits qui sont bons, et c’est le client qui compose son menu, donc il en est responsable.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_223',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-La restauration rapide est néfaste à la santé, elle cause des problèmes irréversibles comme l’obésité, etc.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_215',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Vous êtes locataire d’un appartement trop grand pour vous.  Écrivez une annonce dans un journal pour chercher un colocataire. Il faut mentionner : la superficie, le caractère du colocataire, le prix, etc.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_235',
-  'tache_3',
-  3,
-  'Thème du débat : « La Gratuité Des Musées : Pour Ou Contre ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Vous venez de commencer une nouvelle activité de loisir (sport, danse, etc.).  Écrivez un article sur votre blog pour parler de cette expérience.
-
-Document B :
-La gratuité des musées peut entraîner une surfréquentation, ce qui nuit à la qualité de l’expérience des visiteurs. De plus, cela peut réduire les ressources financières des musées, affectant ainsi leur entretien et la préservation des œuvres. Un tarif réduit serait une meilleure solution pour rendre la culture accessible tout en soutenant les musées.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_224',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-La gratuité des musées est une excellente initiative. Cela rend la culture accessible à tous, indépendamment de leur situation financière. J’ai pu visiter plusieurs musées gratuitement, ce qui m’a permis d’enrichir mes connaissances sans me soucier du coût. Pour moi, la gratuité des musées contribue à l’éducation du public et au partage du patrimoine culturel.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_216',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Vous voulez passer un week-end avec vos amis et faire du sport. Vous leur écrivez une lettre pour proposer ça en citant (date, lieu, programme.).',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_236',
-  'tache_3',
-  3,
-  'Thème du débat : « La Sieste Au Travail : Pour Ou Contre ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Écrivez un article sur votre blog pour raconter pourquoi vous avez décidé de changer votre alimentation (vos habitudes alimentaires).
-
-Document B :
-D’après le site síestepourtous.com,',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_225',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-une micro-sieste permettrait d’augmenter la productivité et la créativité des travailleurs de 35%, ce qui est un avantage considérable pour l’employé et l’employeur. Aussi, la sieste au travail permettrait d’augmenter la mémoire et donc la concentration. Un salarié r é reposé ne penserait plus à dormir et serait davantage disponible pour ses missions. Grâce à la sieste au bureau, le stress et les risques cardiaques diminueraient',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_217',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Bien que les effets positifs d’une power nap aient été scientifiquement prouvés, il existe encore des personnes qui s’y opposent et y voient des inconvénients. La sieste au travail est assez difficile en onvénients. La sieste au travail est termes de Faisabilité. En effet ce n’est pas dans les moyens de toutes les entreprises de mettre en des lits et des salle dédiées à cette ettre en place pratique. Lorsqu’une entreprise veut mettre en place un temps de repos dans son organisation, elle n’est pas tout à fait libre de fair faire selon son bon vouloir. L’entreprise devra se conformer à certaines règles : la mise à disposition d’un local dédié et de matériel',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_237',
-  'tache_3',
-  3,
-  'Thème du débat : « Livraison Des Repas Au Bureau : Pour Ou Contre ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-employés lors de la sieste (prévention des situations de harcèlement), l’égalité de traitement entre salariés, l’établissement d’une charte gérant re salariés, etc.
-
-Document B :
-Votre ami(e) veut découvrir la région dans laquelle vous habitez. Écrivez lui un message pour lui proposer des sites à visiter.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_238',
-  'tache_3',
-  3,
-  'Thème du débat : « Les Jeux Vidéo, Pour Ou Contre ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-La télévision peut également présenter certains inconvénients. Les émissions télévisées peuvent parfois véhiculer des stéréotypes, des préjugés et des valeurs discutables. De plus, le temps passé devant la télévision peut réduire le temps consacré à d’autres activités plus enrichissantes, telles que la lecture, les interactions sociales ou la pratique d’un sport. Il est important de faire preuve de discernement et de réguler l’exposition à la télévision, en particulier pour les enfants, afin de préserver un équilibre sain entre les différentes formes d’apprentissage et de divertissement.
-
-Document B :
-Vous partez en vacances avec vos amis, vous avez trouvé un hôtel.  Vous écrivez un message à vos amis pour décrire cet hôtel (localisation, prix, équipements, etc.) et vous leur proposez de réserver cet hôtel.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_226',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Vous êtes parti(e) travailler à l’étranger. Vous envoyez un message à vos amis pour raconter cette nouvelle expérience professionnelle.  Vous expliquez ce que vous avez le plus aimé.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_218',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Des études ont montré que certaines zones du cerveau de l’adulte peuvent être développées en jouant aux jeux vidéo. Ainsi, il peut être intéressant de jouer aux jeux vidéo, car ils permettent, par exemple, d’améliorer la capacité d’analyse, la capacité à faire des choix et la rapidité de réaction. C’est une bonne nouvelle car la répartition des joueurs par âge montre que 83% des joueurs sont des adultes. Cependant, il convient de rester prudent car certains jeux vidéos ne favorisent pas ce type d’amélioration sur le cerveau.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_239',
-  'tache_3',
-  3,
-  'Thème du débat : « Les Relations Amicales Au Travail : Pour Ou Contre ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Pendant trois ans, des enfants âgés de 8 à 17 ans ont participé à une étude sur les jeux vidéo. Les résultats de cette étude montrent que les enfants qui jouent beaucoup aux jeux vidéo sont plus violents, plus nerveux et plus stressés que ceux qui ne jouent pas ou peu. Ceux qui jouent beaucoup ont également moins de bons résultats à l’école. Il est donc conseillé aux parents d’être vigilants et de limiter l’usage de ces jeux par leurs enfants.
-
-Document B :
-“Bonjour, ça y est, j’ai obtenu mon visa pour le Canada. Je vais arriver le 3 mars. Est-ce que tu pourras m’aider à trouver un hôtel pour la première semaine ? Merci d’avance pour ton aide.”',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_227',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Vous avez trouvé un hôtel pour Matthias. Vous lui écrivez un courriel. Dans ce message vous décrivez l’hôtel et vous lui donnez toutes les informations utiles (situation, tarif…).',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_219',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Vous êtes allés voir un spectacle (film, pièce de théâtre, concert, etc.) avec des amis. Vous l’avez aimé. Sur votre blog, vous racontez votre soirée et vous expliquez pourquoi vous avez aimé le spectacle.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_240',
-  'tache_3',
-  3,
-  'Thème du débat : « L’Utilisation Du Plastique, Pour Ou Contre »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Les amitiés entre collègues au travail peuvent être extrêmement bénéfiques. Elles favorisent un climat de travail agréable et une ambiance positive au sein de l’équipe. Avoir des amis parmi ses collègues permet de renforcer les liens professionnels et de créer un sentiment de camaraderie. Cela peut contribuer à une meilleure communication, une collaboration plus étroite et une résolution plus efficace des problèmes. De plus, partager des moments de convivialité en dehors du travail, comme des déjeuners ou des activités après le bureau peut renforcer les liens et créer une dynamique de groupe solide.
-
-Document B :
-Il est important de trouver un équilibre entre amitié et professionnalisme au travail. Les amitiés excessivement proches peuvent parfois créer des tensions ou des conflits lorsque des décisions professionnelles doivent être prises. De plus, les amitiés exclusives entre certains collègues peuvent exclure les autres membres de l’équipe, ce qui peut nuire à la cohésion et à la collaboration. Il est essentiel de maintenir des limites claires et de veiller à ce que les amitiés ne compromettent pas le professionnalisme, la hiérarchie ou la productivité au sein de l’organisation.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_228',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Je cherche un endroit pour déjeuner en plein air ce week-end. Qu’est-ce que tu me proposes ? 
- À bientôt, 
- Barbara',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_220',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Vous répondez à votre amie Barbara en décrivant le lieu (parc, jardin, terrasse, etc.).',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_241',
-  'tache_3',
-  3,
-  'Thème du débat : « Les Habitudes Alimentaires »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Vous avez visité un nouveau pays pendant vos vacances.  Sur un site internet, racontez votre expérience et donnez votre opinion sur ce pays.
-
-Document B :
-Franck soutient l’utilisation limitée du plastique, soulignant son importance dans de nombreux secteurs, notamment les secteurs médical et alimentaire. Pour lui, le plastique est vital pour la conservation des aliments et la stérilisation des équipements médicaux. Il prône une utilisation responsable et le recyclage, mais reconnaît que certains usages du plastique sont indispensables pour la société moderne.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_229',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Amicha s’oppose fermement à l’utilisation du plastique, mettant en avant son impact environnemental dévastateur. Elle soutient que les déchets plastiques polluent les océans et les écosystèmes, causant des dommages irréparables. Amicha milite pour des alternatives écologiques et durables, insistant sur l’urgence de renoncer au plastique pour protéger l’environnement et la santé publique.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_221',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Votre ami vous propose de faire du camping.  Écrivez un message à votre ami pour lui suggérer un endroit où camper en précisant le lieu, la date et les activités prévues.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_242',
-  'tache_3',
-  3,
-  'Thème du débat : « Cours de langue à distance »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Deux amis souhaitent passer deux semaines de congé chez vous.  Écrivez-leur un message pour leur proposer des lieux à visiter (endroits historiques, restaurants, etc.).
-
-Document B :
-De nos jours, les journées passent très vite car nous sommes tout le temps pris par un rythme de vie effréné : travail, enfants, loisirs… Dès lors, beaucoup d’entre nous préfèrent et favorisent des habitudes alimentaires basées essentiellement sur des repas tout faits à emporter ou à consommer sur place. Prenons l’exemple d’Annette, une jeune femme de 28 ans qui se consacre énormément à son travail et qui aime dîner au restaurant tout en passant de bons moments avec ses amis. Cela lui permet de manger sainement sans avoir à passer des heures dans la cuisine après une rude journée de travail. Ce mode de vie lui convient en tant que célibataire, lui permettant de découvrir de nouveaux restaurants bien notés, de faire de nouvelles connaissances, et d’éviter de longues soirées seule devant sa télévision. Et ceci est vrai même pour les plus jeunes.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_230',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Les fast-foods et la restauration en général ont conduit beaucoup d’entre nous à adopter de mauvaises habitudes alimentaires, basées sur des plats rapides, déséquilibrés, et riches en calories et en graisses. Heureusement, certaines familles tiennent encore bon et choisissent de manger chez elles tout en faisant des économies. Prenons l’exemple de Jeanne, une femme mariée de 45 ans qui préfère manger à la maison avec son mari et ses cinq enfants. En cuisinant elle-même, elle sait ce qu’elle met dans son assiette tout en préservant son budget. Cette caissière, qui travaille dans une grande surface, préfère réaliser elle-même ses recettes car, non seulement ses moyens financiers sont limités, mais elle prend également un plaisir fou à cuisiner pour sa famille.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_222',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Tu as commencé ton nouveau travail ! C’est comment ? Tu es content(e) ?',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_243',
-  'tache_3',
-  3,
-  'Thème du débat : « Le livre papier ou le livre numérique? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Vous répondez à votre ami Ali. Dans votre message, vous décrivez votre nouveau travail (lieu, collègues, etc.) et vous donnez vos impressions.
-
-Document B :
-Vivre avec les personnes âgées, est-ce facile ?',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_231',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Un site internet recherche des gens pour faire des témoignages sur la vie avec les personnes âgées. Rédigez votre expérience pour faire part de comment vous avez pu vous en sortir (vis-à-vis des personnes âgées).',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_223',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Je vais bientôt vivre dans ton quartier. Je cherche un endroit sympathique pour faire mes courses. Est-ce que tu connais un marché intéressant ?',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_244',
-  'tache_3',
-  3,
-  'Thème du débat : « L’Éducation des Enfants. »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Merci d’avance et à bientôt !
-
-Document B :
-Vous répondez à votre ami Bernard. Dans votre message, vous décrivez un marché de votre quartier que vous aimez bien (lieu, horaires, produits, etc.)',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_224',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Depuis plusieurs années maintenant, de nombreux lecteurs ont décidé de remplacer la bibliothèque traditionnelle par des livres numériques. Selon eux, l’avantage est avant tout économique. D’une part, le livre numérique permet d’économiser du papier, d’autre part la version numérique d’un livre est généralement moins chère que la version papier. Les livres numériques ont un autre avantage : ils permettent une ouverture sur le monde pour les personnes en situation de handicap. Certaines options, comme la possibilité d’augmenter la taille des lettres, facilitent la lecture pour les personnes malvoyantes.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_245',
-  'tache_3',
-  3,
-  'Thème du débat : « Menus Sans Viande à La Cantine Scolaire. »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Le livre numérique remplacera-t-il le livre papier ? « Non », répondront la plupart des lecteurs. Le livre papier est un beau support. Quel plaisir de le prêter aux gens qu’on aime ou de l’offrir en glissant un petit mot dedans ! Le livre papier a une histoire, l’odeur du neuf ou de l’ancien… Il transmet beaucoup d’émotions alors que le livre numérique à un côté un peu impersonnel. De plus, les livres numériques demandent de posséder un minimum de connaissances en informatique, ce qui peut être une difficulté pour certaines personnes.
-
-Document B :
-Votre ami va fêter son anniversaire.  Écrivez un message à vos amis pour lui acheter un cadeau commun.',
-  true
-);
-
-INSERT INTO public.questions (epreuve, reference, tache, ordre, texte, actif) VALUES
-(
-  'expression_ecrite',
-  'EE_T1_232',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-La direction d’une école de musique cherche un endroit où organiser une fête pour 100 personnes.  Écrivez un mail pour les informer que vous avez trouvé un local (lieu, tarifs, etc…).',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_225',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Vous organisez un événement.  Écrivez une lettre à vos amis pour les inviter à cet événement, et pour leur demander de vous aider dans l’organisation (en précisant la date, le lieu, l’horaire…).',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_246',
-  'tache_3',
-  3,
-  'Thème du débat : « La Gratuité Des Musées : Pour Ou Contre ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Vous avez assisté à un événement sportif.  Racontez votre expérience sur le journal de votre site web (environnement, préparatifs, supporters, etc).
-
-Document B :
-De plus en plus d’écoles décident de mettre en place un menu sans viande dans les cantines, au moins deux fois par semaine. Certaines études ont montré que les enfants consomment trop de protéines animales. C’est donc une question de santé : les écoles ont choisi de remplacer la viande par d’autres produits (soja, céréales, légumes), moins gras et utiles à la croissance des enfants. Ces menus sans viandes à la cantine reviennent moins cher aux familles. Cette idée plaît beaucoup aux parents comme aux enfants.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_233',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-La décision de supprimer la viande dans les cantines ne plaît pas à tout le monde. En effet, c’est un produit cher : la cantine est le seul endroit où les enfants de familles en difficulté peuvent manger. Les producteurs locaux de viande sont également mécontents : une partie de leur production est réservée aux cantines, il s’agit donc d’une perte financière. Enfin, beaucoup d’enfants interrogés déclarent tout de même préférer les steaks de bœuf aux steaks de soja qui, selon eux, ont peu de goût.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_226',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-La gratuité des musées peut entraîner une surfréquentation, ce qui nuit à la qualité de l’expérience des visiteurs. De plus, cela peut réduire les ressources financières des musées, affectant ainsi leur entretien et la préservation des œuvres. Un tarif réduit serait une meilleure solution pour rendre la culture accessible tout en soutenant les musées.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_247',
-  'tache_3',
-  3,
-  'Thème du débat : « Les Caméras De Surveillance A L’école : Pour Ou Contre ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-La gratuité des musées est une excellente initiative. Cela rend la culture accessible à tous, indépendamment de leur situation financière. J’ai pu visiter plusieurs musées gratuitement, ce qui m’a permis d’enrichir mes connaissances sans me soucier du coût. Pour moi, la gratuité des musées contribue à l’éducation du public et au partage du patrimoine culturel.
-
-Document B :
-Vous avez quitté la ville afin de vous installer à la campagne.  Sur votre blog, vous expliquez pourquoi vous avez fait ce choix et vous présentez les avantages de votre nouvelle vie.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_234',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Dans l’école où j’enseigne à Montréal, les caméras de surveillance sont omniprésentes. Leur présence permet de dissuader les élèves de commettre des actes de violence. Les enseignants, les parents et la majorité des élèves les acceptent volontiers, car ils se sentent rassurés quant à la sécurité des enfants et que cela permet aux enseignants de travailler dans de bonnes conditions. Toutefois, certains élèves considèrent que cela porte atteinte à leur vie privée.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_248',
-  'tache_3',
-  3,
-  'Thème du débat : « Cuisinier Amateur Ou Cuisinier Professionnel ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Vous avez invité votre ami Cédric à votre mariage au Château de Chombony et il vous a répondu qu’il ne connait pas ce château.  Décrivez à votre ami (lieu, localisation, transports, etc.).
-
-Document B :
-Les amateurs ont fait des recettes réussies, mais ils manquent toujours des compétences et des technique, c’est pourquoi la formations et l’expérience sont nécessaires pour être un vrai cuisinier.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_235',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Il parle des cuisiniers qui ont appris le métier de cuisiniers sur internet et qui ont le buzz sur les réseaux sociaux il raconte aussi l’histoire d’une amatrice qui est devenue professionnelle et qui a rédigé plusieurs livres sur la cuisine pour les amateurs de cuisine à la maison.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_227',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-“Je suis en faveur des distributeurs de boissons dans les lycées. Premièrement, ils offrent une commodité supplémentaire pour les élèves, notamment pour ceux qui n’ont pas le temps de passer à la cafétéria pendant les pauses. Deuxièmement, s’ils sont bien gérés, ces distributeurs peuvent offrir une gamme de boissons saines, comme de l’eau, du jus de fruits pur et des boissons aux fruits sans sucre ajouté. Ces distributeurs peuvent être une source de revenus supplémentaire pour l’école, qui peut être réinvestie dans l’amélioration des infrastructures ou des programmes scolaires.”',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_249',
-  'tache_3',
-  3,
-  'Thème du débat : « L’utilisation Des Distributeurs Automatiques Au Sein Des Établissements Scolaires, Pour ou Contre ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-“Je suis contre l’installation de distributeurs de boissons dans les lycées. Ma principale préoccupation est liée à la santé des élèves. Malheureusement, beaucoup de ces distributeurs sont remplis de boissons sucrées et de sodas qui contribuent à l’obésité infantile et à d’autres problèmes de santé comme le diabète. Même les jus de fruits, qui peuvent sembler sains, contiennent souvent beaucoup de sucre. Les écoles devraient être des lieux qui encouragent des habitudes alimentaires saines et je crains que la présence de ces distributeurs n’encourage une consommation excessive de boissons sucrées.”
-
-Document B :
-Opinion 1 : Alexandre, un conseiller d’orientation',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_236',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-“Je suis fermement pour le travail des jeunes pendant les vacances. C’est une excellente occasion d’acquérir des compétences pratiques, d’apprendre à travailler en équipe et de découvrir différentes industries. Les jeunes peuvent gagner de l’argent qu’ils peuvent économiser pour l’avenir ou utiliser pour financer des activités ou des loisirs. De plus, le fait d’avoir une expérience de travail sur leur CV peut leur donner un avantage lorsqu’ils postulent pour des emplois ou des stages à l’avenir. Les vacances d’été sont longues et il y a amplement de temps pour se reposer et travailler.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_228',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Opinion 2 : Élise, une psychologue pour adolescents',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_250',
-  'tache_3',
-  3,
-  'Thème du débat : « Le travail des étudiants pendant les vacances: Pour ou contre ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-“Je suis contre l’idée que les jeunes doivent travailler pendant leurs vacances. Les adolescents sont déjà sous une énorme pression pendant l’année scolaire avec les études, les examens et les activités parascolaires. Les vacances doivent être une période pour eux de se détendre, de se décompresser et de poursuivre des intérêts personnels. Les forcer à travailler pourrait contribuer au stress et à l’épuisement. Il est également important pour les jeunes de disposer de temps non structuré pour explorer leur créativité, passer du temps avec leurs amis et leur famille, et tout simplement être des enfants. Le travail peut attendre.”
-
-Document B :
-La vie en colocation offre de nombreux avantages. Partager un logement avec d’autres personnes permet de réduire les dépenses, que ce soit le loyer, les factures ou les frais généraux. De plus, cela favorise les interactions sociales et les échanges culturels. Vivre avec des colocataires permet de rencontrer des individus de différents horizons, de nouer des amitiés et de partager des expériences enrichissantes.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_237',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-La colocation peut cependant présenter des défis. Les différences de personnalité et de mode de vie entre les colocataires peuvent entraîner des tensions. La gestion des responsabilités et des tâches ménagères peut également être source de conflits. De plus, la colocation peut limiter l’intimité et l’espace personnel. Il est important d’établir une communication ouverte et respectueuse, ainsi que des règles de vie commune, pour favoriser une cohabitation harmonieuse.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_229',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Vous avez passé un cours de cuisine.  Rédigez un article de blog pour décrire ce souvenir en indiquant les détails.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_251',
-  'tache_3',
-  3,
-  'Thème du débat : « Vivre En Colocation : Pour Ou Contre ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Les achats en ligne ont des avantages comme gagner de temps consommateurs les et de trouvent l’argent. les facilement, disponibilité 24/24, produits provenant de tout le monde etc.
-
-Document B :
-Les magazines nous donne la possibilité d’avoir un contact humain et relation avec les vendeurs + possibilité de voir et de toucher ce qu’on veut … les consommateurs favorisent l’achat traditionnel, visiter des magasins le permette d’échanger des achats insatisfaisants et de se se communiquer avec les vendeurs.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_230',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Répondez sur notre site Internet voyage.internaute.fr',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_252',
-  'tache_3',
-  3,
-  'Thème du débat : « Les Achats en Ligne. »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Vous écrivez un message sur ce site internet Vous répondez à la question posée en prenant des exemples de votre vie personnelle.
-
-Document B :
-Le travail est au centre de notre vie. Dès l’enfance, on entend souvent la question: «Qu’est-ce que tu veux faire quand tu seras grand ? ». Le travail devrait être synonyme de réussite et de satisfaction, mais il est trop souvent synonyme de fatigue et d’emprisonnement. Aujourd’hui, beaucoup pensent que l’on ne passe pas assez de temps avec sa famille, ses amis. Il est urgent de revoir la place occupée par le travail dans notre société. Certains pensent que travailler moins permettrait d’avoir plus de temps libre pour mieux vivre.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_231',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Les zoos présentent de nombreux avantages, y compris pour les espèces en voie de disparition. Les animaux y sont bien soignés. Les études démontrent que les taux de reproduction ont augmenté grâce aux programmes menés dans les zoos, contribuant ainsi à la sauvegarde de certaines espèces.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_253',
-  'tache_3',
-  3,
-  'Thème du débat : « Le Travail : Favorable Ou Défavorable ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Les animaux sauvages ne devraient pas être confinés dans des zoos, car cela ne correspond pas à leur habitat naturel. Il décrit les zoos comme des prisons pour les animaux, citant l’exemple d’ours polaires maintenus dans des environnements où la température atteint 15 degrés. Enfin, les animaux nécessitent un environnement naturel et la liberté.
-
-Document B :
-Certaines personnes trouvent la publicité ennuyeuse, mais, à mon avis, elle est indispensable pour le commerce et les entreprises. Grâce à la publicité, on fait connaître un produit ou un service. Et puis, parfois, elles sont drôles ! J’aime bien les écouter quand je suis en voiture. Cela me permet aussi d’être informé des nouveautés et des promotions. Personnellement, j’adore comparer les articles : je peux ainsi faire beaucoup d’économies sur mes achats. Enfin, beaucoup de personnes jouent à des jeux gratuits sur leur téléphone : sans publicité, ces jeux seraient tous payants. 
- Quentin, 28 ans.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_238',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-La publicité est présente partout dans notre vie de tous les jours : journaux, radios, télévision, téléphone, Internet… Par exemple, sur certaines chaînes de télévision, les émissions sont coupées par la publicité et c’est agaçant. Puis, recevoir des dizaines de kilos de papier de publicité par an dans la boîte aux lettres, ce n’est pas très respectueux de l’environnement ! Je pense qu’il est nécessaire de faire voter une loi pour réduire les publicités par courrier et à la télévision. Si la publicité était plus discrète, elle serait plus appréciée. 
- Estelle, 35 ans.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_232',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-www.manger-international.com 
- Ce mois-ci, nous nous intéressons aux habitudes alimentaires dans le monde. Racontez-nous comment mangent les habitants de votre pays ! Les 10 premiers témoignages seront publiés sur notre site !',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_254',
-  'tache_3',
-  3,
-  'Thème du débat : « Les Parcs Zoologiques : Pour Ou Contre ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Vous avez lu cette annonce, vous écrivez un article pour les lecteurs du site “www.manger-international.com”.  Vous expliquez comment mangent les habitants de votre pays et vous indiquez quelles habitudes vous plaisent ou vous déplaisent, et pourquoi.
-
-Document B :
-Beaucoup de gens pensent encore que les jeux vidéo nous rendent bêtes. Pourtant de nombreuses études prouvent le contraire. 
- Ainsi, selon une de ces études, les utilisateurs de jeux de course développeraien leur sens de l’orientation, leur mémoire et la précision de leurs mouvements. D’autres études montrent clairement une amélioration de la rapidité et de la concentration de tous les joueurs. Et c’est sans parler des jeux d’entraînement destinés aux personnes âgées pour consolider la mémoire et la vivacité d’esprit… Bref, c’est scientifique, le jeu vidéo rend plus intelligent !',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_255',
-  'tache_3',
-  3,
-  'Thème du débat : « Les Publicités, Pour ou Contre ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Beaucoup de villes se lancent dans des projets d’interdiction de voitures en zone urbaine sans mettre en place les outils et les infrastructures nécessaires pour réussir cette transition. Certes, en diminuant les voitures, on aura moins d’embouteillages, de stress et surtout un air beaucoup moins pollué, mais en contrepartie, il faut prévoir entre- autres de gigantesques parkings pour garer les voitures, opter davantage pour le transport en commun (métros et bus) et prévoir des autorisations de circulation pour certains corps de métiers (comme la police, les urgentistes, les livreurs, …)
-
-Document B :
-Je fais souvent mes voyages avec des compagnies aériennes à bas prix. Les compagnies Low-cost mettent à disposition des prix inférieurs à ceux proposés par les compagnies aériennes régulières. Cela me coûte des fois moins chère que de voyager en voiture ou en train. Avec ces tarifs-là, vous en doutez qu’il y a un hic, en effet, vous n’aurez le droit à aucun service à bord (ni aliments, ni boissons). Je dirais donc, que le low-cost n’est surtout pas fait pour les vols long courrier.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_233',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-« Salut ! Je sais que tu fais du sport depuis le mois dernier. Ça m’intéresse beaucoup et j’aimerais bien venir avec toi. Tu peux m’en dire plus ? A bientôt ! Camille »',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_256',
-  'tache_3',
-  3,
-  'Thème du débat : « Les Jeux Vidéo ont-ils un Impact sur notre Comportement ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Vous répondez à votre ami Camille. Dans votre message, vous décrivez votre activité sportive et vous donnez des informations utiles (lieu, durée, prix, etc.).
-
-Document B :
-« Tout quitter pour changer de vie ? Il y a deux ans, nous avons décidé de changer de vie. Paul a quitté son poste de banquier à Paris et nous avons ouvert une boulangerie à Calgary ! Que pensez-vous de cette décision ? Avez-vous déjà vécu un grand changement, professionnel ou personnel ? Paul et Naïma »',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_239',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Vous avez lu ce message sur un forum internet. Vous répondez à Paul et Naïma. Dans votre message, vous donnez votre opinion sur le choix de Paul et de Naïma et vous racontez comment vous feriez si vous étiez à leur place.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_234',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Nous avons installé, dans votre entreprise, des bureaux réglables qui montent et descendent, ceci pour permettre aux employés de choisir la position qui leur convient le mieux pour travailler. Les employés sont satisfaits et disent qu’ils sont plus productifs et plus efficaces lors des négociations au téléphone par exemple. Même le climat social est plus convivial et la communication verbale entre collègues s’est renforcée.  « Lorie, responsable ».',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_257',
-  'tache_3',
-  3,
-  'Thème du débat : « L’Interdiction des Voitures dans les Centres-Villes »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-De nos jours, les entreprises veulent toujours plus de productivité et d’efficacité, et les employés passent plus de temps sur les lieux de travail. Les entreprises cherchent toujours des moyens ou astuces pour convaincre leurs employés de travailler plus et qu’elles pensent à leur santé. Moi, ce qui m’importe c’est de faire mon job sur mon temps de travail réel sans être obligé de faire des rallonges en heures supplémentaires. « Florian, ingénieur ».
-
-Document B :
-Le port de l’uniforme étouffe et écrase la personnalité des garçons. Ils ne peuvent s’habiller comme ils veulent, en aucune circonstance. De l’autre coté de l’échelle (chez les pros) il y a des gens qui préféraient pour eux-mêmes et leurs enfants, avoir la possibilité de s’exprimer à travers l’habillement, en décidant eux-mêmes ce qu’ils porteront chaque jour. Ainsi, avec un uniforme, les jeunes qui aiment s’exprimer à travers la mode, se démarquer de la foule grâce à un accessoire ou un vêtement particulier, se retrouveront déçus et emprisonnés dans l’uniforme.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_240',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Certaines personnes trouvent la publicité ennuyeuse, mais, à mon avis, elle est indispensable pour le commerce et les entreprises. Grâce à la publicité, on fait connaître un produit ou un service. Et puis, parfois, elles sont drôles ! J’aime bien les écouter quand je suis en voiture. Cela me permet aussi d’être informé des nouveautés et des promotions. Personnellement, j’adore comparer les articles : je peux ainsi faire beaucoup d’économies sur mes achats. Enfin, beaucoup de personnes jouent à des jeux gratuits sur leur téléphone : sans publicité, ces jeux seraient tous payants. 
- Quentin, 28 ans.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_235',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Document 1 (Marie 58 ans): J’ai pris l’habitude, depuis des années maintenant, de donner un peu de mon temps et de mon argent afin d’aider les personnes vivant dans la précarité extrême; surtout ceux qui vivent sans abri en période hivernale. Pour moi, c’est un devoir d’aider et de contribuer afin que ces personnes puissent vivre le plus normalement possible. En assistant des pauvres ou des associations, on se sent utile au sein d’une société qui devient de plus en plus impitoyable.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_258',
-  'tache_3',
-  3,
-  'Thème du débat : « L’Interdiction des Voitures dans les Centres-Villes »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Document 2 : (Paul 63 ans ) : Pour aider les personnes vivant dans la précarité, on doit s’investir davantage dans les associations caritatives. Personnellement, c’est ce que je fais; je suis bénévole dans une association située dans mon quartier. Elle a pour principal but, aider les sans-abris à trouver un logement et un travail afin au’ils vivent le plus normalement possible. Cette action est plus bénéfique à long terme car elle permet de les rendre autonomes.
-
-Document B :
-La vie en colocation offre de nombreux avantages. Partager un logement avec d’autres personnes permet de réduire les dépenses, que ce soit le loyer, les factures ou les frais généraux. De plus, cela favorise les interactions sociales et les échanges culturels. Vivre avec des colocataires permet de rencontrer des individus de différents horizons, de nouer des amitiés et de partager des expériences enrichissantes.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_259',
-  'tache_3',
-  3,
-  'Thème du débat : « Les Vols A Bas Prix : Pour ou Contre ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Il parle des cuisiniers qui ont appris le métier de cuisiniers sur internet et qui ont le buzz sur les réseaux sociaux il raconte aussi l’histoire d’une amatrice qui est devenue professionnelle et qui a rédigé plusieurs livres sur la cuisine pour les amateurs de cuisine à la maison.
-
-Document B :
-“Je suis en faveur des distributeurs de boissons dans les lycées. Premièrement, ils offrent une commodité supplémentaire pour les élèves, notamment pour ceux qui n’ont pas le temps de passer à la cafétéria pendant les pauses. Deuxièmement, s’ils sont bien gérés, ces distributeurs peuvent offrir une gamme de boissons saines, comme de l’eau, du jus de fruits pur et des boissons aux fruits sans sucre ajouté. Ces distributeurs peuvent être une source de revenus supplémentaire pour l’école, qui peut être réinvestie dans l’amélioration des infrastructures ou des programmes scolaires.”',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_241',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Parc de loisirs : “J’ai hâte de passer la journée avec toi demain. S’il te plaît, dis-moi, quelle activité nous pourrons faire ?”',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_236',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Répondez à votre ami pour lui décrire la sortie (horaires, transport, billet, activités)',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_260',
-  'tache_3',
-  3,
-  'Thème du débat : « Les Vols À Bas Prix : Pour Ou Contre ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Les restaurants rapides proposent des plats équilibrés et variés et ils respectent les normes d’hygiène et les variétés de produits qui sont bonnes et c’est le client qui compose son menu donc il est responsable.
-
-Document B :
-Les fast foods, en raison de leur impact néfaste sur la santé, sont responsables de l’apparition de diverses maladies. Leur consommation régulière peut entraîner des problèmes tels que l’obésité, les maladies cardiovasculaires et le diabète. Il est important de limiter leur consommation afin de préserver notre bien-être.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_242',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Votre ami Mehdi vient de s’installer dans votre ville et il a besoin d’aide concernant les transports. Répondez-lui en lui donnant les informations (types de transport, abonnement, prix…)',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_237',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Vous aimez une personne célèbre ou non par ses actions. Écrivez dans votre blog personnel en précisant l’action que cette personne a faite et dites pourquoi vous l’adorez.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_261',
-  'tache_3',
-  3,
-  'Thème du débat : « Restauration Rapide. »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-La vie en colocation offre de nombreux avantages. Partager un logement avec d’autres personnes permet de réduire les dépenses, que ce soit le loyer, les factures ou les frais généraux. De plus, cela favorise les interactions sociales et les échanges culturels. Vivre avec des colocataires permet de rencontrer des individus de différents horizons, de nouer des amitiés et de partager des expériences enrichissantes.
-
-Document B :
-La colocation peut cependant présenter des défis. Les différences de personnalité et de mode de vie entre les colocataires peuvent entraîner des tensions. La gestion des responsabilités et des tâches ménagères peut également être source de conflits. De plus, la colocation peut limiter l’intimité et l’espace personnel. Il est important d’établir une communication ouverte et respectueuse, ainsi que des règles de vie commune, pour favoriser une cohabitation harmonieuse.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_243',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Invitez vos amis à célébrer votre anniversaire tout en sollicitant leur soutien pour organiser la fête.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_238',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Opinion 1 : Alexandre, un conseiller d’orientation',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_262',
-  'tache_3',
-  3,
-  'Thème du débat : « Les Jeux Vidéo »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-“Je suis fermement pour le travail des jeunes pendant les vacances. C’est une excellente occasion d’acquérir des compétences pratiques, d’apprendre à travailler en équipe et de découvrir différentes industries. Les jeunes peuvent gagner de l’argent qu’ils peuvent économiser pour l’avenir ou utiliser pour financer des activités ou des loisirs. De plus, le fait d’avoir une expérience de travail sur leur CV peut leur donner un avantage lorsqu’ils postulent pour des emplois ou des stages à l’avenir. Les vacances d’été sont longues et il y a amplement de temps pour se reposer et travailler.
-
-Document B :
-Opinion 2 : Élise, une psychologue pour adolescents',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_239',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Vous avez commandé un objet sur Internet et après réception du colis, vous constatez que l’objet est cassé.  Rédigez un e-mail au service clientèle pour signaler le problème, décrivez le dommage de l’objet et précisez ce que vous attendez comme solution.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_244',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-À la rentrée, le nombre d’élèves inscrits dans des écoles privées a augmenté en France. Le succès des établissements privés n’est pas directement lié aux bons résultats scolaires de leurs élèves. C’est la réputation de ces lieux qui explique un tel enthousiasme. Aux yeux de nombreux parents, les élèves y sont mieux encadrés, mieux surveillés et les professeurs sont plus présents. Les parents sont aussi rassurés parce que les classes sont homogènes : elles accueillent généralement des élèves de milieux sociaux favorisés. En effet, les études dans ces établissements sont payantes, ce qui n’est pas le cas dans les écoles publiques.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_240',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Dans les collèges privés, il y a peu d’élèves de milieux sociaux défavorisés. Comme les études dans ces établissements sont payantes, certaines catégories de population en sont exclues. Ce système qui oppose écoles publiques et écoles privées ne facilite pas la mixité sociale. Ainsi, les élèves du privé ont rarement l’occasion de rencontrer d’autres jeunes issus de milieux sociaux moins favorisés qu’eux et inversement. Ce modèle scolaire reproduit les inégalités sociales et renforce le sentiment d’exclusion de certains jeunes.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_263',
-  'tache_3',
-  3,
-  'Thème du débat : « Les devoirs à la maison : pour ou contre ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Je sais que tu vas dans une salle de sport. Qu’est ce que tu penses de cette salle ? Peux-tu m’en dure un peu plus ? Je voudrais savoir si elle est bien !
-
-Document B :
-Il est aujourd''hui possible de fabriquer soi-même tout type de produits à la maison: des shampooings, des savons, des crèmes, du maquillage mais aussi des produits d''entretien pour faire le ménage. C''est formidable car on peut ainsi contrôler leur composition. Il est préférable de sélectionner des ingrédients et des parfums naturels qui ne contiennent pas d''éléments chimiques. Par ailleurs, la fabrication maison permet de reduire les emballages etadonc les déchets.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_245',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-N''hésitez plus : fabriquez vos propres produits',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_241',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Vous préférez fabriquer vous même votre savon au lieu de l''acheter ? Attention il y a des risques pour la santé si vous ne choisissez pas les bons ingredients ou si les règles d''hygiène ne sont pas respectées. Ainsi, avant de vous lancer, il est nécessaire de bien se renseigner et de suivre les règles strictes de fabrication et de conservation. De plas, méme si ces produits coûtent moins cher et représentent une economie d''argent du quatidien, la fabrication mason prend souvent beaucoup de temps',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_246',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Vous avez trouvé un nouveau travail. Vous écrivez à votre amie Francophone pour lui annoncer la bonne nouvelle.  Vous décrivez votre poste, vos collègues et votre lieu de travail.',
-  true
-);
-
-INSERT INTO public.questions (epreuve, reference, tache, ordre, texte, actif) VALUES
-(
-  'expression_ecrite',
-  'EE_T2_242',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Une étudiante qui à 19 ans veut aller à l’étranger pour les études. Elle demande aux internautes du forum de partager leurs expériences et vous avez fait un an à l’étranger.  Parlez- lui de votre expérience (décrire le séjour à l’étranger, les activités…).',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_264',
-  'tache_3',
-  3,
-  'Thème du débat : « L’aide Aux Personnes Pauvres : »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-J’ai pris l’habitude, depuis des années maintenant, de donner un peu de mon temps et de mon argent afin d’aider les personnes vivant dans la précarité extrême, surtout ceux qui vivent sans abri en période hivernale. Pour our moi, c’est un devoir d’aider et de contribuer afin que ces personnes puissent vivre le ou des normalement possible. En assistant des pauvres ou des associations, on se sent utile au sein d’une société qui devient de plus en plus impitoyable.
-
-Document B :
-Pour aider les personnes vivant dans la précarité, on doit s’investir davantage dans des associations caritatives. Personnellement, c’est ce que je fais, je suis bénévole dans une association située dans mon quartier. Elle a pour principal but, aider les sans-abris à trouver un logement et un travail afin qu’ils vivent le plus normalement possible. Cette action est plus bénéfique à long terme car elle permet de les rendre autonomes.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_265',
-  'tache_3',
-  3,
-  'Thème du débat : « Vivre En Colocation : Pour Ou Contre ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Vous avez invité votre ami Cédric à votre mariage au Château de Chombony et il vous a répondu qu’il ne connait pas ce château. Décrivez à votre ami (lieu, localisation, transports, etc.).
-
-Document B :
-Dans votre blog, Racontez votre expérience de l’apprentissage d’une langue étrangère (vous écrivez sur un forum internet en racontant votre expérience en apprenant une langue étrangère).',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_247',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Les amateurs ont fait des recettes réussies, mais ils manquent toujours des compétences et des technique, c’est pourquoi la formations et l’expérience sont nécessaires pour être un vrai cuisinier.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_243',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Il parle des cuisiniers qui ont appris le métier de cuisiniers sur internet et qui ont le buzz sur les réseaux sociaux il raconte aussi l’histoire d’une amatrice qui est devenue professionnelle et qui a rédigé plusieurs livres sur la cuisine pour les amateurs de cuisine à la maison.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_266',
-  'tache_3',
-  3,
-  'Thème du débat : « Cuisinier Amateur Ou Cuisinier Professionnel ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Je suis votre amie Anna et je compte passer un weekend dans ta ville.  Donnez-moi des informations sur les moyens de transport pour explorer la ville. Répondez à Anna dans un message.
-
-Document B :
-Vous avez assisté à une fête de voisins du quartier,  écrivez un blog pour montrer pourquoi vous avez aimé cette fête.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_267',
-  'tache_3',
-  3,
-  'Thème du débat : « Les Distributeurs De Boissons Dans Les Lycées: Pour Ou Contre? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Vous allez bientôt déménager. Écrivez un message à votre ami(e) pour demander son aide en fournissant les informations (date, lieu, transports, etc.).
-
-Document B :
-Vous faites une réclamation par rapport aux mauvaises prestations d’une agence de voyage suite à un voyage mal organisé. Exprimez votre mécontentement.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_244',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-On parle tout le temps des effets négatifs des jeux vidéo, mais ces derniers peuvent également avoir quelques avantages pour le fonctionnement du cerveau et pour la santé d’une manière générale. Si on prend, par exemple, leur apport pour le cerveau, les jeux vidéo permettent d’améliorer plusieurs fonctions cognitives telles que l’amélioration de la concentration, de la réaction et de la capacité d’analyser. Ceci peut paraître évident, dans la mesure où lorsqu’on y joue, on doit toujours trouver des solutions à des situations plus au moins complexes (surtout pour les jeux de stratégie).',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_268',
-  'tache_3',
-  3,
-  'Thème du débat : « Les Jeux Vidéo : Pour Ou Contre ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Vous partez en voyage et vous laissez votre appartement à un ami qui veut venir rester chez-vous pendant vos vacances.  Vous lui envoyez un message pour décrire votre appartement (immeuble, logement, accès…).
-
-Document B :
-Ecrivez un article de blog sur votre souvenir de voyage que vous avez aimé le plus.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_245',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Les inconvénients manque de liberté, Vivre seuls leur permet d''être indépendant, les adolescents qui vivent Avec leurs parents s''ennuient car leurs parents décident à leur place et se sont toujours de pondant des parents […] un avis d''un certain monsieur qui à 25 et il a perdu son job, donc il était dans l''obligation de rentrer vivre avec ces parents, et maintenant il a perdu son espace d''intimitée &#8230; contre la vie des jeunes avec leurs parent, un témoignage d''un jeune qui considère revenir chez ces parents c''est avoir revenir en arrières.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_269',
-  'tache_3',
-  3,
-  'Thème du débat : « Vivre Chez Ses Parents, Pour Ou Contre ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Ecrivez un message à vos amis pour les inviter à votre anniversaire et leur raconter comment va se dérouler votre fête.
-
-Document B :
-Répondez en commentaire à une publication sur Facebook au sujet des études à l’étranger en citant les avantages et les inconvénients de cette expérience',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_246',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Les nouvelles technologies encouragent les enfants à être sédentaires. C’est une préoccupation majeure pour les parents. Cela ne mène à aucun jeu libre créatif, à aucune interaction sociale face à face, conduisant à aucun effort physique! Pourquoi ne pas essayer certaines de ces activités amusantes pour encourager vos enfants à ranger leurs appareils ?',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_270',
-  'tache_3',
-  3,
-  'Thème du débat : « Les Nouvelles Technologies Pour Les Enfants »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Votre ami veut se mettre au sport.  Vous lui envoyez un message pour lui conseiller une salle de sport situé dans votre quartier (localisation, prix, type d’activités, etc…)
-
-Document B :
-Vous avez participé à un événement qui vous a marqué (anniversaire, mariage, etc…).  Racontez votre souvenir.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_247',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-L’amour de la lecture se transmet de génération en génération bien que, ces dernières années, on ne trouve plus beaucoup de bouquins entre les mains des enfants, laissant la place aux smartphones et aux tablettes. En apprenant à lire régulièrement, l’enfant acquiert le langage plus aisément tout en développant sa capacité d’audition et de concentration. De plus, et pour prendre du plaisir ensemble, les parents peuvent consacrer quotidiennement 10 minutes à leurs enfants pour lire des bouquins ; une activité qui renforcera à coup sûr la complicité parent/enfant.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_271',
-  'tache_3',
-  3,
-  'Thème du débat : « La Lecture Pour Les Enfants »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Vous faites du sport dans un club. Vous venez de remporter une compétition. Vous écrivez un courriel à vos amis pour leur raconter cet évènement sportif et annoncer votre réussite sportive.
-
-Document B :
-« Le site colocation.com recherche des témoignes sur vos expériences de colocation. Écrivez-nous ! » Vous avez déjà habité en colocation avec des amis. Vous racontez votre expérience aux membres du site internet. Vous donnez votre opinion sur ce mode de logement.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_248',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Plus de la moitié de l’humanité vit en ville (huit habitants sur dix dans les pays riches) la vie urbaine est donc le principal enjeu écologique.On entend souvent dire que l’organisation actuelle des villes n’est pas écologique, et que le grossissement des villes ne fait qu’augmenter le problème. Pourtant, il faut se méfier des apparences : les villes ne sont pas toujours aussi antiécologique qu’on l’imagine. Par exemple, la consommation d’énergie d’un citadin est moins importante que celle d’un habitant de la campagne.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_272',
-  'tache_3',
-  3,
-  'Thème du débat : « Le Grossissement Des Villes »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Écrivez un message dans le journal de votre université pour rechercher un partenaire avec qui fait du sport.
-
-Document B :
-Écrivez dans un article un message pour raconter votre arrivée dans un pays étranger en donnant vos impressions.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_249',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-La télévision peut également présenter certains inconvénients. Les émissions télévisées peuvent parfois véhiculer des stéréotypes, des préjugés et des valeurs discutables. De plus, le temps passé devant la télévision peut réduire le temps consacré à d''autres activités plus enrichissantes, telles que la lecture, les interactions sociales ou la pratique d''un sport. Il est important de faire preuve de discernement et de réguler l''exposition à la télévision, en particulier pour les enfants, afin de préserver un équilibre sain entre les différentes formes d''apprentissage et de divertissement.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_273',
-  'tache_3',
-  3,
-  'Thème du débat : « Rôle De La Télévision Dans L''éducation Des Enfants. »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Salut ! 
- Je cherche un endroit pour déjeuner en plein air ce week-end. Qu’est-ce que tu me propose ? 
- A bientôt, 
- Barbara. 
- Vous répondez à votre amie Barbara. Vous décrivez le lieu (parc, jardin, terrasse, etc.)
-
-Document B :
-Vous avez visité un nouveau pays pendant vos vacances. Sur un site internes, vous racontez votre expérience et vous donnez votre opinion sur ce pays.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_248',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Chaque année, des millions de tonnes de plastiques sont déversées dans les océans, où elles s''accumulent et se fragmentent en petits morceaux. Ces déchets plastiques ont des effets désastreux sur la faune et la flore marines, qui les ingèrent. Les plastiques menacent ainsi la santé des écosystèmes marins, mais aussi la nôtre, car ils peuvent remonter dans la chaîne alimentaire. Il est urgent de réduire notre consommation de plastiques et de les éliminer à la source, avant qu''ils n''atteignent les océans.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_250',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Le plastique est un matériau indispensable dans le domaine de la santé. Il permet de fabriquer des dispositifs médicaux, tels que des seringues, des cathéters, des prothèses, des implants, des pansements, etc. Ces dispositifs sont souvent jetables, résistants, et adaptés aux besoins des patients. Le plastique contribue ainsi à la prévention des infections, à la réduction des douleurs, à l''amélioration de la qualité de vie, et à la sauvegarde de nombreuses vies. Il est donc un allié de la médecine, qui apporte des solutions innovantes et efficaces.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_274',
-  'tache_3',
-  3,
-  'Thème du débat : « l''utilisation du plastique, pour ou contre »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-votre ami(e) veut découvrir la région dans laquelle vous habitez.  Écrivez lui un message pour lui proposer des sites à visiter.
-
-Document B :
-Vous avez participé à un cours de sport dans une salle.  Écrivez un article dans votre blog parlant de  cette expérience et en exprimant également votre avis par rapport à cette salle.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_251',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Cette pratique révèle souvent des inconvénients à cause de sa notoriété montante. Certains jours, il arrive que les responsables de livraisons peuvent être envahis par un grand nombre de livraisons à faire et cela risque de générer des perturbations liées au stress de l’attente. De même pour les employés, une trop longue heure de travail peut causer un état de fatigue si ce dernier ne quittera pas son bureau pour le repas. Dans tous les cas, il est recommandé de toujours marquer des temps de pause lors des durs labeurs.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_275',
-  'tache_3',
-  3,
-  'Thème du débat : « Livraison Des Repas Au Bureau : Pour Ou Contre ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Je vais bientôt vivre dans ton quartier. Je cherche un endroit sympathique pour faire mes courses. Est-ce que tu connais un marché intéressant ?
-
-Document B :
-Merci d’avance et à bientôt !',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_252',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Ecrivez un article de blog sur votre souvenir de voyage que vous avez aimé le plus.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_276',
-  'tache_3',
-  3,
-  'Thème du débat : « Le Grossissement Des Villes »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Je cherche un endroit pour déjeuner en plein air ce week-end. Qu’est-ce que tu me propose ?
-
-Document B :
-Vous répondez à votre amie Barbara. Vous décrivez le lieu (parc, jardin, terrasse, etc.)',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_249',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Vous avez visité un nouveau pays pendant vos vacances. Sur un site internes, vous racontez votre expérience et vous donnez votre opinion sur ce pays.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_277',
-  'tache_3',
-  3,
-  'Thème du débat : « Rôle De La Télévision Dans L''éducation Des Enfants. »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Amicha s’oppose fermement à l’utilisation du plastique, mettant en avant son impact environnemental dévastateur. Elle argue que les déchets plastiques polluent les océans et les écosystèmes, causant des dommages irréparables. Amicha milite pour des alternatives écologiques et durables, insistant sur l’urgence de renoncer au plastique pour protéger l’environnement et la santé publique.
-
-Document B :
-votre ami(e) veut découvrir la région dans laquelle vous habitez.  Écrivez lui un message pour lui proposer des sites à visiter.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_278',
-  'tache_3',
-  3,
-  'Thème du débat : « l''utilisation du plastique, pour ou contre »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Cette pratique révèle souvent des inconvénients à cause de sa notoriété montante. Certains jours, il arrive que les responsables de livraisons peuvent être envahis par un grand nombre de livraisons à faire et cela risque de générer des perturbations liées au stress de l’attente. De même pour les employés, une trop longue heure de travail peut causer un état de fatigue si ce dernier ne quittera pas son bureau pour le repas. Dans tous les cas, il est recommandé de toujours marquer des temps de pause lors des durs labeurs.
-
-Document B :
-Je vais bientôt vivre dans ton quartier. Je cherche un endroit sympathique pour faire mes courses. Est-ce que tu connais un marché intéressant ?',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_250',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Merci d’avance et à bientôt !',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_253',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Vous répondez à votre ami Bernard. Dans votre message, vous décrivez un marché de votre quartier que vous aimez bien (lieu, horaires, produits, etc.)',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_279',
-  'tache_3',
-  3,
-  'Thème du débat : « Livraison Des Repas Au Bureau : Pour Ou Contre ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Vous faites partie d’une association de quartier qui propose des activités aux enfants (aide aux devoirs, sorties, jeux, etc.) Sur votre site internet, vous racontez votre expérience et vous expliquez pourquoi ce type d’association est utile.
-
-Document B :
-Depuis plusieurs années maintenant, de nombreux lecteurs ont décidé de remplacer la bibliothèque traditionnelle par des livres numériques. Selon eux, l’avantage est avant tout économique. D’une part, le livre numérique permet d’économiser du papier, d’autre part la version numérique d’un livre est généralement moins chère que la version papier. Les livres numériques ont un autre avantage : ils permettent une ouverture sur le monde pour les personnes en situation de handicap. Certaines options, comme la possibilité d’augmenter la taille des lettres, facilitent la lecture pour les personnes malvoyantes.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_251',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-France Télévisions prépare un reportage sur le sport amateur.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_254',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Et vous, quel sportif êtes-vous ?',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_280',
-  'tache_3',
-  3,
-  'Thème du débat : « Sujets d''actualité »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Envoyez-nous vos témoignages sur francetelevisions.fr.
-
-Document B :
-Vous avez passé des vacances formidables dans une belle région de votre pays.Vous écrivez un message à vos amis dans lequel vous racontez votre expérience. Vous expliquez pourquoi vous avez beaucoup aimé ce séjour.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_281',
-  'tache_3',
-  3,
-  'Thème du débat : « les animaux de compagnie pour les enfants, pour ou contre ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Gagnez deux billets pour la destination de votre choix avec la compagnie Air Tropiques. Racontez votre plus beau voyage sur notre forum »
-
-Document B :
-Écrivez un message sur le forum de la compagnie Air Tropiques. Vous racontez votre plus beau voyage (destination, activités, &#8230;) et vous dites pourquoi&#8230;',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_282',
-  'tache_3',
-  3,
-  'Thème du débat : « le vélo en ville, pour ou contre? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-La bibliothèque de votre ville organise une rencontre avec un écrivain. Écrivez un message à votre ami(e) pour l’inviter à cet évènement.
-
-Document B :
-Vous avez participé à un évènement nommé ” La semaine du gout “. Écrivez un article de blog pour raconter cette expérience.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_252',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Grâce à l’art, la curiosité des citadins est attisée dans l’espace urbain. Que ce soit par une peinture ou un spectacle de rue, l’atmosphère éphémère ainsi créée offre une interaction entre des artistes peu connus et un public hétéroclite, parfois peu habitué à côtoyer cette forme d’art.Les villes d’aujourd’hui n’ont plus la même vocation que celles d’hier. Plus qu’un lieu de résidence, la ville se réinvente, s’enrichit de la diversité de sa population, s’agence différemment et s’ouvre sur le monde. Les espaces verts se créent et les murs se parent de couleurs grâce au street art. Cela débouche sur des lieux où la qualité de vie est privilégiée, tout en respectant la nature et l’environnement.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_255',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Mais à une plus large échelle, cela n’est pas aussi évident. Les graffitis peuvent être perçus comme une dégradation de la communauté, une pollution visuelle ou une preuve de la rupture sociale.On le considèrent comme du vandalisme qui défigure les biens publics. Le débat sur les avantages et les inconvénients des graffitis fait rage parmi les artistes, les législateurs et les membres de la communauté.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_283',
-  'tache_3',
-  3,
-  'Thème du débat : « L''école à domicile, pour ou contre? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Participez à notre concours pour gagner un séjour pour deux personnes dans la ville de votre choix. Rédigez un article sur le thème : <<< La vie de mon artiste préféré(e) > ».
-
-Document B :
-Vous participez à ce concours. Vous expliquez pourquoi vous avez choisi cet(te) artiste et vous racontez sa vie.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_253',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Les objets connectés facilitent notre vie quotidienne. Ce sont des objets ou des équipements pilotés à distance à l''aide d''un téléphone portable ou par Internet, comme le système de chauffage ou la fermeture des portes. De plus, avec une montre ou un bracelet connecté, toutes nos activités peuvent être analysées. Un logiciel va mesurer le nombre de nos pas pour nous inciter à faire davantage d''exercice. Un domaine où l''on comprend mieux leur utilité est celui de la surveillance de la santé. Certains objets agissent comme un carnet de santé, toujours prêts à vous rappeler un rendez-vous chez le médecin ou des médicaments à prendre.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_284',
-  'tache_3',
-  3,
-  'Thème du débat : « Faire ses courses alimentaires chez les
-producteurs locaux ou au supermarché »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Vous êtes locataire d’un appartement trop grand pour vous. Écrivez une annonce dan un journal pour chercher un colocataire. Il faut mentionner ; la superficie, caractère du colocataire,  prix, etc).
-
-Document B :
-Vous venez de commencé une nouvelle activité de loisir (Sport, dance, etc.). Écrivez un article sur votre blog pour parler de cette expérience.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_285',
-  'tache_3',
-  3,
-  'Thème du débat : « L’art Urbain : Pour Ou Contre ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Votre ami Cédric a accepté de garder votre maison et jardin pendant vos vacances. Écrivez un message pour lui dire ce qu’il doit faire.
-
-Document B :
-Vous faites une réclamation par rapport aux mauvaises prestations d’une agence de voyage suite à un voyage mal organisé. Exprimez votre mécontentement.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_254',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Vous avez déménagé dans une nouvelle ville depuis un mois.  Vous écrivez un courriel à votre Leo pour lui donner de vos nouvelles ! Vous devez lui décrire : ( l’appartement, le quartier, la ville, les activités…)',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_256',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Vous avez assisté à une fête traditionnelle dans votre pays où à l’étranger.  Racontez la dans votre blog et dites pourquoi vous l’avez aimée.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_286',
-  'tache_3',
-  3,
-  'Thème du débat : « Les Parcs Zoologiques : Pour Ou Contre ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Le texte affirme que les zoos ont beaucoup d’avantages, même pour les animaux en la voie de disparition, les animaux sont bien soignées dans les zoos. Les études montrent que le nombre de reproduction a augmenté grâce aux zoos et ils peuvent sauver la vie des animaux.
-
-Document B :
-Le texte a montré qu’il ne faut pas mettre les animaux sauvages dans les zoos parce que ce n’est pas leur environnement. C’est un prison pour eux. On trouve des ours polaires dans un zoo dont la température est de 15 degrés. Les animaux ont besoin de la nature et de la liberté.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_255',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Vous voulez communiquer avec quelqu’un en français en toute convivialité. Vous écrivez un courriel à cette adresse(…) pour qu’on vous propose quelqu’un (centre d’intérêt, présentez vous…)',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_257',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Écrivez un message à vos amis pour leur raconter à propos d’une fête à laquelle vous avez assisté en famille.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_256',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Vous terminez un séjour professionnel dans un pays étranger et vous souhaitez fêter votre départ. Vous écrivez un couriel à vos collègues pour les invités au restaurant. Vous décrivez votre projet et donnez les informations nécessaires (adresse, date heure etc.)',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_258',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Vous avez commencé une nouvelle activité sportive. Sur votre blog vous racontez votre expérience. Vous expliquez pourquoi cette activité peut être intéressante.',
-  true
-);
-
-INSERT INTO public.questions (epreuve, reference, tache, ordre, texte, actif) VALUES
-(
-  'expression_ecrite',
-  'EE_T3_287',
-  'tache_3',
-  3,
-  'Thème du débat : « Les Animaux de Compagnie au Travail »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Venir au bureau avec son animal de compagnie, c''est à la mode. L''intérêt de cette présence ? C''est simple: diminuer le stress des employés. La présence d''un chien ou d''un chat change l''ambiance générale d''une entreprise : elle réduit les tensions entre collègues, ce qui n''est pas négligeable car chaque année, l''État français dépense entre 2 et 3 milliards d''euros pour soigner les salariés malades du stress. Selon une enquête, un quart des employés pensent aussi que la présence des animaux permet d''être plus motivé au travail.
-
-Document B :
-« Dans l''entreprise où je travaille, les employés sont autorisés à venir avec leur animal de compagnie, chat ou chien. Personnellement, cela me dérange. Je ne suis pas très à l''aise avec les animaux, qui peuvent avoir des comportements imprévisibles. D''autre part, je trouve que cela peut poser des problèmes de santé. Que faire si un employé est allergique aux chats ? Sera-t-il obligé de rester enfermé dans son bureau? Et puis c''est aussi une source de distraction. Mes collègues et moi ne serons pas plus productifs grâce à un chien ou un chat ! »',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_257',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Un évènement sportif aura lieu dans votre ville bientôt. Faites parvenir un message à vos amis pour les inviter (date, lieu, inscription, etc.).',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_258',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-je cherche un vélo en bon état et bon marché. Contactez moi par courriel : [email&#160;protected]',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_259',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Vous souhaitez faire du sport et vous voulez que votre ami vous accompagne.  Écrivez lui un message pour lui proposer de pratiquer ensemble.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_288',
-  'tache_3',
-  3,
-  'Thème du débat : « L''uniforme Scolaire : Pour Ou Contre ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Vous avez déjà étudié dans une université à l’étranger.  Écrivez un article sur votre Blog pour raconter cette expérience.
-
-Document B :
-Le port de l’uniforme étouffe et écrase la personnalité des garçons. Ils ne peuvent s’habiller comme ils veulent, n’en écrase la peuvent aucune circonstance. De l’autre côté de l’échelle (chez les pros) il y a des gens qui préféraient pour eux-mêmes et leurs enfants, avoir la possibilité de s’exprimer à travers l’habillement, en décidant eux-mêmes ce qu’ils porteront chaque jour. Ainsi, avec un uniforme, les jeunes qui aiment s’exprimer à travers la mode, se démarquer de la foule grâce à un accessoire ou un vêtement particulier, se retrouveront déçus et emprisonnés dans l’uniforme.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_259',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Le port de l’uniforme développe un sentiment d’appartenance à son établissement, et à la communauté des élèves. Il nourrit chez le jeune le sens du collectif et engendre souvent la fierté d’appartenir à son établissement. De plus, il réduit la discrimination basée sur le style ou sur la classe sociale de l’élève. En effet, l’uniforme permet aux parents d’économiser beaucoup d’argents, ce ne sont pas tous les parents qui peuvent payer à Cleurs enfants de beaux vêtements griffés ou de marques populaires. La mise en place d’un code vestimentaire réduit donc les différences entre les classes sociales.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_260',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Vous souhaitez fêter votre anniversaire dans un restaurant. Vous invitez vos amis,  vous leur écrivez un courriel pour leur donne toutes les informations nécessaires (lieu, date, menu, etc.) ainsi vous leur demandez de confirmer leur présence.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_261',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Vous êtes nouveaux dans une université 
- Décrivez à vos amis comment cela se passe avec ( les prof,autres étudiants, les activités et autres )',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_289',
-  'tache_3',
-  3,
-  'Thème du débat : « Faut il mettre les photos sur les CV »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Vous avez décidé de ne plus utiliser les réseaux sociaux ( twitter Instagram Facebook et autres). 
- Écrivez un message à vos amis en citant les raisons derrière cette décision.
-
-Document B :
-On parle de l’inutilité de la photo sur le cv tant que ce qui est important sont les diplômes requis et l’expérience professionnelle. Les employeurs n’aiment pas avoir des photos, une étude montre que c’est une perte de temps. La photo sur un cv ne doit pas etre obligatoire car elle peut influencer les employeurs, certains employeurs peuvent choisir un candidat en se basant sur sa couleur (une sorte de discrimination).',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_260',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Christophe adhère à l’idée que la présence d’une photo sur le CV ne sera pas un critère de sélection mais elle est indispensable pour quelques métiers tel que une hôtesse d’accueil, la photo est nécessaire, il donne une idée sur le candidat et certaines employeurs veulent voir la photo pour décider pour ou contre un candidat.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_290',
-  'tache_3',
-  3,
-  'Thème du débat : « l''utilisation du plastique, pour ou contre »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Vous répondez à votre amie Barbara. Vous décrivez le lieu (parc, jardin, terrasse, etc.)
-
-Document B :
-Vous avez visité un nouveau pays pendant vos vacances. Sur un site internes, vous racontez votre expérience et vous donnez votre opinion sur ce pays.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_261',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Écrire un message à votre amie pour lui proposer un lieu de camping (lieu,date, activités&#8230;)',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_262',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Deux amis veulent passer une congé de 2 semaines chez vous. Ecrivez leur un message pour leur proposer les lieux à visiter.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_291',
-  'tache_3',
-  3,
-  'Thème du débat : « Les Vols À Bas Prix : Pour Ou Contre ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Écrivez un courriel à vos amis pour les inviter à un anniversaire surpris de votre meilleur ami.  (Lieu, date, horaire, etc.).
-
-Document B :
-Vous avez participé à une brocante (achat / vente de produits d’occasion) dans votre ville.  Sur votre blog personnel racontez pourquoi vous avez aimé cette activité.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_292',
-  'tache_3',
-  3,
-  'Thème du débat : « L''interdiction des voitures en ville. »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Vous voulez communiquer avec quelqu’un en français en toute convivialité. Vous écrivez un courriel à cette adresse(&#8230;) pour qu''on vous propose quelqu’un (centre d’intérêt, présentez vous&#8230;)
-
-Document B :
-Écrivez un message à vos amis pour leur raconter à propos d''une fête à laquelle vous avez assisté en famille.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_262',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Le dernier exemple vient d’Oslo, la capitale norvégienne. Une responsable du projet annonce : « Ce sera mieux pour les piétons, les cyclistes, les commerces. Mieux pour tout le monde ». Moins de voitures, c’est la reconquête de la ville par ses habitants. Les bénéfices pour la qualité de l’air et pour l’économie locale seront garantis.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_293',
-  'tache_3',
-  3,
-  'Thème du débat : « Menus Sans Viande à La Cantine Scolaire. »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Écrivez un message à vos amis pour leur proposer d''organiser une grande fête. Demandez- leur de vous aider.
-
-Document B :
-Racontez sur un site internet une compétition sportive à laquelle vous avez participé.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_263',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-De plus en plus d’écoles décident de mettre en place un menu sans viande dans les cantines, au moins deux fois par semaine. Certaines études ont montré que les enfants consomment trop de protéines animales. C’est donc une question de santé : les écoles ont choisi de remplacer la viande par d’autres produits (soja, céréales, légumes), moins gras et utiles à la croissance des enfants. Ces menus sans viandes à la cantine reviennent moins cher aux familles. Cette idée plaît beaucoup aux parents comme aux enfants.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_294',
-  'tache_3',
-  3,
-  'Thème du débat : « La vie à la campagne ou en ville »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Écrivez un message à vos amis pour les inviter à découvrir une ville touristique.
-
-Document B :
-Vous avez participé à un festival (gastronomie, musique, sport). Racontez ce qui ne vous a pas plu dans cette expérience.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_264',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-À mon avis, le fait de vivre en ville, cela vous donne la possibilité de vous divertir de plusieurs manières ; comme aller au cinéma, déjeuner dans un restaurant faire du shopping… Tout est à côté, vous n’avez pas besoin de parcourir plusieurs kilomètres pour prendre un taxi ( si le trajet est un peu long) et vous aurez à disposition tout ce dont vous désirez. Même les amoureux des évènements culturels sont servis ; musée, théâtre, opéra… tout y est !',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_263',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Dernièrement, j’ai décidé de quitter la ville pour vivre à la campagne, car j’avais vraiment besoin de me rapprocher de la nature et de profiter du calme. Désormais, au lieu de partir quotidiennement au bar du coin ou au restaurant, j’invite des amis à boire un verre dans la terrasse de ma maison ou j’organise de temps en temps un barbecue dans mon jardin. Un autre détail d’importance m’a encouragé à prendre cette décision ; c’est la disponibilité des logements avec des prix largement inférieurs à ceux proposés en villes. Avec mon budget actuel, j’ai une grande maison avec terrasse et jardin privatif, alors qu’en ville, j’avais le droit à un petit appartement au 5 e  étage d’un immeuble.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_295',
-  'tache_3',
-  3,
-  'Thème du débat : « Cours de langue à distance »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Tu as commencé ton nouveau travail !
-
-Document B :
-C’est comment ? Tu es content(e) ?',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_265',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Vous souhaitez faire du sport et vous voulez que votre ami vous accompagne.  Écrivez lui un message pour lui proposer de pratiquer ensemble.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_264',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Vous avez déjà étudié dans une université à l’étranger.  Écrivez un article sur votre Blog pour raconter cette expérience.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_266',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Vous êtes nouveaux dans une université 
- Décrivez à vos amis comment cela se passe avec ( les prof,autres étudiants, les activités et autres )',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_265',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Vous avez décidé de ne plus utiliser les réseaux sociaux ( twitter Instagram Facebook et autres). 
- Écrivez un message à vos amis en citant les raisons derrière cette décision.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_296',
-  'tache_3',
-  3,
-  'Thème du débat : « Faut il mettre les photos sur les CV »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-On parle de l’inutilité de la photo sur le cv tant que ce qui est important sont les diplômes requis et l’expérience professionnelle. Les employeurs n’aiment pas avoir des photos, une étude montre que c’est une perte de temps. La photo sur un cv ne doit pas etre obligatoire car elle peut influencer les employeurs, certains employeurs peuvent choisir un candidat en se basant sur sa couleur (une sorte de discrimination).
-
-Document B :
-Christophe adhère à l’idée que la présence d’une photo sur le CV ne sera pas un critère de sélection mais elle est indispensable pour quelques métiers tel que une hôtesse d’accueil, la photo est nécessaire, il donne une idée sur le candidat et certaines employeurs veulent voir la photo pour décider pour ou contre un candidat.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_267',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Je cherche un endroit pour déjeuner en plein air ce week-end. Qu’est-ce que tu me propose ?',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_266',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Vous répondez à votre amie Barbara. Vous décrivez le lieu (parc, jardin, terrasse, etc.)',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_297',
-  'tache_3',
-  3,
-  'Thème du débat : « Habitudes alimentaires pour ou contre? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Le livre numérique remplacera-t-il le livre papier ? « Non », répondront la plupart des lecteurs. Le livre papier est un beau support. Quel plaisir de le prêter aux gens qu’on aime ou de l’offrir en glissant un petit mot dedans ! Le livre papier a une histoire, l’odeur du neuf ou de l’ancien… Il transmet beaucoup d’émotions alors que le livre numérique à un côté un peu impersonnel. De plus, les livres numériques demandent de posséder un minimum de connaissances en informatique, ce qui peut être une difficulté pour certaines personnes.
-
-Document B :
-Écrire un message à votre amie pour lui proposer un lieu de camping (lieu,date, activités&#8230;)',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_268',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Deux amis veulent passer une congé de 2 semaines chez vous. Ecrivez leur un message pour leur proposer les lieux à visiter.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_267',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Écrivez un courriel à vos amis pour les inviter à un anniversaire surpris de votre meilleur ami.  (Lieu, date, horaire, etc.).',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_268',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Écrivez un message à vos amis pour leur proposer d''organiser une grande fête. Demandez- leur de vous aider.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_298',
-  'tache_3',
-  3,
-  'Thème du débat : « Menus Sans Viande à La Cantine Scolaire. »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Racontez sur un site internet une compétition sportive à laquelle vous avez participé.
-
-Document B :
-De plus en plus d’écoles décident de mettre en place un menu sans viande dans les cantines, au moins deux fois par semaine. Certaines études ont montré que les enfants consomment trop de protéines animales. C’est donc une question de santé : les écoles ont choisi de remplacer la viande par d’autres produits (soja, céréales, légumes), moins gras et utiles à la croissance des enfants. Ces menus sans viandes à la cantine reviennent moins cher aux familles. Cette idée plaît beaucoup aux parents comme aux enfants.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_269',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Écrivez un message à vos amis pour les inviter à découvrir une ville touristique.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_299',
-  'tache_3',
-  3,
-  'Thème du débat : « La vie à la campagne ou en ville »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Vous avez participé à un festival (gastronomie, musique, sport). Racontez ce qui ne vous a pas plu dans cette expérience.
-
-Document B :
-À mon avis, le fait de vivre en ville, cela vous donne la possibilité de vous divertir de plusieurs manières ; comme aller au cinéma, déjeuner dans un restaurant faire du shopping… Tout est à côté, vous n’avez pas besoin de parcourir plusieurs kilomètres pour prendre un taxi ( si le trajet est un peu long) et vous aurez à disposition tout ce dont vous désirez. Même les amoureux des évènements culturels sont servis ; musée, théâtre, opéra… tout y est !',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_270',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Tu as commencé ton nouveau travail !',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_300',
-  'tache_3',
-  3,
-  'Thème du débat : « Cours de langue à distance »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-C’est comment ? Tu es content(e) ?
-
-Document B :
-Vous répondez à votre ami Ali. Dans votre message, vous décrivez votre nouveau travail (lieu, collègues, etc.) et vous donnez vos impressions.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_269',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Vous souhaitez assister à un festival de cinéma dans votre ville. Vous écrivez un message à votre ami(e) pour lui proposer de venir avec vous. Vous lui donnez toutes les informations nécessaires sur févènement (films, dates et horaires, tarifs, etc.)',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_271',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Vous avez accueilli un étudiant étranger pendant une semaine chez vous. Sur votre blog, vous écrivez un article pour raconter cette semaine. Vous expliquez pourquoi vous avez aimé cette expérience',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_301',
-  'tache_3',
-  3,
-  'Thème du débat : « La restauration rapide »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Les restaurants rapides se distinguent par leur engagement à proposer une variété de plats équilibrés, respectant strictement les normes d''hygiène. En laissant aux clients la liberté de composer leur propre menu, ces établissements les responsabilisent dans leurs choix alimentaires, tout en satisfaisant leurs préférences gustatives.
-
-Document B :
-Les spécialistes affirment que manger régulièrement dans des restaurants de fast-food, qui proposent de la restauration rapide, est dangereux pour la santé. La nourriture servie est souvent la même : frites, hamburgers et boissons sucrées. Ces aliments contiennent une grande quantité de calories, bien trop pour un seul repas. De plus, la plupart des produits dans ces restaurants sont emballés dans du plastique. Par conséquent, manger dans un fast-food augmente la production de déchets plastiques, ce qui est nuisible pour l’environnement.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_270',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Vous avez fini le déménagement de votre entreprise. Écrivez a Lucas pour lui parler de vos nouveaux locaux ( lieu, dimension, Équipements&#8230;)',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_272',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Votre ville a organisé un événement « une semaine sans mon véhicule ». Vous écrivez un article sur un site internet pour raconter l''événement.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_271',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Vous allez déménager à Nice, en France. Vous écrivez un message sur le site d''une agence immobilière. Vous donnez les informations nécessaires (superficie, budget, nombre de pièces, etc).',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_273',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Vous avez commencé à prendre des cours dans une école de langues. Vous envoyez un message à vos amis pour leur raconter comment s''est passée votre première semaine. Parlez de votre impression sur l''école et sur vos cours.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_302',
-  'tache_3',
-  3,
-  'Thème du débat : « Caméras De Surveillance : Pour Ou Contre ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-De nos jours, il y a de plus en plus de caméras de surveillance dans les villes. La vidéosurveillance est appréciée par les Français car cela leur donne un sentiment de sécurité. D''après un sondage, 75% d''entre eux sont pour le développement de la vidéosurveillance. 
- Ils seraient d''accord pour être filmés, mais seulement dans l''espace public: la rue, les magasins ou encore les transports. Cependant, 
- ils refusent d''être surveillés par leur employeur. En France, peu de caméras de vidéosurveillance sont installées sur le lieu de travail.
-
-Document B :
-Certaines enquêtes montrent que la vidéo surveillance coûte cher et que ses résultats sont insuffisants. D''une part, la présence des caméras est facile à remarquer. Par conséquent, la vidéo surveillance est inutile pour éviter les vols, la consommation de drogue et la violence dans les villes. D''autre part, l''utilisation de vidéo surveillance demande beaucoup de personnel. Une étude allemande montre que sept personnes par caméra sont nécessaires pour analyser les informations.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_272',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-votre ami(e) veut découvrir la région dans laquelle vous habitez.  Écrivez lui un message pour lui proposer des sites à visiter.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_274',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Vous avez participé à un cours de sport dans une salle.  Écrivez un article dans votre blog parlant de  cette expérience et en exprimant également votre avis par rapport à cette salle.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_303',
-  'tache_3',
-  3,
+  474,
   'Thème du débat : « Livraison Des Repas Au Bureau : Pour Ou Contre ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -10782,21 +6097,886 @@ Cette pratique révèle souvent des inconvénients à cause de sa notoriété mo
 ),
 (
   'expression_ecrite',
-  'EE_T1_273',
+  'EE_T1_155',
   'tache_1',
-  1,
+  475,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
-Rédigez un message pour inviter votre ami(e) à passer ses vacances dans votre villes en précisant les lieux et les endroits à visiter.',
+Vous avez invité votre ami Cédric à votre mariage au Château de Chombony et il vous a répondu qu’il ne connait pas ce château.  Décrivez à votre ami (lieu, localisation, transports, etc.).',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_153',
+  'tache_2',
+  476,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Dans votre blog, Racontez votre expérience de l’apprentissage d’une langue étrangère  (vous écrivez sur un forum internet en racontant votre expérience en apprenant une langue étrangère) .',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_169',
+  'tache_3',
+  477,
+  'Thème du débat : « Cuisinier Amateur Ou Cuisinier Professionnel ? »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+Les amateurs ont fait des recettes réussies, mais ils manquent toujours des compétences et des technique, c’est pourquoi la formations et l’expérience sont nécessaires pour être un vrai cuisinier.
+
+Document B :
+Il parle des cuisiniers qui ont appris le métier de cuisiniers sur internet et qui ont le buzz sur les réseaux sociaux il raconte aussi l’histoire d’une amatrice qui est devenue professionnelle et qui a rédigé plusieurs livres sur la cuisine pour les amateurs de cuisine à la maison.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_156',
+  'tache_1',
+  478,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Votre ami Mehdi vient de d’emménager dans votre ville et cherche des renseignements sur les moyens de transports. Écrivez un message en lui donnant les informations nécessaires (types de transport, abonnement, tarif, etc.)',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_154',
+  'tache_2',
+  479,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Exprimez votre admiration pour une personnalité, célèbre ou non, en vous appuyant sur ses actions spécifiques.  Rédigez un article de blog en détaillant les actions remarquables de cette personne et expliquez pourquoi vous l’aimez.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_170',
+  'tache_3',
+  480,
+  'Thème du débat : « Vivre En Colocation »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+La vie en colocation offre de nombreux avantages. Partager un logement avec d’autres personnes permet de réduire les dépenses, que ce soit le loyer, les factures ou les frais généraux. De plus, cela favorise les interactions sociales et les échanges culturels. Vivre avec des colocataires permet de rencontrer des individus de différents horizons, de nouer des amitiés et de partager des expériences enrichissantes.
+
+Document B :
+La colocation peut cependant présenter des défis. Les différences de personnalité et de mode de vie entre les colocataires peuvent entraîner des tensions. La gestion des responsabilités et des tâches ménagères peut également être source de conflits. De plus, la colocation peut limiter l’intimité et l’espace personnel. Il est important d’établir une communication ouverte et respectueuse, ainsi que des règles de vie commune, pour favoriser une cohabitation harmonieuse.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_157',
+  'tache_1',
+  481,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Vous voulez partir en week-end avec vos amis le mois prochain. Vous leur écrivez un message pour décrire votre projet (lieu, transport, activités, etc.).',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_155',
+  'tache_2',
+  482,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+COURRIER DES LECTEURS
+
+Tout quitter pour partir en voyage pendant un an: bonne ou mauvaise idée ?
+
+Répondez sur notre site Internet : “voyage.internaute.fr”. Vous écrivez un message sur ce site internet, vous répondez à la question posée en prenant des exemples de votre vie personnelle.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_171',
+  'tache_3',
+  483,
+  'Thème du débat : « Le Travail : Favorable ou Défavorable ? »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+Le travail est au centre de notre vie. Dès l’enfance, on entend souvent la question: «Qu’est-ce que tu veux faire quand tu seras grand ? ». Le travail devrait être synonyme de réussite et de satisfaction, mais il est trop souvent synonyme de fatigue et d’emprisonnement. Aujourd’hui, beaucoup pensent que l’on ne passe pas assez de temps avec sa famille, ses amis. Il est urgent de revoir la place occupée par le travail dans notre société. Certains pensent que travailler moins permettrait d’avoir plus de temps libre pour mieux vivre.
+
+Document B :
+Certaines personnes ont décidé d’arrêter de travailler pour changer de mode de vie. Pourtant, aujourd’hui, travailler, c’est exister La question : «Qu’est-ce que tu fais dans la vie ?» revient souvent lors d’une première rencontre. Elle prouve que l’emploi fait partie de notre identité. D’après le spécialiste Jean-Daniel Remond, la vie en entreprise est très importante. Les contacts quotidiens, les réseaux, les amitiés, l’impression d’être utile, mais aussi les difficultés, tout cela contribue à construire notre personnalité et notre identité.
+
+“Bonjour, ça y est, j’ai obtenu mon visa pour le Canada. Je vais arriver le 3 mars. Est-ce que tu pourras m’aider à trouver un hôtel pour la première semaine ? Merci d’avance pour ton aide.”
+
+Matthias.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_158',
+  'tache_1',
+  484,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Vous avez trouvé un hôtel pour Matthias. Vous lui écrivez un courriel. Dans ce message vous décrivez l’hôtel et vous lui donnez toutes les informations utiles (situation, tarif…).',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_156',
+  'tache_2',
+  485,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Vous êtes allés voir un spectacle (film, pièce de théâtre, concert, etc.) avec des amis. Vous l’avez aimé. Sur votre blog, vous racontez votre soirée et vous expliquez pourquoi vous avez aimé le spectacle.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_172',
+  'tache_3',
+  486,
+  'Thème du débat : « Les Relations Amicales Au Travail »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+Les amitiés entre collègues au travail peuvent être extrêmement bénéfiques. Elles favorisent un climat de travail agréable et une ambiance positive au sein de l’équipe. Avoir des amis parmi ses collègues permet de renforcer les liens professionnels et de créer un sentiment de camaraderie. Cela peut contribuer à une meilleure communication, une collaboration plus étroite et une résolution plus efficace des problèmes. De plus, partager des moments de convivialité en dehors du travail, comme des déjeuners ou des activités après le bureau peut renforcer les liens et créer une dynamique de groupe solide.
+
+Document B :
+Il est important de trouver un équilibre entre amitié et professionnalisme au travail. Les amitiés excessivement proches peuvent parfois créer des tensions ou des conflits lorsque des décisions professionnelles doivent être prises. De plus, les amitiés exclusives entre certains collègues peuvent exclure les autres membres de l’équipe, ce qui peut nuire à la cohésion et à la collaboration. Il est essentiel de maintenir des limites claires et de veiller à ce que les amitiés ne compromettent pas le professionnalisme, la hiérarchie ou la productivité au sein de l’organisation.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_159',
+  'tache_1',
+  487,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Vous voulez communiquer avec quelqu’un en français en toute convivialité. Vous écrivez un courriel à cette adresse(...) pour qu''on vous propose quelqu’un (centre d’intérêt, présentez vous...)',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_157',
+  'tache_2',
+  488,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Écrivez un message à vos amis pour leur raconter à propos d''une fête à laquelle vous avez assisté en famille.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_173',
+  'tache_3',
+  489,
+  'Thème du débat : « L''interdiction des voitures en ville. »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+Le dernier exemple vient d’Oslo, la capitale norvégienne. Une responsable du projet annonce : « Ce sera mieux pour les piétons, les cyclistes, les commerces. Mieux pour tout le monde ». Moins de voitures, c’est la reconquête de la ville par ses habitants. Les bénéfices pour la qualité de l’air et pour l’économie locale seront garantis.
+
+Document B :
+Il faut réfléchir avant d’interdire les voitures en ville. II est vrai que l’idée d’une ville sans circulation et beaucoup moins polluée est tentante. Mais la réalisation de cette idée coûte cher. De plus, où se gareront les voitures interdites de circulation au centre-ville ? II faut aussi bien préciser que les véhicules professionnels que conduisent les policiers, les pompiers, les ambulanciers, les livreurs auront le droit de circuler. Enfin, pour que les habitants puissent se déplacer facilement il faut développer les transports en commun.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_160',
+  'tache_1',
+  490,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Salut !
+
+Je cherche un endroit pour déjeuner en plein air ce week-end. Qu’est-ce que tu me propose ?
+
+A bientôt,
+
+Barbara
+
+Vous répondez à votre amie Barbara. Vous décrivez le lieu (parc, jardin, terrasse, etc.)',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_158',
+  'tache_2',
+  491,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Vous avez visité un nouveau pays pendant vos vacances. Sur un site internes, vous racontez votre expérience et vous donnez votre opinion sur ce pays.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_174',
+  'tache_3',
+  492,
+  'Thème du débat : « l''utilisation du plastique, pour ou contre »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+Franck soutient l’utilisation limitée du plastique, soulignant son importance dans de nombreux secteurs, notamment médical et alimentaire. Pour lui, le plastique est vital pour la conservation des aliments et la stérilisation des équipements médicaux. Il prône une utilisation responsable et le recyclage, mais reconnaît que certains usages du plastique sont indispensables pour la société moderne.
+
+Document B :
+Amicha s’oppose fermement à l’utilisation du plastique, mettant en avant son impact environnemental dévastateur. Elle argue que les déchets plastiques polluent les océans et les écosystèmes, causant des dommages irréparables. Amicha milite pour des alternatives écologiques et durables, insistant sur l’urgence de renoncer au plastique pour protéger l’environnement et la santé publique.
+
+Je vais bientôt vivre dans ton quartier. Je cherche un endroit sympathique pour faire mes courses. Est-ce que tu connais un marché intéressant ?
+
+Merci d’avance et à bientôt !
+
+Bernard',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_161',
+  'tache_1',
+  493,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Vous répondez à votre ami Bernard. Dans votre message, vous décrivez un marché de votre quartier que vous aimez bien (lieu, horaires, produits, etc.)',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_159',
+  'tache_2',
+  494,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Vous faites partie d’une association de quartier qui propose des activités aux enfants (aide aux devoirs, sorties, jeux, etc.) Sur votre site internet, vous racontez votre expérience et vous expliquez pourquoi ce type d’association est utile.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_175',
+  'tache_3',
+  495,
+  'Thème du débat : « Le livre papier ou le livre numérique? »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+Depuis plusieurs années maintenant, de nombreux lecteurs ont décidé de remplacer la bibliothèque traditionnelle par des livres numériques. Selon eux, l’avantage est avant tout économique. D’une part, le livre numérique permet d’économiser du papier, d’autre part la version numérique d’un livre est généralement moins chère que la version papier. Les livres numériques ont un autre avantage : ils permettent une ouverture sur le monde pour les personnes en situation de handicap. Certaines options, comme la possibilité d’augmenter la taille des lettres, facilitent la lecture pour les personnes malvoyantes.
+
+Document B :
+Le livre numérique remplacera-t-il le livre papier ? « Non », répondront la plupart des lecteurs. Le livre papier est un beau support. Quel plaisir de le prêter aux gens qu’on aime ou de l’offrir en glissant un petit mot dedans ! Le livre papier a une histoire, l’odeur du neuf ou de l’ancien… Il transmet beaucoup d’émotions alors que le livre numérique à un côté un peu impersonnel. De plus, les livres numériques demandent de posséder un minimum de connaissances en informatique, ce qui peut être une difficulté pour certaines personnes.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_162',
+  'tache_1',
+  496,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Écrire un message à votre amie pour lui proposer un lieu de camping (lieu,date, activités...)',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_160',
+  'tache_2',
+  497,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Deux amis veulent passer une congé de 2 semaines chez vous. Ecrivez leur un message pour leur proposer les lieux à visiter.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_163',
+  'tache_1',
+  498,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+le texte a montré qu’il ne faut pas mettre les animaux sauvages dans les zoos parce que ce n’est pas leur environnement. C’est un prison pour eux. On trouve des ours polaires dans un zoo dont la température est de 15 degrés. Les animaux ont besoin de la nature et de la liberté.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_161',
+  'tache_2',
+  499,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+www.manger-international.com 
+ Ce mois-ci, nous nous intéressons aux habitudes alimentaires dans le 
+ monde. Racontez-nous comment mangent les habitants de votre pays ! 
+ Les 10 premiers témoignages seront publiés sur notre site !
+
+Vous avez lu cette annonce Vous écrivez un article pour les lecteurs du site www.manger-international.com Vous expliquez comment mangent les habitants de votre pays et vous indiquez quelles habitudes 
+ vous plaisent ou vous déplaisent, et pourquoi',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_164',
+  'tache_1',
+  500,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Les jeux vidéo, sur console ou sur ordinateur, chez soi ou en salle, seul, avec des amis ou en ligne avec des inconnus, peuvent provoquer une dépendance chez certaines personnes. On parle d’addiction quand le jeu vidéo devient le principal (ou l’unique) centre d’intérêt, à la place d’autres activités (relationnelle, professionnelle, scolaire, loisirs, sport…). Cette dépendance est particulièrement préoccupante lors de l’adolescence, période importante où les jeux vidéo peuvent avoir un impact négatif sur les résultats scolaires.',
   true
 );
 
 INSERT INTO public.questions (epreuve, reference, tache, ordre, texte, actif) VALUES
 (
   'expression_ecrite',
-  'EE_T3_304',
+  'EE_T1_165',
+  'tache_1',
+  501,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Certaines personnes ont décidé d’arrêter de travailler pour changer de mode de vie. Pourtant, aujourd’hui, travailler, c’est exister La question : «Qu’est-ce que tu fais dans la vie ?» revient souvent lors d’une première rencontre. Elle prouve que l’emploi fait partie de notre identité. D’après le spécialiste Jean-Daniel Remond, la vie en entreprise est très importante. Les contacts quotidiens, les réseaux, les amitiés, l’impression d’être utile, mais aussi les difficultés, tout cela contribue à construire notre personnalité et notre identité.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_166',
+  'tache_1',
+  502,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Récemment, j’ai pris la décision de ne plus voyager avec les compagnies aériennes à bas prix. En effet, j’ai longuement réfléchi afin de prendre ma décision, mais ce choix était évident : des sièges inconfortables, des conditions de travail pénibles et surtout des avions vétustes qui remettent en cause la sécurité ! Dès lors, pour certains voyages, je vais opter pour la voiture ou même le train, ce dernier permet même de découvrir de jolis paysages. Quant aux longs trajets, vaut mieux prendre un vol en compagnie régulière.ç',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_167',
+  'tache_1',
+  503,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+La décision de supprimer la viande dans les cantines ne plaît pas à tout le monde. En effet, c’est un produit cher : la cantine est le seul endroit où les enfants de familles en difficulté peuvent manger. Les producteurs locaux de viande sont également mécontents : une partie de leur production est réservée aux cantines, il s’agit donc d’une perte financière. Enfin, beaucoup d’enfants interrogés déclarent tout de même préférer les steaks de bœuf aux steaks de soja qui, selon eux, ont peu de goût.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_168',
+  'tache_1',
+  504,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Beaucoup de villes se lancent dans des projets d’interdiction de voitures en zone urbaine sans mettre en place les outils et les infrastructures nécessaires pour réussir cette transition. Certes, en diminuant les voitures, on aura moins d’embouteillages, de stress et surtout un air beaucoup moins pollué, mais en contrepartie, il faut prévoir entre- autres de gigantesques parkings pour garer les voitures, opter davantage pour le transport en commun (métros et bus) et prévoir des autorisations de circulation pour certains corps de métiers (comme la police, les urgentistes, les livreurs, …)',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_169',
+  'tache_1',
+  505,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Écrivez un message à votre ami Marc, qui veut voyager et découvrir un autre pays, pour lui parler de votre pays et de sa culture (lieux, sites touristiques, monuments, etc). »',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_170',
+  'tache_1',
+  506,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Malgré les efforts pour imposer la parité à tous les postes dans les entreprises et les collectivités, il y a, dans les faits, des métiers où les femmes sont largement majoritaires tels que : les sage-femmes. De plus, les femmes ne doivent pas faire les métiers d’homme, car ils doivent prendre soin de ses enfants.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_176',
   'tache_3',
-  3,
+  507,
+  'Thème du débat : « Le travail des étudiants pendant les vacances: Pour ou contre ? »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+Opinion 1 : Alexandre, un conseiller d’orientation
+
+“Je suis fermement pour le travail des jeunes pendant les vacances. C’est une excellente occasion d’acquérir des compétences pratiques, d’apprendre à travailler en équipe et de découvrir différentes industries. Les jeunes peuvent gagner de l’argent qu’ils peuvent économiser pour l’avenir ou utiliser pour financer des activités ou des loisirs. De plus, le fait d’avoir une expérience de travail sur leur CV peut leur donner un avantage lorsqu’ils postulent pour des emplois ou des stages à l’avenir. Les vacances d’été sont longues et il y a amplement de temps pour se reposer et travailler.
+
+Document B :
+Opinion 2 : Élise, une psychologue pour adolescents
+
+“Je suis contre l’idée que les jeunes doivent travailler pendant leurs vacances. Les adolescents sont déjà sous une énorme pression pendant l’année scolaire avec les études, les examens et les activités parascolaires. Les vacances doivent être une période pour eux de se détendre, de se décompresser et de poursuivre des intérêts personnels. Les forcer à travailler pourrait contribuer au stress et à l’épuisement. Il est également important pour les jeunes de disposer de temps non structuré pour explorer leur créativité, passer du temps avec leurs amis et leur famille, et tout simplement être des enfants. Le travail peut attendre.”
+
+Parc de loisirs : “J’ai hâte de passer la journée avec toi demain. S’il te plaît, dis-moi, quelle activité nous pourrons faire ?”
+
+Répondez à votre ami pour lui décrire la sortie (horaires,',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_171',
+  'tache_1',
+  508,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+transport, billet, activités)',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_162',
+  'tache_2',
+  509,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+écrivez un message à vos amis pour leur raconter votre expérience lors d’un salon du livre (conférence, expositions et rencontre avec les auteurs…)',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_177',
+  'tache_3',
+  510,
+  'Thème du débat : « Faire ses courses alimentaires chez les producteurs locaux ou au supermarché »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+Jean qui vit à la compagne favorise l’achat des produits alimentaires directement à la ferme pour la bonne qualité quitte à payer un peu plus cher.
+
+Document B :
+Camille qui vit dans la ville préfère faire ses courses au supermarché pour la variété qu’il propose et pour les prix abordables.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_172',
+  'tache_1',
+  511,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+écrivez un message à votre ami pour lui raconter votre entretien d’embauche',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_163',
+  'tache_2',
+  512,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+“Gagnez deux billets pour la destination de votre choix avec la compagnie Air Tropiques. Racontez votre plus beau voyage sur notre forum”',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_178',
+  'tache_3',
+  513,
+  'Thème du débat : « L''école à domicile, pour ou contre? »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+Les raisons qui poussent les parents à opter pour la scolarisation à domicile sont nombreuses. Elle donne la possibilité d’adopter une pédagogie plus individualisée. On peut passer plus de temps sur les points sur lesquels l’enfant bute ou lui proposer, à l’occasion, des jeux éducatifs. L’enfant gère son apprentissage à son rythme, il creuse les sujets qui le passionnent et ne subit pas la pression des autres élèves qui peuvent avancer plus au moins vite que lui. Autre avantage de l’instruction en famille, une évolution différente. Avec l’école à la maison, pas de notes qui peuvent parfois être décourageantes, mais un contrôle continu des connaissances, pas de stress dû aux évaluations et aux devoirs.
+
+Document B :
+Le choix de la scolarisation à domicile représente un véritable défi et donc, quelques inconvénients à prendre en compte avant de se lancer. La scolarisation à domicile nécessite beaucoup de temps, une bonne organisation et elle a aussi un coût. Tout le matériel, les livres, les manuels, et les sorties sont à la charge des familles, et l’un des deux parents est souvent amené à mettre entre parenthèses son emploi. Au total, l’école à domicile coûte généralement plus cher qu’une scolarisation dans le public. De plus, l’enfant ne côtoie pas de camarades au quotidien, car l’école à domicile ne permet pas à l’enfant d’entrer en interaction avec d’autres enfants comme il le ferait dans un cadre scolaire classique.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_173',
+  'tache_1',
+  514,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+écrivez un message à votre ami pour lui décrire le programme de vos prochaines vacances',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_164',
+  'tache_2',
+  515,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+écrivez un article de blog sur un événement auquel vous avez assisté dernièrement (fête, festival, …)',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_179',
+  'tache_3',
+  516,
+  'Thème du débat : « le vélo en ville, pour ou contre? »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+Quand on parle de vélo, on pense systématiquement à deux choses: sport et loisir. On oublie souvent que c’est avant tout un mode de déplacement personnel et professionnel. En ville, c’est un moyen de transport rapide et déstressant puisqu’il permet d’éviter les interminables embouteillages aux heures de pointe. Se rendre au travail tout en faisant du sport, histoire de joindre l’utile à l’agréable.
+
+Document B :
+Avec tous les accidents de la route observés annuellement, sortir son vélo pour se déplacer avec en ville peut être très dangereux. En effet, avec la densité importante de véhicules, le non-respect du Code de la route et le manque de pistes cyclables, pratiquer du vélo en zone urbaine présente de vrais risques d’accident. De plus, faire du vélo de nos jours, c’est s’exposer à des gaz d’échappement toxiques et nocifs pour la santé humaine (notamment le monoxyde de carbone…).',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_174',
+  'tache_1',
+  517,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Vous avez mis en ligne une annonce pour la location de votre appartement. Écrivez un courriel à une personne intéressée pour lui donner les informations sur l’appartement et le quartier',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_165',
+  'tache_2',
+  518,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Vous venez de commencer les cours à l’université à Montréal, écrivez un message à votre ami pour lui raconter votre première semaine à l’université',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_175',
+  'tache_1',
+  519,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Vous faites du sport dans un club. Vous venez de remporter une compétition vous écrivez un courriel à vos amis pour leur raconter cet évènement sportif et annoncer votre réussite sportive.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_166',
+  'tache_2',
+  520,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Le site « colocation.com » recherche des témoignes sur vos expériences de colocation. Vous avez déjà habité en colocation avec des amis. Vous racontez votre expérience aux membres du site internet. Vous donnez votre opinion sur ce mode de logement.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_180',
+  'tache_3',
+  521,
+  'Thème du débat : « Le grossissement des villes. »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+Dans nos jours, les villes grossissent toujours plus. Malheureusement, ce phénomène a un impact fort sur l’environnement. Car plus une ville grossisse, plus elle a des effets négatifs sur la nature et donc, ensuite, sur l’homme. L’effet négatif le plus visible est la déforestation, qui augmente les végétaux qui retiennent le carbone. Donc, quand on les supprime pour construire des bâtiments ou des rues, on supprime de espaces verts capables de retenir des millions de tonnes de carbone.
+
+Document B :
+Plus, de la moitié de l’humanité vit en ville (huit habitants sur dix dans les pays riches) la vie urbaine est donc le principal enjeu écologique. On entend souvent dire que l’organisation actuelle des villes n’est pas écologique. Et que le grossissement des villes ne fait qu’augmenter le problème. Pourtant, il faut se méfier des apparences : les villes ne sont pas toujours aussi antiécologique qu’on l’imagine. Par exemple, la consommation d’énergie d’un citadin est moins importante que celle d’un habitant de la campagne.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_176',
+  'tache_1',
+  522,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Ecrivez un message à votre ami(e) pour lui faire part de votre programme de déménagement vers votre nouveau logement, en demandant son aide ( date, lieu, programme)',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_167',
+  'tache_2',
+  523,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Vous avez participé à un concours pour gagner un séjour de deux semaines dans votre ville préféré. Le thème de ce concours est “Mon artiste préféré“. Écrivez un article de blog pour parler de votre artiste préféré.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_181',
+  'tache_3',
+  524,
+  'Thème du débat : « Objets Connectés »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+Les objets connectés facilitent notre vie quotidienne. Ce sont des objets ou des équipements pilotés à distance à l’aide d’un téléphone portable ou par Internet, comme le système de chauffage ou la fermeture des portes. De plus, avec une montre ou un bracelet connecté, toutes nos activités peuvent être analysées. Un logiciel va mesurer le nombre de nos pas pour nous inciter à faire davantage d’exercice. Un domaine où l’on comprend mieux leur utilité est celui de la surveillance de la santé. Certains objets agissent comme un carnet de santé, toujours prêts à vous rappeler un rendez-vous chez le médecin ou des médicaments à prendre.
+
+Document B :
+Il y aurait 50 milliards d’objets connectés dans le monde : l’alarme, le téléviseur, la caméra de surveillance, les volets, le détecteur de fumée. etc. Face à cette évolution, la question de la sécurité se pose. En effet, un pirate informatique peut prendre le contrôle d’un objet connecté en quelques minutes. Ou encore, un cambrioleur pourrait vérifier grâce aux caméras de surveillance connectées d’une habitation que les occupants sont absents. Il est aussi possible d’entrer dans le système connecté d’une voiture, et d’en prendre les commandes à distance.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_177',
+  'tache_1',
+  525,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Vous partez en voyage et vous laissez votre appartement à un ami qui veut venir rester chez-vous pendant vos vacances. Vous lui envoyez un message pour décrire votre appartement (immeuble, logement, accès…).',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_182',
+  'tache_3',
+  526,
+  'Thème du débat : « Vivre chez ses parents, pour ou contre ? »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+Les avantages penser à l’avenir, avoir les vêtements propres être en confort surtout que les argents n’est pas tjrs suffisante, Vivre avec ces parents pendant la période des études permet aux jeunes d’économiser les frais de logement, des plats faits maison et une certaine stabilité psychique, teste les adolescents qui vivent avec leurs parents lui permettent d’économiser son argent pour des projets de vie(il paye pas ni le loyer ni la nourriture) (pour ne pas payer le loyer qui coûte chers, le ménage est fait, les vêtements est propres).. favorise que les jeunes vivent avec leurs parents avec le témoin de deux jeunes, la jeune fille disait que le Loyer est très chère et étudier loin de chez soi revient plus chère, Le deuxième jeune trouve que vivre avec ses parents est plus bénéfique pour lui par exemple: la bouffe est bonne, vêtements toujours propres et y a pas de place pour la solitude.
+
+Document B :
+Les inconvénients manque de liberté, Vivre seuls leur permet d’être indépendant, les adolescents qui vivent Avec leurs parents s’ennuient car leurs parents décident à leur place et se sont toujours de pondant des parents […] un avis d’un certain monsieur qui à 25 et il a perdu son job, donc il était dans l’obligation de rentrer vivre avec ces parents, et maintenant il a perdu son espace d’intimitée … contre la vie des jeunes avec leurs parent, un témoignage d’un jeune qui considère revenir chez ces parents c’est avoir revenir en arrières.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_178',
+  'tache_1',
+  527,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Ecrivez un message à vos amis pour les inviter à votre anniversaire et leur raconter comment va se dérouler votre fête.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_168',
+  'tache_2',
+  528,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Répondez en commentaire à une publication sur Facebook au sujet des études à l’étranger en citant les avantages et les inconvénients de cette expérience',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_183',
+  'tache_3',
+  529,
+  'Thème du débat : « Les nouvelles technologies pour les enfants »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+Les enfants de l’école primaire peuvent utiliser la technologie pour trouver des vidéos sur les sujets qu’ils ont étudiés à l’école ou pour jouer à des jeux qui améliorent leur aisance en mathématiques, leur compréhension de la lecture ou leurs compétences en dactylographie.
+
+Document B :
+Les nouvelles technologies encouragent les enfants à être sédentaires. C’est une préoccupation majeure pour les parents. Cela ne mène à aucun jeu libre créatif, à aucune interaction sociale face à face, conduisant à aucun effort physique! Pourquoi ne pas essayer certaines de ces activités amusantes pour encourager vos enfants à ranger leurs appareils ?',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_179',
+  'tache_1',
+  530,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Votre ami veut se mettre au sport. Vous lui envoyez un message pour lui conseiller une salle de sport situé dans votre quartier (localisation, prix, type d’activités, etc…)',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_169',
+  'tache_2',
+  531,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Vous avez participé à un événement qui vous a marqué  (anniversaire, mariage, etc…). Racontez votre souvenir',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_170',
+  'tache_2',
+  532,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+<< Le site «colocation.com» recherche des témoignes sur vos expériences de colocation. Écrivez-nous ! >>',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_180',
+  'tache_1',
+  533,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Plus de la moitié de l’humanité vit en ville (huit habitants sur dix dans les pays riches) la vie urbaine est donc le principal enjeu écologique.On entend souvent dire que l’organisation actuelle des villes n’est pas écologique, et que le grossissement des villes ne fait qu’augmenter le problème. Pourtant, il faut se méfier des apparences : les villes ne sont pas toujours aussi antiécologique qu’on l’imagine. Par exemple, la consommation d’énergie d’un citadin est moins importante que celle d’un habitant de la campagne.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_171',
+  'tache_2',
+  534,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Les professeurs de l''école de votre quartier souhaitent présenter différents métiers aux élèves. Vous voulez participer à ce projet pour parler de votre expérience. Vous leur écrivez. Vous décrivez votre profession (activités, collègues, etc.). Vous expliquez pourquoi vous trouvez votre métier intéressant.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_184',
+  'tache_3',
+  535,
+  'Thème du débat : « Louer son appartement à des inconnus, est-ce une bonne idée ? »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+De plus en plus de gens louent leur logement ou une chambre à des voyageurs, pour gagner un revenu supplémentaire ou pour rencontrer de nouvelles personnes. Ce système, basé sur la confiance, permet aux visiteurs de se loger en payant moins cher que dans un hôtel. De plus, si le propriétaire est d''accord, ils peuvent même utiliser la cuisine et éviter d''aller au restaurant! La personne qui les accueille peut leur servir de guide et les conseiller sur les visites à faire. C''est un échange précieux pour tout le monde!
+
+D''après rapidloc.com
+
+Document B :
+L''année dernière, j''ai loué mon appartement à un couple de touristes pour leurs vacances d''une semaine à Marseille. C''était une très mauvaise expérience qui m''a fait changer d''avis sur ce mode de location! Ils sont arrivés en retard et j''ai dû les attendre pour leur donner la clé. Ils ont fait beaucoup de bruit et dérangé mes voisins. En plus, ils ont quitté mon appartement sans faire la vaisselle et en laissant leurs déchets. J''ai passé trois heures à nettoyer.
+
+Julien, 38 ans
+
+Je cherche un vélo en bon état et bon marché. Contactez-moi par courriel
+
+[email&#160;protected]',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_181',
+  'tache_1',
+  536,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+L’idée n’est pas bonne. D’une part, cela coûterait cher aux villes. Or, il me semble que la ville de Toulouse a d’autres problèmes à régler en priorité. Par exemple, il faudrait d’abord réaménager les espaces verts, cela profiterait à tout le monde. D’autre part, il vaudrait mieux réorganiser les transports publics au lieu de les rendre gratuits. Aujourd’hui, les gens préfèrent prendre leur voiture parce que la ville manque de transports publics dans certains quartiers éloignés. Enfin, selon moi, il faut garder les transports publics payants. Les gens respecteront davantage les équipements s’ils participent à leur financement en payant un titre de transport.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_182',
+  'tache_1',
+  537,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Vous avez publié une annonce pour la location de votre appartement. Rédigez un courriel à une personne intéressée en lui fournissant des informations sur l’appartement ainsi que sur le quartier.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_183',
+  'tache_1',
+  538,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Écrivez un courriel à vos amis pour les inviter à un anniversaire surpris de votre meilleur ami. (Lieu, date, horaire, etc.).',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_184',
+  'tache_1',
+  539,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+L’anniversaire de votre ami approche à grands pas et vous avez décidé de lui offrir un voyage comme cadeau.  Rédigez un message pour l’informer des préparations que vous avez faites (destination, dates, préparatifs, etc).',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_172',
+  'tache_2',
+  540,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Un internaute a publié le message suivant : « Je vais partir étudier un an à l’étranger et j’ai peur ». Rédigez une réponse pour partager votre expérience personnelle. Parlez des défis que vous avez rencontrés, des solutions que vous as trouvées, et des bénéfices que vous avez tirés de cette expérience.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_185',
+  'tache_1',
+  541,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Vous souhaitez assister à un festival de cinéma dans votre ville. Vous écrivez un message à votre ami(e) pour lui proposer de venir avec vous. Vous lui donnez toutes les informations nécessaires sur févènement (films, dates et horaires, tarifs, etc.).',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_173',
+  'tache_2',
+  542,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Vous avez accueilli un étudiant étranger pendant une semaine chez vous. Sur votre blog, vous écrivez un article pour raconter cette semaine. Vous expliquez pourquoi vous avez aimé cette expérience.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_185',
+  'tache_3',
+  543,
+  'Thème du débat : « La Restauration Rapide »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+Les restaurants rapides se distinguent par leur engagement à proposer une variété de plats équilibrés, respectant strictement les normes d’hygiène. En laissant aux clients la liberté de composer leur propre menu, ces établissements les responsabilisent dans leurs choix alimentaires, tout en satisfaisant leurs préférences gustatives.
+
+Document B :
+Les spécialistes affirment que manger régulièrement dans des restaurants de fast-food, qui proposent de la restauration rapide, est dangereux pour la santé. La nourriture servie est souvent la même : frites, hamburgers et boissons sucrées. Ces aliments contiennent une grande quantité de calories, bien trop pour un seul repas. De plus, la plupart des produits dans ces restaurants sont emballés dans du plastique. Par conséquent, manger dans un fast-food augmente la production de déchets plastiques, ce qui est nuisible pour l’environnement.
+
+Parc de loisirs : “J’ai hâte de passer la journée avec toi demain. S’il te plaît, dis-moi, quelle activité nous pourrons faire ?”',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_186',
+  'tache_1',
+  544,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Répondez à votre ami pour lui décrire la sortie (horaires, transport, billet, activités).',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_187',
+  'tache_1',
+  545,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Rédigez un message pour inviter votre ami à passer ses vacances dans votre ville.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_186',
+  'tache_3',
+  546,
   'Thème du débat : « La Chasse Aux Animaux : Pour Ou Contre ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -10806,34 +6986,1107 @@ Document A :
 “Je suis de ceux qui n’arrivent pas à comprendre comment l’on peut prendre du plaisir à tuer des animaux. Je suis de ceux qui n’arrivent pas à comprendre comment on peut prétendre aimer la nature alors qu’on la détruit”
 
 Document B :
-“Les gens chassent pour différentes raisons : la subsistance, le commerce, la conversation et l’aménagement de la faune, la protection de la propriété, l’exercice, le loisir et le prestige.”',
+“Les gens chassent pour différentes raisons : la subsistance, le commerce, la conversation et l’aménagement de la faune, la protection de la propriété, l’exercice, le loisir et le prestige.”
+
+David, Journaliste de la FRM.',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T1_274',
+  'EE_T1_188',
   'tache_1',
-  1,
+  547,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
-Vous voulez passer un week-end avec vos amis et faire du sport.  Vous leur écrivez une lettre pour proposer ça en citant (date, lieu, programme.).',
+La bibliothèque de votre ville organise une rencontre avec un écrivain.  Écrivez un message à votre ami(e) pour l’inviter à cet événement.',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T2_275',
+  'EE_T2_174',
   'tache_2',
-  2,
+  548,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
-Écrivez un article sur votre blog pour raconter pourquoi vous avez décidé de changer votre alimentation  (vos habitudes alimentaires).',
+Vous avez participé à un événement nommé “La semaine du goût”.  Écrivez un article de blog pour raconter cette expérience.',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T3_305',
+  'EE_T3_187',
   'tache_3',
-  3,
+  549,
+  'Thème du débat : « L’art Urbain : Pour Ou Contre ? »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+Grâce à l’art, la curiosité des citadins est attisée dans l’espace urbain. Que ce soit par une peinture ou un spectacle de rue, l’atmosphère éphémère ainsi créée offre une interaction entre des artistes peu connus et un public hétéroclite, parfois peu habitué à côtoyer cette forme d’art. Les villes d’aujourd’hui n’ont plus la même vocation que celles d’hier. Plus qu’un lieu de résidence, la ville se réinvente, s’enrichit de la diversité de sa population, s’agence différemment et s’ouvre sur le monde. Les espaces verts se créent et les murs se parent de couleurs grâce au street art. Cela débouche sur des lieux où la qualité de vie est privilégiée, tout en respectant la nature et l’environnement.
+
+Document B :
+Mais à une plus large échelle, cela n’est pas aussi évident. Les graffitis peuvent être perçus comme une dégradation de la communauté, une pollution visuelle ou une preuve de la rupture sociale. On les considère comme du vandalisme qui défigure les biens publics. Le débat sur les avantages et les inconvénients des graffitis fait rage parmi les artistes, les législateurs et les membres de la communauté.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_189',
+  'tache_1',
+  550,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Vous allez déménager. Des amis ont accepté de vous aider.  Vous leur écrivez un message collectif pour leur expliquer comment le déménagement va se passer (lieux, horaires, durée, trajet, tâches à faire, etc.)',
+  true
+);
+
+INSERT INTO public.questions (epreuve, reference, tache, ordre, texte, actif) VALUES
+(
+  'expression_ecrite',
+  'EE_T2_175',
+  'tache_2',
+  551,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Participez à notre concours pour gagner un séjour pour deux personnes dans la ville de votre choix. Rédigez un article sur le thème : « La vie de mon artiste préféré(e) ».
+
+Vous participez à ce concours. Vous expliquez pourquoi vous avez choisi cet(te) artiste et vous racontez sa vie.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_190',
+  'tache_1',
+  552,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Votre ami Cédric a accepté de garder votre maison et jardin pendant vos vacances.  Écrivez un message pour lui dire ce qu’il doit faire.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_176',
+  'tache_2',
+  553,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Vous faites une réclamation par rapport aux mauvaises prestations d’une agence de voyages suite à un voyage mal organisé.  Exprimez votre mécontentement.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_188',
+  'tache_3',
+  554,
+  'Thème du débat : « La Restauration Rapide »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+Les restaurants rapides proposent des plats équilibrés et variés, et ils respectent les normes d’hygiène et les variétés de produits qui sont bons, et c’est le client qui compose son menu, donc il en est responsable.
+
+Document B :
+La restauration rapide est néfaste à la santé, elle cause des problèmes irréversibles comme l’obésité, etc.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_191',
+  'tache_1',
+  555,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Vous êtes locataire d’un appartement trop grand pour vous.  Écrivez une annonce dans un journal pour chercher un colocataire. Il faut mentionner : la superficie, le caractère du colocataire, le prix, etc.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_177',
+  'tache_2',
+  556,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Vous venez de commencer une nouvelle activité de loisir (sport, danse, etc.).  Écrivez un article sur votre blog pour parler de cette expérience.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_189',
+  'tache_3',
+  557,
+  'Thème du débat : « La Gratuité Des Musées : Pour Ou Contre ? »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+La gratuité des musées peut entraîner une surfréquentation, ce qui nuit à la qualité de l’expérience des visiteurs. De plus, cela peut réduire les ressources financières des musées, affectant ainsi leur entretien et la préservation des œuvres. Un tarif réduit serait une meilleure solution pour rendre la culture accessible tout en soutenant les musées.
+
+Document B :
+La gratuité des musées est une excellente initiative. Cela rend la culture accessible à tous, indépendamment de leur situation financière. J’ai pu visiter plusieurs musées gratuitement, ce qui m’a permis d’enrichir mes connaissances sans me soucier du coût. Pour moi, la gratuité des musées contribue à l’éducation du public et au partage du patrimoine culturel.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_192',
+  'tache_1',
+  558,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Vous voulez passer un week-end avec vos amis et faire du sport. Vous leur écrivez une lettre pour proposer ça en citant (date, lieu, programme.).',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_178',
+  'tache_2',
+  559,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Écrivez un article sur votre blog pour raconter pourquoi vous avez décidé de changer votre alimentation (vos habitudes alimentaires).',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_190',
+  'tache_3',
+  560,
+  'Thème du débat : « La Sieste Au Travail : Pour Ou Contre ? »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+D’après le site síestepourtous.com,
+
+une micro-sieste permettrait d’augmenter la productivité et la créativité des travailleurs de 35%, ce qui est un avantage considérable pour l’employé et l’employeur. Aussi, la sieste au travail permettrait d’augmenter la mémoire et donc la concentration. Un salarié r é reposé ne penserait plus à dormir et serait davantage disponible pour ses missions. Grâce à la sieste au bureau, le stress et les risques cardiaques diminueraient
+
+Document B :
+Bien que les effets positifs d’une power nap aient été scientifiquement prouvés, il existe encore des personnes qui s’y opposent et y voient des inconvénients. La sieste au travail est assez difficile en onvénients. La sieste au travail est termes de Faisabilité. En effet ce n’est pas dans les moyens de toutes les entreprises de mettre en des lits et des salle dédiées à cette ettre en place pratique. Lorsqu’une entreprise veut mettre en place un temps de repos dans son organisation, elle n’est pas tout à fait libre de fair faire selon son bon vouloir. L’entreprise devra se conformer à certaines règles : la mise à disposition d’un local dédié et de matériel
+
+employés lors de la sieste (prévention des situations de harcèlement), l’égalité de traitement entre salariés, l’établissement d’une charte gérant re salariés, etc.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_193',
+  'tache_1',
+  561,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Vous partez en vacances avec vos amis, vous avez trouvé un hôtel.  Vous écrivez un message à vos amis pour décrire cet hôtel (localisation, prix, équipements, etc.) et vous leur proposez de réserver cet hôtel.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_179',
+  'tache_2',
+  562,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Vous êtes parti(e) travailler à l’étranger. Vous envoyez un message à vos amis pour raconter cette nouvelle expérience professionnelle.  Vous expliquez ce que vous avez le plus aimé.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_191',
+  'tache_3',
+  563,
+  'Thème du débat : « Les Jeux Vidéo, Pour Ou Contre ? »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+Des études ont montré que certaines zones du cerveau de l’adulte peuvent être développées en jouant aux jeux vidéo. Ainsi, il peut être intéressant de jouer aux jeux vidéo, car ils permettent, par exemple, d’améliorer la capacité d’analyse, la capacité à faire des choix et la rapidité de réaction. C’est une bonne nouvelle car la répartition des joueurs par âge montre que 83% des joueurs sont des adultes. Cependant, il convient de rester prudent car certains jeux vidéos ne favorisent pas ce type d’amélioration sur le cerveau.
+
+Document B :
+Pendant trois ans, des enfants âgés de 8 à 17 ans ont participé à une étude sur les jeux vidéo. Les résultats de cette étude montrent que les enfants qui jouent beaucoup aux jeux vidéo sont plus violents, plus nerveux et plus stressés que ceux qui ne jouent pas ou peu. Ceux qui jouent beaucoup ont également moins de bons résultats à l’école. Il est donc conseillé aux parents d’être vigilants et de limiter l’usage de ces jeux par leurs enfants.
+
+“Bonjour, ça y est, j’ai obtenu mon visa pour le Canada. Je vais arriver le 3 mars. Est-ce que tu pourras m’aider à trouver un hôtel pour la première semaine ? Merci d’avance pour ton aide.”
+
+Matthias.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_194',
+  'tache_1',
+  564,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Vous répondez à votre amie Barbara en décrivant le lieu (parc, jardin, terrasse, etc.).',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_192',
+  'tache_3',
+  565,
+  'Thème du débat : « L’Utilisation Du Plastique, Pour Ou Contre »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+Franck soutient l’utilisation limitée du plastique, soulignant son importance dans de nombreux secteurs, notamment les secteurs médical et alimentaire. Pour lui, le plastique est vital pour la conservation des aliments et la stérilisation des équipements médicaux. Il prône une utilisation responsable et le recyclage, mais reconnaît que certains usages du plastique sont indispensables pour la société moderne.
+
+Document B :
+Amicha s’oppose fermement à l’utilisation du plastique, mettant en avant son impact environnemental dévastateur. Elle soutient que les déchets plastiques polluent les océans et les écosystèmes, causant des dommages irréparables. Amicha milite pour des alternatives écologiques et durables, insistant sur l’urgence de renoncer au plastique pour protéger l’environnement et la santé publique.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_195',
+  'tache_1',
+  566,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Votre ami vous propose de faire du camping.  Écrivez un message à votre ami pour lui suggérer un endroit où camper en précisant le lieu, la date et les activités prévues.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_180',
+  'tache_2',
+  567,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Deux amis souhaitent passer deux semaines de congé chez vous.  Écrivez-leur un message pour leur proposer des lieux à visiter (endroits historiques, restaurants, etc.).',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_193',
+  'tache_3',
+  568,
+  'Thème du débat : « Les Habitudes Alimentaires »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+De nos jours, les journées passent très vite car nous sommes tout le temps pris par un rythme de vie effréné : travail, enfants, loisirs… Dès lors, beaucoup d’entre nous préfèrent et favorisent des habitudes alimentaires basées essentiellement sur des repas tout faits à emporter ou à consommer sur place. Prenons l’exemple d’Annette, une jeune femme de 28 ans qui se consacre énormément à son travail et qui aime dîner au restaurant tout en passant de bons moments avec ses amis. Cela lui permet de manger sainement sans avoir à passer des heures dans la cuisine après une rude journée de travail. Ce mode de vie lui convient en tant que célibataire, lui permettant de découvrir de nouveaux restaurants bien notés, de faire de nouvelles connaissances, et d’éviter de longues soirées seule devant sa télévision. Et ceci est vrai même pour les plus jeunes.
+
+Document B :
+Les fast-foods et la restauration en général ont conduit beaucoup d’entre nous à adopter de mauvaises habitudes alimentaires, basées sur des plats rapides, déséquilibrés, et riches en calories et en graisses. Heureusement, certaines familles tiennent encore bon et choisissent de manger chez elles tout en faisant des économies. Prenons l’exemple de Jeanne, une femme mariée de 45 ans qui préfère manger à la maison avec son mari et ses cinq enfants. En cuisinant elle-même, elle sait ce qu’elle met dans son assiette tout en préservant son budget. Cette caissière, qui travaille dans une grande surface, préfère réaliser elle-même ses recettes car, non seulement ses moyens financiers sont limités, mais elle prend également un plaisir fou à cuisiner pour sa famille.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_196',
+  'tache_1',
+  569,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Salut,
+
+Tu as commencé ton nouveau travail ! C’est comment ? Tu es content(e) ?
+
+Ali
+
+Vous répondez à votre ami Ali. Dans votre message, vous décrivez votre nouveau travail (lieu, collègues, etc.) et vous donnez vos impressions.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_181',
+  'tache_2',
+  570,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Vivre avec les personnes âgées, est-ce facile ?
+
+Un site internet recherche des gens pour faire des témoignages sur la vie avec les personnes âgées. Rédigez votre expérience pour faire part de comment vous avez pu vous en sortir (vis-à-vis des personnes âgées).',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_197',
+  'tache_1',
+  571,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Votre ami va fêter son anniversaire.  Écrivez un message à vos amis pour lui acheter un cadeau commun.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_182',
+  'tache_2',
+  572,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+La direction d’une école de musique cherche un endroit où organiser une fête pour 100 personnes.  Écrivez un mail pour les informer que vous avez trouvé un local (lieu, tarifs, etc…).',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_198',
+  'tache_1',
+  573,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Vous organisez un événement.  Écrivez une lettre à vos amis pour les inviter à cet événement, et pour leur demander de vous aider dans l’organisation (en précisant la date, le lieu, l’horaire…).',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_183',
+  'tache_2',
+  574,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Vous avez assisté à un événement sportif.  Racontez votre expérience sur le journal de votre site web (environnement, préparatifs, supporters, etc).',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_199',
+  'tache_1',
+  575,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+La gratuité des musées est une excellente initiative. Cela rend la culture accessible à tous, indépendamment de leur situation financière. J’ai pu visiter plusieurs musées gratuitement, ce qui m’a permis d’enrichir mes connaissances sans me soucier du coût. Pour moi, la gratuité des musées contribue à l’éducation du public et au partage du patrimoine culturel.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_200',
+  'tache_1',
+  576,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Il parle des cuisiniers qui ont appris le métier de cuisiniers sur internet et qui ont le buzz sur les réseaux sociaux il raconte aussi l’histoire d’une amatrice qui est devenue professionnelle et qui a rédigé plusieurs livres sur la cuisine pour les amateurs de cuisine à la maison.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_201',
+  'tache_1',
+  577,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+“Je suis contre l’installation de distributeurs de boissons dans les lycées. Ma principale préoccupation est liée à la santé des élèves. Malheureusement, beaucoup de ces distributeurs sont remplis de boissons sucrées et de sodas qui contribuent à l’obésité infantile et à d’autres problèmes de santé comme le diabète. Même les jus de fruits, qui peuvent sembler sains, contiennent souvent beaucoup de sucre. Les écoles devraient être des lieux qui encouragent des habitudes alimentaires saines et je crains que la présence de ces distributeurs n’encourage une consommation excessive de boissons sucrées.”',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_194',
+  'tache_3',
+  578,
+  'Thème du débat : « Le travail des étudiants pendant les vacances: Pour ou contre ? »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+Opinion 1 : Alexandre, un conseiller d’orientation
+
+“Je suis fermement pour le travail des jeunes pendant les vacances. C’est une excellente occasion d’acquérir des compétences pratiques, d’apprendre à travailler en équipe et de découvrir différentes industries. Les jeunes peuvent gagner de l’argent qu’ils peuvent économiser pour l’avenir ou utiliser pour financer des activités ou des loisirs. De plus, le fait d’avoir une expérience de travail sur leur CV peut leur donner un avantage lorsqu’ils postulent pour des emplois ou des stages à l’avenir. Les vacances d’été sont longues et il y a amplement de temps pour se reposer et travailler.
+
+Document B :
+Opinion 2 : Élise, une psychologue pour adolescents',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_202',
+  'tache_1',
+  579,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+“Je suis contre l’idée que les jeunes doivent travailler pendant leurs vacances. Les adolescents sont déjà sous une énorme pression pendant l’année scolaire avec les études, les examens et les activités parascolaires. Les vacances doivent être une période pour eux de se détendre, de se décompresser et de poursuivre des intérêts personnels. Les forcer à travailler pourrait contribuer au stress et à l’épuisement. Il est également important pour les jeunes de disposer de temps non structuré pour explorer leur créativité, passer du temps avec leurs amis et leur famille, et tout simplement être des enfants. Le travail peut attendre.”',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_203',
+  'tache_1',
+  580,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+La colocation peut cependant présenter des défis. Les différences de personnalité et de mode de vie entre les colocataires peuvent entraîner des tensions. La gestion des responsabilités et des tâches ménagères peut également être source de conflits. De plus, la colocation peut limiter l’intimité et l’espace personnel. Il est important d’établir une communication ouverte et respectueuse, ainsi que des règles de vie commune, pour favoriser une cohabitation harmonieuse.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_184',
+  'tache_2',
+  581,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Vous avez passé un cours de cuisine.  Rédigez un article de blog pour décrire ce souvenir en indiquant les détails.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_204',
+  'tache_1',
+  582,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Les magazines nous donne la possibilité d’avoir un contact humain et relation avec les vendeurs + possibilité de voir et de toucher ce qu’on veut … les consommateurs favorisent l’achat traditionnel, visiter des magasins le permette d’échanger des achats insatisfaisants et de se se communiquer avec les vendeurs.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_205',
+  'tache_1',
+  583,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Les animaux sauvages ne devraient pas être confinés dans des zoos, car cela ne correspond pas à leur habitat naturel. Il décrit les zoos comme des prisons pour les animaux, citant l’exemple d’ours polaires maintenus dans des environnements où la température atteint 15 degrés. Enfin, les animaux nécessitent un environnement naturel et la liberté.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_206',
+  'tache_1',
+  584,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+La publicité est présente partout dans notre vie de tous les jours : journaux, radios, télévision, téléphone, Internet… Par exemple, sur certaines chaînes de télévision, les émissions sont coupées par la publicité et c’est agaçant. Puis, recevoir des dizaines de kilos de papier de publicité par an dans la boîte aux lettres, ce n’est pas très respectueux de l’environnement ! Je pense qu’il est nécessaire de faire voter une loi pour réduire les publicités par courrier et à la télévision. Si la publicité était plus discrète, elle serait plus appréciée. 
+ Estelle, 35 ans.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_207',
+  'tache_1',
+  585,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Vous répondez à votre ami Camille. Dans votre message, vous décrivez votre activité sportive et vous donnez des informations utiles (lieu, durée, prix, etc.).',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_185',
+  'tache_2',
+  586,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+« Tout quitter pour changer de vie ? Il y a deux ans, nous avons décidé de changer de vie. Paul a quitté son poste de banquier à Paris et nous avons ouvert une boulangerie à Calgary ! Que pensez-vous de cette décision ? Avez-vous déjà vécu un grand changement, professionnel ou personnel ? Paul et Naïma »
+
+Vous avez lu ce message sur un forum internet. Vous répondez à Paul et Naïma. Dans votre message, vous donnez votre opinion sur le choix de Paul et de Naïma et vous racontez comment vous feriez si vous étiez à leur place.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_208',
+  'tache_1',
+  587,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+De nos jours, les entreprises veulent toujours plus de productivité et d’efficacité, et les employés passent plus de temps sur les lieux de travail. Les entreprises cherchent toujours des moyens ou astuces pour convaincre leurs employés de travailler plus et qu’elles pensent à leur santé. Moi, ce qui m’importe c’est de faire mon job sur mon temps de travail réel sans être obligé de faire des rallonges en heures supplémentaires. « Florian, ingénieur ».',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_209',
+  'tache_1',
+  588,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Le port de l’uniforme développe un sentiment d’appartenance à son établissement, et à la communautés des élèves. Il nourrit chez le jeune le sens du collectif et engendre souvent la fierté d’appartenir à son établissement. De plus, il réduit la discrimination basée sur le style ou sur la classe sociale de l’élève. En effet, l’uniforme permet aux parents d’économiser beaucoup d’argents, ce ne sont pas tous les parents qui peuvent payer à leurs enfants de beaux vêtements griffés ou de marques populaires. La mise en place d’un code vestimentaire réduit donc les différences entre les classes sociales.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_195',
+  'tache_3',
+  589,
+  'Thème du débat : « L''aide Aux Personnes Pauvres »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+Document 1 (Marie 58 ans): J’ai pris l’habitude, depuis des années maintenant, de donner un peu de mon temps et de mon argent afin d’aider les personnes vivant dans la précarité extrême; surtout ceux qui vivent sans abri en période hivernale. Pour moi, c’est un devoir d’aider et de contribuer afin que ces personnes puissent vivre le plus normalement possible. En assistant des pauvres ou des associations, on se sent utile au sein d’une société qui devient de plus en plus impitoyable.
+
+Document B :
+(Paul 63 ans ) : Pour aider les personnes vivant dans la précarité, on doit s’investir davantage dans les associations caritatives. Personnellement, c’est ce que je fais; je suis bénévole dans une association située dans mon quartier. Elle a pour principal but, aider les sans-abris à trouver un logement et un travail afin au’ils vivent le plus normalement possible. Cette action est plus bénéfique à long terme car elle permet de les rendre autonomes.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_196',
+  'tache_3',
+  590,
+  'Thème du débat : « Les Jeux Vidéo : Pour Ou Contre ? »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+Les enfants, jusqu’à l’âge de l’adolescence, jouent d’une manière régulière aux jeux vidéo et à force, ils peuvent développer des pensées négatives et des comportements agressifs. En effet, une étude récente, menée sur des enfants âgés de 9 à 18 ans jouant fréquemment aux jeux vidéo, a révélé que le fait de jouer à des jeux de violence augmente considérablement un comportement agressif. Et selon Diégo Gentil, ce phénomène est inévitable, quel que soit le degré de vigilance des parents !
+
+Document B :
+On parle tout le temps des effets négatifs des jeux vidéo, mais ces derniers peuvent également avoir quelques avantages pour le fonctionnement du cerveau et pour la santé d’une manière générale. Si on prend, par exemple, leur apport pour le cerveau, les jeux vidéo permettent d’améliorer plusieurs fonctions cognitives telles que l’amélioration de la concentration, de la réaction et de la capacité d’analyser. Ceci peut paraître évident, dans la mesure où lorsqu’on y joue, on doit toujours trouver des solutions à des situations plus au moins complexes (surtout pour les jeux de stratégie).',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_210',
+  'tache_1',
+  591,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Parc de loisirs : “J’ai hâte de passer la journée avec toi demain. S’il te plaît, dis-moi, quelle activité nous pourrons faire ?”
+
+Répondez à votre ami pour lui décrire la sortie (horaires, transport, billet, activités)',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_211',
+  'tache_1',
+  592,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Camille qui vit dans la ville préfère faire ses courses au supermarché pour la variété qu’il propose et pour les prix abordables.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_212',
+  'tache_1',
+  593,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Robert (29 ans).',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_197',
+  'tache_3',
+  594,
+  'Thème du débat : « Restauration Rapide. »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+Les restaurants rapides proposent des plats équilibrés et variés et ils respectent les normes d’hygiène et les variétés de produits qui sont bonnes et c’est le client qui compose son menu donc il est responsable.
+
+Document B :
+Les fast foods, en raison de leur impact néfaste sur la santé, sont responsables de l’apparition de diverses maladies. Leur consommation régulière peut entraîner des problèmes tels que l’obésité, les maladies cardiovasculaires et le diabète. Il est important de limiter leur consommation afin de préserver notre bien-être.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_213',
+  'tache_1',
+  595,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Votre ami Mehdi vient de s’installer dans votre ville et il a besoin d’aide concernant les transports. Répondez-lui en lui donnant les informations (types de transport, abonnement, prix…)',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_186',
+  'tache_2',
+  596,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Vous aimez une personne célèbre ou non par ses actions. Écrivez dans votre blog personnel en précisant l’action que cette personne a faite et dites pourquoi vous l’adorez.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_214',
+  'tache_1',
+  597,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Invitez vos amis à célébrer votre anniversaire tout en sollicitant leur soutien pour organiser la fête.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_215',
+  'tache_1',
+  598,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Nous protestons depuis longtemps contre les devoirs à la maison pour plusieurs raisons. Personne ne jamais prouve leur utilité pour améliorer les résultats des élèves. Beaucoup de parents ont peu de temps pour encadrer les devoirs de leurs enfants et certains parents ne savent pas le faire. Quant aux élèves, ceux qui ont réussi les exercices en classe perdent leurs temps à faire à la maison. Ceux qui ne sont pas aidés à la maison ne réussissent toujours pas, ils sont défavorisés. C’est pourquoi nous pensons qu’il faut supprimer les devoirs à la maison.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_216',
+  'tache_1',
+  599,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Vous préférez fabriquer vous même votre savon au lieu de l''acheter ? Attention il y a des risques pour la santé si vous ne choisissez pas les bons ingredients ou si les règles d''hygiène ne sont pas respectées. Ainsi, avant de vous lancer, il est nécessaire de bien se renseigner et de suivre les règles strictes de fabrication et de conservation. De plas, méme si ces produits coûtent moins cher et représentent une economie d''argent du quatidien, la fabrication mason prend souvent beaucoup de temps',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_217',
+  'tache_1',
+  600,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Vous avez trouvé un nouveau travail. Vous écrivez à votre amie Francophone pour lui annoncer la bonne nouvelle.  Vous décrivez votre poste, vos collègues et votre lieu de travail.',
+  true
+);
+
+INSERT INTO public.questions (epreuve, reference, tache, ordre, texte, actif) VALUES
+(
+  'expression_ecrite',
+  'EE_T2_187',
+  'tache_2',
+  601,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Une étudiante qui à 19 ans veut aller à l’étranger pour les études. Elle demande aux internautes du forum de partager leurs expériences et vous avez fait un an à l’étranger.  Parlez- lui de votre expérience (décrire le séjour à l’étranger, les activités…).',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_218',
+  'tache_1',
+  602,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Pour aider les personnes vivant dans la précarité, on doit s’investir davantage dans des associations caritatives. Personnellement, c’est ce que je fais, je suis bénévole dans une association située dans mon quartier. Elle a pour principal but, aider les sans-abris à trouver un logement et un travail afin qu’ils vivent le plus normalement possible. Cette action est plus bénéfique à long terme car elle permet de les rendre autonomes.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_219',
+  'tache_1',
+  603,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Je suis votre amie Anna et je compte passer un weekend dans ta ville.  Donnez-moi des informations sur les moyens de transport pour explorer la ville. Répondez à Anna dans un message.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_188',
+  'tache_2',
+  604,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Vous avez assisté à une fête de voisins du quartier,  écrivez un blog pour montrer pourquoi vous avez aimé cette fête.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_220',
+  'tache_1',
+  605,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Vous allez bientôt déménager. Écrivez un message à votre ami(e) pour demander son aide en fournissant les informations (date, lieu, transports, etc.).',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_189',
+  'tache_2',
+  606,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Ecrivez un article de blog sur votre souvenir de voyage que vous avez aimé le plus.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_190',
+  'tache_2',
+  607,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Écrivez dans un article un message pour raconter votre arrivée dans un pays étranger en donnant vos impressions.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_198',
+  'tache_3',
+  608,
+  'Thème du débat : « l''utilisation du plastique, pour ou contre »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+Chaque année, des millions de tonnes de plastiques sont déversées dans les océans, où elles s''accumulent et se fragmentent en petits morceaux. Ces déchets plastiques ont des effets désastreux sur la faune et la flore marines, qui les ingèrent. Les plastiques menacent ainsi la santé des écosystèmes marins, mais aussi la nôtre, car ils peuvent remonter dans la chaîne alimentaire. Il est urgent de réduire notre consommation de plastiques et de les éliminer à la source, avant qu''ils n''atteignent les océans.
+
+Document B :
+Le plastique est un matériau indispensable dans le domaine de la santé. Il permet de fabriquer des dispositifs médicaux, tels que des seringues, des cathéters, des prothèses, des implants, des pansements, etc. Ces dispositifs sont souvent jetables, résistants, et adaptés aux besoins des patients. Le plastique contribue ainsi à la prévention des infections, à la réduction des douleurs, à l''amélioration de la qualité de vie, et à la sauvegarde de nombreuses vies. Il est donc un allié de la médecine, qui apporte des solutions innovantes et efficaces.
+
+votre ami(e) veut découvrir la région dans laquelle vous habitez.  Écrivez lui un message pour lui proposer des sites à visiter.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_221',
+  'tache_1',
+  609,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+France Télévisions prépare un reportage sur le sport amateur.
+
+Et vous, quel sportif êtes-vous ?
+
+Envoyez-nous vos témoignages sur francetelevisions.fr.
+
+Vous avez passé des vacances formidables dans une belle région de votre pays.Vous écrivez un message à vos amis dans lequel vous racontez votre expérience. Vous expliquez pourquoi vous avez beaucoup aimé ce séjour.
+
+Dans les collèges privés, il y a peu d''élèves de milieux sociaux défavorisés. Comme les études dans ces établissements sont payantes, certaines catégories de population en sont exclues. Ce système qui oppose écoles publiques et écoles privées ne facilite pas la mixité sociale. Ainsi, les élèves du privé ont rarement l''occasion de rencontrer d''autres jeunes issus de milieux sociaux moins favorisés qu''eux et inversement. Ce modèle scolaire reproduit les inégalités sociales et renforce le sentiment d''exclusion de certains jeunes.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_191',
+  'tache_2',
+  610,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Gagnez deux billets pour la destination de votre choix avec la compagnie Air Tropiques. Racontez votre plus beau voyage sur notre forum »
+
+Écrivez un message sur le forum de la compagnie Air Tropiques. Vous racontez votre plus beau voyage (destination, activités, ...) et vous dites pourquoi...',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_222',
+  'tache_1',
+  611,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Mais à une plus large échelle, cela n’est pas aussi évident. Les graffitis peuvent être perçus comme une dégradation de la communauté, une pollution visuelle ou une preuve de la rupture sociale.On le considèrent comme du vandalisme qui défigure les biens publics. Le débat sur les avantages et les inconvénients des graffitis fait rage parmi les artistes, les législateurs et les membres de la communauté.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_223',
+  'tache_1',
+  612,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Vous avez déménagé dans une nouvelle ville depuis un mois.  Vous écrivez un courriel à votre Leo pour lui donner de vos nouvelles ! Vous devez lui décrire : ( l’appartement, le quartier, la ville, les activités…)',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_192',
+  'tache_2',
+  613,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Vous avez assisté à une fête traditionnelle dans votre pays où à l’étranger.  Racontez la dans votre blog et dites pourquoi vous l’avez aimée.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_199',
+  'tache_3',
+  614,
+  'Thème du débat : « Les Parcs Zoologiques : Pour Ou Contre ? »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+Le texte affirme que les zoos ont beaucoup d’avantages, même pour les animaux en la voie de disparition, les animaux sont bien soignées dans les zoos. Les études montrent que le nombre de reproduction a augmenté grâce aux zoos et ils peuvent sauver la vie des animaux.
+
+Document B :
+Le texte a montré qu’il ne faut pas mettre les animaux sauvages dans les zoos parce que ce n’est pas leur environnement. C’est un prison pour eux. On trouve des ours polaires dans un zoo dont la température est de 15 degrés. Les animaux ont besoin de la nature et de la liberté.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_224',
+  'tache_1',
+  615,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Vous terminez un séjour professionnel dans un pays étranger et vous souhaitez fêter votre départ. Vous écrivez un couriel à vos collègues pour les invités au restaurant. Vous décrivez votre projet et donnez les informations nécessaires (adresse, date heure etc.)',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_193',
+  'tache_2',
+  616,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Vous avez commencé une nouvelle activité sportive. Sur votre blog vous racontez votre expérience. Vous expliquez pourquoi cette activité peut être intéressante.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_200',
+  'tache_3',
+  617,
+  'Thème du débat : « Les Animaux de Compagnie au Travail »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+Venir au bureau avec son animal de compagnie, c''est à la mode. L''intérêt de cette présence ? C''est simple: diminuer le stress des employés. La présence d''un chien ou d''un chat change l''ambiance générale d''une entreprise : elle réduit les tensions entre collègues, ce qui n''est pas négligeable car chaque année, l''État français dépense entre 2 et 3 milliards d''euros pour soigner les salariés malades du stress. Selon une enquête, un quart des employés pensent aussi que la présence des animaux permet d''être plus motivé au travail.
+
+Document B :
+« Dans l''entreprise où je travaille, les employés sont autorisés à venir avec leur animal de compagnie, chat ou chien. Personnellement, cela me dérange. Je ne suis pas très à l''aise avec les animaux, qui peuvent avoir des comportements imprévisibles. D''autre part, je trouve que cela peut poser des problèmes de santé. Que faire si un employé est allergique aux chats ? Sera-t-il obligé de rester enfermé dans son bureau? Et puis c''est aussi une source de distraction. Mes collègues et moi ne serons pas plus productifs grâce à un chien ou un chat ! »',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_225',
+  'tache_1',
+  618,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Un évènement sportif aura lieu dans votre ville bientôt. Faites parvenir un message à vos amis pour les inviter (date, lieu, inscription, etc.).',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_201',
+  'tache_3',
+  619,
+  'Thème du débat : « Les Achats En Ligne : Pour Ou Contre ? »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+Les achats en ligne ont des avantages comme gagner de temps consommateurs les et de trouvent l’argent. les facilement, disponibilité 24/24, produits provenant de tout le monde etc.
+
+Document B :
+Les magazines nous donne la possibilité d’avoir un contact humain et relation avec les vendeurs + possibilité de voir et de toucher ce qu’on veut … les consommateurs favorisent l’achat traditionnel, visiter des magasins le permette d’échanger des achats insatisfaisants et de se se communiquer avec les vendeurs.
+
+je cherche un vélo en bon état et bon marché. Contactez moi par courriel : [email&#160;protected]',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_226',
+  'tache_1',
+  620,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Vous souhaitez faire du sport et vous voulez que votre ami vous accompagne.  Écrivez lui un message pour lui proposer de pratiquer ensemble.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_194',
+  'tache_2',
+  621,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Vous avez déjà étudié dans une université à l’étranger.  Écrivez un article sur votre Blog pour raconter cette expérience.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_227',
+  'tache_1',
+  622,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Vous souhaitez fêter votre anniversaire dans un restaurant. Vous invitez vos amis,  vous leur écrivez un courriel pour leur donne toutes les informations nécessaires (lieu, date, menu, etc.) ainsi vous leur demandez de confirmer leur présence.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_228',
+  'tache_1',
+  623,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Vous êtes nouveaux dans une université 
+ Décrivez à vos amis comment cela se passe avec ( les prof,autres étudiants, les activités et autres )',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_195',
+  'tache_2',
+  624,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Vous avez décidé de ne plus utiliser les réseaux sociaux ( twitter Instagram Facebook et autres). 
+ Écrivez un message à vos amis en citant les raisons derrière cette décision.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_202',
+  'tache_3',
+  625,
+  'Thème du débat : « Faut il mettre les photos sur les CV »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+On parle de l’inutilité de la photo sur le cv tant que ce qui est important sont les diplômes requis et l’expérience professionnelle. Les employeurs n’aiment pas avoir des photos, une étude montre que c’est une perte de temps. La photo sur un cv ne doit pas etre obligatoire car elle peut influencer les employeurs, certains employeurs peuvent choisir un candidat en se basant sur sa couleur (une sorte de discrimination).
+
+Document B :
+Christophe adhère à l’idée que la présence d’une photo sur le CV ne sera pas un critère de sélection mais elle est indispensable pour quelques métiers tel que une hôtesse d’accueil, la photo est nécessaire, il donne une idée sur le candidat et certaines employeurs veulent voir la photo pour décider pour ou contre un candidat.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_229',
+  'tache_1',
+  626,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Écrivez un message à vos amis pour leur proposer d''organiser une grande fête. Demandez- leur de vous aider.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_196',
+  'tache_2',
+  627,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Racontez sur un site internet une compétition sportive à laquelle vous avez participé.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_203',
+  'tache_3',
+  628,
+  'Thème du débat : « Menus Sans Viande à La Cantine Scolaire. »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+De plus en plus d’écoles décident de mettre en place un menu sans viande dans les cantines, au moins deux fois par semaine. Certaines études ont montré que les enfants consomment trop de protéines animales. C’est donc une question de santé : les écoles ont choisi de remplacer la viande par d’autres produits (soja, céréales, légumes), moins gras et utiles à la croissance des enfants. Ces menus sans viandes à la cantine reviennent moins cher aux familles. Cette idée plaît beaucoup aux parents comme aux enfants.
+
+Document B :
+La décision de supprimer la viande dans les cantines ne plaît pas à tout le monde. En effet, c’est un produit cher : la cantine est le seul endroit où les enfants de familles en difficulté peuvent manger. Les producteurs locaux de viande sont également mécontents : une partie de leur production est réservée aux cantines, il s’agit donc d’une perte financière. Enfin, beaucoup d’enfants interrogés déclarent tout de même préférer les steaks de bœuf aux steaks de soja qui, selon eux, ont peu de goût.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_230',
+  'tache_1',
+  629,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Écrivez un message à vos amis pour les inviter à découvrir une ville touristique.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_197',
+  'tache_2',
+  630,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Vous avez participé à un festival (gastronomie, musique, sport). Racontez ce qui ne vous a pas plu dans cette expérience.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_204',
+  'tache_3',
+  631,
+  'Thème du débat : « La vie à la campagne ou en ville »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+À mon avis, le fait de vivre en ville, cela vous donne la possibilité de vous divertir de plusieurs manières ; comme aller au cinéma, déjeuner dans un restaurant faire du shopping… Tout est à côté, vous n’avez pas besoin de parcourir plusieurs kilomètres pour prendre un taxi ( si le trajet est un peu long) et vous aurez à disposition tout ce dont vous désirez. Même les amoureux des évènements culturels sont servis ; musée, théâtre, opéra… tout y est !
+
+Document B :
+Dernièrement, j’ai décidé de quitter la ville pour vivre à la campagne, car j’avais vraiment besoin de me rapprocher de la nature et de profiter du calme. Désormais, au lieu de partir quotidiennement au bar du coin ou au restaurant, j’invite des amis à boire un verre dans la terrasse de ma maison ou j’organise de temps en temps un barbecue dans mon jardin. Un autre détail d’importance m’a encouragé à prendre cette décision ; c’est la disponibilité des logements avec des prix largement inférieurs à ceux proposés en villes. Avec mon budget actuel, j’ai une grande maison avec terrasse et jardin privatif, alors qu’en ville, j’avais le droit à un petit appartement au 5 e  étage d’un immeuble.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_205',
+  'tache_3',
+  632,
+  'Thème du débat : « La restauration rapide »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+Les restaurants rapides se distinguent par leur engagement à proposer une variété de plats équilibrés, respectant strictement les normes d''hygiène. En laissant aux clients la liberté de composer leur propre menu, ces établissements les responsabilisent dans leurs choix alimentaires, tout en satisfaisant leurs préférences gustatives.
+
+Document B :
+Les spécialistes affirment que manger régulièrement dans des restaurants de fast-food, qui proposent de la restauration rapide, est dangereux pour la santé. La nourriture servie est souvent la même : frites, hamburgers et boissons sucrées. Ces aliments contiennent une grande quantité de calories, bien trop pour un seul repas. De plus, la plupart des produits dans ces restaurants sont emballés dans du plastique. Par conséquent, manger dans un fast-food augmente la production de déchets plastiques, ce qui est nuisible pour l’environnement.
+
+La bibliothèque de votre ville organise une rencontre avec un écrivain. Écrivez un message à votre ami(e) pour l’inviter à cet évènement.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_231',
+  'tache_1',
+  633,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Vous avez fini le déménagement de votre entreprise. Écrivez a Lucas pour lui parler de vos nouveaux locaux ( lieu, dimension, Équipements...)',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_198',
+  'tache_2',
+  634,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Votre ville a organisé un événement « une semaine sans mon véhicule ». Vous écrivez un article sur un site internet pour raconter l''événement.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_232',
+  'tache_1',
+  635,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Vous avez commencé à prendre des cours dans une école de langues. Vous envoyez un message à vos amis pour leur raconter comment s''est passée votre première semaine. Parlez de votre impression sur l''école et sur vos cours.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_206',
+  'tache_3',
+  636,
+  'Thème du débat : « Caméras De Surveillance : Pour Ou Contre ? »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+De nos jours, il y a de plus en plus de caméras de surveillance dans les villes. La vidéosurveillance est appréciée par les Français car cela leur donne un sentiment de sécurité. D''après un sondage, 75% d''entre eux sont pour le développement de la vidéosurveillance. 
+ Ils seraient d''accord pour être filmés, mais seulement dans l''espace public: la rue, les magasins ou encore les transports. Cependant, 
+ ils refusent d''être surveillés par leur employeur. En France, peu de caméras de vidéosurveillance sont installées sur le lieu de travail.
+
+Document B :
+Certaines enquêtes montrent que la vidéo surveillance coûte cher et que ses résultats sont insuffisants. D''une part, la présence des caméras est facile à remarquer. Par conséquent, la vidéo surveillance est inutile pour éviter les vols, la consommation de drogue et la violence dans les villes. D''autre part, l''utilisation de vidéo surveillance demande beaucoup de personnel. Une étude allemande montre que sept personnes par caméra sont nécessaires pour analyser les informations.
+
+votre ami(e) veut découvrir la région dans laquelle vous habitez.  Écrivez lui un message pour lui proposer des sites à visiter.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_207',
+  'tache_3',
+  637,
   'Thème du débat : « La Sieste Au Travail : Pour Ou Contre ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -10843,52 +8096,61 @@ Document A :
 Augmenter la productivité du personnel et les bienfaits pour leurs santé ainsi que diminuer le stress.
 
 Document B :
-montre que malgré de nombreuses études qui prouvent ces bienfaits, il est assez difficile en termes de faisabilité. En effet c''est pas dans les moyens de toutes les entreprises de mettre en place des salles dédiés à cette pratique.',
+montre que malgré de nombreuses études qui prouvent ces bienfaits, il est assez difficile en termes de faisabilité. En effet c''est pas dans les moyens de toutes les entreprises de mettre en place des salles dédiés à cette pratique.
+
+le journal ” Bienvenue” compte publier un article qui parle des habitants de notre ville.  Écrivez nous un message qui sera diffusé dans ce numéro.  Vous êtes récemment installé dans cette ville, et il vous est demandé de vous présenter et décrire ensuite tous vos lieux préférés au sein de cette ville.
+
+Vous venez d’assister au concert de votre artiste favori.  Vous écrivez un article sur votre blog personnel, pour partager cette expérience et inciter vos amis et les autres à assister à son prochain concert.',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T1_275',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+  'EE_T3_208',
+  'tache_3',
+  638,
+  'Thème du débat : « Les jeux vidéo »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+les enfants, jusqu’à l’âge de l’adolescence, jouent d’une manière régulière aux jeux vidéo et à force, ils peuvent développer des pensée négatives et des comportements agressifs. En effet, une étude récente, menée sur des enfants âgés de 9 à 18 ans jouant fréquemment aux jeux vidéo, a révélé que le fait de jouer à des jeux de violence augmente considérablement un comportement agressif. Et selon Diego Gentil, ce phénomène est inévitable quelque soit le degré de vigilance des parents!
+
+Document B :
+On parle tout le temps des effets négatifs des jeux vidéo, mais ces derniers peuvent également avoir quelques avantages pour le fonctionnement du cerveau et pour la santé d’une manière générale. si on prend, par exemple, leur rapport pour le cerveau, les jeux vidéo permettent d’améliorer plusieurs fonctions cognitives telles que l’amélioration de la concentration, de la création et de la capacité d’analyse. Ceci peut paraitre évident, dans la mesure où lorsqu’on y joue, on doit toujours trouver.
 
 “Salut ! Je sais que tu fais du sport depuis le mois dernier. ça m’intéresse beaucoup et j’aimerais bien venir avec toi. Tu peux m’en dire plus ? à bientôt ! Camille”
- Vous répondez à votre amie Camille. Dans votre message vous décrivez votre activité sportive et vous donnez des informations utiles (lieu, durée, prix, etc.).',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_276',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+ Vous répondez à votre amie Camille. Dans votre message vous décrivez votre activité sportive et vous donnez des informations utiles (lieu, durée, prix, etc.).
 
 NIEMA : “Mon époux a laissé son poste de banquier à Paris pour que nous lancions une boulangerie en ville. Avez-vous vécu une situation similaire dans votre parcours professionnel ou personnel ? ”  Vous avez lu ce message sur internet, partagez votre opinion concernant la décision prise par Niema et son époux Pau. Ensuite, exprimez ce que vous auriez opté de faire dans une situation similaire.',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T3_306',
+  'EE_T3_209',
   'tache_3',
-  3,
+  639,
   'Thème du débat : « Le Bien Être Au Travail »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
 • Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
 
 Document A :
+Nelson
+
 Je travaille depuis 5 ans dans une grande entreprise technologique. Pour moi, le bien-être au travail rime avec flexibilité. Grâce au télétravail et aux horaires ajustables, je ressens un équilibre entre ma vie professionnelle et personnelle. Cependant, je souligne l’importance d’espaces de détente au bureau pour les moments où je m’y trouve.
 
 Document B :
+Fabrice
+
 Je suis cadre dans une PME, j’associe bien-être au travail à la reconnaissance. Les retours positifs, un management bienveillant et les formations continues ont un impact profond sur ma motivation. Toutefois, je déplore l’absence d’initiatives pour la santé mentale, suggérant que des ateliers de méditation ou des conseils psychologiques pourraient être bénéfiques.',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T1_276',
+  'EE_T1_233',
   'tache_1',
-  1,
+  640,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous avez invité votre ami Éric à votre mariage au château de Chambord et il vous a répondu qu’il ne connait pas ce château. Décrivez à votre ami (lieu, localisation, transport, etc.).',
@@ -10896,19 +8158,9 @@ Vous avez invité votre ami Éric à votre mariage au château de Chambord et il
 ),
 (
   'expression_ecrite',
-  'EE_T2_277',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Dans votre blog, Racontez votre expérience de l’apprentissage d’une langue étrangère (vous écrivez sur un Forum internet en racontant votre expérience en apprenant une langue étrangère).',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_307',
+  'EE_T3_210',
   'tache_3',
-  3,
+  641,
   'Thème du débat : « Cuisinier Amateur Ou Cuisinier Professionnel ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -10918,24 +8170,16 @@ Document A :
 Les amateurs ont fait des recettes réussies, mais ils manquent toujours des compétences et des technique, c''est pourquoi la formations et l''expérience sont nécessaires pour être un vrai cuisinier.
 
 Document B :
-Il parle des cuisiniers qui ont appris le métier de cuisiniers sur internet et qui ont le buzz sur les réseaux sociaux il raconte aussi l''histoire d''une amatrice qui est devenue professionnelle et qui a rédigé plusieurs livres sur la cuisine pour les amateurs de cuisine à la maison.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_277',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+Il parle des cuisiniers qui ont appris le métier de cuisiniers sur internet et qui ont le buzz sur les réseaux sociaux il raconte aussi l''histoire d''une amatrice qui est devenue professionnelle et qui a rédigé plusieurs livres sur la cuisine pour les amateurs de cuisine à la maison.
 
 Vous invitez un(e) ami(e) pour une semaine de festival de cinéma organisée dans votre ville.  Vous lui envoyez un message avec toutes les informations nécessaires (programme, tarif, horaire, date, lieu, etc.).',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T2_278',
+  'EE_T2_199',
   'tache_2',
-  2,
+  642,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous avez accueilli un étudiant étranger chez vous pendant une semaine.  Écrivez un article sur votre blog pour raconter ce qui vous a intéressé et ce qui vous a le plus impressionné de cette expérience.',
@@ -10943,9 +8187,9 @@ Vous avez accueilli un étudiant étranger chez vous pendant une semaine.  Écr
 ),
 (
   'expression_ecrite',
-  'EE_T3_308',
+  'EE_T3_211',
   'tache_3',
-  3,
+  643,
   'Thème du débat : « La Restauration Rapide : Pour Ou Contre ? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -10960,56 +8204,30 @@ J’ai eu une expérience déplaisante avec la restauration rapide. J’ai trouv
 ),
 (
   'expression_ecrite',
-  'EE_T1_278',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+  'EE_T3_212',
+  'tache_3',
+  644,
+  'Thème du débat : « Les Caméras De Surveillance : Pour Ou Contre ? »
 
-Vous êtes locataire d’un grand appartement et vous cherchez un colocataire.  Écrivez une annonce dans un journal pour chercher un colocataire en mentionnant (prix, superficie, lieu, etc.).',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_279',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+Dans l’école où j’enseigne à Toronto, les caméras de surveillance sont omniprésentes. Leur présence permet de dissuader les élèves de commettre des actes de violence. Les enseignants, les parents et la majorité des élèves les acceptent volontiers, car ils se sentent rassurés quant à la sécurité des enfants et que cela permet aux enseignants de travailler dans de bonnes conditions. Toutefois, certains élèves considèrent que cela porte atteinte à leur vie privée.
+
+Document B :
+Je suis opposé à l’installation des caméras de surveillance dans nos écoles à Montréal. Les résultats obtenus dans les pays où ce système est utilisé ne sont pas convaincants. Les personnes mal intentionnées peuvent facilement contourner les caméras, qui sont très visibles. Les problèmes de discipline dans une école peuvent être résolus en améliorant la communication entre les enseignants, l’administration et les élèves. Il est également nécessaire de faire respecter et expliquer les règles de l’école par tous, plutôt que de recourir aux caméras.
+
+Vous êtes locataire d’un grand appartement et vous cherchez un colocataire.  Écrivez une annonce dans un journal pour chercher un colocataire en mentionnant (prix, superficie, lieu, etc.).
 
 Vous venez de commencé une nouvelle activité de loisir (Sport, dance, etc.).  Écrivez un article sur votre blog pour parler de cette expérience.',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T3_309',
-  'tache_3',
-  3,
-  'Thème du débat : « La Gratuité Des Musées : Pour Ou Contre ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-la gratuité des musées peut entraîner une sur fréquentation, ce qui nuit à la qualité de l’expérience des visiteurs. De plus,  cela puisse réduire les ressources financières des musées, affectant ainsi leur entretien et la préservation des œuvres. Un tarif réduit serait une meilleure solution pour rendre la culture accessible tout en soutenant les musées.
-
-Document B :
-La gratuité des musées est une excellente initiative. Cela rend la culture accessible à tous, indépendamment de leur situation financière. J’ai pu visiter plusieurs musées gratuitement, ce qui m’a permis d’enrichir mes connaissances sans me soucier du coût. Pour moi, la gratuité des musées contribue à l’éducation du public et au partage du patrimoine culturel.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_279',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Invitez un ami à passer une journée avec vous, écrivez-lui un email en lui expliquant (lieu, la date, l’heure, les activités)',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_280',
+  'EE_T2_200',
   'tache_2',
-  2,
+  645,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous avez passé une journée de formation dans votre entreprise. Dans un forum, rédigez un article à vos collègues pour leur raconter cette journée et ce qui vous a plu.',
@@ -11017,29 +8235,19 @@ Vous avez passé une journée de formation dans votre entreprise. Dans un forum,
 ),
 (
   'expression_ecrite',
-  'EE_T1_280',
+  'EE_T1_234',
   'tache_1',
-  1,
+  646,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Écrire un message pour inviter vos amis à une fête de fin d’année (Date, lieu, programme).',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_281',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous faites une réclamation par rapport aux mauvaises prestations d’une agence de voyage suite à un voyage mal organisé. Exprimez votre mécontentement.',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T3_310',
+  'EE_T3_213',
   'tache_3',
-  3,
+  647,
   'Thème du débat : « Le Contrôle Parental »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -11054,171 +8262,41 @@ Mon fils s’est senti étouffé par le contrôle parental que j’avais install
 ),
 (
   'expression_ecrite',
-  'EE_T1_281',
+  'EE_T1_235',
   'tache_1',
-  1,
+  648,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
-Écrivez un courriel à vos amis pour les inviter à un anniversaire surpris pour votre meilleure ami(e), et proposez de lui offrir un cadeau commun  (lieu cadeau, activités, etc.).',
+Invitez un ami à passer une journée avec vous, écrivez-lui un email en lui expliquant (lieu, la date, l’heure, les activités)',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T3_311',
-  'tache_3',
-  3,
-  'Thème du débat : « La sévérité des parents envers leurs enfants : approches divergentes »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Une étude menée par le Centre de recherche sur la parentalité de l’Université de Toronto en juin dernier a révélé que la majorité des parents adoptent des approches plus bienveillantes envers leurs enfants qu’auparavant. Cette étude a examiné un échantillon représentatif de mille familles dans différentes régions du pays et a montré que les parents encouragent une communication ouverte avec leurs enfants et adoptent des approches moins autoritaires.
-
-Document B :
-Un article d’opinion paru dans un magazine populaire en mars 2023 présente des témoignages de parents qui ont recours à des méthodes de discipline plus strictes, telles que des privations de liberté, des punitions corporelles et des critiques constantes. Certains parents estiment que ces approches sont nécessaires pour aider leurs enfants à développer leur responsabilité et leur discipline dans un monde de plus en plus compétitif. Cependant, de nombreux experts en éducation considèrent ces méthodes comme inappropriées et préconisent des approches plus positives et coopératives pour guider les enfants vers un comportement approprié.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_282',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Écrivez un email pour répondre à votre ami(e) qui va passer le Week-end dans votre ville. Il faut décrire les moyens de transport.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_282',
+  'EE_T2_201',
   'tache_2',
-  2,
+  649,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
-Vous avez assisté à une fête entre voisins dans votre quartier. Dans votre blog décrivez cet évènement et racontez pourquoi vous l’avez aimé.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_312',
-  'tache_3',
-  3,
-  'Thème du débat : « Les Distributeurs De Boissons Dans Les Lycées: Pour Ou Contre? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-“Je suis en faveur des distributeurs de boissons dans les lycées. Premièrement, ils offrent une commodité supplémentaire pour les élèves, notamment pour ceux qui n’ont pas le temps de passer à la cafétéria pendant les pauses. Deuxièmement, s’ils sont bien gérés, ces distributeurs peuvent offrir une gamme de boissons saines, comme de l’eau, du jus de fruits pur et des boissons aux fruits sans sucre ajouté. Ces distributeurs peuvent être une source de revenus supplémentaire pour l’école, qui peut être réinvestie dans l’amélioration des infrastructures ou des programmes scolaires.”
-
-Document B :
-“Je suis contre l’installation de distributeurs de boissons dans les lycées. Ma principale préoccupation est liée à la santé des élèves. Malheureusement, beaucoup de ces distributeurs sont remplis de boissons sucrées et de sodas qui contribuent à l’obésité infantile et à d’autres problèmes de santé comme le diabète. Même les jus de fruits, qui peuvent sembler sains, contiennent souvent beaucoup de sucre. Les écoles devraient être des lieux qui encouragent des habitudes alimentaires saines et je crains que la présence de ces distributeurs n’encourage une consommation excessive de boissons sucrées.”',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_313',
-  'tache_3',
-  3,
-  'Thème du débat : « Le Contrôle Parental »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Répondre au courriel de votre ami Lucas pour lui donner les informations sur les nouveaux locaux de votre entreprise  (lieu, disposition des pièces, équipements…)
-
-Document B :
 Vous avez assisté à un événement intitulé “une semaine sans voiture”. Racontez dans un blog l’expérience que vous avez vécue et donnez votre impression sur cette initiative.',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T3_314',
-  'tache_3',
-  3,
-  'Thème du débat : « Les Vêtements De Marque: Pour Ou Contre ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Écrivez un courriel à vos amis pour les inviter à un anniversaire surpris pour votre meilleure ami(e), et proposez de lui offrir un cadeau commun  (lieu cadeau, activités, etc.).
-
-Document B :
-Votre direction est à la recherche d''une salle pour la fête de fin d''année, capable d''accueillir 100 invités. Rédigez un message à la direction pour leur dire que vous avez trouvé un local idéal. (Lieu, tarifs et services etc.…)',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_283',
+  'EE_T1_236',
   'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Une étude menée par le Centre de recherche sur la parentalité de l’Université de Toronto en juin dernier a révélé que la majorité des parents adoptent des approches plus bienveillantes envers leurs enfants qu’auparavant. Cette étude a examiné un échantillon représentatif de mille familles dans différentes régions du pays et a montré que les parents encouragent une communication ouverte avec leurs enfants et adoptent des approches moins autoritaires.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_315',
-  'tache_3',
-  3,
-  'Thème du débat : « La sévérité des parents envers leurs enfants : approches divergentes »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Vous voulez organiser une visite culturelle dans votre ville. Vous envoyez un message pour inviter vos amis. Vous leur donner toutes les informations nécessaires (activités, date, lieu, etc.).
-
-Document B :
-Vous avez assisté à une soirée écologique pour protéger la planète qui avait lieu dans votre université. Racontez là dans votre blog et expliquez pourquoi vous l’avez aimée.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_284',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Selon des associations des parents d’élèves, les devoirs à la maison sont utiles, car ils permettent aux élèves d’apprendre à organiser leur temps de manière autonome. Pour les parents, les devoirs sont lien quotidien avec l’école. Même s’il est parfois difficile de suivre les devoirs après une journée de travail fatigant, ils apprécient ce moment partagé avec leurs enfants parce que ceux-ci sont contents que leurs parents s’intéressent à eux. C’est valorisant !',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_316',
-  'tache_3',
-  3,
-  'Thème du débat : « Les Devoirs À La Maison »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Écrivez un email pour répondre à votre ami(e) qui va passer le Week-end dans votre ville. Il faut décrire les moyens de transport.
-
-Document B :
-Vous avez assisté à une fête entre voisins dans votre quartier. Dans votre blog décrivez cet évènement et racontez pourquoi vous l’avez aimé.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_285',
-  'tache_1',
-  1,
+  650,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous venez de vous installer dans une nouvelle ville. Vous écrivez un message à un(e) ami(e) pour décrire votre nouvel environnement (quartier, voisins, magasins, etc.)',
   true
-),
+);
+
+INSERT INTO public.questions (epreuve, reference, tache, ordre, texte, actif) VALUES
 (
   'expression_ecrite',
-  'EE_T2_283',
+  'EE_T2_202',
   'tache_2',
-  2,
+  651,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous avez participé à une action pour la « Journée mondiale du nettoyage de notre planète ». Vous avez ramassé des déchets dans un lieu public (plage, forêt, rue, etc.) avec d''autres personnes. Vous racontez cette expérience à vos amis. Vous expliquez pourquoi il est important de participer à ce type d''action.',
@@ -11226,9 +8304,9 @@ Vous avez participé à une action pour la « Journée mondiale du nettoyage de 
 ),
 (
   'expression_ecrite',
-  'EE_T3_317',
+  'EE_T3_214',
   'tache_3',
-  3,
+  652,
   'Thème du débat : « Les publicités alimentaires pour les enfants. »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -11237,15 +8315,19 @@ Vous avez participé à une action pour la « Journée mondiale du nettoyage de 
 Document A :
 Certaines personnes trouvent la publicité ennuyeuse, mais, à mon avis, elle est indispensable pour le commerce et les entreprises. Grâce à la publicité, on fait connaître un produit ou un service. Et puis, parfois, elles sont drôles ! J''aime bien les écouter quand je suis en voiture. Cela me permet aussi d''être informé des nouveautés et des promotions. Personnellement, j''adore comparer les articles : je peux ainsi faire beaucoup d''économies sur mes achats. Enfin, beaucoup de personnes jouent à des jeux gratuits sur leur téléphone : sans publicité, ces jeux seraient tous payants.
 
+Quentin, 28 ans
+
 Document B :
-La publicité est présente partout dans notre vie de tous les jours : journaux, radios, télévision, téléphone, Internet&#8230; Par exemple, sur certaines chaînes de télévision, les émissions sont coupées par la publicité et c''est agaçant. Puis, recevoir des dizaines de kilos de papier de publicité par an dans la boîte aux lettres, ce n''est pas très respectueux de l''environnement ! Je pense qu''il est nécessaire de faire voter une loi pour réduire les publicités par courrier et à la télévision. Si la publicité était plus discrète, elle serait plus appréciée.',
+La publicité est présente partout dans notre vie de tous les jours : journaux, radios, télévision, téléphone, Internet... Par exemple, sur certaines chaînes de télévision, les émissions sont coupées par la publicité et c''est agaçant. Puis, recevoir des dizaines de kilos de papier de publicité par an dans la boîte aux lettres, ce n''est pas très respectueux de l''environnement ! Je pense qu''il est nécessaire de faire voter une loi pour réduire les publicités par courrier et à la télévision. Si la publicité était plus discrète, elle serait plus appréciée.
+
+Estelle, 35 ans',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T1_286',
+  'EE_T1_237',
   'tache_1',
-  1,
+  653,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous allez fêter votre anniversaire. Vos amis vous demandent ce que vous souhaitez comme cadeaux. Vous voulez des vêtements. Vous leur écrivez un message pour leur décrire les vêtements que vous aimeriez recevoir.',
@@ -11253,736 +8335,104 @@ Vous allez fêter votre anniversaire. Vos amis vous demandent ce que vous souhai
 ),
 (
   'expression_ecrite',
-  'EE_T2_284',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-www.manger-international.com',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_318',
+  'EE_T3_215',
   'tache_3',
-  3,
+  654,
   'Thème du débat : « Jeux vidéo. »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
 • Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
 
 Document A :
-Ce mois-ci, nous nous intéressons aux habitudes alimentaires dans le monde. Racontez-nous comment mangent les habitants de votre pays!
+Beaucoup de gens pensent encore que les jeux vidéo nous rendent bêtes. Pourtant de nombreuses études prouvent le contraire. Ainsi, selon une de ces études, les utilisateurs de jeux de course développeraient leur sens de l''orientation, leur mémoire et la précision de leurs mouvements. D''autres études montrent clairement une amélioration de la rapidité et de la concentration de tous les joueurs. Et c''est sans parler des jeux d''entraînement destinés aux personnes âgées pour consolider la mémoire et la vivacité d''esprit... Bref, c''est scientifique, le jeu vidéo rend plus intelligent !
 
 Document B :
-Les 10 premiers témoignages seront publiés sur notre site !',
+Les jeux vidéo, sur console ou sur ordinateur, chez soi ou en salle, seul, avec des amis ou en ligne avec des inconnus, peuvent provoquer une dépendance chez certaines personnes. On parle d''addiction quand le jeu vidéo devient le principal (ou l''unique) centre d''intérêt, à la place d''autres activités (relationnelle, professionnelle, scolaire, loisirs, sport...). Cette dépendance est particulièrement préoccupante lors de l''adolescence, période importante où les jeux vidéo peuvent avoir un impact négatif sur les résultats scolaires.',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T1_287',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Vous avez lu cette annonce Vous écrivez un article pour les lecteurs du site www.manger-international.com. Vous expliquez comment mangent les habitants de votre pays et vous indiquez quelles habitudes vous plaisent ou vous déplaisent, et pourquoi ?',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_319',
+  'EE_T3_216',
   'tache_3',
-  3,
+  655,
   'Thème du débat : « Les achats en ligne. »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
 • Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
 
 Document A :
-Les jeux vidéo, sur console ou sur ordinateur, chez soi ou en salle, seul, avec des amis ou en ligne avec des inconnus, peuvent provoquer une dépendance chez certaines personnes. On parle d''addiction quand le jeu vidéo devient le principal (ou l''unique) centre d''intérêt, à la place d''autres activités (relationnelle, professionnelle, scolaire, loisirs, sport&#8230;). Cette dépendance est particulièrement préoccupante lors de l''adolescence, période importante où les jeux vidéo peuvent avoir un impact négatif sur les résultats scolaires.
+Les achats en ligne ont des avantages comme gagner de temps consommateurs les et de trouvent l''argent. les facilement, disponibilité 24/24, produits provenant de tout le monde etc.
 
 Document B :
-Un évènement sportif aura lieu dans votre ville bientôt. Faites parvenir un message à vos amis pour les inviter (date, lieu, inscription, etc.).',
+Les magazines nous donne la possibilité d''avoir un contact humain et relation avec les vendeurs + possibilité de voir et de toucher ce qu''on veut … les consommateurs favorisent l''achat traditionnel, visiter des magasins le permette d''échanger des achats insatisfaisants et de se se communiquer avec les vendeurs.',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T1_288',
+  'EE_T1_238',
   'tache_1',
-  1,
+  656,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Vous avez passé un cours de cuisine. Rédigez un article de blog pour décrire ce souvenir en indiquant les détails.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_285',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Les achats en ligne ont des avantages comme gagner de temps consommateurs les et de trouvent l''argent. les facilement, disponibilité 24/24, produits provenant de tout le monde etc.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_320',
-  'tache_3',
-  3,
-  'Thème du débat : « Cuisinier amateur ou Cuisinier Professionnel ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Les magazines nous donne la possibilité d''avoir un contact humain et relation avec les vendeurs + possibilité de voir et de toucher ce qu''on veut … les consommateurs favorisent l''achat traditionnel, visiter des magasins le permette d''échanger des achats insatisfaisants et de se se communiquer avec les vendeurs.
-
-Document B :
-Vous avez invité votre ami Éric à votre mariage au château de Chmbony et il vous a répondu qu''il ne connait pas ce château. Décrivez à votre ami (lieu, localisation, transport, etc.).',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_286',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Rédigez un message pour inviter votre ami à passer ses vacances dans votre ville.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_321',
-  'tache_3',
-  3,
-  'Thème du débat : « la chasse aux animaux : pour ou contre ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Vous avez participé à un concours pour gagner un séjour de deux semaines dans votre ville préféré. Le thème de ce concours est « Mon artiste préféré » . Écrivez un article de blog pour parler de votre article préféré.
-
-Document B :
-“Je suis de ceux qui n’arrivent pas à comprendre comment l’on peut prendre du plaisir à tuer des animaux. Je suis de ceux qui n’arrivent pas à comprendre comment on peut prétendre aimer la nature alors qu’on la détruit”',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_289',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-“Les gens chassent pour différentes raisons : la subsistance, le commerce, la conversation et l’aménagement de la faune, la protection de la propriété, l’exercice, le loisir et le prestige.”',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_287',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-David, Journaliste de la FRM',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_322',
-  'tache_3',
-  3,
-  'Thème du débat : « la consommation de viande : pour ou contre? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Vous voulez organiser une grande fête, invitez vos amis et demandez leur aide (lieu, date, thème, etc.).
-
-Document B :
-Vous avez participé à une compétition sportive, racontez votre expérience sur un site internet et donnez votre avis.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_290',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Je suis contre la consommation de viande en raison de préoccupations éthiques, environnementales et sanitaires. Éthiquement, je crois que tous les animaux ont droit à la vie et à la liberté, et que l''élevage industriel implique souvent des traitements inhumains. Environnementalement, l''élevage d''animaux pour la viande est une source majeure de gaz à effet de serre et nécessite une grande quantité de terres et d''eau, ce qui contribue au changement climatique et à la déforestation.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_288',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Je suis d''accord avec la consommation de viande car elle est une source essentielle de protéines, de vitamines B et de minéraux comme le fer et le zinc. Bien que l''on puisse obtenir ces nutriments à partir de sources végétales, ils sont souvent plus accessibles et plus facilement absorbés par le corps lorsqu''ils proviennent de sources animales. De plus, la viande fait partie intégrante de nombreux régimes culturels et traditions culinaires, ce qui ajoute à sa valeur au-delà de la nutrition. Cependant, il est crucial de se procurer de la viande de manière responsable, en soutenant des pratiques d''élevage éthiques et durables.',
-  true
-);
-
-INSERT INTO public.questions (epreuve, reference, tache, ordre, texte, actif) VALUES
-(
-  'expression_ecrite',
-  'EE_T3_323',
-  'tache_3',
-  3,
-  'Thème du débat : « les distributeurs de boissons dans les lycées: Pour ou contre? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Votre ami(e) va venir passer le  week-end prochain dans votre ville. Écrivez un message pour lui présenter tous les moyens de transport disponibles dans votre ville (type de transport, circuit, tarif, etc.).
-
-Document B :
-Vous avez participé à une fête avec vos voisins. Écrivez un article de blog pour raconter cette expérience.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_324',
-  'tache_3',
-  3,
-  'Thème du débat : « Rôle De La Télévision Dans L''éducation Des Enfants. »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Écrivez un message dans le journal de votre université pour rechercher un partenaire avec qui fait du sport.
-
-Document B :
-Écrivez dans un article un message pour raconter votre arrivée dans un pays étranger en donnant vos impressions.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_325',
-  'tache_3',
-  3,
-  'Thème du débat : « L''interdiction des voitures en ville. »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Écrivez un message pour inviter vos amis à une fête de fin d’année.
-
-Document B :
-Vous avez passé des vacances au Canada par le biais d’une agence. Écrivez en commentaire l''expérience que vous avez vécue durant ce voyage.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_326',
-  'tache_3',
-  3,
-  'Thème du débat : « Restauration Rapide. »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Votre ami Cédric a accepté de garder votre maison et jardin pendant vos vacances. Écrivez un message pour lui dire ce qu''il doit faire.
-
-Document B :
-Vous avez effectué un voyage qui s''est mal passé par le biais d''une agence. Ecrivez leur un courriel pour exprimer votre mécontentement.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_291',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Les restaurants rapides proposent des plats équilibrés et variés et ils respectent les normes d''hygiène et les variétés de produits qui sont bonnes et c''est le client qui compose son menu donc il est responsable.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_289',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Les fast foods, en raison de leur impact néfaste sur la santé, sont responsables de l''apparition de diverses maladies. Leur consommation régulière peut entraîner des problèmes tels que l''obésité, les maladies cardiovasculaires et le diabète. Il est important de limiter leur consommation afin de préserver notre bien-être.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_327',
-  'tache_3',
-  3,
-  'Thème du débat : « Animaux De Compagnie. »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Répondre à un message de ton ami qui veut s''inscrire dans la même école de langue.
-
-Document B :
-Raconte ton expérience de bénévolat dans une association pour les personnes âgées.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_292',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-La question des animaux de compagnie dans les locations de courte durée suscite souvent des débats. Certains propriétaires sont ouverts à accueillir des animaux, tandis que d''autres les interdisent. Pour les amoureux des animaux, il est crucial de trouver des logements qui acceptent les animaux de compagnie, car ils considèrent leurs compagnons à fourrure comme des membres de leur famille. Ces voyageurs ont besoin de logements où leurs animaux peuvent se sentir à l''aise et bienvenus, avec des espaces extérieurs appropriés pour les promenades et les jeux.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_290',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-La présence d''animaux de compagnie dans les locations de courte durée peut également présenter des défis pour les propriétaires et les autres voyageurs. Certains animaux peuvent être bruyants, causer des dégâts ou provoquer des allergies chez certaines personnes. En raison de ces préoccupations, de nombreux propriétaires préfèrent interdire les animaux de compagnie dans leurs logements. Cela peut limiter les options pour les voyageurs qui souhaitent emmener leurs animaux avec eux. Cependant, il existe également des logements de courte durée spécialement conçus pour les animaux de compagnie, offrant des équipements adaptés tels que des litières, des jouets et des espaces dédiés pour les animaux. Ces logements sont souvent très demandés par les voyageurs qui veulent profiter de leurs vacances en compagnie de leurs animaux bien-aimés.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_328',
-  'tache_3',
-  3,
-  'Thème du débat : « Vie en colocation entre adultes. »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Un nouveau restaurant vient d''ouvrir près de chez vous. Vous écrivez à un(e) ami(e) pour lui proposer d''y aller avec vous. Vous décrivez le restaurant (cuisine, prix, décoration, etc.)
-
-Document B :
-Vous avez visité une ville que vous ne connaissiez pas. Vous avez envie de partager votre découverte. Vous postez un message sur un site Internet dédié aux voyages. Racontez votre expérience et expliquez ce qui vous a plu et ce qui vous a déplu dans la ville.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_293',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Vivre avec d''autres personnes demande d''avoir une bonne entente et de respecter certaines règles. Il n''est pas toujours possible d''écouter sa musique préférée à volume élevé, d''inviter tous ses amis pour faire la fête ou de laisser de la vaisselle sale dans la cuisine. Chaque individu a des habitudes susceptibles d''irriter les autres. C''est pourquoi il est essentiel d''établir des règles de vie en communauté et de les respecter mutuellement. Il est important de communiquer avec ses colocataires chaque fois qu''un problème survient. L''organisation et la discussion sont les clés d''une colocation réussie ou non.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_291',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Être adulte et vivre en colocation ? C''est un choix qui permet d''accéder facilement à un logement plus spacieux et économique. Il est vrai que vous n''aurez qu''une chambre pour vous et que vous devrez partager la cuisine, le salon et la salle de bain. Toutefois, une colocation peut inclure une maison avec jardin ou un grand appartement en centre-ville ! De plus, en partageant le loyer et les charges avec vos colocataires, vous réduirez considérablement vos dépenses par rapport à un appartement individuel. Alors que vous n''aurez qu''une chambre pour vous et que vous devrez partager les espaces communs, une colocation offre des opportunités de logements bien plus abordables.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_329',
-  'tache_3',
-  3,
-  'Thème du débat : « Le travail des étudiants pendant les vacances: Pour ou contre ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Invitez vos amis à célébrer votre anniversaire tout en sollicitant leur soutien pour organiser la fête.
-
-Document B :
-Vous avez participé à un concours de cuisine, vous allez décrire vos souvenirs dans votre blog en indiquant les détails.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_294',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Opinion 1 : Alexandre, un conseiller d''orientation',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_330',
-  'tache_3',
-  3,
-  'Thème du débat : « le travail : Favorable ou défavorable ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Opinion 2 : Élise, une psychologue pour adolescents
-
-Document B :
-« Je suis contre l''idée que les jeunes doivent travailler pendant leurs vacances. Les adolescents sont déjà sous une énorme pression pendant l''année scolaire avec les études, les examens et les activités parascolaires. Les vacances doivent être une période pour eux de se détendre, de se décompresser et de poursuivre des intérêts personnels. Les forcer à travailler pourrait contribuer au stress et à l''épuisement. Il est également important pour les jeunes de disposer de temps non structuré pour explorer leur créativité, passer du temps avec leurs amis et leur famille, et tout simplement être des enfants. Le travail peut attendre. »',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_295',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Vous voulez partir en week-end avec vos amis le mois prochain. Vous leur écrivez un message pour décrire votre projet (lieu, transport, activités, etc.)',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_292',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Tout quitter pour partir en voyage pendant un an: bonne ou mauvaise idée ?',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_331',
-  'tache_3',
-  3,
-  'Thème du débat : « Prise de position / Débat »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Répondez sur notre site Internet voyage.internaute.fr
-
-Document B :
-Vous écrivez un message sur ce site internet Vous répondez à la question posée en prenant des exemples de votre vie personnelle.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_296',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Vous envisagez de vous installer dans une nouvelle vie. Vous écrivez un message à votre ami(e) afin de lui décrire la nouvelle vie (quartier, magasins, etc.).',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_293',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Vous avez participé à une activité de bénévolat pour protéger la nature et l''écosystème. Répondez en commentaire et partagez votre expérience.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_332',
-  'tache_3',
-  3,
-  'Thème du débat : « Les publicités alimentaires pour les enfants. »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Les publicités d''aliments industriels passent en boucle lors des programmes destinés aux enfants. Par conséquent, ces enfants sont influencés par ces pubs et changent de préférences alimentaires demandant aux parents de leur acheter des produits gras, sucrés et salés tout en refusant de manger sainement. Ces publicités alimentaires déséquilibrent totalement l''assiette de nos enfants et a pour résultats directs totalement de problèmes de santé dés le jeune âge. comme la prise de poids qui mène à l''obésité.
-
-Document B :
-Pourquoi c''est choquant que des publicités alimentaires soient diffusés lorsque les enfants regardent leurs programmes préférés? C''est et aux aux parents, et aux parents seuls d''éduquer leurs enfants et de leur apprendre à manger d''une manière saine. On ne peut donc en aucun cas interdire à nos enfants de voir des publicités alimentaires pendant leurs programmes de télévision. Il est donc primordial que les parents interviennent afin que ces publicités n''aient pas d''impacts négatifs sur les habitudes alimentaires de leurs enfants.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_294',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous voulez organiser une grande fête, invitez vos amis et demandez leur aide (lieu, date, thème, etc.).',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T3_333',
+  'EE_T2_203',
+  'tache_2',
+  657,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Vous avez participé à une compétition sportive, racontez votre expérience sur un site internet et donnez votre avis.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_217',
   'tache_3',
-  3,
+  658,
   'Thème du débat : « la consommation de viande : pour ou contre? »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
 • Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
 
 Document A :
-Vous avez participé à une compétition sportive, racontez votre expérience sur un site internet et donnez votre avis.
+Danniel :
+
+Je suis contre la consommation de viande en raison de préoccupations éthiques, environnementales et sanitaires. Éthiquement, je crois que tous les animaux ont droit à la vie et à la liberté, et que l''élevage industriel implique souvent des traitements inhumains. Environnementalement, l''élevage d''animaux pour la viande est une source majeure de gaz à effet de serre et nécessite une grande quantité de terres et d''eau, ce qui contribue au changement climatique et à la déforestation.
 
 Document B :
-Je suis contre la consommation de viande en raison de préoccupations éthiques, environnementales et sanitaires. Éthiquement, je crois que tous les animaux ont droit à la vie et à la liberté, et que l''élevage industriel implique souvent des traitements inhumains. Environnementalement, l''élevage d''animaux pour la viande est une source majeure de gaz à effet de serre et nécessite une grande quantité de terres et d''eau, ce qui contribue au changement climatique et à la déforestation.',
+Alain:
+
+Je suis d''accord avec la consommation de viande car elle est une source essentielle de protéines, de vitamines B et de minéraux comme le fer et le zinc. Bien que l''on puisse obtenir ces nutriments à partir de sources végétales, ils sont souvent plus accessibles et plus facilement absorbés par le corps lorsqu''ils proviennent de sources animales. De plus, la viande fait partie intégrante de nombreux régimes culturels et traditions culinaires, ce qui ajoute à sa valeur au-delà de la nutrition. Cependant, il est crucial de se procurer de la viande de manière responsable, en soutenant des pratiques d''élevage éthiques et durables.',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T2_295',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+  'EE_T1_239',
+  'tache_1',
+  659,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Votre ami(e) va venir passer le  week-end prochain dans votre ville. Écrivez un message pour lui présenter tous les moyens de transport disponibles dans votre ville (type de transport, circuit, tarif, etc.).',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T3_334',
-  'tache_3',
-  3,
-  'Thème du débat : « les distributeurs de boissons dans les lycées: Pour ou contre? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Vous avez participé à une fête avec vos voisins. Écrivez un article de blog pour raconter cette expérience.
-
-Document B :
-« Je suis en faveur des distributeurs de boissons dans les lycées. Premièrement, ils offrent une commodité supplémentaire pour les élèves, notamment pour ceux qui n''ont pas le temps de passer à la cafétéria pendant les pauses. Deuxièmement, s''ils sont bien gérés, ces distributeurs peuvent offrir une gamme de boissons saines, comme de l''eau, du jus de fruits pur et des boissons aux fruits sans sucre ajouté. Ces distributeurs peuvent être une source de revenus supplémentaire pour l''école, qui peut être réinvestie dans l''amélioration des infrastructures ou des programmes scolaires. »',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_296',
+  'EE_T2_204',
   'tache_2',
-  2,
+  660,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
-Écrivez un message dans le journal de votre université pour rechercher un partenaire avec qui fait du sport.',
+Vous avez participé à une fête avec vos voisins. Écrivez un article de blog pour raconter cette expérience.',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T3_335',
-  'tache_3',
-  3,
-  'Thème du débat : « Rôle De La Télévision Dans L''éducation Des Enfants. »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Écrivez dans un article un message pour raconter votre arrivée dans un pays étranger en donnant vos impressions.
-
-Document B :
-La télévision est un outil de communication et de divertissement largement répandu dans notre société moderne. Son influence est incontestable, tant sur les individus que sur la culture en général. Elle permet de diffuser des informations, d''offrir des divertissements variés et de favoriser la diffusion de la culture. La télévision est présente dans de nombreux foyers et constitue une source d''information et de divertissement accessibles à tous. Grâce à sa portée et à sa capacité à toucher un large public, la télévision joue un rôle important dans la transmission des connaissances et la sensibilisation aux enjeux sociaux.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_297',
+  'EE_T2_205',
   'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Écrivez un message pour inviter vos amis à une fête de fin d’année.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_336',
-  'tache_3',
-  3,
-  'Thème du débat : « L''interdiction des voitures en ville. »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Vous avez passé des vacances au Canada par le biais d’une agence. Écrivez en commentaire l''expérience que vous avez vécue durant ce voyage.
-
-Document B :
-Le dernier exemple vient d''Oslo, la capitale norvégienne. Une responsable du projet annonce: « Ce sera mieux pour les piétons, les cyclistes, les commerces. Mieux pour tout le monde ». Moins de voitures, c''est la reconquête de la ville par ses habitants. Les bénéfices pour la qualité de l''air et pour l''économie locale seront garantis.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_337',
-  'tache_3',
-  3,
-  'Thème du débat : « Restauration Rapide. »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Vous avez effectué un voyage qui s''est mal passé par le biais d''une agence. Ecrivez leur un courriel pour exprimer votre mécontentement.
-
-Document B :
-Les restaurants rapides proposent des plats équilibrés et variés et ils respectent les normes d''hygiène et les variétés de produits qui sont bonnes et c''est le client qui compose son menu donc il est responsable.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_298',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Répondre à un message de ton ami qui veut s''inscrire dans la même école de langue.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_338',
-  'tache_3',
-  3,
-  'Thème du débat : « Animaux De Compagnie. »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Raconte ton expérience de bénévolat dans une association pour les personnes âgées.
-
-Document B :
-La question des animaux de compagnie dans les locations de courte durée suscite souvent des débats. Certains propriétaires sont ouverts à accueillir des animaux, tandis que d''autres les interdisent. Pour les amoureux des animaux, il est crucial de trouver des logements qui acceptent les animaux de compagnie, car ils considèrent leurs compagnons à fourrure comme des membres de leur famille. Ces voyageurs ont besoin de logements où leurs animaux peuvent se sentir à l''aise et bienvenus, avec des espaces extérieurs appropriés pour les promenades et les jeux.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_299',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Un nouveau restaurant vient d''ouvrir près de chez vous. Vous écrivez à un(e) ami(e) pour lui proposer d''y aller avec vous. Vous décrivez le restaurant (cuisine, prix, décoration, etc.)',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_339',
-  'tache_3',
-  3,
-  'Thème du débat : « Vie en colocation entre adultes. »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Vous avez visité une ville que vous ne connaissiez pas. Vous avez envie de partager votre découverte. Vous postez un message sur un site Internet dédié aux voyages. Racontez votre expérience et expliquez ce qui vous a plu et ce qui vous a déplu dans la ville.
-
-Document B :
-Vivre avec d''autres personnes demande d''avoir une bonne entente et de respecter certaines règles. Il n''est pas toujours possible d''écouter sa musique préférée à volume élevé, d''inviter tous ses amis pour faire la fête ou de laisser de la vaisselle sale dans la cuisine. Chaque individu a des habitudes susceptibles d''irriter les autres. C''est pourquoi il est essentiel d''établir des règles de vie en communauté et de les respecter mutuellement. Il est important de communiquer avec ses colocataires chaque fois qu''un problème survient. L''organisation et la discussion sont les clés d''une colocation réussie ou non.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_300',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Invitez vos amis à célébrer votre anniversaire tout en sollicitant leur soutien pour organiser la fête.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_340',
-  'tache_3',
-  3,
-  'Thème du débat : « Le travail des étudiants pendant les vacances: Pour ou contre ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Vous avez participé à un concours de cuisine, vous allez décrire vos souvenirs dans votre blog en indiquant les détails.
-
-Document B :
-Opinion 1 : Alexandre, un conseiller d''orientation',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_341',
-  'tache_3',
-  3,
-  'Thème du débat : « le travail : Favorable ou défavorable ? »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-« Je suis contre l''idée que les jeunes doivent travailler pendant leurs vacances. Les adolescents sont déjà sous une énorme pression pendant l''année scolaire avec les études, les examens et les activités parascolaires. Les vacances doivent être une période pour eux de se détendre, de se décompresser et de poursuivre des intérêts personnels. Les forcer à travailler pourrait contribuer au stress et à l''épuisement. Il est également important pour les jeunes de disposer de temps non structuré pour explorer leur créativité, passer du temps avec leurs amis et leur famille, et tout simplement être des enfants. Le travail peut attendre. »
-
-Document B :
-écrivez un message à votre ami(e) pour l''inviter à venir passer le week-end prochain avec vous en indiquant (activités, lieu, etc.).',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_297',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Vous avez décidé de laisser tout derrière vous pour voyager pendant un an, Rédigez un billet de blog pour partager cette aventure unique.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_301',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Opinion 1 : Stéphane, entrepreneur',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_342',
-  'tache_3',
-  3,
-  'Thème du débat : « Prise de position / Débat »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-« Je suis convaincu que le travail est absolument favorable pour l''individu et la société. Le travail permet non seulement d''assurer son propre moyen de subsistance, mais également de contribuer au développement économique de la société. De plus, il favorise l''autonomie et la confiance en soi, encourage le sens des responsabilités et offre une opportunité d''épanouissement personnel et professionnel. Il peut même aider à forger notre identité et notre place dans la société. »
-
-Document B :
-Opinion 2 : Laura, sociologue',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_302',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Écrivez dans un article un message pour raconter votre arrivée dans un pays étranger en donnant vos impressions.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_303',
-  'tache_2',
-  2,
+  661,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous avez passé des vacances au Canada par le biais d’une agence. Écrivez en commentaire l''expérience que vous avez vécue durant ce voyage.',
@@ -11990,36 +8440,19 @@ Vous avez passé des vacances au Canada par le biais d’une agence. Écrivez en
 ),
 (
   'expression_ecrite',
-  'EE_T3_343',
-  'tache_3',
-  3,
-  'Thème du débat : « L''interdiction des voitures en ville. »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-Le dernier exemple vient d''Oslo, la capitale norvégienne. Une responsable du projet annonce: « Ce sera mieux pour les piétons, les cyclistes, les commerces. Mieux pour tout le monde ». Moins de voitures, c''est la reconquête de la ville par ses habitants. Les bénéfices pour la qualité de l''air et pour l''économie locale seront garantis.
-
-Document B :
-Il faut réfléchir avant d''interdire les voitures en ville. II est vrai que l''idée d''une ville sans circulation et beaucoup moins polluée est tentante. Mais la réalisation de cette idée coûte cher. De plus, où se gareront les voitures interdites de circulation au centre-ville? II faut aussi bien préciser que les véhicules professionnels que conduisent les policiers, les pompiers, les ambulanciers, les livreurs auront le droit de circuler. Enfin, pour que les habitants puissent se déplacer facilement il faut développer les transports en commun.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_304',
+  'EE_T2_206',
   'tache_2',
-  2,
+  662,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
-Écrivez dans un blog votre expérience d’études à l''étranger (séjour, activités &#8230;)',
+Vous avez effectué un voyage qui s''est mal passé par le biais d''une agence. Ecrivez leur un courriel pour exprimer votre mécontentement.',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T1_298',
+  'EE_T1_240',
   'tache_1',
-  1,
+  663,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Répondre à un message de ton ami qui veut s''inscrire dans la même école de langue.',
@@ -12027,9 +8460,9 @@ Répondre à un message de ton ami qui veut s''inscrire dans la même école de 
 ),
 (
   'expression_ecrite',
-  'EE_T2_305',
+  'EE_T2_207',
   'tache_2',
-  2,
+  664,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Raconte ton expérience de bénévolat dans une association pour les personnes âgées.',
@@ -12037,9 +8470,9 @@ Raconte ton expérience de bénévolat dans une association pour les personnes �
 ),
 (
   'expression_ecrite',
-  'EE_T3_344',
+  'EE_T3_218',
   'tache_3',
-  3,
+  665,
   'Thème du débat : « Animaux De Compagnie. »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
@@ -12054,186 +8487,215 @@ La présence d''animaux de compagnie dans les locations de courte durée peut é
 ),
 (
   'expression_ecrite',
-  'EE_T2_306',
+  'EE_T2_208',
   'tache_2',
-  2,
+  666,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
-Les professeurs de votre quartier veulent organiser une rencontre avec leurs élèves pour les orienter dans le choix de leurs futures professions, vous leur écrivez un mail pour leur donner les avantages de votre profession.',
+Vous avez participé à un concours de cuisine, vous allez décrire vos souvenirs dans votre blog en indiquant les détails.',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T3_345',
+  'EE_T1_241',
+  'tache_1',
+  667,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+
+Vous envisagez de vous installer dans une nouvelle vie. Vous écrivez un message à votre ami(e) afin de lui décrire la nouvelle vie (quartier, magasins, etc.).',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_209',
+  'tache_2',
+  668,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Vous avez participé à une activité de bénévolat pour protéger la nature et l''écosystème. Répondez en commentaire et partagez votre expérience.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_219',
   'tache_3',
-  3,
-  'Thème du débat : « Location Courte Durée. »
+  669,
+  'Thème du débat : « Les publicités alimentaires pour les enfants. »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
 • Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
 
 Document A :
-Écrivez un courriel à votre ami pour l''inviter à vous accompagner au concert de votre musicien préféré en lui précisant tous les détails (heure, tarif, lieu&#8230;)
+Les publicités d''aliments industriels passent en boucle lors des programmes destinés aux enfants. Par conséquent, ces enfants sont influencés par ces pubs et changent de préférences alimentaires demandant aux parents de leur acheter des produits gras, sucrés et salés tout en refusant de manger sainement. Ces publicités alimentaires déséquilibrent totalement l''assiette de nos enfants et a pour résultats directs totalement de problèmes de santé dés le jeune âge. comme la prise de poids qui mène à l''obésité.
 
 Document B :
-La location courte durée offre flexibilité et commodité pour les voyageurs. Elle permet de louer un logement pour une période de temps limitée, que ce soit pour des vacances ou un déplacement professionnel. Cela permet aux voyageurs de profiter d''un hébergement confortable avec des équipements adaptés à leurs besoins, tout en évitant les engagements à long terme.',
+Pourquoi c''est choquant que des publicités alimentaires soient diffusés lorsque les enfants regardent leurs programmes préférés? C''est et aux aux parents, et aux parents seuls d''éduquer leurs enfants et de leur apprendre à manger d''une manière saine. On ne peut donc en aucun cas interdire à nos enfants de voir des publicités alimentaires pendant leurs programmes de télévision. Il est donc primordial que les parents interviennent afin que ces publicités n''aient pas d''impacts négatifs sur les habitudes alimentaires de leurs enfants.',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T1_299',
+  'EE_T1_242',
   'tache_1',
-  1,
+  670,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
-La location courte durée peut parfois être coûteuse, en particulier dans les zones touristiques. De plus, la disponibilité peut être limitée, surtout pendant les périodes de forte demande. Il est donc important de planifier et de réserver à l''avance pour obtenir les meilleurs résultats.',
+écrivez un message à votre ami(e) pour l''inviter à venir passer le week-end prochain avec vous en indiquant (activités, lieu, etc.).',
   true
-);
-
-INSERT INTO public.questions (epreuve, reference, tache, ordre, texte, actif) VALUES
+),
 (
   'expression_ecrite',
-  'EE_T2_307',
+  'EE_T2_210',
   'tache_2',
-  2,
+  671,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Vous avez décidé de laisser tout derrière vous pour voyager pendant un an, Rédigez un billet de blog pour partager cette aventure unique.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_220',
+  'tache_3',
+  672,
+  'Thème du débat : « le travail : Favorable ou défavorable ? »
+
+• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
+• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
+
+Document A :
+Opinion 1 : Stéphane, entrepreneur
+
+« Je suis convaincu que le travail est absolument favorable pour l''individu et la société. Le travail permet non seulement d''assurer son propre moyen de subsistance, mais également de contribuer au développement économique de la société. De plus, il favorise l''autonomie et la confiance en soi, encourage le sens des responsabilités et offre une opportunité d''épanouissement personnel et professionnel. Il peut même aider à forger notre identité et notre place dans la société. »
+
+Document B :
+Opinion 2 : Laura, sociologue
+
+«  Le travail, dans sa forme actuelle, peut avoir des aspects défavorables. Dans de nombreux cas, le travail est associé à un stress intense, à des horaires rigides et à un déséquilibre entre la vie professionnelle et la vie privée. Il peut être une source d''épuisement professionnel, surtout lorsque la charge de travail est excessive et que la reconnaissance est faible. De plus, certaines formes de travail peuvent être aliénantes, lorsque les travailleurs ne se sentent pas impliqués ou valorisés dans ce qu''ils font. Il est donc essentiel de repenser nos rapports au travail pour en faire une expérience plus équilibrée et enrichissante. »',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T2_211',
+  'tache_2',
+  673,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Écrivez dans un blog votre expérience d’études à l''étranger (séjour, activités ...)',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T1_243',
+  'tache_1',
+  674,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Écrivez un message à votre ami pour lui raconter le programme de déménagement dans votre nouvel appartement.',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T3_346',
+  'EE_T2_212',
+  'tache_2',
+  675,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Écrivez un thème ou un article sur votre artiste préféré.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_221',
   'tache_3',
-  3,
+  676,
   'Thème du débat : « Objets Connectés »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
 • Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
 
 Document A :
-Écrivez un thème ou un article sur votre artiste préféré.
+Les objectés connectés permettent de vérifier à travers un téléphone si un individu est en bonne santé tout en vérifiant ses battements de cœur et le nombre de pas qu''il effectue. Ils facilitent également le travail humain. Plus besoin d''un portier désormais, vous pouvez ouvrir un portail à domicile à l''aide des appareils connectés à votre téléphone portable. Il est également possible de faire surveiller son domicile à distance.
 
 Document B :
-Les objectés connectés permettent de vérifier à travers un téléphone si un individu est en bonne santé tout en vérifiant ses battements de cœur et le nombre de pas qu''il effectue. Ils facilitent également le travail humain. Plus besoin d''un portier désormais, vous pouvez ouvrir un portail à domicile à l''aide des appareils connectés à votre téléphone portable. Il est également possible de faire surveiller son domicile à distance.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_300',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
 Certains affirment que les objets connectés peuvent être à l''origine des cambriolages et même des espionnages. Mais surtout un grand inconvénient contre la vie privée des Hommes.',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T2_308',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+  'EE_T1_244',
+  'tache_1',
+  677,
+  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Marc veut visiter un pays et découvrir une nouvelle culture. Écrivez-lui un message en commentaire pour le pousser à venir visiter ton pays.',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T3_347',
+  'EE_T2_213',
+  'tache_2',
+  678,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Écrivez un courriel à vos amis pour leur parler de votre première semaine au travail dans votre nouveau poste.',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_222',
   'tache_3',
-  3,
+  679,
   'Thème du débat : « Égalité Entre Hommes Et Femmes. »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
 • Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
 
 Document A :
-Écrivez un courriel à vos amis pour leur parler de votre première semaine au travail dans votre nouveau poste.
+Certains postes sont majoritairement occupés par des hommes. Au Québec, l''égalité entre les femmes et les hommes est respectée, les femmes peuvent les métiers réservés aux hommes tels que les postes de direction.
+
+D''après http://www.scf.gouv.qc.ca
 
 Document B :
-Certains postes sont majoritairement occupés par des hommes. Au Québec, l''égalité entre les femmes et les hommes est respectée, les femmes peuvent les métiers réservés aux hommes tels que les postes de direction.',
+Malgré les efforts pour imposer la parité à tous les postes dans les entreprises et les collectivités, il y a, dans les faits, des métiers où les femmes sont largement majoritaires telles que : les sage-femmes. De plus, les femmes ne doivent pas faire les métiers d''homme, car ils doivent prendre soin de ses enfants.
+
+D''après https://www.village-justice.com',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T1_301',
+  'EE_T1_245',
   'tache_1',
-  1,
+  680,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
-D''après http://www.scf.gouv.qc.ca',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_348',
-  'tache_3',
-  3,
-  'Thème du débat : « Gratuité Des Transports En Commun. »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-D''après https://www.village-justice.com
-
-Document B :
 Vous avez effectué un travail temporaire en été. Vous écrivez un message à vos amis pour leur raconter ce que vous avez fait.',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T1_302',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
+  'EE_T2_214',
+  'tache_2',
+  681,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Vous voulez vendre votre vélo. Vous écrivez un courriel à cette adresse en précisant les caractéristiques de votre vélo.',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T2_309',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
-
-Les transports en commun gratuits, c''est une très bonne idée, cela permet de diminuer le nombre de voitures en ville et d''éviter les bouchons. C''est aussi une bonne mesure pour diminuer la pollution et donc les risques de maladies respiratoires. Dans ma ville, il y a des transports en commun gratuits. On observe que les gens utilisent plus souvent les transports publics depuis que la gratuité est en place. On observe également que cette mesure a profité aux commerçants : les gens reviennent faire leurs achats dans le centre-ville, ils vont moins dans les hypermarchés.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T3_349',
-  'tache_3',
-  3,
-  'Thème du débat : « Vêtements De Grande Marque. »
-
-• Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
-• Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
-
-Document A :
-L''idée n''est pas bonne. D''une part, cela couterait cher aux villes. Or, il me semble que la ville de Toulouse a d''autres problèmes à régler en priorité. Par exemple, il faudrait d''abord réaménager leurs espaces verts, cela profiterait à tout le monde. D''autre part, il vaudrait mieux réorganiser les transports publics au lieu de les rendre gratuits. Aujourd''hui, les gens préfèrent prendre leur voiture parce que la ville manque de transports publics dans certains quartiers éloignés. Et puis, selon moi, il faut garder les transports publics payants. Les gens respecteront davantage les équipements s''ils participent à leur financement en payant un titre de transport.
-
-Document B :
-Répondre au courriel de votre ami Lucas pour lui donner les informations sur les nouveaux locaux de votre entreprise (lieu, disposition des pièces, équipements&#8230;)',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_303',
+  'EE_T1_246',
   'tache_1',
-  1,
+  682,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
-Vous avez assisté à un événement intitulé « une semaine sans voiture ». Racontez dans un blog l''expérience que vous avez vécue et donnez votre impression sur cette initiative.',
+Répondre au courriel de votre ami Lucas pour lui donner les informations sur les nouveaux locaux de votre entreprise (lieu, disposition des pièces, équipements...)',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T1_304',
+  'EE_T1_247',
   'tache_1',
-  1,
+  683,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
 
 Vous voulez fêter votre anniversaire et les amis veulent vous apporter des cadeaux. Écrivez-leur un message pour leur dire le type de cadeaux que vous aimeriez recevoir.',
@@ -12241,9 +8703,9 @@ Vous voulez fêter votre anniversaire et les amis veulent vous apporter des cade
 ),
 (
   'expression_ecrite',
-  'EE_T2_310',
+  'EE_T2_215',
   'tache_2',
-  2,
+  684,
   'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Racontez dans un blog les habitudes alimentaires de votre pays.',
@@ -12251,48 +8713,38 @@ Racontez dans un blog les habitudes alimentaires de votre pays.',
 ),
 (
   'expression_ecrite',
-  'EE_T1_305',
+  'EE_T1_248',
   'tache_1',
-  1,
+  685,
   'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
-Même les adultes peuvent se faire du bien en jouant fréquemment aux jeux vidéo, en effet, une étude américaine a prouvé que ces derniers procurent aussi des bienfaits aux fonctions cognitives des adultes.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T2_311',
-  'tache_2',
-  2,
-  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
 
 Répondez par message à votre ami pour le conseiller d''une salle de sport dans votre quartier.',
   true
 ),
 (
   'expression_ecrite',
-  'EE_T3_350',
+  'EE_T2_216',
+  'tache_2',
+  686,
+  'Tâche 2 — Article / Récit d''expérience (120 à 150 mots)
+
+Afin de participer à un concours sur internet, racontez à propos d''une fête qui vous a marqué le plus (anniversaire, fête traditionnelle...)',
+  true
+),
+(
+  'expression_ecrite',
+  'EE_T3_223',
   'tache_3',
-  3,
-  'Thème du débat : « Restauration Rapide. »
+  687,
+  'Thème du débat : « Lecture Des Enfants. »
 
 • Première partie, présentez les deux opinions avec vos propres mots (entre 40 et 60 mots) ;
 • Deuxième partie, donnez votre position sur le thème général, commun à ces deux opinions (entre 80 et 120 mots).
 
 Document A :
-Afin de participer à un concours sur internet, racontez à propos d''une fête qui vous a marqué le plus (anniversaire, fête traditionnelle&#8230;)
+La lecture pour les enfants est d''une importance capitale dans leur développement. Elle favorise l''acquisition du langage, stimule leur imagination et leur créativité, et contribue à développer leur concentration et leurs compétences cognitives. La lecture offre également aux enfants une ouverture sur le monde qui les entoure, en leur permettant de découvrir de nouveaux univers, des personnages fascinants et des histoires captivantes. Les livres adaptés à leur âge les accompagnent dans leur apprentissage et les aident à comprendre le monde qui les entoure de manière ludique et éducative.
 
 Document B :
-La lecture pour les enfants est d''une importance capitale dans leur développement. Elle favorise l''acquisition du langage, stimule leur imagination et leur créativité, et contribue à développer leur concentration et leurs compétences cognitives. La lecture offre également aux enfants une ouverture sur le monde qui les entoure, en leur permettant de découvrir de nouveaux univers, des personnages fascinants et des histoires captivantes. Les livres adaptés à leur âge les accompagnent dans leur apprentissage et les aident à comprendre le monde qui les entoure de manière ludique et éducative.',
-  true
-),
-(
-  'expression_ecrite',
-  'EE_T1_306',
-  'tache_1',
-  1,
-  'Tâche 1 — Rédaction d''un message / courriel (60 à 120 mots)
-
 La lecture pour les enfants peut parfois être perçue comme une activité ennuyeuse ou désuète, en concurrence avec les jeux vidéo et les écrans. Cependant, il est essentiel de rappeler les nombreux avantages de la lecture pour leur développement. Les parents et les éducateurs ont un rôle crucial à jouer pour encourager les enfants à lire et à découvrir le plaisir des livres. Il est important de leur proposer des livres adaptés à leur âge et à leurs centres d''intérêt, et de partager des moments de lecture ensemble. De plus, les bibliothèques et les librairies offrent une grande variété de livres pour enfants, facilitant ainsi l''accès à la lecture et encourageant les enfants à développer le goût de la lecture dès leur plus jeune âge.',
   true
 );
