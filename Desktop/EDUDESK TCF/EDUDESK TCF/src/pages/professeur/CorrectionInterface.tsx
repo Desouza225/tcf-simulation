@@ -92,7 +92,7 @@ export default function CorrectionInterface() {
   const navigate = useNavigate();
   const [production, setProduction] = useState<Production | null>(null);
   const [etudiant, setEtudiant] = useState<Profile | null>(null);
-  const [tache, setTache] = useState<{ consigne: string; duree_secondes: number | null } | null>(null);
+  const [tache, setTache] = useState<{ consigne: string; duree_secondes: number | null; reference?: string | null } | null>(null);
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
   const [refusing, setRefusing] = useState(false);
@@ -121,7 +121,6 @@ export default function CorrectionInterface() {
   useEffect(() => {
     if (!id) return;
     const load = async () => {
-      // Joindre la session directement pour récupérer duree_expression_ecrite
       let prodData: any = null;
       const { data: prod, error: prodErr } = await supabase
         .from('productions')
@@ -154,6 +153,7 @@ export default function CorrectionInterface() {
       if (prodData?.etudiant) setEtudiant(prodData.etudiant as unknown as Profile);
       if (prodData?.grille_notation) setNotes(prodData.grille_notation as Record<string, number>);
       if (prodData?.commentaire) setCommentaire(prodData.commentaire);
+      if (prodData?.raison_refus) setRaisonRefus(prodData.raison_refus);
 
       // Durée EE récupérée via la jointure
       if (prodData?.epreuve === 'expression_ecrite') {
@@ -161,98 +161,182 @@ export default function CorrectionInterface() {
         setDureeEE((prodData as any).session?.duree_expression_ecrite ?? null);
       }
 
-      // Charger la consigne de la tâche en parallèle
-      if (prod?.epreuve && prod?.numero_tache) {
-        supabase
-          .from('taches')
-          .select('consigne, duree_secondes, reference')
-          .eq('epreuve', prod.epreuve)
-          .eq('numero_tache', prod.numero_tache)
-          .eq('actif', true)
-          .maybeSingle()
-          .then(({ data: t }) => setTache(t));
+      // ─── Chargement du sujet exact de la tâche ─────────────────────────────
+      if (prodData?.epreuve && prodData?.numero_tache) {
+        const epreuve = prodData.epreuve;
+        const numTache = prodData.numero_tache;
+        const ref = prodData.reference;
+
+        let foundTache: { consigne: string; duree_secondes: number | null; reference?: string | null } | null = null;
+
+        // 1. Si une référence existe, chercher d'abord par référence dans `taches`
+        if (ref) {
+          const { data: tByRef } = await supabase
+            .from('taches')
+            .select('consigne, duree_secondes, reference')
+            .eq('epreuve', epreuve)
+            .eq('reference', ref)
+            .limit(1)
+            .maybeSingle();
+
+          if (tByRef?.consigne) {
+            foundTache = tByRef;
+          } else {
+            // Chercher dans `questions` par reference
+            const { data: qByRef } = await supabase
+              .from('questions')
+              .select('texte, reference')
+              .eq('epreuve', epreuve)
+              .eq('reference', ref)
+              .limit(1)
+              .maybeSingle();
+
+            if (qByRef?.texte) {
+              foundTache = { consigne: qByRef.texte, duree_secondes: null, reference: qByRef.reference || ref };
+            }
+          }
+        }
+
+        // 2. Si non trouvé par référence, chercher dans `taches` par epreuve + numero_tache
+        if (!foundTache) {
+          const { data: tByNum } = await supabase
+            .from('taches')
+            .select('consigne, duree_secondes, reference')
+            .eq('epreuve', epreuve)
+            .eq('numero_tache', numTache)
+            .eq('actif', true)
+            .limit(1);
+
+          if (Array.isArray(tByNum) && tByNum.length > 0 && tByNum[0].consigne) {
+            foundTache = tByNum[0];
+          } else {
+            // Fallback dans `questions`
+            const { data: qByNum } = await supabase
+              .from('questions')
+              .select('texte, reference')
+              .eq('epreuve', epreuve)
+              .in('tache', [`tache_${numTache}`, String(numTache)])
+              .limit(1);
+
+            if (Array.isArray(qByNum) && qByNum.length > 0 && qByNum[0].texte) {
+              foundTache = { consigne: qByNum[0].texte, duree_secondes: null, reference: qByNum[0].reference || null };
+            }
+          }
+        }
+
+        // 3. Fallback avec consigne type officielle TCF si rien n'est trouvé
+        if (!foundTache) {
+          if (epreuve === 'expression_ecrite') {
+            if (numTache === 1) {
+              foundTache = {
+                consigne: "Tâche 1 — Rédaction d'un message / courriel (60 à 120 mots)\nRédigez un message court pour transmettre des informations, donner des nouvelles ou inviter une personne.",
+                duree_secondes: null,
+                reference: ref || 'EE_T1',
+              };
+            } else if (numTache === 2) {
+              foundTache = {
+                consigne: "Tâche 2 — Article ou lettre de compte-rendu (120 à 150 mots)\nRacontez une expérience vécue, décrivez un événement et donnez vos impressions ou recommandations.",
+                duree_secondes: null,
+                reference: ref || 'EE_T2',
+              };
+            } else {
+              foundTache = {
+                consigne: "Tâche 3 — Synthèse de deux documents d'opinion et prise de position argumentée (120 à 180 mots)\n1. Première partie : Dégagez le problème commun et présentez les opinions exprimées dans chacun des documents.\n2. Seconde partie : Prenez position sur le sujet en argumentant avec des exemples personnels.",
+                duree_secondes: null,
+                reference: ref || 'EE_T3',
+              };
+            }
+          } else {
+            foundTache = {
+              consigne: `Tâche ${numTache} — Expression orale\nPrésentez votre point de vue et argumentez à l'oral sur le sujet proposé.`,
+              duree_secondes: numTache === 1 ? 120 : 270,
+              reference: ref || `EO_T${numTache}`,
+            };
+          }
+        }
+
+        setTache(foundTache);
       }
 
       // Session productions en parallèle dès qu'on a session_id + epreuve
-      if (prod?.session_id && prod?.epreuve) {
-        await loadSessionProductions(prod.session_id, prod.epreuve);
+      if (prodData?.session_id && prodData?.epreuve) {
+        await loadSessionProductions(prodData.session_id, prodData.epreuve);
       }
       setLoading(false);
     };
     load();
   }, [id, loadSessionProductions]);
 
-  const handleSubmit = async () => {
-    if (!production || !id) return;
-    setSubmitting(true);
-
-    // 1. Sauvegarder la correction sur la production
-    const { error } = await supabase.from('productions').update({
-      statut_correction: 'corrige',
-      score: scoreTotal,
-      commentaire: commentaire || null,
-      grille_notation: notes,
-      corrige_at: new Date().toISOString(),
-    }).eq('id', id);
-
-    if (error) {
-      toast.error('Erreur lors de la soumission. Veuillez réessayer.');
-      setSubmitting(false);
-      return;
-    }
-
-    // 2. Récupérer toutes les productions de cette session pour vérifier si tout est corrigé
-    const sessionId = production.session_id;
-    const { data: allProds } = await supabase
+  /**
+   * Recalcule et synchronise les scores globaux et par épreuve de la session.
+   * Gère de manière cohérente les tâches 'corrige' ET 'refuse' (note 0).
+   */
+  const calculateAndSyncSession = async (
+    sessionId: string,
+    currentProdId: string,
+    currentStatut: 'corrige' | 'refuse',
+    currentScore: number
+  ) => {
+    const { data: allProds, error: prodsErr } = await supabase
       .from('productions')
       .select('id, epreuve, score, statut_correction, numero_tache')
       .eq('session_id', sessionId);
 
-    const prods = Array.isArray(allProds) ? allProds : [];
+    if (prodsErr || !allProds) {
+      console.error('Erreur récupération productions session:', prodsErr);
+      return;
+    }
 
-    // Marquer la production courante comme corrigée localement pour le calcul
-    const prodsUpdated = prods.map(p => p.id === id ? { ...p, statut_correction: 'corrige', score: scoreTotal } : p);
-
-    // Seules les productions d'expression (EE / EO) nécessitent une correction professeur ;
-    // les productions QCM (compréhension) sont notées automatiquement et n'ont pas de professeur_id.
-    const expressionProds = prodsUpdated.filter(
-      p => p.epreuve === 'expression_ecrite' || p.epreuve === 'expression_orale'
+    // Prods mises à jour en mémoire avec la production courante
+    const prodsUpdated = allProds.map(p =>
+      p.id === currentProdId ? { ...p, statut_correction: currentStatut, score: currentScore } : p
     );
-    const toutesCorigees = expressionProds.length > 0 && expressionProds.every(p => p.statut_correction === 'corrige');
 
-    // 3. Agréger les scores par épreuve et mettre à jour sessions_examen
     const prodsEE = prodsUpdated.filter(p => p.epreuve === 'expression_ecrite');
     const prodsEO = prodsUpdated.filter(p => p.epreuve === 'expression_orale');
 
-    const allEECorrigees = prodsEE.length > 0 && prodsEE.every(p => p.statut_correction === 'corrige');
-    const allEOCorrigees = prodsEO.length > 0 && prodsEO.every(p => p.statut_correction === 'corrige');
+    // Une tâche est considérée terminée si elle est corrigée ou refusée (note 0)
+    const isDone = (p: { statut_correction: string }) => p.statut_correction === 'corrige' || p.statut_correction === 'refuse';
+
+    const allEEDone = prodsEE.length > 0 && prodsEE.every(isDone);
+    const allEODone = prodsEO.length > 0 && prodsEO.every(isDone);
 
     const sessionUpdate: Record<string, unknown> = {};
 
-    if (allEECorrigees && prodsEE.length > 0) {
+    if (allEEDone) {
       const sommeEE = prodsEE.reduce((s, p) => s + (p.score ?? 0), 0);
       const maxEE = MAX_EE * prodsEE.length;
-      sessionUpdate.score_expression_ecrite = Math.round((sommeEE / maxEE) * 699);
-    }
-    if (allEOCorrigees && prodsEO.length > 0) {
-      const sommeEO = prodsEO.reduce((s, p) => s + (p.score ?? 0), 0);
-      const maxEO = MAX_EO * prodsEO.length;
-      sessionUpdate.score_expression_orale = Math.round((sommeEO / maxEO) * 699);
+      sessionUpdate.score_expression_ecrite = maxEE > 0 ? Math.round((sommeEE / maxEE) * 699) : 0;
     }
 
-    if (toutesCorigees) {
-      // Récupérer les scores auto (oral/écrit QCM) depuis sessions_examen
-      const { data: sess } = await supabase
-        .from('sessions_examen')
-        .select('score_oral, score_ecrit')
-        .eq('id', sessionId)
-        .maybeSingle();
+    if (allEODone) {
+      const sommeEO = prodsEO.reduce((s, p) => s + (p.score ?? 0), 0);
+      const maxEO = MAX_EO * prodsEO.length;
+      sessionUpdate.score_expression_orale = maxEO > 0 ? Math.round((sommeEO / maxEO) * 699) : 0;
+    }
+
+    // Récupérer la session existante pour les scores QCM (oral / écrit) et scores existants
+    const { data: sess } = await supabase
+      .from('sessions_examen')
+      .select('id, mode, score_oral, score_ecrit, score_expression_ecrite, score_expression_orale')
+      .eq('id', sessionId)
+      .maybeSingle();
+
+    // Vérifier si toutes les productions d'expression nécessaires sont terminées
+    const expressionProds = prodsUpdated.filter(
+      p => p.epreuve === 'expression_ecrite' || p.epreuve === 'expression_orale'
+    );
+    const toutesExpressionDone = expressionProds.length > 0 && expressionProds.every(isDone);
+
+    if (toutesExpressionDone) {
+      const scoreEEFinal = sessionUpdate.score_expression_ecrite ?? sess?.score_expression_ecrite ?? null;
+      const scoreEOFinal = sessionUpdate.score_expression_orale ?? sess?.score_expression_orale ?? null;
 
       const scores: number[] = [];
       if (sess?.score_oral !== null && sess?.score_oral !== undefined) scores.push(sess.score_oral);
       if (sess?.score_ecrit !== null && sess?.score_ecrit !== undefined) scores.push(sess.score_ecrit);
-      if (sessionUpdate.score_expression_ecrite !== undefined) scores.push(sessionUpdate.score_expression_ecrite as number);
-      if (sessionUpdate.score_expression_orale !== undefined) scores.push(sessionUpdate.score_expression_orale as number);
+      if (scoreEEFinal !== null && scoreEEFinal !== undefined) scores.push(scoreEEFinal as number);
+      if (scoreEOFinal !== null && scoreEOFinal !== undefined) scores.push(scoreEOFinal as number);
 
       if (scores.length > 0) {
         const scoreGlobal = Math.round(scores.reduce((a, b) => a + b, 0) / scores.length);
@@ -263,24 +347,73 @@ export default function CorrectionInterface() {
     }
 
     if (Object.keys(sessionUpdate).length > 0) {
-      await supabase.from('sessions_examen').update(sessionUpdate).eq('id', sessionId);
-    }
+      const { error: sessUpdateErr } = await supabase
+        .from('sessions_examen')
+        .update(sessionUpdate)
+        .eq('id', sessionId);
 
-    // 4. Notifier l'étudiant
-    if (production.etudiant_id) {
-      await supabase.from('notifications').insert({
-        utilisateur_id: production.etudiant_id,
-        titre: 'Correction disponible',
-        message: toutesCorigees
-          ? `Toutes vos productions ont été corrigées. Consultez vos résultats dans l'historique.`
-          : `Votre ${production.epreuve === 'expression_ecrite' ? 'expression écrite' : 'expression orale'} — Tâche ${production.numero_tache} a été corrigée.`,
-        lien: '/etudiant/historique',
-      });
+      if (sessUpdateErr) {
+        console.error('Erreur mise à jour session:', sessUpdateErr);
+      }
     }
+  };
 
-    toast.success('Correction soumise et étudiant notifié !');
-    await loadSessionProductions(production.session_id, production.epreuve);
-    navigate('/professeur/corrections');
+  const handleSubmit = async () => {
+    if (!production || !id) return;
+    setSubmitting(true);
+
+    try {
+      // 1. Sauvegarder la correction sur la production
+      const { error } = await supabase.from('productions').update({
+        statut_correction: 'corrige',
+        score: scoreTotal,
+        commentaire: commentaire || null,
+        grille_notation: notes,
+        raison_refus: null,
+        corrige_at: new Date().toISOString(),
+      }).eq('id', id);
+
+      if (error) {
+        console.error('Erreur sauvegarde production:', error);
+        toast.error(error.message || 'Erreur lors de la soumission. Veuillez réessayer.');
+        setSubmitting(false);
+        return;
+      }
+
+      // 2. Mettre à jour la session avec recalcul complet
+      const sessionId = production.session_id;
+      if (sessionId) {
+        await calculateAndSyncSession(sessionId, id, 'corrige', scoreTotal);
+      }
+
+      // 3. Notifier l'étudiant
+      if (production.etudiant_id) {
+        const epreuveLabel = production.epreuve === 'expression_ecrite' ? 'expression écrite' : 'expression orale';
+        try {
+          await supabase.from('notifications').insert({
+            utilisateur_id: production.etudiant_id,
+            titre: 'Correction disponible',
+            message: `Votre ${epreuveLabel} — Tâche ${production.numero_tache} a été corrigée (${scoreTotal}/${maxTotal} pts).`,
+            lien: '/etudiant/historique',
+          });
+        } catch { /* Notification non-bloquante */ }
+      }
+
+      toast.success(
+        production.statut_correction === 'corrige'
+          ? 'Correction mise à jour avec succès !'
+          : 'Correction soumise et étudiant notifié !'
+      );
+      if (production.session_id && production.epreuve) {
+        await loadSessionProductions(production.session_id, production.epreuve);
+      }
+      navigate('/professeur/corrections');
+    } catch (err: any) {
+      console.error('Exception soumission:', err);
+      toast.error(err?.message || 'Erreur lors de la soumission de la correction.');
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   // Refus de correction : marque la production comme refusée, supprime l'audio et notifie l'étudiant
@@ -288,72 +421,69 @@ export default function CorrectionInterface() {
     if (!production || !id) return;
     setRefusing(true);
 
-    // Supprimer l'audio du storage si présent
-    if (production.audio_url) {
-      try {
-        const url = new URL(production.audio_url);
-        const marker = '/productions-audio/';
-        const idx = url.pathname.indexOf(marker);
-        if (idx !== -1) {
-          const path = url.pathname.slice(idx + marker.length);
-          await supabase.storage.from('productions-audio').remove([path]);
-        }
-      } catch { /* URL invalide, on ignore */ }
-    }
-
-    // Marquer comme refusée avec score=0 (compté comme corrigé dans la session)
-    const { error } = await supabase.from('productions').update({
-      statut_correction: 'refuse',
-      score: 0,
-      audio_url: null,
-      contenu_texte: null,
-      raison_refus: raisonRefus.trim() || null,
-      corrige_at: new Date().toISOString(),
-    }).eq('id', id);
-
-    if (error) {
-      toast.error('Erreur lors du refus. Veuillez réessayer.');
-      setRefusing(false);
-      return;
-    }
-
-    // Vérifier si toutes les productions de la session sont corrigées/refusées
-    const sessionId = production.session_id;
-    const { data: allProds } = await supabase
-      .from('productions')
-      .select('id, epreuve, score, statut_correction, numero_tache')
-      .eq('session_id', sessionId);
-
-    if (allProds) {
-      const done = allProds.every(p => p.statut_correction === 'corrige' || p.statut_correction === 'refuse');
-      if (done) {
-        const eeProds = allProds.filter(p => p.epreuve === 'expression_ecrite');
-        const eoProds = allProds.filter(p => p.epreuve === 'expression_orale');
-        const scoreEE = eeProds.length > 0 ? Math.round(eeProds.reduce((s, p) => s + (p.score ?? 0), 0) / eeProds.length) : null;
-        const scoreEO = eoProds.length > 0 ? Math.round(eoProds.reduce((s, p) => s + (p.score ?? 0), 0) / eoProds.length) : null;
-        await supabase.from('sessions_examen').update({
-          score_expression_ecrite: scoreEE,
-          score_expression_orale: scoreEO,
-          correction_complete: true,
-        }).eq('id', sessionId);
+    try {
+      // 1. Supprimer l'audio du storage si présent
+      if (production.audio_url) {
+        try {
+          const url = new URL(production.audio_url);
+          const marker = '/productions-audio/';
+          const idx = url.pathname.indexOf(marker);
+          if (idx !== -1) {
+            const path = url.pathname.slice(idx + marker.length);
+            await supabase.storage.from('productions-audio').remove([path]);
+          }
+        } catch { /* URL invalide, on ignore */ }
       }
-    }
 
-    // Notifier l'étudiant
-    if (production.etudiant_id) {
-      const epreuveLabel = production.epreuve === 'expression_ecrite' ? 'Expression écrite' : 'Expression orale';
-      await supabase.from('notifications').insert({
-        utilisateur_id: production.etudiant_id,
-        titre: 'Production refusée — Note 0',
-        message: raisonRefus.trim()
-          ? `Votre ${epreuveLabel} — Tâche ${production.numero_tache} a été refusée (note : 0/20). Motif : ${raisonRefus.trim()}`
-          : `Votre ${epreuveLabel} — Tâche ${production.numero_tache} a été refusée par votre professeur. Note attribuée : 0/20.`,
-        lien: '/etudiant/historique',
-      });
-    }
+      // 2. Marquer comme refusée avec score=0
+      const { error } = await supabase.from('productions').update({
+        statut_correction: 'refuse',
+        score: 0,
+        audio_url: null,
+        contenu_texte: null,
+        raison_refus: raisonRefus.trim() || null,
+        corrige_at: new Date().toISOString(),
+      }).eq('id', id);
 
-    toast.success('Production refusée — note 0 attribuée et étudiant notifié.');
-    navigate('/professeur/corrections');
+      if (error) {
+        console.error('Erreur refus production:', error);
+        toast.error(error.message || 'Erreur lors du refus. Veuillez réessayer.');
+        setRefusing(false);
+        return;
+      }
+
+      // 3. Mettre à jour la session avec recalcul complet
+      const sessionId = production.session_id;
+      if (sessionId) {
+        await calculateAndSyncSession(sessionId, id, 'refuse', 0);
+      }
+
+      // 4. Notifier l'étudiant
+      if (production.etudiant_id) {
+        const epreuveLabel = production.epreuve === 'expression_ecrite' ? 'Expression écrite' : 'Expression orale';
+        try {
+          await supabase.from('notifications').insert({
+            utilisateur_id: production.etudiant_id,
+            titre: 'Production refusée — Note 0',
+            message: raisonRefus.trim()
+              ? `Votre ${epreuveLabel} — Tâche ${production.numero_tache} a été refusée (note : 0/20). Motif : ${raisonRefus.trim()}`
+              : `Votre ${epreuveLabel} — Tâche ${production.numero_tache} a été refusée par votre professeur. Note attribuée : 0/20.`,
+            lien: '/etudiant/historique',
+          });
+        } catch { /* Notification non-bloquante */ }
+      }
+
+      toast.success('Production refusée — note 0 enregistrée et étudiant notifié.');
+      if (production.session_id && production.epreuve) {
+        await loadSessionProductions(production.session_id, production.epreuve);
+      }
+      navigate('/professeur/corrections');
+    } catch (err: any) {
+      console.error('Exception refus:', err);
+      toast.error(err?.message || 'Erreur lors du refus.');
+    } finally {
+      setRefusing(false);
+    }
   };
 
   if (loading) return (
@@ -375,7 +505,7 @@ export default function CorrectionInterface() {
         <Button variant="ghost" size="icon" asChild>
           <Link to="/professeur/corrections"><ChevronLeft className="w-5 h-5" /></Link>
         </Button>
-        <div className="min-w-0">
+        <div className="min-w-0 flex-1">
           <h1 className="text-xl font-bold text-foreground text-balance">
             Correction — {production.epreuve === 'expression_ecrite' ? 'Expression écrite' : 'Expression orale'} Tâche {production.numero_tache}
           </h1>
@@ -392,37 +522,47 @@ export default function CorrectionInterface() {
           )}
         </div>
         {production.statut_correction === 'corrige' && <Badge className="bg-success text-success-foreground shrink-0">Corrigé</Badge>}
+        {production.statut_correction === 'refuse' && <Badge variant="destructive" className="shrink-0">Refusé</Badge>}
+        {production.statut_correction === 'en_attente' && <Badge variant="outline" className="text-amber-600 border-amber-500/40 bg-amber-500/10 shrink-0">En attente</Badge>}
       </div>
 
-      {/* Sujet de la tâche */}
+      {/* Sujet officiel de la tâche */}
       {tache && (
-        <Card className="h-full border-primary/20 bg-primary/5">
-          <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-semibold text-primary flex items-center gap-2 flex-wrap">
-              <FileText className="w-4 h-4 shrink-0" />
-              <span>Sujet — Tâche {production.numero_tache}</span>
+        <Card className="h-full border-primary/20 bg-primary/5 shadow-sm">
+          <CardHeader className="pb-3 border-b border-primary/10">
+            <CardTitle className="text-sm md:text-base font-semibold text-primary flex items-center gap-2 flex-wrap">
+              <FileText className="w-4 h-4 shrink-0 text-primary" />
+              <span>Sujet — {production.epreuve === 'expression_ecrite' ? 'Expression Écrite' : 'Expression Orale'} Tâche {production.numero_tache}</span>
               {(production.reference || tache.reference) && (
                 <Badge variant="outline" className="text-xs font-mono font-medium border-primary/40 bg-primary/10 text-primary">
                   Réf : {production.reference || tache.reference}
                 </Badge>
               )}
               {tache.duree_secondes && (
-                <span className="ml-auto text-xs font-normal text-muted-foreground">
-                  {Math.floor(tache.duree_secondes / 60)} min
-                  {tache.duree_secondes % 60 > 0 ? ` ${tache.duree_secondes % 60}s` : ''}
+                <span className="ml-auto text-xs font-normal text-muted-foreground bg-background/80 px-2 py-0.5 rounded-full border border-border">
+                  ⏱ {Math.floor(tache.duree_secondes / 60)} min{tache.duree_secondes % 60 > 0 ? ` ${tache.duree_secondes % 60}s` : ''}
                 </span>
               )}
             </CardTitle>
           </CardHeader>
-          <CardContent>
-            <p className="text-sm text-foreground leading-relaxed text-pretty whitespace-pre-wrap">{tache.consigne}</p>
+          <CardContent className="pt-3">
+            <p className="text-sm text-foreground leading-relaxed text-pretty whitespace-pre-wrap font-normal">
+              {tache.consigne}
+            </p>
           </CardContent>
         </Card>
       )}
 
       {/* Production de l'étudiant */}
       <Card className="h-full">
-        <CardHeader><CardTitle className="text-base text-balance">Production de l'étudiant</CardTitle></CardHeader>
+        <CardHeader>
+          <CardTitle className="text-base text-balance flex items-center justify-between">
+            <span>Production de l'étudiant</span>
+            {production.statut_correction === 'refuse' && (
+              <Badge variant="destructive" className="text-xs">Production refusée</Badge>
+            )}
+          </CardTitle>
+        </CardHeader>
         <CardContent>
           {production.audio_url && (
             <AudioPlayerCorrection
@@ -431,11 +571,22 @@ export default function CorrectionInterface() {
             />
           )}
           {production.contenu_texte && (
-            <div className="bg-muted/50 rounded-lg p-4 space-y-2">
+            <div className="bg-muted/50 rounded-lg p-4 space-y-2 border border-border">
               <p className="text-sm text-foreground whitespace-pre-wrap text-pretty leading-relaxed">{production.contenu_texte}</p>
               <p className="text-xs text-muted-foreground text-right font-mono">
                 {production.contenu_texte.split(/\s+/).filter(Boolean).length} mots
               </p>
+            </div>
+          )}
+          {!production.audio_url && !production.contenu_texte && production.statut_correction === 'refuse' && (
+            <div className="flex items-center gap-3 p-4 bg-destructive/5 border border-destructive/20 rounded-lg">
+              <XCircle className="w-5 h-5 text-destructive shrink-0" />
+              <div>
+                <p className="text-sm font-medium text-destructive">Cette production a été refusée (Note : 0/20).</p>
+                {production.raison_refus && (
+                  <p className="text-xs text-muted-foreground mt-1">Motif : {production.raison_refus}</p>
+                )}
+              </div>
             </div>
           )}
           {!production.audio_url && !production.contenu_texte && production.statut_correction === 'corrige' && (
@@ -446,10 +597,10 @@ export default function CorrectionInterface() {
               </p>
             </div>
           )}
-          {!production.audio_url && !production.contenu_texte && production.statut_correction !== 'corrige' && (
+          {!production.audio_url && !production.contenu_texte && production.statut_correction === 'en_attente' && (
             <div className="flex items-center gap-3 p-4 bg-destructive/5 border border-destructive/20 rounded-lg">
               <Mic className="w-5 h-5 text-destructive shrink-0" />
-              <p className="text-sm text-destructive">Aucun enregistrement disponible pour cette tâche.</p>
+              <p className="text-sm text-destructive">Aucun contenu ou enregistrement disponible pour cette tâche.</p>
             </div>
           )}
         </CardContent>
@@ -515,25 +666,29 @@ export default function CorrectionInterface() {
             <div className="space-y-2">
               {sessionProductions.map(p => {
                 const max = p.epreuve === 'expression_ecrite' ? MAX_EE : MAX_EO;
-                const corrigee = p.statut_correction === 'corrige' && p.score !== null;
-                // Utilise le score en cours si c'est la tâche courante et non encore sauvegardée
-                const scoreAffiche = p.id === id && !corrigee ? scoreTotal : (p.score ?? null);
-                const niv = corrigee || (p.id === id && Object.keys(notes).length > 0)
-                  ? tacheToNiveau(scoreAffiche ?? 0, max)
+                const isCurrent = p.id === id;
+                const isRefuse = p.statut_correction === 'refuse' && !isCurrent;
+                const isCorrigee = p.statut_correction === 'corrige' && p.score !== null;
+                const scoreAffiche = isCurrent ? scoreTotal : (p.score ?? 0);
+                const niv = (isCorrigee || (isCurrent && Object.keys(notes).length > 0)) && !isRefuse
+                  ? tacheToNiveau(scoreAffiche, max)
                   : null;
+
                 return (
                   <div key={p.id} className={cn(
                     'flex items-center justify-between gap-3 p-3 rounded-lg border',
-                    p.id === id ? 'bg-primary/5 border-primary/30' : 'bg-muted/30 border-border'
+                    isCurrent ? 'bg-primary/5 border-primary/30' : 'bg-muted/30 border-border'
                   )}>
                     <div className="flex items-center gap-2 min-w-0">
-                      <span className={cn('text-sm font-medium', p.id === id ? 'text-primary' : 'text-foreground')}>
+                      <span className={cn('text-sm font-medium', isCurrent ? 'text-primary' : 'text-foreground')}>
                         Tâche {p.numero_tache}
                       </span>
-                      {p.id === id && <Badge variant="outline" className="text-xs text-primary border-primary/40">en cours</Badge>}
+                      {isCurrent && <Badge variant="outline" className="text-xs text-primary border-primary/40">en cours</Badge>}
                     </div>
                     <div className="flex items-center gap-2 shrink-0">
-                      {niv ? (
+                      {p.statut_correction === 'refuse' && !isCurrent ? (
+                        <Badge variant="destructive" className="text-xs">Refusée (0/{max})</Badge>
+                      ) : niv ? (
                         <>
                           <Badge style={{ backgroundColor: CECRL_COLORS[niv] }} className="text-white text-xs">
                             {niv}
@@ -555,21 +710,21 @@ export default function CorrectionInterface() {
             {(() => {
               const max = production?.epreuve === 'expression_ecrite' ? MAX_EE : MAX_EO;
               const prodsWithScore = sessionProductions.map(p => {
-                if (p.id === id) return { ...p, score: scoreTotal, statut_correction: 'corrige' };
+                if (p.id === id) return { ...p, score: scoreTotal, statut_correction: 'corrige' as const };
                 return p;
               });
-              const corrigees = prodsWithScore.filter(p => p.statut_correction === 'corrige' && p.score !== null);
-              if (corrigees.length === 0) return null;
-              const somme = corrigees.reduce((s, p) => s + (p.score ?? 0), 0);
-              const maxTotal_ = max * corrigees.length;
-              const pct = Math.round((somme / maxTotal_) * 100);
+              const terminees = prodsWithScore.filter(p => p.statut_correction === 'corrige' || p.statut_correction === 'refuse');
+              if (terminees.length === 0) return null;
+              const somme = terminees.reduce((s, p) => s + (p.score ?? 0), 0);
+              const maxTotal_ = max * terminees.length;
+              const pct = maxTotal_ > 0 ? Math.round((somme / maxTotal_) * 100) : 0;
               const niveauEpreuve = pctToCECRL(pct);
-              const toutes = corrigees.length === sessionProductions.length;
+              const toutes = terminees.length === sessionProductions.length;
               return (
                 <div className="pt-2 border-t border-border flex items-center justify-between gap-3 flex-wrap">
                   <div>
                     <p className="font-semibold text-sm text-foreground">
-                      {toutes ? 'Score total de l\'épreuve' : `Cumul (${corrigees.length}/${sessionProductions.length} tâches)`}
+                      {toutes ? 'Score total de l\'épreuve' : `Cumul (${terminees.length}/${sessionProductions.length} tâches)`}
                     </p>
                     <p className="text-xs text-muted-foreground">{pct}% de réussite</p>
                   </div>
@@ -601,51 +756,62 @@ export default function CorrectionInterface() {
 
       {/* Actions finales : Valider ou Refuser */}
       <div className="flex flex-col gap-3">
-        <Button className="w-full" onClick={handleSubmit}
-          disabled={submitting || refusing || production.statut_correction === 'corrige' || production.statut_correction === 'refuse'}>
-          {submitting ? <><Loader2 className="w-4 h-4 mr-2 animate-spin" />Envoi...</>
-            : production.statut_correction === 'corrige' ? <><CheckCircle className="w-4 h-4 mr-2" />Déjà corrigé</>
-            : production.statut_correction === 'refuse' ? <><XCircle className="w-4 h-4 mr-2" />Production refusée</>
-            : 'Valider et envoyer la correction'}
+        <Button
+          className="w-full gap-2"
+          onClick={handleSubmit}
+          disabled={submitting || refusing}
+        >
+          {submitting ? (
+            <><Loader2 className="w-4 h-4 mr-2 animate-spin" />Envoi en cours...</>
+          ) : production.statut_correction === 'corrige' ? (
+            <><CheckCircle className="w-4 h-4 mr-2" />Mettre à jour la correction</>
+          ) : production.statut_correction === 'refuse' ? (
+            <><CheckCircle className="w-4 h-4 mr-2" />Corriger à nouveau (annuler le refus)</>
+          ) : (
+            <><CheckCircle className="w-4 h-4 mr-2" />Valider et envoyer la correction</>
+          )}
         </Button>
 
-        {/* Bouton refus — uniquement pour les productions en attente */}
-        {production.statut_correction === 'en_attente' && (
-          <AlertDialog>
-            <AlertDialogTrigger asChild>
-              <Button variant="outline" className="w-full gap-2 border-destructive/40 text-destructive hover:bg-destructive/5 hover:text-destructive"
-                disabled={submitting || refusing}>
-                <XCircle className="w-4 h-4" />Refuser cette production
-              </Button>
-            </AlertDialogTrigger>
-            <AlertDialogContent className="max-w-[calc(100%-2rem)] md:max-w-lg">
-              <AlertDialogHeader>
-                <AlertDialogTitle>Refuser la production</AlertDialogTitle>
-                <AlertDialogDescription className="text-pretty">
-                  La production sera marquée comme refusée, l'enregistrement audio et le contenu texte seront supprimés.
-                  L'étudiant sera notifié du refus et pourra soumettre une nouvelle production.
-                </AlertDialogDescription>
-              </AlertDialogHeader>
-              <div className="space-y-2 py-2">
-                <Label className="text-sm font-normal">Motif du refus (optionnel)</Label>
-                <Textarea
-                  placeholder="Ex : enregistrement inaudible, sujet hors contexte, contenu inapproprié…"
-                  className="min-h-20 text-sm"
-                  value={raisonRefus}
-                  onChange={e => setRaisonRefus(e.target.value)}
-                />
-              </div>
-              <AlertDialogFooter>
-                <AlertDialogCancel onClick={() => setRaisonRefus('')}>Annuler</AlertDialogCancel>
-                <AlertDialogAction
-                  onClick={handleRefuse}
-                  className="bg-destructive text-destructive-foreground hover:bg-destructive/90">
-                  {refusing ? <><Loader2 className="w-4 h-4 mr-2 animate-spin" />Refus en cours…</> : 'Confirmer le refus'}
-                </AlertDialogAction>
-              </AlertDialogFooter>
-            </AlertDialogContent>
-          </AlertDialog>
-        )}
+        {/* Bouton refus */}
+        <AlertDialog>
+          <AlertDialogTrigger asChild>
+            <Button
+              variant="outline"
+              className="w-full gap-2 border-destructive/40 text-destructive hover:bg-destructive/5 hover:text-destructive"
+              disabled={submitting || refusing}
+            >
+              <XCircle className="w-4 h-4" />
+              {production.statut_correction === 'refuse' ? 'Modifier le motif de refus' : 'Refuser cette production (Note 0)'}
+            </Button>
+          </AlertDialogTrigger>
+          <AlertDialogContent className="max-w-[calc(100%-2rem)] md:max-w-lg">
+            <AlertDialogHeader>
+              <AlertDialogTitle>Refuser la production</AlertDialogTitle>
+              <AlertDialogDescription className="text-pretty">
+                La production recevra la note 0. L'enregistrement audio éventuel sera supprimé.
+                L'étudiant sera notifié du motif de refus.
+              </AlertDialogDescription>
+            </AlertDialogHeader>
+            <div className="space-y-2 py-2">
+              <Label className="text-sm font-normal">Motif du refus (optionnel)</Label>
+              <Textarea
+                placeholder="Ex : enregistrement inaudible, sujet hors contexte, contenu inapproprié…"
+                className="min-h-20 text-sm"
+                value={raisonRefus}
+                onChange={e => setRaisonRefus(e.target.value)}
+              />
+            </div>
+            <AlertDialogFooter>
+              <AlertDialogCancel onClick={() => setRaisonRefus(production.raison_refus || '')}>Annuler</AlertDialogCancel>
+              <AlertDialogAction
+                onClick={handleRefuse}
+                className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
+              >
+                {refusing ? <><Loader2 className="w-4 h-4 mr-2 animate-spin" />Refus en cours…</> : 'Confirmer le refus'}
+              </AlertDialogAction>
+            </AlertDialogFooter>
+          </AlertDialogContent>
+        </AlertDialog>
       </div>
     </div>
   );

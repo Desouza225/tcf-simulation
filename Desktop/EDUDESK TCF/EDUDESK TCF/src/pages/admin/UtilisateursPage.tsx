@@ -140,16 +140,87 @@ export default function UtilisateursPage() {
     fetchUsers();
   };
 
+  const [deleting, setDeleting] = useState<string | null>(null);
+
   const handleDelete = async (userId: string) => {
     const target = users.find(u => u.id === userId);
     if (target && !canManage(target)) {
       toast.error('Vous n\'avez pas les droits pour supprimer cet utilisateur.');
       return;
     }
-    const { error } = await supabase.functions.invoke('delete-user', { body: { userId } });
-    if (error) { toast.error('Erreur lors de la suppression.'); return; }
-    toast.success('Utilisateur supprimé !');
-    setUsers(prev => prev.filter(u => u.id !== userId));
+    setDeleting(userId);
+
+    // 1. Nettoyer les audios du storage si l'utilisateur a des productions
+    try {
+      const { data: prods } = await supabase
+        .from('productions')
+        .select('audio_url')
+        .eq('etudiant_id', userId)
+        .not('audio_url', 'is', null);
+
+      if (Array.isArray(prods) && prods.length > 0) {
+        const paths: string[] = [];
+        for (const p of prods) {
+          if (!p.audio_url) continue;
+          try {
+            const url = new URL(p.audio_url);
+            const marker = '/productions-audio/';
+            const idx = url.pathname.indexOf(marker);
+            if (idx !== -1) paths.push(url.pathname.slice(idx + marker.length));
+          } catch { /* URL ignorée */ }
+        }
+        if (paths.length > 0) {
+          await supabase.storage.from('productions-audio').remove(paths);
+        }
+      }
+    } catch {
+      // Ignorer l'erreur storage non-bloquante
+    }
+
+    // 2. Tenter la suppression via Edge Function
+    let deleted = false;
+    let lastErrorMsg = '';
+
+    try {
+      const { data, error } = await supabase.functions.invoke('delete-user', { body: { userId } });
+      if (!error && !data?.error) {
+        deleted = true;
+      } else {
+        lastErrorMsg = data?.error || error?.message || '';
+      }
+    } catch (e: any) {
+      lastErrorMsg = e?.message || '';
+    }
+
+    // 3. Si l'Edge Function a échoué ou n'est pas déployée, repli sur la RPC admin_delete_user
+    if (!deleted) {
+      try {
+        const { data: rpcData, error: rpcError } = await supabase.rpc('admin_delete_user', {
+          target_user_id: userId,
+        });
+        if (!rpcError && (rpcData as any)?.success) {
+          deleted = true;
+        } else {
+          lastErrorMsg = rpcError?.message || lastErrorMsg || 'Erreur lors de la suppression.';
+        }
+      } catch (e: any) {
+        lastErrorMsg = e?.message || lastErrorMsg || 'Erreur lors de la suppression.';
+      }
+    }
+
+    setDeleting(null);
+
+    if (deleted) {
+      toast.success('Utilisateur supprimé avec succès !');
+      setUsers(prev => prev.filter(u => u.id !== userId));
+      setAttributionsMap(prev => {
+        const next = { ...prev };
+        delete next[userId];
+        return next;
+      });
+    } else {
+      toast.error(lastErrorMsg || 'Erreur lors de la suppression de l\'utilisateur.');
+    }
   };
 
   const toggleExamenBlanc = async (userId: string, current: boolean) => {
@@ -422,19 +493,23 @@ export default function UtilisateursPage() {
                         </Button>
                         <AlertDialog>
                           <AlertDialogTrigger asChild>
-                            <Button variant="ghost" size="icon" className="text-destructive hover:text-destructive">
-                              <Trash2 className="w-4 h-4" />
+                            <Button variant="ghost" size="icon" className="text-destructive hover:text-destructive" disabled={deleting === user.id}>
+                              {deleting === user.id ? <Loader2 className="w-4 h-4 animate-spin" /> : <Trash2 className="w-4 h-4" />}
                             </Button>
                           </AlertDialogTrigger>
                           <AlertDialogContent className="max-w-[calc(100%-2rem)] md:max-w-lg">
                             <AlertDialogHeader>
                               <AlertDialogTitle className="text-balance">Supprimer {user.prenom} {user.nom} ?</AlertDialogTitle>
-                              <AlertDialogDescription className="text-pretty">Cette action est irréversible.</AlertDialogDescription>
+                              <AlertDialogDescription className="text-pretty">Cette action est irréversible. Toutes les données associées seront supprimées.</AlertDialogDescription>
                             </AlertDialogHeader>
                             <AlertDialogFooter>
-                              <AlertDialogCancel>Annuler</AlertDialogCancel>
-                              <AlertDialogAction className="bg-destructive text-destructive-foreground hover:bg-destructive/90" onClick={() => handleDelete(user.id)}>
-                                Supprimer
+                              <AlertDialogCancel disabled={deleting === user.id}>Annuler</AlertDialogCancel>
+                              <AlertDialogAction
+                                className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
+                                onClick={() => handleDelete(user.id)}
+                                disabled={deleting === user.id}
+                              >
+                                {deleting === user.id ? <><Loader2 className="w-4 h-4 mr-2 animate-spin" />Suppression...</> : 'Supprimer'}
                               </AlertDialogAction>
                             </AlertDialogFooter>
                           </AlertDialogContent>

@@ -190,11 +190,9 @@ export default function ProfesseurHistoriquePage() {
                             ? <Badge variant="destructive" className="text-xs"><XCircle className="w-3 h-3 mr-1" />Refusée</Badge>
                             : <Badge className="bg-success text-success-foreground text-xs"><CheckCircle className="w-3 h-3 mr-1" />Corrigée</Badge>
                           }
-                          {!isRefuse && (
-                            <Button size="sm" variant="outline" asChild className="shrink-0">
-                              <Link to={`/professeur/corrections/${prod.id}`}>Voir</Link>
-                            </Button>
-                          )}
+                          <Button size="sm" variant="outline" asChild className="shrink-0">
+                            <Link to={`/professeur/corrections/${prod.id}`}>Voir</Link>
+                          </Button>
                         </div>
                       </div>
                     );
