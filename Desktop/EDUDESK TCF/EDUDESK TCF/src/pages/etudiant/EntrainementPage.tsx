@@ -72,12 +72,12 @@ const EE_TASK_OPTIONS = [
 const EO_TASK_OPTIONS = [
   {
     mode: 'all' as const,
-    title: 'Session Complète (3 tâches)',
-    badge: 'Format Officiel',
+    title: 'Session Complète (Tâches 1 & 3)',
+    badge: 'Tâches 1 & 3',
     badgeColor: 'border-primary/40 bg-primary/10 text-primary',
     icon: Layers,
-    description: 'Découvrez les 3 tâches de l\'épreuve orale : l\'entretien, l\'interaction et le point de vue.',
-    details: 'Tâche 1 (2 min) · Tâche 2 (Interaction) · Tâche 3 (4 min 30s)',
+    description: 'Enchaînez la présentation/entretien (Tâche 1) et l\'expression de point de vue (Tâche 3) avec temps de préparation.',
+    details: 'Tâche 1 (2 min) + Tâche 3 (4 min 30s) · Enregistrement audio',
   },
   {
     mode: 1 as const,
@@ -377,7 +377,7 @@ export default function EntrainementPage() {
     if (epreuve === 'expression_ecrite' || epreuve === 'expression_orale') {
       let requiredNums: number[] = [];
       if (tacheMode === 'all') {
-        requiredNums = [1, 2, 3];
+        requiredNums = epreuve === 'expression_ecrite' ? [1, 2, 3] : [1, 3];
       } else {
         requiredNums = [tacheMode];
       }
