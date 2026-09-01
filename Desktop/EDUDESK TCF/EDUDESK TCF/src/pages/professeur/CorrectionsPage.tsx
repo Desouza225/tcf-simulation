@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { ClipboardList, CheckCircle, FileText, Mic } from 'lucide-react';
+import { ClipboardList, CheckCircle, FileText, Mic, User } from 'lucide-react';
 import type { Production, Profile, NiveauCECRL } from '@/types/index';
 import { pctToCECRL, CECRL_COLORS, CECRL_DESCRIPTIONS, EPREUVE_LABELS } from '@/types/index';
 import { cn } from '@/lib/utils';
@@ -33,7 +33,7 @@ interface SessionGroup {
   epreuves: EpreuveGroup[];
 }
 
-function groupBySession(prods: (Production & { etudiant?: Profile, session?: { id: string; created_at: string; mode?: string } })[]): SessionGroup[] {
+function groupBySession(prods: (Production & { etudiant?: Profile; session?: { id: string; created_at: string; mode?: string } })[]): SessionGroup[] {
   const map = new Map<string, SessionGroup>();
   for (const p of prods) {
     const sid = p.session_id;
@@ -57,48 +57,76 @@ export default function CorrectionsPage() {
 
   useEffect(() => {
     if (!user) return;
-    supabase
-      .from('productions')
-      .select('*, etudiant:profiles!etudiant_id(*), session:sessions_examen!session_id(id, created_at, mode)')
-      .eq('professeur_id', user.id)
-      .eq('statut_correction', 'en_attente')
-      .order('epreuve')
-      .order('numero_tache')
-      .then(async ({ data, error }) => {
-        let all: any[] = [];
-        if (error || !data) {
-          const fallback = await supabase
-            .from('productions')
-            .select('*')
-            .eq('professeur_id', user.id)
-            .eq('statut_correction', 'en_attente')
-            .order('epreuve')
-            .order('numero_tache');
-          if (fallback.data && fallback.data.length > 0) {
-            const etudIds = [...new Set(fallback.data.map(p => p.etudiant_id).filter(Boolean))];
-            const sessionIds = [...new Set(fallback.data.map(p => p.session_id).filter(Boolean))];
-            const [etudRes, sessRes] = await Promise.all([
-              supabase.from('profiles').select('*').in('id', etudIds),
-              supabase.from('sessions_examen').select('id, created_at, mode').in('id', sessionIds),
-            ]);
-            const etudMap = new Map((etudRes.data || []).map(e => [e.id, e]));
-            const sessMap = new Map((sessRes.data || []).map(s => [s.id, s]));
-            all = fallback.data.map(p => ({
-              ...p,
-              etudiant: etudMap.get(p.etudiant_id),
-              session: sessMap.get(p.session_id),
-            }));
-          }
+    const loadData = async () => {
+      // 1. Récupérer les ID des étudiants attribués
+      const { data: attrData } = await supabase
+        .from('attributions')
+        .select('etudiant_id')
+        .eq('professeur_id', user.id);
+
+      const etudIds = (attrData || []).map(a => a.etudiant_id).filter(Boolean);
+
+      // 2. Charger les productions en attente
+      let query = supabase
+        .from('productions')
+        .select('*, etudiant:profiles!etudiant_id(*), session:sessions_examen!session_id(id, created_at, mode)')
+        .eq('statut_correction', 'en_attente');
+
+      if (etudIds.length > 0) {
+        query = query.or(`professeur_id.eq.${user.id},etudiant_id.in.(${etudIds.join(',')}),professeur_id.is.null`);
+      } else {
+        query = query.or(`professeur_id.eq.${user.id},professeur_id.is.null`);
+      }
+
+      const { data, error } = await query
+        .order('epreuve')
+        .order('numero_tache');
+
+      let all: any[] = [];
+      if (error || !data) {
+        // Fallback sans jointure explicite
+        let fallbackQuery = supabase
+          .from('productions')
+          .select('*')
+          .eq('statut_correction', 'en_attente');
+
+        if (etudIds.length > 0) {
+          fallbackQuery = fallbackQuery.or(`professeur_id.eq.${user.id},etudiant_id.in.(${etudIds.join(',')}),professeur_id.is.null`);
         } else {
-          all = data;
+          fallbackQuery = fallbackQuery.or(`professeur_id.eq.${user.id},professeur_id.is.null`);
         }
-        // Trier par date de session croissante (plus anciens en haut, plus récents en bas)
-        const groups = groupBySession(all);
-        groups.sort((a, b) => new Date(a.sessionDate).getTime() - new Date(b.sessionDate).getTime());
-        setPendingGroups(groups);
-        setPendingCount(all.length);
-        setLoading(false);
-      });
+
+        const { data: fallbackData } = await fallbackQuery
+          .order('epreuve')
+          .order('numero_tache');
+
+        if (fallbackData && fallbackData.length > 0) {
+          const uIds = [...new Set(fallbackData.map(p => p.etudiant_id).filter(Boolean))];
+          const sIds = [...new Set(fallbackData.map(p => p.session_id).filter(Boolean))];
+          const [etudRes, sessRes] = await Promise.all([
+            supabase.from('profiles').select('*').in('id', uIds),
+            supabase.from('sessions_examen').select('id, created_at, mode').in('id', sIds),
+          ]);
+          const etudMap = new Map((etudRes.data || []).map(e => [e.id, e]));
+          const sessMap = new Map((sessRes.data || []).map(s => [s.id, s]));
+          all = fallbackData.map(p => ({
+            ...p,
+            etudiant: etudMap.get(p.etudiant_id),
+            session: sessMap.get(p.session_id),
+          }));
+        }
+      } else {
+        all = data;
+      }
+
+      const groups = groupBySession(all);
+      groups.sort((a, b) => new Date(a.sessionDate).getTime() - new Date(b.sessionDate).getTime());
+      setPendingGroups(groups);
+      setPendingCount(all.length);
+      setLoading(false);
+    };
+
+    loadData();
   }, [user]);
 
   // Filtrer selon l'onglet actif
@@ -119,15 +147,16 @@ export default function CorrectionsPage() {
     const totalTaches = sg.epreuves.reduce((n, eg) => n + eg.productions.length, 0);
 
     return (
-      <Card key={sg.sessionId} className="h-full">
-        <CardHeader className="pb-3">
+      <Card key={sg.sessionId} className="h-full border-border shadow-sm">
+        <CardHeader className="pb-3 border-b border-border/50 bg-muted/20">
           <div className="flex items-start justify-between gap-3 flex-wrap">
             <div className="min-w-0 flex-1">
-              <CardTitle className="text-base font-bold text-foreground text-balance">
-                {sg.etudiant?.prenom} {sg.etudiant?.nom}
+              <CardTitle className="text-base font-bold text-foreground text-balance flex items-center gap-2">
+                <User className="w-4 h-4 text-primary shrink-0" />
+                <span>{sg.etudiant?.prenom || 'Étudiant'} {sg.etudiant?.nom || ''}</span>
               </CardTitle>
               <div className="flex items-center gap-2 mt-1 flex-wrap">
-                <Badge className={cn('text-xs py-0 h-4 shrink-0',
+                <Badge className={cn('text-xs py-0 h-4 shrink-0 font-medium',
                   sg.sessionMode === 'examen_blanc' ? 'bg-[#C8102E] text-white' : 'bg-[#1B365D] text-white'
                 )}>
                   {sg.sessionMode === 'examen_blanc' ? 'Examen blanc' : 'Entraînement'}
@@ -142,7 +171,7 @@ export default function CorrectionsPage() {
           </div>
         </CardHeader>
 
-        <CardContent className="pt-0 space-y-4">
+        <CardContent className="pt-3 space-y-4">
           {sg.epreuves.map(eg => {
             const isEE = eg.epreuve === 'expression_ecrite';
             const max = isEE ? MAX_EE : MAX_EO;
@@ -169,13 +198,26 @@ export default function CorrectionsPage() {
                     </Badge>
                   )}
                 </div>
+
                 <div className="space-y-1.5 pl-5">
                   {eg.productions.map(prod => {
                     const niveau = prod.statut_correction === 'corrige' ? getTaskNiveau(prod) : null;
+                    const words = prod.contenu_texte ? prod.contenu_texte.split(/\s+/).filter(Boolean).length : 0;
                     return (
-                      <div key={prod.id} className="flex items-center justify-between gap-3 px-3 py-2 rounded-lg bg-muted/40 border border-border">
+                      <div key={prod.id} className="flex items-center justify-between gap-3 px-3 py-2 rounded-lg bg-muted/30 border border-border hover:border-primary/40 transition-colors">
                         <div className="min-w-0 flex-1">
-                          <p className="text-sm font-medium text-foreground">Tâche {prod.numero_tache}</p>
+                          <div className="flex items-center gap-2 flex-wrap">
+                            <p className="text-sm font-semibold text-foreground">Tâche {prod.numero_tache}</p>
+                            {prod.reference && (
+                              <Badge variant="outline" className="text-[10px] font-mono border-primary/30 text-primary py-0 h-4">
+                                {prod.reference}
+                              </Badge>
+                            )}
+                            {isEE && words > 0 && (
+                              <span className="text-xs text-muted-foreground font-mono">({words} mots)</span>
+                            )}
+                          </div>
+
                           {prod.statut_correction === 'corrige' && prod.score !== null && (
                             <div className="flex items-center gap-1.5 mt-0.5 flex-wrap">
                               <span className="text-xs text-success font-medium">{prod.score} / {max} pts</span>
@@ -185,8 +227,9 @@ export default function CorrectionsPage() {
                             </div>
                           )}
                         </div>
-                        <Button size="sm" variant="default" asChild className="shrink-0">
-                          <Link to={`/professeur/corrections/${prod.id}`}>Corriger</Link>
+
+                        <Button size="sm" variant="default" asChild className="shrink-0 shadow-xs">
+                          <Link to={`/professeur/corrections/${prod.id}`}>Évaluer & Corriger</Link>
                         </Button>
                       </div>
                     );
@@ -201,11 +244,11 @@ export default function CorrectionsPage() {
   };
 
   return (
-    <div className="max-w-3xl mx-auto space-y-6 fade-in">
+    <div className="max-w-4xl mx-auto space-y-6 fade-in pb-12">
       <div>
         <h1 className="text-2xl font-bold text-foreground text-balance">File de corrections</h1>
         <p className="text-muted-foreground mt-1">
-          {loading ? '—' : pendingCount} tâche{pendingCount !== 1 ? 's' : ''} en attente de correction
+          {loading ? '—' : pendingCount} tâche{pendingCount !== 1 ? 's' : ''} en attente de notation
         </p>
       </div>
 
@@ -254,10 +297,10 @@ export default function CorrectionsPage() {
 
       {/* Lien vers l'historique des corrections */}
       {!loading && (
-        <div className="text-center">
+        <div className="text-center pt-2">
           <Button variant="outline" asChild>
             <Link to="/professeur/historique">
-              <ClipboardList className="w-4 h-4 mr-2" />Voir l'historique des corrections
+              <ClipboardList className="w-4 h-4 mr-2" />Voir l'historique des corrections effectuées
             </Link>
           </Button>
         </div>

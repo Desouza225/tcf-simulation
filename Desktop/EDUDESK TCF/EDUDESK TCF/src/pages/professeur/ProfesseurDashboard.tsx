@@ -18,26 +18,33 @@ export default function ProfesseurDashboard() {
   useEffect(() => {
     if (!user) return;
     const load = async () => {
-      const [etudiantsResult, correctionsResult] = await Promise.all([
-        supabase.from('attributions').select('etudiant:profiles!etudiant_id(*)').eq('professeur_id', user.id),
-        supabase.from('productions').select('*').eq('professeur_id', user.id).eq('statut_correction', 'en_attente').order('created_at', { ascending: false }).limit(5),
-      ]);
-      
+      // 1. Récupérer les étudiants attribués
+      const { data: rawAttr } = await supabase.from('attributions').select('etudiant_id').eq('professeur_id', user.id);
+      const ids = (rawAttr || []).map(a => a.etudiant_id).filter(Boolean);
+
       let etudiantsList: Profile[] = [];
-      if (etudiantsResult.error || !etudiantsResult.data) {
-        const { data: rawAttr } = await supabase.from('attributions').select('etudiant_id').eq('professeur_id', user.id);
-        if (rawAttr && rawAttr.length > 0) {
-          const ids = rawAttr.map(a => a.etudiant_id);
-          const { data: stdProfiles } = await supabase.from('profiles').select('*').in('id', ids);
-          etudiantsList = Array.isArray(stdProfiles) ? stdProfiles : [];
-        }
-      } else {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        etudiantsList = (etudiantsResult.data || []).map((a: any) => a.etudiant as Profile).filter(Boolean);
+      if (ids.length > 0) {
+        const { data: stdProfiles } = await supabase.from('profiles').select('*').in('id', ids);
+        etudiantsList = Array.isArray(stdProfiles) ? stdProfiles : [];
       }
 
+      // 2. Charger les corrections en attente
+      let corrQuery = supabase
+        .from('productions')
+        .select('*')
+        .eq('statut_correction', 'en_attente')
+        .order('created_at', { ascending: false });
+
+      if (ids.length > 0) {
+        corrQuery = corrQuery.or(`professeur_id.eq.${user.id},etudiant_id.in.(${ids.join(',')}),professeur_id.is.null`);
+      } else {
+        corrQuery = corrQuery.or(`professeur_id.eq.${user.id},professeur_id.is.null`);
+      }
+
+      const { data: corrData } = await corrQuery.limit(10);
+
       setEtudiants(etudiantsList);
-      setCorrections(Array.isArray(correctionsResult.data) ? correctionsResult.data : []);
+      setCorrections(Array.isArray(corrData) ? corrData : []);
       setLoading(false);
     };
     load();

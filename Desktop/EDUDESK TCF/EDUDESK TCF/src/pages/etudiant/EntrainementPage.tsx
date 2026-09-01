@@ -12,7 +12,7 @@ import {
   Headphones, FileText, PenLine, Mic, Play, Pause,
   CheckCircle2, XCircle, ChevronLeft, ChevronRight,
   BookOpen, Clock, Loader2, Trophy, Square, AlertTriangle,
-  Send, Info, Layers, Mail,
+  Send, Info, Layers, Mail, MessageSquare, Sparkles, RefreshCw,
 } from 'lucide-react';
 import { toast } from 'sonner';
 import type { Question, Tache, EpreuveType, NiveauCECRL } from '@/types/index';
@@ -72,12 +72,12 @@ const EE_TASK_OPTIONS = [
 const EO_TASK_OPTIONS = [
   {
     mode: 'all' as const,
-    title: 'Session Complète (Tâches 1 & 3)',
-    badge: 'Tâches 1 & 3',
+    title: 'Session Complète (3 tâches)',
+    badge: 'Format Officiel',
     badgeColor: 'border-primary/40 bg-primary/10 text-primary',
     icon: Layers,
-    description: 'Enchaînez la présentation/entretien et l\'expression de point de vue avec temps de préparation.',
-    details: 'Tâche 1 (2 min) + Tâche 3 (4 min 30s)',
+    description: 'Découvrez les 3 tâches de l\'épreuve orale : l\'entretien, l\'interaction et le point de vue.',
+    details: 'Tâche 1 (2 min) · Tâche 2 (Interaction) · Tâche 3 (4 min 30s)',
   },
   {
     mode: 1 as const,
@@ -87,6 +87,15 @@ const EO_TASK_OPTIONS = [
     icon: Mic,
     description: 'Parlez spontanément de vous, de vos activités, de votre quotidien, de votre famille ou de vos projets.',
     details: '1 tâche ciblée · Enregistrement audio direct',
+  },
+  {
+    mode: 2 as const,
+    title: 'Tâche 2 — Exercice en interaction',
+    badge: 'Interaction en direct · Non soumis',
+    badgeColor: 'border-amber-500/40 bg-amber-500/10 text-amber-600 dark:text-amber-400',
+    icon: MessageSquare,
+    description: 'Exercice d\'interaction (poser des questions pour obtenir des informations). Consultez le sujet pour vous préparer et vous exercer avec un professeur ou un pair.',
+    details: '1 tâche interactive · Consultation & préparation (sans enregistrement)',
   },
   {
     mode: 3 as const,
@@ -368,7 +377,7 @@ export default function EntrainementPage() {
     if (epreuve === 'expression_ecrite' || epreuve === 'expression_orale') {
       let requiredNums: number[] = [];
       if (tacheMode === 'all') {
-        requiredNums = epreuve === 'expression_ecrite' ? [1, 2, 3] : [1, 3];
+        requiredNums = [1, 2, 3];
       } else {
         requiredNums = [tacheMode];
       }
@@ -376,6 +385,7 @@ export default function EntrainementPage() {
       const selectedTaches: Tache[] = [];
 
       for (const num of requiredNums) {
+        // 1. Chercher dans `taches`
         const { data: pool } = await supabase
           .from('taches')
           .select('*')
@@ -386,6 +396,41 @@ export default function EntrainementPage() {
         if (Array.isArray(pool) && pool.length > 0) {
           const randomIndex = Math.floor(Math.random() * pool.length);
           selectedTaches.push(pool[randomIndex]);
+        } else {
+          // 2. Fallback dans `questions`
+          const { data: qPool } = await supabase
+            .from('questions')
+            .select('*')
+            .eq('epreuve', epreuve)
+            .in('tache', [`tache_${num}`, String(num)])
+            .eq('actif', true);
+
+          if (Array.isArray(qPool) && qPool.length > 0) {
+            const randomIndex = Math.floor(Math.random() * qPool.length);
+            const q = qPool[randomIndex];
+            selectedTaches.push({
+              id: q.id,
+              epreuve,
+              numero_tache: num,
+              reference: q.reference || (epreuve === 'expression_ecrite' ? `EE_T${num}` : `EO_T${num}`),
+              consigne: q.texte || '',
+              duree_secondes: epreuve === 'expression_orale' ? (num === 1 ? 120 : num === 2 ? 330 : 270) : null,
+              actif: true,
+              created_at: new Date().toISOString(),
+            } as Tache);
+          } else if (epreuve === 'expression_orale' && num === 2) {
+            // Fallback officiel pour EO Tâche 2
+            selectedTaches.push({
+              id: 'fallback_eo_t2',
+              epreuve: 'expression_orale',
+              numero_tache: 2,
+              reference: 'EO_T2_001',
+              consigne: "Tâche 2 — Exercice en interaction (avec préparation) (2 min de préparation • 3 min 30 d’échange)\n\nSujet :\nJe suis un(e) ami(e). Vous voulez organiser une fête d'anniversaire surprise pour un proche. Vous me demandez des idées et des renseignements pour préparer l'événement (lieu, date, invités, budget, animations).\n\nConsignes :\n• Temps de préparation : 2 minutes\n• Durée de l'échange : environ 3 minutes 30",
+              duree_secondes: 330,
+              actif: true,
+              created_at: new Date().toISOString(),
+            } as Tache);
+          }
         }
       }
 
@@ -456,10 +501,11 @@ export default function EntrainementPage() {
     }
   };
 
-  // Soumettre expression orale avec enregistrements audio compressés
+  // Soumettre expression orale avec enregistrements audio compressés (exclut la Tâche 2 qui est en interaction)
   const submitExpressionOrale = async () => {
     if (!user) return;
-    const hasAny = taches.some(t => audioBlobs[t.numero_tache]);
+    const tasksToSubmit = taches.filter(t => t.numero_tache !== 2);
+    const hasAny = tasksToSubmit.some(t => audioBlobs[t.numero_tache]);
     if (!hasAny) {
       toast.error("Veuillez enregistrer au moins une tâche avant de soumettre.");
       return;
@@ -476,7 +522,7 @@ export default function EntrainementPage() {
 
       const { data: attribution } = await supabase.from('attributions').select('professeur_id').eq('etudiant_id', user.id).maybeSingle();
 
-      for (const tache of taches) {
+      for (const tache of tasksToSubmit) {
         const blob = audioBlobs[tache.numero_tache];
         let audioUrl: string | null = null;
 
@@ -505,7 +551,7 @@ export default function EntrainementPage() {
         });
       }
 
-      toast.success(taches.length === 1
+      toast.success(tasksToSubmit.length === 1
         ? 'Votre enregistrement a été envoyé à votre professeur pour correction !'
         : 'Vos enregistrements ont été envoyés à votre professeur pour correction !'
       );
@@ -638,14 +684,6 @@ export default function EntrainementPage() {
             <p className="text-muted-foreground mt-1">Choisissez une tâche ciblée ou lancez la session complète</p>
           </div>
         </div>
-
-        <Alert className="border-blue-500/30 bg-blue-500/5">
-          <Info className="h-4 w-4 text-blue-600 dark:text-blue-400 shrink-0" />
-          <AlertDescription className="text-pretty text-sm text-foreground">
-            <span className="font-semibold">La Tâche 2 n'est pas incluse dans cet exercice.</span>{' '}
-            Il s'agit d'un exercice en interaction directe avec un examinateur. Seules les <strong>Tâches 1 et 3</strong> sont proposées en autonomie.
-          </AlertDescription>
-        </Alert>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {EO_TASK_OPTIONS.map(opt => {
@@ -804,15 +842,18 @@ export default function EntrainementPage() {
     );
   }
 
-  // ─── Expression orale : Enregistrement ──────────────────────────────────────
+  // ─── Expression orale : Enregistrement & Consultation ───────────────────────
   if (selectedEpreuve === 'expression_orale') {
     const tache = taches[currentIdx];
-    const allRecorded = taches.length > 0 && taches.every(t => audioBlobs[t.numero_tache]);
-    const anyRecorded = taches.some(t => audioBlobs[t.numero_tache]);
     const isSingleTask = taches.length === 1;
+    const isTask2 = tache?.numero_tache === 2;
+
+    const recordableTasks = taches.filter(t => t.numero_tache !== 2);
+    const allRecordableDone = recordableTasks.length > 0 && recordableTasks.every(t => audioBlobs[t.numero_tache]);
+    const anyRecordableDone = recordableTasks.some(t => audioBlobs[t.numero_tache]);
 
     return (
-      <div className="max-w-2xl mx-auto space-y-6 fade-in">
+      <div className="max-w-2xl mx-auto space-y-6 fade-in pb-12">
         <div className="flex items-center gap-3">
           <Button
             variant="ghost"
@@ -833,27 +874,14 @@ export default function EntrainementPage() {
                 : 'Expression Orale — Entraînement'}
             </h1>
             <p className="text-sm text-muted-foreground">
-              {taches.filter(t => audioBlobs[t.numero_tache]).length}/{taches.length} tâche{taches.length > 1 ? 's' : ''} enregistrée{taches.length > 1 ? 's' : ''}
+              {recordableTasks.length > 0 ? (
+                `${recordableTasks.filter(t => audioBlobs[t.numero_tache]).length}/${recordableTasks.length} tâche${recordableTasks.length > 1 ? 's' : ''} enregistrée${recordableTasks.length > 1 ? 's' : ''}`
+              ) : (
+                'Exercice de consultation et entraînement interactif'
+              )}
             </p>
           </div>
         </div>
-
-        <Alert className="border-blue-500/30 bg-blue-500/5">
-          <Info className="h-4 w-4 text-blue-600 dark:text-blue-400 shrink-0" />
-          <AlertDescription className="text-pretty text-sm text-foreground">
-            <span className="font-semibold">La Tâche 2 n'est pas incluse dans cet exercice.</span>{' '}
-            Il s'agit d'un exercice en interaction avec un examinateur, qui ne peut pas être simulé en autonomie.
-            Seules les <strong>Tâches 1 et 3</strong> sont pratiquées ici.
-          </AlertDescription>
-        </Alert>
-
-        <Alert className="border-primary/30 bg-primary/5">
-          <Mic className="h-4 w-4 text-primary" />
-          <AlertDescription className="text-pretty text-sm">
-            Lisez la consigne, puis enregistrez votre réponse. L'audio est compressé avant envoi.
-            Vos enregistrements sont transmis à votre professeur pour correction.
-          </AlertDescription>
-        </Alert>
 
         {taches.length === 0 && (
           <Card><CardContent className="p-8 text-center text-muted-foreground">Aucune tâche disponible.</CardContent></Card>
@@ -861,34 +889,45 @@ export default function EntrainementPage() {
 
         {/* Navigation entre tâches (si session complète avec > 1 tâche) */}
         {taches.length > 1 && (
-          <div className="flex gap-2">
-            {taches.map((t, i) => (
-              <button
-                key={t.id}
-                onClick={() => { setCurrentIdx(i); setTimerActive(false); }}
-                className={[
-                  'flex-1 py-2 rounded-md text-sm font-medium border transition-colors',
-                  i === currentIdx
-                    ? 'border-primary bg-primary/10 text-primary'
-                    : audioBlobs[t.numero_tache]
-                      ? 'border-success/40 bg-success/5 text-success'
-                      : 'border-border bg-card text-muted-foreground hover:border-primary/40',
-                ].join(' ')}
-              >
-                {audioBlobs[t.numero_tache] ? <CheckCircle2 className="w-3.5 h-3.5 inline mr-1" /> : null}
-                Tâche {t.numero_tache}
-              </button>
-            ))}
+          <div className="flex gap-2 flex-wrap">
+            {taches.map((t, i) => {
+              const isT2 = t.numero_tache === 2;
+              const hasAudio = audioBlobs[t.numero_tache];
+              return (
+                <button
+                  key={t.id || i}
+                  onClick={() => { setCurrentIdx(i); setTimerActive(false); }}
+                  className={cn(
+                    'flex-1 py-2 px-3 rounded-md text-xs md:text-sm font-medium border transition-colors flex items-center justify-center gap-1.5',
+                    i === currentIdx
+                      ? 'border-primary bg-primary/10 text-primary font-semibold'
+                      : isT2
+                        ? 'border-amber-500/30 bg-amber-500/5 text-amber-700 dark:text-amber-400'
+                        : hasAudio
+                          ? 'border-success/40 bg-success/5 text-success'
+                          : 'border-border bg-card text-muted-foreground hover:border-primary/40'
+                  )}
+                >
+                  {hasAudio && <CheckCircle2 className="w-3.5 h-3.5 text-success" />}
+                  <span>Tâche {t.numero_tache}</span>
+                  {isT2 && <span className="text-[10px] opacity-80">(Interaction)</span>}
+                </button>
+              );
+            })}
           </div>
         )}
 
         {tache && (
-          <Card className="h-full">
-            <CardHeader>
+          <Card className="h-full border-border shadow-sm">
+            <CardHeader className="pb-3 border-b border-border/50">
               <div className="flex items-center justify-between gap-3 flex-wrap">
                 <CardTitle className="text-base text-balance flex items-center gap-2">
                   <span>Tâche {tache.numero_tache}</span>
-                  {tache.duree_secondes && (
+                  {isTask2 ? (
+                    <Badge variant="outline" className="text-xs border-amber-500/40 bg-amber-500/10 text-amber-600 dark:text-amber-400 font-normal">
+                      Exercice en interaction • 2 min prép. + 3 min 30 échange
+                    </Badge>
+                  ) : tache.duree_secondes && (
                     <span className="text-sm font-normal text-muted-foreground">
                       — {Math.floor(tache.duree_secondes / 60)} min{tache.duree_secondes % 60 > 0 ? ` ${tache.duree_secondes % 60}s` : ''}
                     </span>
@@ -902,37 +941,88 @@ export default function EntrainementPage() {
                 <TimerDisplay seconds={timerActive ? timerSeconds : (tache.duree_secondes || 120)} />
               </div>
             </CardHeader>
-            <CardContent className="space-y-4">
-              <p className="text-sm text-foreground bg-muted/50 rounded-lg p-4 leading-relaxed text-pretty">
+            <CardContent className="space-y-4 pt-4">
+              <p className="text-sm md:text-base text-foreground bg-muted/40 rounded-xl p-4 leading-relaxed text-pretty whitespace-pre-wrap font-normal select-text">
                 {tache.consigne}
               </p>
 
               {/* Minuteur de préparation */}
-              <div className="flex gap-2">
+              <div className="flex items-center gap-2 flex-wrap">
                 {!timerActive ? (
                   <Button variant="outline" size="sm" onClick={() => { setTimerSeconds(tache.duree_secondes || 120); setTimerActive(true); }} className="gap-1.5">
-                    <Clock className="w-3.5 h-3.5" /> Démarrer minuteur
+                    <Clock className="w-3.5 h-3.5" /> Démarrer le minuteur ({Math.floor((tache.duree_secondes || 120) / 60)} min)
                   </Button>
                 ) : (
                   <Button variant="outline" size="sm" onClick={() => setTimerActive(false)} className="gap-1.5">
-                    <Pause className="w-3.5 h-3.5" /> Arrêter minuteur
+                    <Pause className="w-3.5 h-3.5" /> Mettre en pause le minuteur
                   </Button>
                 )}
               </div>
 
-              {/* Enregistrement audio */}
-              <div className="border border-border rounded-lg p-4 space-y-3 bg-muted/20">
-                <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">
-                  Enregistrement audio
-                </p>
-                <AudioRecorder
-                  key={tache.numero_tache}
-                  tacheNum={tache.numero_tache}
-                  onRecorded={handleRecorded}
-                  disabled={submitting}
-                  initialRecorded={!!audioBlobs[tache.numero_tache]}
-                />
-              </div>
+              {/* TÂCHE 2 : INTERACTION (SANS ENREGISTREUR NI SOUMISSION) */}
+              {isTask2 ? (
+                <div className="space-y-3">
+                  <Alert className="border-amber-500/30 bg-amber-500/5">
+                    <Info className="h-4 w-4 text-amber-600 dark:text-amber-400 shrink-0" />
+                    <AlertDescription className="text-pretty text-sm text-foreground space-y-1">
+                      <p className="font-semibold text-amber-700 dark:text-amber-400">
+                        Exercice en interaction avec un examinateur
+                      </p>
+                      <p className="text-xs text-muted-foreground leading-relaxed">
+                        Cette épreuve se déroule sous forme de dialogue direct (poser une dizaine de questions pour obtenir des informations détaillées). En mode entraînement, préparez vos questions et entraînez-vous à voix haute avec un professeur ou un camarade.
+                      </p>
+                      <p className="text-xs font-semibold text-amber-600 dark:text-amber-400 pt-1">
+                        ✓ Cette tâche ne nécessite ni enregistrement audio ni soumission.
+                      </p>
+                    </AlertDescription>
+                  </Alert>
+
+                  <div className="border border-border rounded-xl p-4 bg-muted/20 space-y-2">
+                    <p className="text-xs font-bold text-foreground uppercase tracking-wide flex items-center gap-1.5">
+                      <Sparkles className="w-3.5 h-3.5 text-primary" />
+                      Conseils pour réussir la Tâche 2
+                    </p>
+                    <ul className="text-xs text-muted-foreground space-y-1.5 list-disc list-inside">
+                      <li>Posez une dizaine de questions variées (prix, dates, horaires, localisation, prestations, options).</li>
+                      <li>Adoptez le registre de langue adéquat (vouvoiement poli ou tutoiement selon le contexte).</li>
+                      <li>Variez les formules interrogatives : <em>« Est-ce que... »</em>, <em>« Pourriez-vous me préciser... »</em>, <em>« Quel(le) est... »</em>, <em>« À quelle heure... »</em>.</li>
+                    </ul>
+                  </div>
+
+                  {isSingleTask && (
+                    <div className="flex gap-3 pt-2">
+                      <Button
+                        variant="default"
+                        className="flex-1 gap-2"
+                        onClick={() => loadContent('expression_orale', 2)}
+                      >
+                        <RefreshCw className="w-4 h-4" /> Nouveau sujet Tâche 2
+                      </Button>
+                      <Button
+                        variant="outline"
+                        className="flex-1"
+                        onClick={() => { setSelectedTacheMode(null); setTaches([]); }}
+                      >
+                        Choisir une autre tâche
+                      </Button>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                /* TÂCHES 1 & 3 : ENREGISTREMENT AUDIO DISPONIBLE */
+                <div className="border border-border rounded-xl p-4 space-y-3 bg-muted/20">
+                  <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">
+                    Enregistrement audio de votre réponse
+                  </p>
+                  <AudioRecorder
+                    key={tache.numero_tache}
+                    tacheNum={tache.numero_tache}
+                    onRecorded={handleRecorded}
+                    disabled={submitting}
+                    initialRecorded={!!audioBlobs[tache.numero_tache]}
+                  />
+                </div>
+              )}
             </CardContent>
           </Card>
         )}
@@ -949,20 +1039,33 @@ export default function EntrainementPage() {
           </div>
         )}
 
-        {/* Bouton soumettre */}
-        {taches.length > 0 && (
+        {/* Bouton soumettre (uniquement si au moins une tâche enregistrable est présente) */}
+        {!isSingleTask && recordableTasks.length > 0 && (
           <Button
             onClick={submitExpressionOrale}
-            disabled={submitting || !anyRecorded}
-            className="w-full gap-2"
+            disabled={submitting || !anyRecordableDone}
+            className="w-full gap-2 shadow-md"
+            size="lg"
           >
             {submitting
               ? <><Loader2 className="w-4 h-4 animate-spin" />Envoi en cours…</>
-              : isSingleTask
-                ? <><Send className="w-4 h-4" />Envoyer ma tâche pour correction</>
-                : allRecorded
-                  ? <><Send className="w-4 h-4" />Envoyer toutes les tâches pour correction</>
-                  : <><Send className="w-4 h-4" />Envoyer les tâches enregistrées ({taches.filter(t => audioBlobs[t.numero_tache]).length}/{taches.length})</>
+              : allRecordableDone
+                ? <><Send className="w-4 h-4" />Envoyer les tâches enregistrées (Tâches 1 & 3) pour correction</>
+                : <><Send className="w-4 h-4" />Envoyer les tâches enregistrées ({recordableTasks.filter(t => audioBlobs[t.numero_tache]).length}/{recordableTasks.length})</>
+            }
+          </Button>
+        )}
+
+        {isSingleTask && !isTask2 && (
+          <Button
+            onClick={submitExpressionOrale}
+            disabled={submitting || !audioBlobs[taches[0]?.numero_tache]}
+            className="w-full gap-2 shadow-md"
+            size="lg"
+          >
+            {submitting
+              ? <><Loader2 className="w-4 h-4 animate-spin" />Envoi en cours…</>
+              : <><Send className="w-4 h-4" />Envoyer mon enregistrement pour correction</>
             }
           </Button>
         )}
