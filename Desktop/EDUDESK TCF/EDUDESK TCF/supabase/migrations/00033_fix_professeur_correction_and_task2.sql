@@ -113,8 +113,7 @@ CREATE POLICY "Professeur can insert notifications for students"
     )
   );
 
--- ─── 5. RPC Fonction `submit_professeur_correction` ────────────────────────────
--- Exécute la mise à jour de la production, le recalcul atomique de la session et la notification
+-- ─── 5. RPC Fonction `submit_professeur_correction` (Robuste & Sécurisée) ────────
 CREATE OR REPLACE FUNCTION public.submit_professeur_correction(
   p_production_id uuid,
   p_score integer,
@@ -137,7 +136,6 @@ DECLARE
   v_epreuve           text;
   v_numero_tache      integer;
   v_epreuve_label     text;
-  v_all_prods         record;
   v_prods_ee_count    integer := 0;
   v_prods_ee_done     integer := 0;
   v_prods_ee_sum      integer := 0;
@@ -149,29 +147,45 @@ DECLARE
   v_score_eo_final    integer;
   v_scores_arr        integer[];
   v_score_global      integer;
-  v_niveau_cecrl      public.niveau_cecrl;
+  v_niveau_cecrl      text;
   v_max_ee            integer := 20;
   v_max_eo            integer := 18;
 BEGIN
   v_caller_id := auth.uid();
   IF v_caller_id IS NULL THEN
-    RAISE EXCEPTION 'Non authentifié.';
+    RAISE EXCEPTION 'Non authentifié. Veuillez vous reconnecter.';
   END IF;
 
-  -- Vérifier le rôle de l'appelant
-  SELECT role INTO v_caller_role FROM public.profiles WHERE id = v_caller_id;
-  IF v_caller_role IS NULL OR v_caller_role NOT IN ('professeur', 'admin', 'super_admin') THEN
-    RAISE EXCEPTION 'Accès refusé : rôle professeur ou administrateur requis.';
+  -- 1. S'assurer que le profil professeur existe bien dans public.profiles (évite l'erreur de clé étrangère)
+  INSERT INTO public.profiles (id, email, role, created_at, updated_at)
+  SELECT u.id, u.email, 'professeur', now(), now()
+  FROM auth.users u
+  WHERE u.id = v_caller_id
+  ON CONFLICT (id) DO NOTHING;
+
+  -- 2. Vérifier le rôle de l'appelant
+  SELECT role::text INTO v_caller_role FROM public.profiles WHERE id = v_caller_id;
+  IF v_caller_role IS NULL OR lower(trim(v_caller_role)) NOT IN ('professeur', 'admin', 'super_admin', 'enseignant') THEN
+    IF NOT EXISTS (
+      SELECT 1 FROM auth.users u
+      WHERE u.id = v_caller_id
+        AND (
+          u.raw_user_meta_data->>'role' IN ('professeur', 'admin', 'super_admin', 'enseignant')
+          OR u.raw_app_meta_data->>'role' IN ('professeur', 'admin', 'super_admin', 'enseignant')
+        )
+    ) THEN
+      RAISE EXCEPTION 'Accès refusé : rôle professeur ou administrateur requis.';
+    END IF;
   END IF;
 
-  -- Récupérer la production
+  -- 3. Récupérer la production
   SELECT id, session_id, etudiant_id, epreuve, numero_tache, audio_url
   INTO v_prod
   FROM public.productions
   WHERE id = p_production_id;
 
   IF v_prod.id IS NULL THEN
-    RAISE EXCEPTION 'Production introuvable.';
+    RAISE EXCEPTION 'Production introuvable (ID : %)', p_production_id;
   END IF;
 
   v_session_id   := v_prod.session_id;
@@ -179,11 +193,11 @@ BEGIN
   v_epreuve      := v_prod.epreuve;
   v_numero_tache := v_prod.numero_tache;
 
-  -- 1. Mettre à jour la production
+  -- 4. Mettre à jour la production (attribution automatique au professeur connecté)
   IF p_statut = 'refuse' THEN
     UPDATE public.productions
     SET
-      statut_correction = 'refuse'::public.statut_correction,
+      statut_correction = 'refuse',
       score = 0,
       audio_url = NULL,
       contenu_texte = NULL,
@@ -196,7 +210,7 @@ BEGIN
   ELSE
     UPDATE public.productions
     SET
-      statut_correction = 'corrige'::public.statut_correction,
+      statut_correction = 'corrige',
       score = p_score,
       commentaire = p_commentaire,
       grille_notation = p_grille_notation,
@@ -206,115 +220,116 @@ BEGIN
     WHERE id = p_production_id;
   END IF;
 
-  -- 2. Recalculer la session si rattachée à une session
+  -- 5. Recalculer la session parente si existante (non-bloquant en cas d'anomalie de session)
   IF v_session_id IS NOT NULL THEN
-    -- Calculer les totaux pour EE
-    SELECT
-      count(*),
-      count(*) FILTER (WHERE statut_correction IN ('corrige', 'refuse')),
-      coalesce(sum(score), 0)
-    INTO v_prods_ee_count, v_prods_ee_done, v_prods_ee_sum
-    FROM public.productions
-    WHERE session_id = v_session_id AND epreuve = 'expression_ecrite';
+    BEGIN
+      SELECT
+        count(*),
+        count(*) FILTER (WHERE statut_correction IN ('corrige', 'refuse')),
+        coalesce(sum(score), 0)
+      INTO v_prods_ee_count, v_prods_ee_done, v_prods_ee_sum
+      FROM public.productions
+      WHERE session_id = v_session_id AND epreuve = 'expression_ecrite';
 
-    -- Calculer les totaux pour EO
-    SELECT
-      count(*),
-      count(*) FILTER (WHERE statut_correction IN ('corrige', 'refuse')),
-      coalesce(sum(score), 0)
-    INTO v_prods_eo_count, v_prods_eo_done, v_prods_eo_sum
-    FROM public.productions
-    WHERE session_id = v_session_id AND epreuve = 'expression_orale';
+      SELECT
+        count(*),
+        count(*) FILTER (WHERE statut_correction IN ('corrige', 'refuse')),
+        coalesce(sum(score), 0)
+      INTO v_prods_eo_count, v_prods_eo_done, v_prods_eo_sum
+      FROM public.productions
+      WHERE session_id = v_session_id AND epreuve = 'expression_orale';
 
-    -- Récupérer la session actuelle
-    SELECT id, mode, score_oral, score_ecrit, score_expression_ecrite, score_expression_orale
-    INTO v_sess
-    FROM public.sessions_examen
-    WHERE id = v_session_id;
+      SELECT id, mode, score_oral, score_ecrit, score_expression_ecrite, score_expression_orale
+      INTO v_sess
+      FROM public.sessions_examen
+      WHERE id = v_session_id;
 
-    IF v_sess.id IS NOT NULL THEN
-      -- Calcul score EE
-      IF v_prods_ee_count > 0 AND v_prods_ee_count = v_prods_ee_done THEN
-        v_score_ee_final := round((v_prods_ee_sum::numeric / (v_max_ee * v_prods_ee_count)) * 699);
-      ELSE
-        v_score_ee_final := v_sess.score_expression_ecrite;
-      END IF;
-
-      -- Calcul score EO
-      IF v_prods_eo_count > 0 AND v_prods_eo_count = v_prods_eo_done THEN
-        v_score_eo_final := round((v_prods_eo_sum::numeric / (v_max_eo * v_prods_eo_count)) * 699);
-      ELSE
-        v_score_eo_final := v_sess.score_expression_orale;
-      END IF;
-
-      -- Vérifier si toutes les productions d'expression sont terminées
-      IF (v_prods_ee_count = 0 OR v_prods_ee_count = v_prods_ee_done)
-         AND (v_prods_eo_count = 0 OR v_prods_eo_count = v_prods_eo_done)
-         AND (v_prods_ee_count > 0 OR v_prods_eo_count > 0) THEN
-
-        v_scores_arr := ARRAY[]::integer[];
-        IF v_sess.score_oral IS NOT NULL THEN v_scores_arr := array_append(v_scores_arr, v_sess.score_oral); END IF;
-        IF v_sess.score_ecrit IS NOT NULL THEN v_scores_arr := array_append(v_scores_arr, v_sess.score_ecrit); END IF;
-        IF v_score_ee_final IS NOT NULL THEN v_scores_arr := array_append(v_scores_arr, v_score_ee_final); END IF;
-        IF v_score_eo_final IS NOT NULL THEN v_scores_arr := array_append(v_scores_arr, v_score_eo_final); END IF;
-
-        IF array_length(v_scores_arr, 1) > 0 THEN
-          SELECT round(avg(val)) INTO v_score_global FROM unnest(v_scores_arr) AS val;
-
-          -- Déterminer le niveau CECRL
-          IF v_score_global >= 549 THEN v_niveau_cecrl := 'C2'::public.niveau_cecrl;
-          ELSIF v_score_global >= 499 THEN v_niveau_cecrl := 'C1'::public.niveau_cecrl;
-          ELSIF v_score_global >= 406 THEN v_niveau_cecrl := 'B2'::public.niveau_cecrl;
-          ELSIF v_score_global >= 301 THEN v_niveau_cecrl := 'B1'::public.niveau_cecrl;
-          ELSIF v_score_global >= 226 THEN v_niveau_cecrl := 'A2'::public.niveau_cecrl;
-          ELSE v_niveau_cecrl := 'A1'::public.niveau_cecrl;
-          END IF;
+      IF v_sess.id IS NOT NULL THEN
+        IF v_prods_ee_count > 0 AND v_prods_ee_count = v_prods_ee_done THEN
+          v_score_ee_final := round((v_prods_ee_sum::numeric / (v_max_ee * v_prods_ee_count)) * 699);
+        ELSE
+          v_score_ee_final := v_sess.score_expression_ecrite;
         END IF;
 
-        -- Mise à jour session complète
-        UPDATE public.sessions_examen
-        SET
-          score_expression_ecrite = v_score_ee_final,
-          score_expression_orale  = v_score_eo_final,
-          score_global            = coalesce(v_score_global, score_global),
-          niveau_cecrl            = coalesce(v_niveau_cecrl, niveau_cecrl),
-          correction_complete     = true
-        WHERE id = v_session_id;
-      ELSE
-        -- Mise à jour partielle session
-        UPDATE public.sessions_examen
-        SET
-          score_expression_ecrite = v_score_ee_final,
-          score_expression_orale  = v_score_eo_final
-        WHERE id = v_session_id;
+        IF v_prods_eo_count > 0 AND v_prods_eo_count = v_prods_eo_done THEN
+          v_score_eo_final := round((v_prods_eo_sum::numeric / (v_max_eo * v_prods_eo_count)) * 699);
+        ELSE
+          v_score_eo_final := v_sess.score_expression_orale;
+        END IF;
+
+        IF (v_prods_ee_count = 0 OR v_prods_ee_count = v_prods_ee_done)
+           AND (v_prods_eo_count = 0 OR v_prods_eo_count = v_prods_eo_done)
+           AND (v_prods_ee_count > 0 OR v_prods_eo_count > 0) THEN
+
+          v_scores_arr := ARRAY[]::integer[];
+          IF v_sess.score_oral IS NOT NULL THEN v_scores_arr := array_append(v_scores_arr, v_sess.score_oral); END IF;
+          IF v_sess.score_ecrit IS NOT NULL THEN v_scores_arr := array_append(v_scores_arr, v_sess.score_ecrit); END IF;
+          IF v_score_ee_final IS NOT NULL THEN v_scores_arr := array_append(v_scores_arr, v_score_ee_final); END IF;
+          IF v_score_eo_final IS NOT NULL THEN v_scores_arr := array_append(v_scores_arr, v_score_eo_final); END IF;
+
+          IF array_length(v_scores_arr, 1) IS NOT NULL AND array_length(v_scores_arr, 1) > 0 THEN
+            SELECT round(avg(val)) INTO v_score_global FROM unnest(v_scores_arr) AS val;
+
+            IF v_score_global >= 549 THEN v_niveau_cecrl := 'C2';
+            ELSIF v_score_global >= 499 THEN v_niveau_cecrl := 'C1';
+            ELSIF v_score_global >= 406 THEN v_niveau_cecrl := 'B2';
+            ELSIF v_score_global >= 301 THEN v_niveau_cecrl := 'B1';
+            ELSIF v_score_global >= 226 THEN v_niveau_cecrl := 'A2';
+            ELSE v_niveau_cecrl := 'A1';
+            END IF;
+          END IF;
+
+          UPDATE public.sessions_examen
+          SET
+            score_expression_ecrite = v_score_ee_final,
+            score_expression_orale  = v_score_eo_final,
+            score_global            = coalesce(v_score_global, score_global),
+            niveau_cecrl            = CASE WHEN v_niveau_cecrl IS NOT NULL THEN v_niveau_cecrl::public.niveau_cecrl ELSE niveau_cecrl END,
+            correction_complete     = true
+          WHERE id = v_session_id;
+        ELSE
+          UPDATE public.sessions_examen
+          SET
+            score_expression_ecrite = v_score_ee_final,
+            score_expression_orale  = v_score_eo_final
+          WHERE id = v_session_id;
+        END IF;
       END IF;
-    END IF;
+    EXCEPTION WHEN OTHERS THEN
+      -- Ne pas bloquer la correction si le recalcul de la session échoue
+      NULL;
+    END;
   END IF;
 
-  -- 3. Notifier l'étudiant
+  -- 6. Notifier l'étudiant (non-bloquant si l'étudiant n'a plus de profil)
   IF v_etudiant_id IS NOT NULL THEN
-    v_epreuve_label := CASE WHEN v_epreuve = 'expression_ecrite' THEN 'Expression écrite' ELSE 'Expression orale' END;
+    BEGIN
+      v_epreuve_label := CASE WHEN v_epreuve = 'expression_ecrite' THEN 'Expression écrite' ELSE 'Expression orale' END;
 
-    IF p_statut = 'refuse' THEN
-      INSERT INTO public.notifications (utilisateur_id, titre, message, lien)
-      VALUES (
-        v_etudiant_id,
-        'Production refusée — Note 0',
-        CASE WHEN p_raison_refus IS NOT NULL AND length(trim(p_raison_refus)) > 0
-             THEN 'Votre ' || v_epreuve_label || ' — Tâche ' || v_numero_tache || ' a été refusée (note : 0/20). Motif : ' || trim(p_raison_refus)
-             ELSE 'Votre ' || v_epreuve_label || ' — Tâche ' || v_numero_tache || ' a été refusée par votre professeur. Note attribuée : 0/20.'
-        END,
-        '/etudiant/historique'
-      );
-    ELSE
-      INSERT INTO public.notifications (utilisateur_id, titre, message, lien)
-      VALUES (
-        v_etudiant_id,
-        'Correction disponible',
-        'Votre ' || v_epreuve_label || ' — Tâche ' || v_numero_tache || ' a été corrigée (' || p_score || ' pts).',
-        '/etudiant/historique'
-      );
-    END IF;
+      IF p_statut = 'refuse' THEN
+        INSERT INTO public.notifications (utilisateur_id, titre, message, lien)
+        VALUES (
+          v_etudiant_id,
+          'Production refusée — Note 0',
+          CASE WHEN p_raison_refus IS NOT NULL AND length(trim(p_raison_refus)) > 0
+               THEN 'Votre ' || v_epreuve_label || ' — Tâche ' || v_numero_tache || ' a été refusée (note : 0/20). Motif : ' || trim(p_raison_refus)
+               ELSE 'Votre ' || v_epreuve_label || ' — Tâche ' || v_numero_tache || ' a été refusée par votre professeur. Note attribuée : 0/20.'
+          END,
+          '/etudiant/historique'
+        );
+      ELSE
+        INSERT INTO public.notifications (utilisateur_id, titre, message, lien)
+        VALUES (
+          v_etudiant_id,
+          'Correction disponible',
+          'Votre ' || v_epreuve_label || ' — Tâche ' || v_numero_tache || ' a été corrigée (' || p_score || ' pts).',
+          '/etudiant/historique'
+        );
+      END IF;
+    EXCEPTION WHEN OTHERS THEN
+      -- Ne pas bloquer si la notification échoue
+      NULL;
+    END;
   END IF;
 
   RETURN jsonb_build_object(
