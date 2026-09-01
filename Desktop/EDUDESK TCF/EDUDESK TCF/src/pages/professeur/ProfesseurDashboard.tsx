@@ -29,19 +29,12 @@ export default function ProfesseurDashboard() {
       }
 
       // 2. Charger les corrections en attente
-      let corrQuery = supabase
+      const { data: corrData } = await supabase
         .from('productions')
         .select('*')
         .eq('statut_correction', 'en_attente')
-        .order('created_at', { ascending: false });
-
-      if (ids.length > 0) {
-        corrQuery = corrQuery.or(`professeur_id.eq.${user.id},etudiant_id.in.(${ids.join(',')}),professeur_id.is.null`);
-      } else {
-        corrQuery = corrQuery.or(`professeur_id.eq.${user.id},professeur_id.is.null`);
-      }
-
-      const { data: corrData } = await corrQuery.limit(10);
+        .order('created_at', { ascending: false })
+        .limit(10);
 
       setEtudiants(etudiantsList);
       setCorrections(Array.isArray(corrData) ? corrData : []);

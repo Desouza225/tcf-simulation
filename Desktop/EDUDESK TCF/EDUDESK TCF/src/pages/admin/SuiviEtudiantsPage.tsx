@@ -27,6 +27,13 @@ interface EpreuveStats {
   moyenneEntrainement: number | null;
 }
 
+interface DerniereNoteEpreuve {
+  score: number;
+  niveau?: NiveauCECRL | null;
+  date: string;
+  mode: 'entrainement' | 'examen_blanc';
+}
+
 interface EtudiantStats {
   profile: Profile;
   professeur?: Profile | null;
@@ -35,11 +42,18 @@ interface EtudiantStats {
   examsBlancs: number;
   correctionsEnAttente: number;
   dernierScore: number | null;
+  dernierScoreMode: 'entrainement' | 'examen_blanc' | null;
   dernierNiveau: NiveauCECRL | null;
   scoreMoyen: number | null;
   progression: number | null;
   niveauGlobal: NiveauCECRL | null;
   parEpreuve: EpreuveStats[];
+  dernieresNotes: {
+    co: DerniereNoteEpreuve | null;
+    ce: DerniereNoteEpreuve | null;
+    ee: DerniereNoteEpreuve | null;
+    eo: DerniereNoteEpreuve | null;
+  };
 }
 
 const SCORE_MAX = 699;
@@ -94,7 +108,7 @@ export default function SuiviEtudiantsPage() {
               .select('*')
               .eq('etudiant_id', profile.id)
               .order('created_at', { ascending: false })
-              .limit(20),
+              .limit(50),
             supabase
               .from('productions')
               .select('id', { count: 'exact' })
@@ -109,8 +123,17 @@ export default function SuiviEtudiantsPage() {
           const scored = examSessions.filter(s => s.score_global !== null);
           const scores = scored.map(s => s.score_global as number);
           const scoreMoyen = avg(scores);
-          const dernierScore = scores[0] ?? null;
-          const dernierNiveau = examSessions[0]?.niveau_cecrl ?? null;
+
+          // Dernier score général
+          const dernierScoreSession = sessions.find(s => s.statut === 'termine' && (s.score_global !== null || sessionEntrainementScore(s) !== null));
+          const dernierScore = dernierScoreSession
+            ? (dernierScoreSession.score_global ?? sessionEntrainementScore(dernierScoreSession))
+            : null;
+          const dernierScoreMode = (dernierScoreSession?.mode as 'entrainement' | 'examen_blanc') ?? null;
+          const dernierNiveau = dernierScoreSession?.niveau_cecrl
+            ? (dernierScoreSession.niveau_cecrl as NiveauCECRL)
+            : (dernierScore !== null ? pctToCECRL(Math.round((dernierScore / SCORE_MAX) * 100)) : null);
+
           const progression = scores.length >= 2 ? scores[0] - scores[1] : null;
 
           // Moyennes par épreuve — séparées par mode
@@ -125,6 +148,19 @@ export default function SuiviEtudiantsPage() {
             moyenneExamen: avg(examSessions.map(s => s[e.key] as number | null)),
             moyenneEntrainement: avg(trainSessions.map(s => s[e.key] as number | null)),
           }));
+
+          // Dernières notes individuelles par épreuve
+          const sCO = sessions.find(s => s.score_oral !== null && s.statut === 'termine');
+          const sCE = sessions.find(s => s.score_ecrit !== null && s.statut === 'termine');
+          const sEE = sessions.find(s => s.score_expression_ecrite !== null && s.statut === 'termine');
+          const sEO = sessions.find(s => s.score_expression_orale !== null && s.statut === 'termine');
+
+          const dernieresNotes = {
+            co: sCO ? { score: sCO.score_oral!, niveau: pctToCECRL(Math.round((sCO.score_oral! / SCORE_MAX) * 100)), date: sCO.created_at, mode: sCO.mode } : null,
+            ce: sCE ? { score: sCE.score_ecrit!, niveau: pctToCECRL(Math.round((sCE.score_ecrit! / SCORE_MAX) * 100)), date: sCE.created_at, mode: sCE.mode } : null,
+            ee: sEE ? { score: sEE.score_expression_ecrite!, niveau: pctToCECRL(Math.round((sEE.score_expression_ecrite! / SCORE_MAX) * 100)), date: sEE.created_at, mode: sEE.mode } : null,
+            eo: sEO ? { score: sEO.score_expression_orale!, niveau: pctToCECRL(Math.round((sEO.score_expression_orale! / SCORE_MAX) * 100)), date: sEO.created_at, mode: sEO.mode } : null,
+          };
 
           // Niveau global CECRL — toutes sessions confondues
           const allScores: number[] = [];
@@ -149,11 +185,13 @@ export default function SuiviEtudiantsPage() {
             examsBlancs: examSessions.length,
             correctionsEnAttente: pendingRes.count || 0,
             dernierScore,
+            dernierScoreMode,
             dernierNiveau,
             scoreMoyen,
             progression,
             niveauGlobal,
             parEpreuve,
+            dernieresNotes,
           } as EtudiantStats;
         })
       );
@@ -471,7 +509,11 @@ export default function SuiviEtudiantsPage() {
                           { label: 'Sessions totales', value: sessionsTotal, score: null },
                           { label: 'Examens blancs', value: examsBlancs, score: null },
                           { label: 'Score moyen', value: scoreMoyen !== null ? `${scoreMoyen}/699` : '—', score: scoreMoyen },
-                          { label: 'Dernier score', value: dernierScore !== null ? `${dernierScore}/699` : '—', score: dernierScore },
+                          {
+                            label: dernierScoreMode === 'examen_blanc' ? 'Dernier exam blanc' : 'Dernier score',
+                            value: dernierScore !== null ? `${dernierScore}/699` : '—',
+                            score: dernierScore
+                          },
                         ].map(stat => {
                           const niv = stat.score !== null ? pctToCECRL(Math.round((stat.score / 699) * 100)) : null;
                           return (
@@ -486,6 +528,44 @@ export default function SuiviEtudiantsPage() {
                             </div>
                           );
                         })}
+                      </div>
+
+                      {/* Dernières notes par épreuve */}
+                      <div className="space-y-2">
+                        <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
+                          Dernières notes obtenues par épreuve
+                        </p>
+                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                          {[
+                            { key: 'co', label: 'Compr. Orale', item: dernieresNotes.co },
+                            { key: 'ce', label: 'Compr. Écrite', item: dernieresNotes.ce },
+                            { key: 'ee', label: 'Expr. Écrite', item: dernieresNotes.ee },
+                            { key: 'eo', label: 'Expr. Orale', item: dernieresNotes.eo },
+                          ].map(({ key, label, item }) => (
+                            <div key={key} className="bg-muted/40 border border-border/60 rounded-lg p-2.5 flex flex-col justify-between">
+                              <div>
+                                <p className="text-xs text-muted-foreground font-medium truncate">{label}</p>
+                                <p className={cn('text-base font-bold mt-0.5', scoreColor(item?.score ?? null))}>
+                                  {item ? `${item.score}/699` : '—'}
+                                </p>
+                              </div>
+                              {item ? (
+                                <div className="mt-1.5 flex items-center justify-between gap-1 text-[10px] text-muted-foreground">
+                                  {item.niveau && (
+                                    <Badge style={{ backgroundColor: CECRL_COLORS[item.niveau] }} className="text-white text-[10px] h-4 px-1">
+                                      {item.niveau}
+                                    </Badge>
+                                  )}
+                                  <span className="truncate">
+                                    {new Date(item.date).toLocaleDateString('fr-FR', { day: '2-digit', month: 'short' })}
+                                  </span>
+                                </div>
+                              ) : (
+                                <p className="text-[10px] text-muted-foreground/60 mt-1">Non évalué</p>
+                              )}
+                            </div>
+                          ))}
+                        </div>
                       </div>
 
                       {/* Moyennes par épreuve — entraînement vs examen blanc */}

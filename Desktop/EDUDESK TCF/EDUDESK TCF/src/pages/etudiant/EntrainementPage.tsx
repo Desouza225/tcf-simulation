@@ -447,9 +447,58 @@ export default function EntrainementPage() {
     setReponses(prev => ({ ...prev, [currentIdx]: choixId }));
   };
 
+  const finishQcmSession = async (finalReponses: Record<number, string>) => {
+    if (!user || (selectedEpreuve !== 'comprehension_oral' && selectedEpreuve !== 'comprehension_ecrit')) {
+      setSessionDone(true);
+      return;
+    }
+
+    const correct = questions.filter((q, i) => finalReponses[i] === q.bonne_reponse).length;
+    const pct = Math.round((correct / questions.length) * 100);
+    const scoreSur699 = Math.round((correct / questions.length) * 699);
+    const niveau = pctToCECRL(pct);
+    const scoreField = selectedEpreuve === 'comprehension_oral' ? 'score_oral' : 'score_ecrit';
+
+    try {
+      const { data: session, error: sessErr } = await supabase
+        .from('sessions_examen')
+        .insert({
+          etudiant_id: user.id,
+          mode: 'entrainement',
+          epreuve_actuelle: selectedEpreuve,
+          statut: 'termine',
+          [scoreField]: scoreSur699,
+          score_global: scoreSur699,
+          niveau_cecrl: niveau,
+          termine_at: new Date().toISOString(),
+        })
+        .select()
+        .maybeSingle();
+
+      if (sessErr) {
+        console.error('Erreur enregistrement session QCM:', sessErr);
+      } else if (session?.id) {
+        const reponsesToInsert = questions.map((q, i) => ({
+          session_id: session.id,
+          question_id: q.id,
+          reponse_choisie: finalReponses[i] || null,
+          est_correcte: finalReponses[i] === q.bonne_reponse,
+        }));
+        await supabase.from('reponses_qcm').insert(reponsesToInsert);
+      }
+    } catch (err) {
+      console.error('Erreur sauvegarde entraînement QCM:', err);
+    }
+
+    setSessionDone(true);
+  };
+
   const nextQuestion = () => {
-    if (currentIdx < questions.length - 1) setCurrentIdx(prev => prev + 1);
-    else setSessionDone(true);
+    if (currentIdx < questions.length - 1) {
+      setCurrentIdx(prev => prev + 1);
+    } else {
+      finishQcmSession(reponses);
+    }
   };
 
   const handleRecorded = (tacheNum: number, blob: Blob) => {
@@ -469,24 +518,36 @@ export default function EntrainementPage() {
     if (eeTimerRef.current) { clearInterval(eeTimerRef.current); eeTimerRef.current = null; }
     const dureeCapturee = eeElapsed;
     try {
-      const { data: session } = await supabase.from('sessions_examen').insert({
+      const { data: session, error: sessErr } = await supabase.from('sessions_examen').insert({
         etudiant_id: user.id, mode: 'entrainement',
         epreuve_actuelle: selectedEpreuve, statut: 'termine',
         termine_at: new Date().toISOString(),
         duree_expression_ecrite: dureeCapturee > 0 ? dureeCapturee : null,
       }).select().maybeSingle();
+
+      if (sessErr || !session) {
+        console.error('Erreur creation session EE:', sessErr);
+        throw new Error(sessErr?.message || 'Impossible de créer la session.');
+      }
+
       const { data: attribution } = await supabase.from('attributions').select('professeur_id').eq('etudiant_id', user.id).maybeSingle();
+
       for (const tache of taches) {
         const texte = texteReponses[tache.numero_tache];
         if (!texte?.trim()) continue;
-        await supabase.from('productions').insert({
-          session_id: session?.id, etudiant_id: user.id,
+        const { error: prodErr } = await supabase.from('productions').insert({
+          session_id: session.id, etudiant_id: user.id,
           epreuve: selectedEpreuve, numero_tache: tache.numero_tache,
           reference: tache.reference || null,
           contenu_texte: texte, statut_correction: 'en_attente',
           professeur_id: attribution?.professeur_id || null,
         });
+        if (prodErr) {
+          console.error('Erreur insertion production EE:', prodErr);
+          throw new Error(prodErr.message || 'Erreur lors de l\'enregistrement de la production.');
+        }
       }
+
       toast.success(taches.length === 1
         ? 'Votre réponse a été envoyée à votre professeur pour correction !'
         : 'Vos réponses ont été envoyées à votre professeur pour correction !'
@@ -494,8 +555,9 @@ export default function EntrainementPage() {
       setSelectedEpreuve(null);
       setSelectedTacheMode(null);
       setPendingCount({});
-    } catch {
-      toast.error('Erreur lors de la soumission. Veuillez réessayer.');
+    } catch (err: any) {
+      console.error('Exception submitExpressionEcrite:', err);
+      toast.error(err?.message || 'Erreur lors de la soumission. Veuillez réessayer.');
     } finally {
       setSubmitting(false);
     }
@@ -518,7 +580,10 @@ export default function EntrainementPage() {
         termine_at: new Date().toISOString(),
       }).select().maybeSingle();
 
-      if (sessionError || !session) throw new Error('Impossible de créer la session.');
+      if (sessionError || !session) {
+        console.error('Erreur creation session EO:', sessionError);
+        throw new Error(sessionError?.message || 'Impossible de créer la session.');
+      }
 
       const { data: attribution } = await supabase.from('attributions').select('professeur_id').eq('etudiant_id', user.id).maybeSingle();
 
@@ -527,8 +592,8 @@ export default function EntrainementPage() {
         let audioUrl: string | null = null;
 
         if (blob) {
-          // Upload vers productions-audio avec chemin organisé
-          const fileName = `audio/${user.id}/entrainement/${session.id}/tache_${tache.numero_tache}.webm`;
+          // Upload vers productions-audio avec chemin unique
+          const fileName = `audio/${user.id}/entrainement/${session.id}/tache_${tache.numero_tache}_${Date.now()}.webm`;
           const { data: uploaded, error: uploadError } = await supabase.storage
             .from('productions-audio')
             .upload(fileName, blob, { upsert: true, contentType: 'audio/webm' });
@@ -538,17 +603,22 @@ export default function EntrainementPage() {
             audioUrl = urlData.publicUrl;
           } else {
             console.error(`Upload tâche ${tache.numero_tache}:`, uploadError?.message);
-            toast.error(`Tâche ${tache.numero_tache} : échec de l'envoi audio. La tâche sera soumise sans audio.`);
+            toast.error(`Tâche ${tache.numero_tache} : échec de l'envoi audio (${uploadError?.message || 'storage'}).`);
           }
         }
 
-        await supabase.from('productions').insert({
+        const { error: prodErr } = await supabase.from('productions').insert({
           session_id: session.id, etudiant_id: user.id,
           epreuve: 'expression_orale', numero_tache: tache.numero_tache,
           reference: tache.reference || null,
           audio_url: audioUrl, statut_correction: 'en_attente',
           professeur_id: attribution?.professeur_id || null,
         });
+
+        if (prodErr) {
+          console.error('Erreur insertion production EO:', prodErr);
+          throw new Error(prodErr.message || 'Erreur lors de l\'enregistrement de la production orale.');
+        }
       }
 
       toast.success(tasksToSubmit.length === 1
@@ -558,9 +628,9 @@ export default function EntrainementPage() {
       setSelectedEpreuve(null);
       setSelectedTacheMode(null);
       setPendingCount({});
-    } catch (err) {
-      toast.error('Erreur lors de la soumission. Veuillez réessayer.');
-      console.error(err);
+    } catch (err: any) {
+      console.error('Exception submitExpressionOrale:', err);
+      toast.error(err?.message || 'Erreur lors de la soumission. Veuillez réessayer.');
     } finally {
       setSubmitting(false);
     }

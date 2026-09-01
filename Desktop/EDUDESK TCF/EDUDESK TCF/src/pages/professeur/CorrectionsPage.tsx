@@ -36,9 +36,9 @@ interface SessionGroup {
 function groupBySession(prods: (Production & { etudiant?: Profile; session?: { id: string; created_at: string; mode?: string } })[]): SessionGroup[] {
   const map = new Map<string, SessionGroup>();
   for (const p of prods) {
-    const sid = p.session_id;
+    const sid = p.session_id || `standalone_${p.id}`;
     const date = p.session?.created_at ?? p.created_at;
-    const mode = (p.session?.mode as 'entrainement' | 'examen_blanc') ?? null;
+    const mode = (p.session?.mode as 'entrainement' | 'examen_blanc') ?? 'entrainement';
     if (!map.has(sid)) map.set(sid, { sessionId: sid, sessionDate: date, sessionMode: mode, etudiant: p.etudiant, epreuves: [] });
     const sg = map.get(sid)!;
     let eg = sg.epreuves.find(e => e.epreuve === p.epreuve);
@@ -58,47 +58,21 @@ export default function CorrectionsPage() {
   useEffect(() => {
     if (!user) return;
     const loadData = async () => {
-      // 1. Récupérer les ID des étudiants attribués
-      const { data: attrData } = await supabase
-        .from('attributions')
-        .select('etudiant_id')
-        .eq('professeur_id', user.id);
-
-      const etudIds = (attrData || []).map(a => a.etudiant_id).filter(Boolean);
-
-      // 2. Charger les productions en attente
-      let query = supabase
+      // 1. Charger toutes les productions en attente accessibles
+      const { data, error } = await supabase
         .from('productions')
         .select('*, etudiant:profiles!etudiant_id(*), session:sessions_examen!session_id(id, created_at, mode)')
-        .eq('statut_correction', 'en_attente');
-
-      if (etudIds.length > 0) {
-        query = query.or(`professeur_id.eq.${user.id},etudiant_id.in.(${etudIds.join(',')}),professeur_id.is.null`);
-      } else {
-        query = query.or(`professeur_id.eq.${user.id},professeur_id.is.null`);
-      }
-
-      const { data, error } = await query
-        .order('epreuve')
-        .order('numero_tache');
+        .eq('statut_correction', 'en_attente')
+        .order('created_at', { ascending: false });
 
       let all: any[] = [];
       if (error || !data) {
         // Fallback sans jointure explicite
-        let fallbackQuery = supabase
+        const { data: fallbackData } = await supabase
           .from('productions')
           .select('*')
-          .eq('statut_correction', 'en_attente');
-
-        if (etudIds.length > 0) {
-          fallbackQuery = fallbackQuery.or(`professeur_id.eq.${user.id},etudiant_id.in.(${etudIds.join(',')}),professeur_id.is.null`);
-        } else {
-          fallbackQuery = fallbackQuery.or(`professeur_id.eq.${user.id},professeur_id.is.null`);
-        }
-
-        const { data: fallbackData } = await fallbackQuery
-          .order('epreuve')
-          .order('numero_tache');
+          .eq('statut_correction', 'en_attente')
+          .order('created_at', { ascending: false });
 
         if (fallbackData && fallbackData.length > 0) {
           const uIds = [...new Set(fallbackData.map(p => p.etudiant_id).filter(Boolean))];
