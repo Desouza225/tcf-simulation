@@ -170,7 +170,7 @@ export default function CorrectionInterface() {
 
   const grille = production?.epreuve === 'expression_ecrite' ? GRILLE_EXPRESSION_ECRITE : GRILLE_EXPRESSION_ORALE;
   const maxTotal = grille.reduce((a, b) => a + b.max, 0);
-  const scoreTotal = Object.values(notes).reduce((a, b) => a + b, 0);
+  const scoreTotal = Math.round(Object.values(notes).reduce((a, b) => a + b, 0) * 100) / 100;
   const niveauTache: NiveauCECRL | null = Object.keys(notes).length > 0 ? tacheToNiveau(scoreTotal, maxTotal) : null;
 
   const loadSessionProductions = useCallback(async (sessionId: string, epreuve: string) => {
@@ -839,14 +839,23 @@ export default function CorrectionInterface() {
               <div className="flex items-center gap-2 shrink-0">
                 <Input
                   type="number"
+                  step="0.1"
                   min={0}
                   max={item.max}
-                  value={notes[item.critere] ?? ''}
+                  value={notes[item.critere] !== undefined ? notes[item.critere] : ''}
                   onChange={e => {
-                    const val = e.target.value === '' ? 0 : Math.min(item.max, Math.max(0, Number(e.target.value)));
-                    setNotes(prev => ({ ...prev, [item.critere]: val }));
+                    const raw = e.target.value.replace(',', '.');
+                    if (raw === '') {
+                      const updated = { ...notes };
+                      delete updated[item.critere];
+                      setNotes(updated);
+                    } else {
+                      const num = parseFloat(raw);
+                      const val = isNaN(num) ? 0 : Math.min(item.max, Math.max(0, Math.round(num * 100) / 100));
+                      setNotes(prev => ({ ...prev, [item.critere]: val }));
+                    }
                   }}
-                  className="w-16 text-center font-bold font-mono text-base"
+                  className="w-20 text-center font-bold font-mono text-base"
                 />
                 <span className="text-sm text-muted-foreground w-8">/ {item.max}</span>
               </div>
