@@ -417,7 +417,7 @@ export default function CorrectionInterface() {
     setSubmitting(true);
 
     try {
-      // 1. Tenter la soumission via la RPC atomique
+      // 1. Tenter la soumission via la RPC atomique (prioritaire)
       const { data: rpcRes, error: rpcErr } = await supabase.rpc('submit_professeur_correction', {
         p_production_id: id,
         p_score: scoreTotal,
@@ -437,23 +437,32 @@ export default function CorrectionInterface() {
         return;
       }
 
-      // 2. Fallback direct si la RPC n'est pas encore enregistrée
-      console.warn('RPC submit_professeur_correction indisponible, exécution via fallback direct:', rpcErr);
+      console.warn('RPC submit_professeur_correction indisponible ou rejetée:', rpcErr);
 
-      const { error: prodUpdateErr } = await supabase.from('productions').update({
-        statut_correction: 'corrige',
-        score: scoreTotal,
-        commentaire: commentaire || null,
-        grille_notation: notes,
-        raison_refus: null,
-        corrige_at: new Date().toISOString(),
-        professeur_id: user?.id || production.professeur_id || null,
-      }).eq('id', id);
+      // 2. Fallback direct si la RPC n'est pas encore créée en base
+      const { data: updatedRows, error: prodUpdateErr } = await supabase
+        .from('productions')
+        .update({
+          statut_correction: 'corrige',
+          score: scoreTotal,
+          commentaire: commentaire || null,
+          grille_notation: notes,
+          raison_refus: null,
+          corrige_at: new Date().toISOString(),
+          professeur_id: user?.id || production.professeur_id || null,
+        })
+        .eq('id', id)
+        .select();
 
       if (prodUpdateErr) {
         console.error('Erreur sauvegarde production directe:', prodUpdateErr);
-        toast.error(prodUpdateErr.message || 'Erreur lors de la soumission de la correction.');
-        return;
+        throw new Error(prodUpdateErr.message || 'Erreur lors de la soumission de la correction.');
+      }
+
+      if (!updatedRows || updatedRows.length === 0) {
+        throw new Error(
+          "Impossible de modifier cette ancienne production (sécurité RLS). Veuillez exécuter la migration SQL 00033 dans le SQL Editor de Supabase pour débloquer les droits d'écriture."
+        );
       }
 
       if (production.session_id) {
@@ -521,22 +530,31 @@ export default function CorrectionInterface() {
       }
 
       // 3. Fallback direct
-      console.warn('RPC submit_professeur_correction refus indisponible, fallback direct:', rpcErr);
+      console.warn('RPC submit_professeur_correction refus indisponible:', rpcErr);
 
-      const { error: prodErr } = await supabase.from('productions').update({
-        statut_correction: 'refuse',
-        score: 0,
-        audio_url: null,
-        contenu_texte: null,
-        raison_refus: raisonRefus.trim() || null,
-        corrige_at: new Date().toISOString(),
-        professeur_id: user?.id || production.professeur_id || null,
-      }).eq('id', id);
+      const { data: refusedRows, error: prodErr } = await supabase
+        .from('productions')
+        .update({
+          statut_correction: 'refuse',
+          score: 0,
+          audio_url: null,
+          contenu_texte: null,
+          raison_refus: raisonRefus.trim() || null,
+          corrige_at: new Date().toISOString(),
+          professeur_id: user?.id || production.professeur_id || null,
+        })
+        .eq('id', id)
+        .select();
 
       if (prodErr) {
         console.error('Erreur refus production directe:', prodErr);
-        toast.error(prodErr.message || 'Erreur lors du refus.');
-        return;
+        throw new Error(prodErr.message || 'Erreur lors du refus.');
+      }
+
+      if (!refusedRows || refusedRows.length === 0) {
+        throw new Error(
+          "Impossible de refuser cette ancienne production (sécurité RLS). Veuillez exécuter la migration SQL 00033 dans le SQL Editor de Supabase pour débloquer les droits d'écriture."
+        );
       }
 
       if (production.session_id) {
