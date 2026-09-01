@@ -6,8 +6,8 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Skeleton } from '@/components/ui/skeleton';
-import { BookOpen, ClipboardList, TrendingUp } from 'lucide-react';
-import type { SessionExamen, NiveauCECRL } from '@/types/index';
+import { BookOpen, ClipboardList } from 'lucide-react';
+import type { SessionExamen } from '@/types/index';
 import { CECRL_COLORS, EPREUVE_LABELS } from '@/types/index';
 
 export default function EtudiantDashboard() {
@@ -26,10 +26,6 @@ export default function EtudiantDashboard() {
       });
   }, [user]);
 
-  const lastExamBlancWithScore = sessions.find(
-    s => s.mode === 'examen_blanc' && (s.correction_complete || (s.score_expression_ecrite !== null && s.score_expression_orale !== null)) && s.niveau_cecrl
-  );
-
   return (
     <div className="max-w-5xl mx-auto space-y-6 fade-in">
       {/* En-tête */}
@@ -39,32 +35,6 @@ export default function EtudiantDashboard() {
         </h1>
         <p className="text-muted-foreground mt-1">Prêt pour votre préparation TCF Canada ?</p>
       </div>
-
-      {/* Niveau CECRL actuel */}
-      {lastExamBlancWithScore && (
-        <Card
-          className="border-primary/20 bg-primary/5 cursor-pointer hover:border-primary/40 hover:shadow-md transition-all"
-          onClick={() => navigate('/etudiant/historique')}
-        >
-          <CardContent className="p-4 flex items-center justify-between gap-4">
-            <div>
-              <p className="text-sm text-muted-foreground">Votre dernier niveau CECRL</p>
-              <div className="flex items-center gap-2 mt-1">
-                <Badge
-                  style={{ backgroundColor: CECRL_COLORS[lastExamBlancWithScore.niveau_cecrl as NiveauCECRL] }}
-                  className="text-white text-lg px-3 py-1"
-                >
-                  {lastExamBlancWithScore.niveau_cecrl}
-                </Badge>
-                <span className="text-sm text-muted-foreground">
-                  Score : {lastExamBlancWithScore.score_global}/699
-                </span>
-              </div>
-            </div>
-            <TrendingUp className="w-10 h-10 text-primary/30 shrink-0" />
-          </CardContent>
-        </Card>
-      )}
 
       {/* Les deux modes principaux */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
