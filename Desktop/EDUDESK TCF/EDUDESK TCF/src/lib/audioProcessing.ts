@@ -200,3 +200,102 @@ export function attachAudioClarityProcessor(audioEl: HTMLMediaElement, isEnabled
     console.warn('Traitement Web Audio API non disponible:', err);
   }
 }
+
+/**
+ * Résout une URL audio fiable pour la lecture dans le navigateur.
+ * Tente d'abord de générer une URL signée Supabase (valable 2h) si le fichier est dans le bucket `productions-audio`.
+ * Si l'URL directe échoue ou si le bucket est privé, télécharge le blob binaire avec le token d'authentification
+ * et crée un `blob:http...` 100% garanti de fonctionner sans problème CORS ou de droits.
+ */
+export async function resolvePlayableAudioUrl(rawUrlOrPath: string): Promise<string> {
+  if (!rawUrlOrPath || typeof rawUrlOrPath !== 'string') return '';
+  const trimmed = rawUrlOrPath.trim();
+  if (!trimmed) return '';
+
+  // Si c'est déjà un Blob local ou data URL
+  if (trimmed.startsWith('blob:') || trimmed.startsWith('data:')) {
+    return trimmed;
+  }
+
+  // Extraire le chemin relatif si c'est une URL Supabase
+  let storagePath = trimmed;
+  if (trimmed.includes('/productions-audio/')) {
+    const parts = trimmed.split('/productions-audio/');
+    storagePath = parts[1]?.split('?')[0] || '';
+  }
+
+  // Si on a un chemin dans productions-audio
+  if (storagePath && !storagePath.startsWith('http://') && !storagePath.startsWith('https://')) {
+    try {
+      // 1. Tenter URL signée (valable 2h)
+      const { data: signedData, error: signedError } = await supabase.storage
+        .from('productions-audio')
+        .createSignedUrl(storagePath, 7200);
+
+      if (!signedError && signedData?.signedUrl) {
+        return signedData.signedUrl;
+      }
+    } catch (err) {
+      console.warn('Erreur createSignedUrl:', err);
+    }
+
+    try {
+      // 2. Tenter le téléchargement direct du blob avec le client Supabase
+      const { data: blob, error: downloadError } = await supabase.storage
+        .from('productions-audio')
+        .download(storagePath);
+
+      if (!downloadError && blob) {
+        return URL.createObjectURL(blob);
+      }
+    } catch (err) {
+      console.warn('Erreur download blob productions-audio:', err);
+    }
+
+    // 3. Fallback URL publique
+    const { data: publicData } = supabase.storage
+      .from('productions-audio')
+      .getPublicUrl(storagePath);
+    if (publicData?.publicUrl) {
+      return publicData.publicUrl;
+    }
+  }
+
+  return trimmed;
+}
+
+/**
+ * Télécharge le fichier audio en mémoire et renvoie un ObjectURL local.
+ * Utilisé comme secours infaillible si le tag <audio> déclenche une erreur.
+ */
+export async function fetchAudioBlobUrl(rawUrlOrPath: string): Promise<string | null> {
+  if (!rawUrlOrPath) return null;
+  let storagePath = rawUrlOrPath.trim();
+  if (storagePath.includes('/productions-audio/')) {
+    const parts = storagePath.split('/productions-audio/');
+    storagePath = parts[1]?.split('?')[0] || '';
+  }
+  if (!storagePath || storagePath.startsWith('http')) {
+    try {
+      const res = await fetch(rawUrlOrPath);
+      if (res.ok) {
+        const blob = await res.blob();
+        return URL.createObjectURL(blob);
+      }
+    } catch {
+      return null;
+    }
+  }
+
+  try {
+    const { data: blob, error } = await supabase.storage
+      .from('productions-audio')
+      .download(storagePath);
+    if (!error && blob) {
+      return URL.createObjectURL(blob);
+    }
+  } catch (err) {
+    console.error('Erreur fetchAudioBlobUrl:', err);
+  }
+  return null;
+}

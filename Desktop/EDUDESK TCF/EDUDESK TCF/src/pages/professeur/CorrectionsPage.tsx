@@ -1,13 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { supabase } from '@/db/supabase';
 import { useAuth } from '@/contexts/AuthContext';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { Input } from '@/components/ui/input';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { ClipboardList, CheckCircle, FileText, Mic, User } from 'lucide-react';
+import { ClipboardList, CheckCircle, FileText, Mic, User, RefreshCw, Search, Clock, Sparkles } from 'lucide-react';
 import type { Production, Profile, NiveauCECRL } from '@/types/index';
 import {
   pctToCECRL,
@@ -17,7 +18,7 @@ import {
   scoreEoToCECRLLabel,
   CECRL_COLORS,
   CECRL_DESCRIPTIONS,
-  EPREUVE_LABELS
+  EPREUVE_LABELS,
 } from '@/types/index';
 import { cn } from '@/lib/utils';
 
@@ -70,11 +71,15 @@ export default function CorrectionsPage() {
   const [pendingGroups, setPendingGroups] = useState<SessionGroup[]>([]);
   const [pendingCount, setPendingCount] = useState(0);
   const [loading, setLoading] = useState(true);
+  const [refreshing, setRefreshing] = useState(false);
+  const [search, setSearch] = useState('');
   const [activeTab, setActiveTab] = useState<'tout' | 'examen_blanc' | 'entrainement'>('tout');
 
-  useEffect(() => {
+  const loadData = useCallback(async (isSilent = false) => {
     if (!user) return;
-    const loadData = async () => {
+    if (!isSilent) setRefreshing(true);
+
+    try {
       // 1. Charger toutes les productions en attente accessibles
       const { data, error } = await supabase
         .from('productions')
@@ -111,20 +116,53 @@ export default function CorrectionsPage() {
       }
 
       const groups = groupBySession(all);
-      groups.sort((a, b) => new Date(a.sessionDate).getTime() - new Date(b.sessionDate).getTime());
+      // Tri du plus récent au plus ancien (nouveaux sujets en haut !)
+      groups.sort((a, b) => new Date(b.sessionDate).getTime() - new Date(a.sessionDate).getTime());
+
       setPendingGroups(groups);
       setPendingCount(all.length);
+    } catch (err) {
+      console.error('Erreur chargement file de corrections:', err);
+    } finally {
       setLoading(false);
-    };
-
-    loadData();
+      setRefreshing(false);
+    }
   }, [user]);
 
-  // Filtrer selon l'onglet actif
+  useEffect(() => {
+    if (!user) return;
+    loadData();
+
+    // Abonnement temps réel aux nouvelles productions et modifications
+    const channel = supabase
+      .channel('prof-corrections-live')
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'productions' }, () => {
+        loadData(true);
+      })
+      .subscribe();
+
+    // Rafraîchissement automatique toutes les 15 secondes
+    const interval = setInterval(() => {
+      loadData(true);
+    }, 15000);
+
+    return () => {
+      supabase.removeChannel(channel);
+      clearInterval(interval);
+    };
+  }, [user, loadData]);
+
+  // Filtrer selon l'onglet actif et la recherche
   const filteredGroups = pendingGroups.filter(sg => {
-    if (activeTab === 'tout') return true;
-    if (activeTab === 'examen_blanc') return sg.sessionMode === 'examen_blanc';
-    if (activeTab === 'entrainement') return sg.sessionMode === 'entrainement' || sg.sessionMode === null;
+    if (activeTab === 'examen_blanc' && sg.sessionMode !== 'examen_blanc') return false;
+    if (activeTab === 'entrainement' && sg.sessionMode !== 'entrainement' && sg.sessionMode !== null) return false;
+
+    if (search.trim()) {
+      const q = search.toLowerCase();
+      const nomComplet = `${sg.etudiant?.prenom || ''} ${sg.etudiant?.nom || ''}`.toLowerCase();
+      const email = (sg.etudiant?.email || '').toLowerCase();
+      return nomComplet.includes(q) || email.includes(q);
+    }
     return true;
   });
 
@@ -134,17 +172,28 @@ export default function CorrectionsPage() {
     entrainement: pendingGroups.filter(g => g.sessionMode === 'entrainement' || g.sessionMode === null).length,
   };
 
+  const isRecent = (dateStr: string) => {
+    const diffHours = (Date.now() - new Date(dateStr).getTime()) / (1000 * 60 * 60);
+    return diffHours < 24;
+  };
+
   const renderSessionGroup = (sg: SessionGroup) => {
     const totalTaches = sg.epreuves.reduce((n, eg) => n + eg.productions.length, 0);
+    const recent = isRecent(sg.sessionDate);
 
     return (
-      <Card key={sg.sessionId} className="h-full border-border shadow-sm">
+      <Card key={sg.sessionId} className={cn('h-full border-border shadow-sm transition-all', recent && 'border-primary/30 ring-1 ring-primary/20')}>
         <CardHeader className="pb-3 border-b border-border/50 bg-muted/20">
           <div className="flex items-start justify-between gap-3 flex-wrap">
             <div className="min-w-0 flex-1">
               <CardTitle className="text-base font-bold text-foreground text-balance flex items-center gap-2">
                 <User className="w-4 h-4 text-primary shrink-0" />
                 <span>{sg.etudiant?.prenom || 'Étudiant'} {sg.etudiant?.nom || ''}</span>
+                {recent && (
+                  <Badge className="bg-emerald-600 text-white text-[10px] py-0 h-4 gap-1">
+                    <Sparkles className="w-2.5 h-2.5" /> Nouveau
+                  </Badge>
+                )}
               </CardTitle>
               <div className="flex items-center gap-2 mt-1 flex-wrap">
                 <Badge className={cn('text-xs py-0 h-4 shrink-0 font-medium',
@@ -152,9 +201,16 @@ export default function CorrectionsPage() {
                 )}>
                   {sg.sessionMode === 'examen_blanc' ? 'Examen blanc' : 'Entraînement'}
                 </Badge>
-                <p className="text-xs text-muted-foreground">
-                  Séance du{' '}
-                  {new Date(sg.sessionDate).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}
+                <p className="text-xs text-muted-foreground flex items-center gap-1">
+                  <Clock className="w-3 h-3" />
+                  Soumis le{' '}
+                  {new Date(sg.sessionDate).toLocaleDateString('fr-FR', {
+                    day: 'numeric',
+                    month: 'short',
+                    year: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                  })}
                   {' · '}{totalTaches} tâche{totalTaches > 1 ? 's' : ''}
                 </p>
               </div>
@@ -189,7 +245,7 @@ export default function CorrectionsPage() {
                     : <Mic className="w-3.5 h-3.5 text-primary shrink-0" />
                   }
                   <span className="text-xs font-semibold text-foreground">
-                    {EPREUVE_LABELS[eg.epreuve as keyof typeof EPREUVE_LABELS]}
+                    {EPREUVE_LABELS[eg.epreuve as keyof typeof EPREUVE_LABELS] || eg.epreuve}
                   </span>
                   {niveauEpreuveCode && niveauEpreuveLabel && (
                     <Badge style={{ backgroundColor: CECRL_COLORS[niveauEpreuveCode] }} className="text-white text-xs py-0 h-4">
@@ -246,38 +302,62 @@ export default function CorrectionsPage() {
 
   return (
     <div className="max-w-4xl mx-auto space-y-6 fade-in pb-12">
-      <div>
-        <h1 className="text-2xl font-bold text-foreground text-balance">File de corrections</h1>
-        <p className="text-muted-foreground mt-1">
-          {loading ? '—' : pendingCount} tâche{pendingCount !== 1 ? 's' : ''} en attente de notation
-        </p>
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <h1 className="text-2xl font-bold text-foreground text-balance">File de corrections</h1>
+          <p className="text-muted-foreground mt-1">
+            {loading ? '—' : pendingCount} tâche{pendingCount !== 1 ? 's' : ''} en attente réparties sur {loading ? '—' : pendingGroups.length} séance{pendingGroups.length !== 1 ? 's' : ''}
+          </p>
+        </div>
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={() => loadData()}
+          disabled={refreshing}
+          className="self-start sm:self-center gap-2"
+        >
+          <RefreshCw className={`w-3.5 h-3.5 ${refreshing ? 'animate-spin' : ''}`} />
+          <span>Actualiser</span>
+        </Button>
       </div>
 
-      {/* Onglets de filtrage */}
-      {!loading && (
-        <Tabs value={activeTab} onValueChange={v => setActiveTab(v as typeof activeTab)}>
-          <TabsList className="w-full">
-            <TabsTrigger value="tout" className="flex-1 gap-1.5">
-              Tout
-              {countByMode.tout > 0 && (
-                <Badge variant="secondary" className="text-xs h-4 py-0 px-1.5">{countByMode.tout}</Badge>
-              )}
-            </TabsTrigger>
-            <TabsTrigger value="examen_blanc" className="flex-1 gap-1.5">
-              Examens blancs
-              {countByMode.examen_blanc > 0 && (
-                <Badge variant="secondary" className="text-xs h-4 py-0 px-1.5">{countByMode.examen_blanc}</Badge>
-              )}
-            </TabsTrigger>
-            <TabsTrigger value="entrainement" className="flex-1 gap-1.5">
-              Entraînements
-              {countByMode.entrainement > 0 && (
-                <Badge variant="secondary" className="text-xs h-4 py-0 px-1.5">{countByMode.entrainement}</Badge>
-              )}
-            </TabsTrigger>
-          </TabsList>
-        </Tabs>
-      )}
+      {/* Barre de recherche et onglets */}
+      <div className="space-y-3">
+        <div className="relative">
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+          <Input
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+            placeholder="Rechercher un étudiant par nom, prénom ou email..."
+            className="pl-9"
+          />
+        </div>
+
+        {!loading && (
+          <Tabs value={activeTab} onValueChange={v => setActiveTab(v as typeof activeTab)}>
+            <TabsList className="w-full">
+              <TabsTrigger value="tout" className="flex-1 gap-1.5">
+                Tout
+                {countByMode.tout > 0 && (
+                  <Badge variant="secondary" className="text-xs h-4 py-0 px-1.5">{countByMode.tout}</Badge>
+                )}
+              </TabsTrigger>
+              <TabsTrigger value="examen_blanc" className="flex-1 gap-1.5">
+                Examens blancs
+                {countByMode.examen_blanc > 0 && (
+                  <Badge variant="secondary" className="text-xs h-4 py-0 px-1.5">{countByMode.examen_blanc}</Badge>
+                )}
+              </TabsTrigger>
+              <TabsTrigger value="entrainement" className="flex-1 gap-1.5">
+                Entraînements
+                {countByMode.entrainement > 0 && (
+                  <Badge variant="secondary" className="text-xs h-4 py-0 px-1.5">{countByMode.entrainement}</Badge>
+                )}
+              </TabsTrigger>
+            </TabsList>
+          </Tabs>
+        )}
+      </div>
 
       {loading ? (
         <div className="space-y-3">{[1, 2, 3].map(i => <Skeleton key={i} className="h-24 w-full bg-muted" />)}</div>
@@ -286,9 +366,11 @@ export default function CorrectionsPage() {
           <CardContent className="p-12 text-center">
             <CheckCircle className="w-12 h-12 text-success/30 mx-auto mb-4" />
             <p className="text-muted-foreground">
-              {activeTab === 'tout'
+              {search.trim()
+                ? 'Aucune correction trouvée pour cette recherche.'
+                : activeTab === 'tout'
                 ? 'Aucune correction en attente. Excellent travail !'
-                : `Aucune correction en attente pour cette catégorie.`}
+                : 'Aucune correction en attente pour cette catégorie.'}
             </p>
           </CardContent>
         </Card>

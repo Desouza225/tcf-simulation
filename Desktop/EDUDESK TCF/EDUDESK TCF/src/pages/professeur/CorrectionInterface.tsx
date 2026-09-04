@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback, useRef } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { supabase } from '@/db/supabase';
 import { useAuth } from '@/contexts/AuthContext';
+import { resolvePlayableAudioUrl, fetchAudioBlobUrl, getAudioClaritySetting, attachAudioClarityProcessor } from '@/lib/audioProcessing';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -18,7 +19,7 @@ import {
   Play, Pause, Loader2, ChevronLeft, CheckCircle, Mic,
   BarChart2, XCircle, FileText, User, Clock, CheckCircle2,
   Volume2, FastForward, HelpCircle, Info, Sparkles, BookOpen,
-  Check, Award
+  Check, Award, Download, RotateCcw,
 } from 'lucide-react';
 import { toast } from 'sonner';
 import type { Production, Profile, NiveauCECRL } from '@/types/index';
@@ -212,11 +213,37 @@ function getWordTarget(numTache: number) {
 
 function AudioPlayerCorrection({ url, label }: { url: string; label?: string }) {
   const ref = useRef<HTMLAudioElement>(null);
+  const [playableUrl, setPlayableUrl] = useState<string>('');
+  const [loadingAudio, setLoadingAudio] = useState(true);
   const [playing, setPlaying] = useState(false);
   const [error, setError] = useState(false);
   const [playbackRate, setPlaybackRate] = useState<number>(1);
   const [duration, setDuration] = useState<number>(0);
   const [currentTime, setCurrentTime] = useState<number>(0);
+
+  // Résolution robuste de l'URL au montage ou changement d'URL
+  const initAudio = useCallback(async () => {
+    if (!url) {
+      setError(true);
+      setLoadingAudio(false);
+      return;
+    }
+    setLoadingAudio(true);
+    setError(false);
+    try {
+      const resolved = await resolvePlayableAudioUrl(url);
+      setPlayableUrl(resolved || url);
+    } catch (err) {
+      console.warn('Erreur resolvePlayableAudioUrl:', err);
+      setPlayableUrl(url);
+    } finally {
+      setLoadingAudio(false);
+    }
+  }, [url]);
+
+  useEffect(() => {
+    initAudio();
+  }, [initAudio]);
 
   const toggleRate = () => {
     const rates = [1, 1.25, 1.5];
@@ -226,6 +253,40 @@ function AudioPlayerCorrection({ url, label }: { url: string; label?: string }) 
     if (ref.current) ref.current.playbackRate = nextRate;
   };
 
+  const handleTogglePlay = async () => {
+    if (!ref.current) return;
+    if (playing) {
+      ref.current.pause();
+      setPlaying(false);
+    } else {
+      try {
+        const clarityEnabled = await getAudioClaritySetting();
+        attachAudioClarityProcessor(ref.current, clarityEnabled);
+        await ref.current.play();
+        setPlaying(true);
+      } catch (err) {
+        console.warn('Erreur play:', err);
+      }
+    }
+  };
+
+  // En cas d'erreur de lecture directe sur <audio>, tentative de secours immédiat via téléchargement binaire du blob
+  const handleAudioError = async () => {
+    console.warn('Erreur de lecture audio standard, tentative de secours via téléchargement binaire...');
+    try {
+      const blobUrl = await fetchAudioBlobUrl(url);
+      if (blobUrl && blobUrl !== playableUrl) {
+        setPlayableUrl(blobUrl);
+        setError(false);
+        return;
+      }
+    } catch (err) {
+      console.error('Échec du fallback audio:', err);
+    }
+    setError(true);
+    setPlaying(false);
+  };
+
   const formatTime = (secs: number) => {
     const m = Math.floor(secs / 60);
     const s = Math.floor(secs % 60);
@@ -233,28 +294,33 @@ function AudioPlayerCorrection({ url, label }: { url: string; label?: string }) 
   };
 
   return (
-    <div className="flex flex-col gap-2 p-4 bg-muted/60 border border-border rounded-xl">
+    <div className="flex flex-col gap-3 p-4 bg-muted/60 border border-border rounded-xl">
       <div className="flex items-center gap-3">
         <button
-          onClick={() => {
-            if (ref.current) {
-              playing ? ref.current.pause() : ref.current.play();
-              setPlaying(!playing);
-            }
-          }}
-          disabled={error}
+          onClick={handleTogglePlay}
+          disabled={error || loadingAudio || !playableUrl}
           className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground shrink-0 shadow-sm hover:opacity-90 transition-opacity disabled:opacity-40"
         >
-          {playing ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5 ml-0.5" />}
+          {loadingAudio ? (
+            <Loader2 className="w-4 h-4 animate-spin" />
+          ) : playing ? (
+            <Pause className="w-5 h-5" />
+          ) : (
+            <Play className="w-5 h-5 ml-0.5" />
+          )}
         </button>
 
         <div className="flex-1 min-w-0">
           <div className="flex items-center justify-between text-xs text-muted-foreground mb-1">
-            <span className="font-medium text-foreground flex items-center gap-1.5">
-              <Volume2 className="w-3.5 h-3.5 text-primary" />
-              {error ? '⚠ Enregistrement indisponible' : (label || 'Enregistrement audio du candidat')}
+            <span className="font-medium text-foreground flex items-center gap-1.5 truncate">
+              <Volume2 className="w-3.5 h-3.5 text-primary shrink-0" />
+              {loadingAudio
+                ? 'Chargement de l\'audio...'
+                : error
+                ? '⚠ Échec de lecture directe'
+                : (label || 'Enregistrement audio du candidat')}
             </span>
-            <span>
+            <span className="shrink-0 font-mono">
               {formatTime(currentTime)} / {duration > 0 ? formatTime(duration) : '--:--'}
             </span>
           </div>
@@ -264,36 +330,91 @@ function AudioPlayerCorrection({ url, label }: { url: string; label?: string }) 
             min={0}
             max={duration || 100}
             value={currentTime}
+            disabled={error || loadingAudio}
             onChange={e => {
               const val = Number(e.target.value);
               setCurrentTime(val);
               if (ref.current) ref.current.currentTime = val;
             }}
-            className="w-full h-1.5 bg-muted-foreground/20 rounded-lg appearance-none cursor-pointer accent-primary"
+            className="w-full h-1.5 bg-muted-foreground/20 rounded-lg appearance-none cursor-pointer accent-primary disabled:opacity-40"
           />
         </div>
 
-        <Button
-          type="button"
-          variant="outline"
-          size="sm"
-          onClick={toggleRate}
-          className="h-8 px-2 text-xs font-mono shrink-0 gap-1 border-border"
-          title="Modifier la vitesse de lecture"
-        >
-          <FastForward className="w-3 h-3" />
-          {playbackRate}x
-        </Button>
+        <div className="flex items-center gap-1 shrink-0">
+          <Button
+            type="button"
+            variant="outline"
+            size="sm"
+            onClick={toggleRate}
+            disabled={error || loadingAudio}
+            className="h-8 px-2 text-xs font-mono shrink-0 gap-1 border-border"
+            title="Modifier la vitesse de lecture"
+          >
+            <FastForward className="w-3 h-3" />
+            {playbackRate}x
+          </Button>
+
+          {playableUrl && (
+            <Button
+              type="button"
+              variant="ghost"
+              size="sm"
+              asChild
+              className="h-8 px-2 text-xs shrink-0 text-muted-foreground hover:text-foreground"
+              title="Télécharger / Ouvrir l'audio"
+            >
+              <a href={playableUrl} target="_blank" rel="noreferrer" download={`enregistrement_${Date.now()}.webm`}>
+                <Download className="w-3.5 h-3.5" />
+              </a>
+            </Button>
+          )}
+        </div>
       </div>
 
-      <audio
-        ref={ref}
-        src={url}
-        onLoadedMetadata={e => setDuration(e.currentTarget.duration || 0)}
-        onTimeUpdate={e => setCurrentTime(e.currentTarget.currentTime || 0)}
-        onEnded={() => setPlaying(false)}
-        onError={() => { setError(true); setPlaying(false); }}
-      />
+      {error && (
+        <div className="flex items-center justify-between gap-3 p-2.5 bg-destructive/10 border border-destructive/20 rounded-lg text-xs text-destructive">
+          <span>Impossible de lire l'audio directement dans le navigateur.</span>
+          <div className="flex items-center gap-2 shrink-0">
+            <Button
+              type="button"
+              size="sm"
+              variant="outline"
+              onClick={() => handleAudioError()}
+              className="h-7 text-xs gap-1 border-destructive/30 hover:bg-destructive/15"
+            >
+              <RotateCcw className="w-3 h-3" /> Réessayer
+            </Button>
+            {playableUrl && (
+              <Button
+                type="button"
+                size="sm"
+                variant="default"
+                asChild
+                className="h-7 text-xs gap-1"
+              >
+                <a href={playableUrl} target="_blank" rel="noreferrer" download>
+                  <Download className="w-3 h-3" /> Télécharger
+                </a>
+              </Button>
+            )}
+          </div>
+        </div>
+      )}
+
+      {playableUrl && (
+        <audio
+          ref={ref}
+          src={playableUrl}
+          crossOrigin="anonymous"
+          onLoadedMetadata={e => {
+            setError(false);
+            setDuration(e.currentTarget.duration || 0);
+          }}
+          onTimeUpdate={e => setCurrentTime(e.currentTarget.currentTime || 0)}
+          onEnded={() => setPlaying(false)}
+          onError={handleAudioError}
+        />
+      )}
     </div>
   );
 }
