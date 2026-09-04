@@ -27,14 +27,22 @@ function normalizeChoix(raw: unknown): ChoixReponse[] | null {
 }
 
 /**
- * Déduplique strictement une liste de questions par ID, Audio URL, Référence et Contenu.
- * Garantit qu'un candidat ne pourra JAMAIS avoir la même question ou le même audio dans une session.
+ * Déduplique strictement une liste de questions par :
+ * 1. ID unique
+ * 2. URL Audio (Compréhension Orale)
+ * 3. Choix / Propositions textuelles (qui identifient une question répétée entre différents tests sous des numéros différents)
+ * 4. Référence unique
+ * 5. Texte / Énoncé complet (pour Compréhension Écrite ou questions sans audio)
+ *
+ * Garantit qu'un candidat ne pourra JAMAIS avoir deux fois la même question ou le même document sonore,
+ * même si les questions proviennent de différentes séries/tests dans le pack importé.
  */
 export function deduplicateQuestions<T extends Partial<Question>>(questions: T[]): T[] {
   const seenIds = new Set<string>();
   const seenAudios = new Set<string>();
   const seenRefs = new Set<string>();
-  const seenContents = new Set<string>();
+  const seenTexts = new Set<string>();
+  const seenChoices = new Set<string>();
   const result: T[] = [];
 
   for (const q of questions) {
@@ -53,18 +61,36 @@ export function deduplicateQuestions<T extends Partial<Question>>(questions: T[]
       seenAudios.add(cleanAudio);
     }
 
-    // 3. Déduplication par Référence
+    // 3. Déduplication par propositions / choix textuels (pour les questions répétées entre séries de tests)
+    // Ne pas dédupliquer si les choix sont simplement ['A', 'B', 'C', 'D'] (ex: images Q1-Q4)
+    if (q.choix && Array.isArray(q.choix) && q.choix.length > 0) {
+      const firstText = (q.choix[0]?.texte || '').trim();
+      const isSimpleABCD = firstText.length === 1 || ['A', 'B', 'C', 'D'].includes(firstText);
+      if (!isSimpleABCD) {
+        const choiceKey = q.choix
+          .map(c => `${c.id}:${(c.texte || '').trim().toLowerCase()}`)
+          .join('|');
+        if (seenChoices.has(choiceKey)) continue;
+        seenChoices.add(choiceKey);
+      }
+    }
+
+    // 4. Déduplication par Référence exacte
     if (q.reference && typeof q.reference === 'string' && q.reference.trim().length > 0) {
       const cleanRef = q.reference.trim().toLowerCase();
       if (seenRefs.has(cleanRef)) continue;
       seenRefs.add(cleanRef);
     }
 
-    // 4. Déduplication par Contenu texte + choix (pour questions sans audio ou CE)
-    if (q.texte && typeof q.texte === 'string' && q.texte.trim().length > 15) {
-      const cleanContent = (q.texte.trim().toLowerCase() + '::' + JSON.stringify(q.choix || '')).replace(/\s+/g, ' ');
-      if (seenContents.has(cleanContent)) continue;
-      seenContents.add(cleanContent);
+    // 5. Déduplication par Texte complet UNIQUEMENT pour les questions sans audio (Compréhension Écrite)
+    // Ne PAS utiliser sur la CO car la consigne est générique ("Écoutez le document...")
+    const hasAudio = !!(q.audio_url && typeof q.audio_url === 'string' && q.audio_url.trim().length > 0);
+    if (!hasAudio && q.texte && typeof q.texte === 'string') {
+      const cleanText = q.texte.trim().toLowerCase().replace(/\s+/g, ' ');
+      if (cleanText.length > 30) {
+        if (seenTexts.has(cleanText)) continue;
+        seenTexts.add(cleanText);
+      }
     }
 
     result.push(q);
