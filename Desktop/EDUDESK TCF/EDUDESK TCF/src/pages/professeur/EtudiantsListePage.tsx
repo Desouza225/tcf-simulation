@@ -346,8 +346,8 @@ export default function EtudiantsListePage() {
         <div className="space-y-3">
           {etudiants.map(({
             profile, sessions, sessionsTotal, examsBlancs,
-            correctionsEnAttente, dernierScore, dernierNiveau,
-            scoreMoyen, progression, niveauGlobal, parEpreuve,
+            correctionsEnAttente, dernierScore, dernierScoreMode, dernierNiveau,
+            scoreMoyen, progression, niveauGlobal, parEpreuve, dernieresNotes,
           }) => {
             const isExpanded = expanded === profile.id;
             const examActif = profile.examen_blanc_actif;

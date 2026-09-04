@@ -307,7 +307,11 @@ export default function SuiviEtudiantsPage() {
         </Card>
       ) : (
         <div className="space-y-2">
-          {filtered.map(({ profile, professeur, sessions, sessionsTotal, examsBlancs, correctionsEnAttente, dernierScore, dernierNiveau, scoreMoyen, progression, niveauGlobal, parEpreuve }) => {
+          {filtered.map(({
+            profile, professeur, sessions, sessionsTotal, examsBlancs,
+            correctionsEnAttente, dernierScore, dernierScoreMode, dernierNiveau,
+            scoreMoyen, progression, niveauGlobal, parEpreuve, dernieresNotes,
+          }) => {
             const isExpanded = expanded === profile.id;
             const examActif = profile.examen_blanc_actif;
 
