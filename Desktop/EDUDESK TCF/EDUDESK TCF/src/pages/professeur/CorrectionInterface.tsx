@@ -275,161 +275,201 @@ export default function CorrectionInterface() {
     : null;
 
   const loadSessionProductions = useCallback(async (sessionId: string, epreuve: string) => {
-    const { data } = await supabase
-      .from('productions')
-      .select('*')
-      .eq('session_id', sessionId)
-      .eq('epreuve', epreuve)
-      .order('numero_tache');
-    setSessionProductions(Array.isArray(data) ? data : []);
+    try {
+      const { data } = await supabase
+        .from('productions')
+        .select('*')
+        .eq('session_id', sessionId)
+        .eq('epreuve', epreuve)
+        .order('numero_tache', { ascending: true });
+      if (data) setSessionProductions(data);
+    } catch (e) {
+      console.warn('Erreur loadSessionProductions:', e);
+    }
   }, []);
 
   useEffect(() => {
     if (!id) return;
     const load = async () => {
-      let prodData: any = null;
-      const { data: prod, error: prodErr } = await supabase
-        .from('productions')
-        .select('*, etudiant:profiles!etudiant_id(*), session:sessions_examen!session_id(id, created_at, mode, duree_expression_ecrite)')
-        .eq('id', id)
-        .maybeSingle();
-
-      if (prodErr || !prod) {
-        const { data: rawProd } = await supabase
+      setLoading(true);
+      try {
+        let prodData: any = null;
+        const { data: prod, error: prodErr } = await supabase
           .from('productions')
-          .select('*')
+          .select('*, etudiant:profiles!etudiant_id(*), session:sessions_examen!session_id(id, created_at, mode, duree_expression_ecrite)')
           .eq('id', id)
           .maybeSingle();
-        if (rawProd) {
-          const [etudRes, sessRes] = await Promise.all([
-            rawProd.etudiant_id ? supabase.from('profiles').select('*').eq('id', rawProd.etudiant_id).maybeSingle() : Promise.resolve({ data: null }),
-            rawProd.session_id ? supabase.from('sessions_examen').select('id, created_at, mode, duree_expression_ecrite').eq('id', rawProd.session_id).maybeSingle() : Promise.resolve({ data: null }),
-          ]);
-          prodData = {
-            ...rawProd,
-            etudiant: etudRes.data,
-            session: sessRes.data,
-          };
-        }
-      } else {
-        prodData = prod;
-      }
 
-      setProduction(prodData);
-      if (prodData?.etudiant) setEtudiant(prodData.etudiant as unknown as Profile);
-      if (prodData?.grille_notation) setNotes(prodData.grille_notation as Record<string, number>);
-      if (prodData?.commentaire) setCommentaire(prodData.commentaire);
-      if (prodData?.raison_refus) setRaisonRefus(prodData.raison_refus);
-
-      if (prodData?.epreuve === 'expression_ecrite') {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        setDureeEE((prodData as any).session?.duree_expression_ecrite ?? null);
-      }
-
-      // ─── Chargement du sujet exact de la tâche ─────────────────────────────
-      if (prodData?.epreuve && prodData?.numero_tache) {
-        const epreuve = prodData.epreuve;
-        const numTache = prodData.numero_tache;
-        const ref = prodData.reference;
-
-        let foundTache: { consigne: string; duree_secondes: number | null; reference?: string | null } | null = null;
-
-        // 1. Chercher par référence dans `taches`
-        if (ref) {
-          const { data: tByRef } = await supabase
-            .from('taches')
-            .select('consigne, duree_secondes, reference')
-            .eq('epreuve', epreuve)
-            .eq('reference', ref)
-            .limit(1)
+        if (prodErr || !prod) {
+          const { data: rawProd } = await supabase
+            .from('productions')
+            .select('*')
+            .eq('id', id)
             .maybeSingle();
-
-          if (tByRef?.consigne) {
-            foundTache = tByRef;
-          } else {
-            // Chercher dans `questions` par reference
-            const { data: qByRef } = await supabase
-              .from('questions')
-              .select('texte, reference')
-              .eq('epreuve', epreuve)
-              .eq('reference', ref)
-              .limit(1)
-              .maybeSingle();
-
-            if (qByRef?.texte) {
-              foundTache = { consigne: qByRef.texte, duree_secondes: null, reference: qByRef.reference || ref };
-            }
-          }
-        }
-
-        // 2. Si non trouvé par référence, chercher par epreuve + numero_tache
-        if (!foundTache) {
-          const { data: tByNum } = await supabase
-            .from('taches')
-            .select('consigne, duree_secondes, reference')
-            .eq('epreuve', epreuve)
-            .eq('numero_tache', numTache)
-            .eq('actif', true)
-            .limit(1);
-
-          if (Array.isArray(tByNum) && tByNum.length > 0 && tByNum[0].consigne) {
-            foundTache = tByNum[0];
-          } else {
-            const { data: qByNum } = await supabase
-              .from('questions')
-              .select('texte, reference')
-              .eq('epreuve', epreuve)
-              .in('tache', [`tache_${numTache}`, String(numTache)])
-              .limit(1);
-
-            if (Array.isArray(qByNum) && qByNum.length > 0 && qByNum[0].texte) {
-              foundTache = { consigne: qByNum[0].texte, duree_secondes: null, reference: qByNum[0].reference || null };
-            }
-          }
-        }
-
-        // 3. Fallback officiel
-        if (!foundTache) {
-          if (epreuve === 'expression_ecrite') {
-            if (numTache === 1) {
-              foundTache = {
-                consigne: "Tâche 1 — Rédaction d'un message / courriel (60 à 120 mots)\nRédigez un message court pour transmettre des informations, donner des nouvelles ou inviter une personne.",
-                duree_secondes: null,
-                reference: ref || 'EE_T1',
-              };
-            } else if (numTache === 2) {
-              foundTache = {
-                consigne: "Tâche 2 — Article ou lettre de compte-rendu (120 à 150 mots)\nRacontez une expérience vécue, décrivez un événement et donnez vos impressions ou recommandations.",
-                duree_secondes: null,
-                reference: ref || 'EE_T2',
-              };
-            } else {
-              foundTache = {
-                consigne: "Tâche 3 — Synthèse de deux documents d'opinion et prise de position argumentée (120 à 180 mots)\n1. Première partie : Dégagez le problème commun et présentez les opinions exprimées dans chacun des documents.\n2. Seconde partie : Prenez position sur le sujet en argumentant avec des exemples personnels.",
-                duree_secondes: null,
-                reference: ref || 'EE_T3',
-              };
-            }
-          } else {
-            foundTache = {
-              consigne: numTache === 1
-                ? "Tâche 1 — Entretien sans préparation (environ 2 minutes)\nPrésentez-vous, parlez de votre quotidien, de vos activités et de vos projets personnels ou professionnels."
-                : numTache === 2
-                  ? "Tâche 2 — Exercice en interaction (2 min préparation • 3 min 30 échange)\nPosez une dizaine de questions à votre examinateur pour obtenir des renseignements détaillés."
-                  : "Tâche 3 — Expression d'un point de vue (environ 4 minutes 30)\nPrésentez votre point de vue argumenté et illustré sur le thème de société proposé.",
-              duree_secondes: numTache === 1 ? 120 : numTache === 2 ? 330 : 270,
-              reference: ref || `EO_T${numTache}`,
+          if (rawProd) {
+            const [etudRes, sessRes] = await Promise.all([
+              rawProd.etudiant_id ? supabase.from('profiles').select('*').eq('id', rawProd.etudiant_id).maybeSingle() : Promise.resolve({ data: null }),
+              rawProd.session_id ? supabase.from('sessions_examen').select('id, created_at, mode, duree_expression_ecrite').eq('id', rawProd.session_id).maybeSingle() : Promise.resolve({ data: null }),
+            ]);
+            prodData = {
+              ...rawProd,
+              etudiant: etudRes.data,
+              session: sessRes.data,
             };
           }
+        } else {
+          prodData = prod;
         }
 
-        setTache(foundTache);
-      }
+        setProduction(prodData);
+        if (prodData?.etudiant) setEtudiant(prodData.etudiant as unknown as Profile);
 
-      if (prodData?.session_id && prodData?.epreuve) {
-        await loadSessionProductions(prodData.session_id, prodData.epreuve);
+        if (prodData?.grille_notation) {
+          try {
+            const parsed = typeof prodData.grille_notation === 'string'
+              ? JSON.parse(prodData.grille_notation)
+              : prodData.grille_notation;
+            if (parsed && typeof parsed === 'object' && !Array.isArray(parsed)) {
+              const cleanNotes: Record<string, number> = {};
+              Object.entries(parsed).forEach(([k, v]) => {
+                const num = Number(v);
+                if (!isNaN(num)) cleanNotes[k] = num;
+              });
+              setNotes(cleanNotes);
+            }
+          } catch (e) {
+            console.warn('Erreur lecture grille_notation:', e);
+          }
+        }
+
+        if (prodData?.commentaire) setCommentaire(prodData.commentaire);
+        if (prodData?.raison_refus) setRaisonRefus(prodData.raison_refus);
+
+        if (prodData?.epreuve === 'expression_ecrite') {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          setDureeEE((prodData as any).session?.duree_expression_ecrite ?? null);
+        }
+
+        // ─── Chargement du sujet exact de la tâche ─────────────────────────────
+        if (prodData?.epreuve && prodData?.numero_tache) {
+          const epreuve = prodData.epreuve;
+          const numTache = prodData.numero_tache;
+          const ref = prodData.reference;
+
+          let foundTache: { consigne: string; duree_secondes: number | null; reference?: string | null } | null = null;
+
+          // 1. Chercher par référence dans `taches`
+          if (ref) {
+            try {
+              const { data: tByRef } = await supabase
+                .from('taches')
+                .select('consigne, duree_secondes, reference')
+                .eq('epreuve', epreuve)
+                .eq('reference', ref)
+                .limit(1)
+                .maybeSingle();
+
+              if (tByRef?.consigne) {
+                foundTache = tByRef;
+              } else {
+                const { data: qByRef } = await supabase
+                  .from('questions')
+                  .select('texte, reference')
+                  .eq('epreuve', epreuve)
+                  .eq('reference', ref)
+                  .limit(1)
+                  .maybeSingle();
+
+                if (qByRef?.texte) {
+                  foundTache = { consigne: qByRef.texte, duree_secondes: null, reference: qByRef.reference || ref };
+                }
+              }
+            } catch (e) {
+              console.warn('Erreur recherche tache par reference:', e);
+            }
+          }
+
+          // 2. Si non trouvé par référence, chercher par epreuve + numero_tache
+          if (!foundTache) {
+            try {
+              const { data: tByNum } = await supabase
+                .from('taches')
+                .select('consigne, duree_secondes, reference')
+                .eq('epreuve', epreuve)
+                .eq('numero_tache', numTache)
+                .eq('actif', true)
+                .limit(1);
+
+              if (Array.isArray(tByNum) && tByNum.length > 0 && tByNum[0].consigne) {
+                foundTache = tByNum[0];
+              } else {
+                const { data: qByNum } = await supabase
+                  .from('questions')
+                  .select('texte, reference')
+                  .eq('epreuve', epreuve)
+                  .in('tache', [`tache_${numTache}`, String(numTache)])
+                  .limit(1);
+
+                if (Array.isArray(qByNum) && qByNum.length > 0 && qByNum[0].texte) {
+                  foundTache = { consigne: qByNum[0].texte, duree_secondes: null, reference: qByNum[0].reference || null };
+                }
+              }
+            } catch (e) {
+              console.warn('Erreur recherche tache par numero:', e);
+            }
+          }
+
+          // 3. Fallback officiel
+          if (!foundTache) {
+            if (epreuve === 'expression_ecrite') {
+              if (numTache === 1) {
+                foundTache = {
+                  consigne: "Tâche 1 — Rédaction d'un message / courriel (60 à 120 mots)\nRédigez un message court pour transmettre des informations, donner des nouvelles ou inviter une personne.",
+                  duree_secondes: null,
+                  reference: ref || 'EE_T1',
+                };
+              } else if (numTache === 2) {
+                foundTache = {
+                  consigne: "Tâche 2 — Article ou lettre de compte-rendu (120 à 150 mots)\nRacontez une expérience vécue, décrivez un événement et donnez vos impressions ou recommandations.",
+                  duree_secondes: null,
+                  reference: ref || 'EE_T2',
+                };
+              } else {
+                foundTache = {
+                  consigne: "Tâche 3 — Synthèse de deux documents d'opinion et prise de position argumentée (120 à 180 mots)\n1. Première partie : Dégagez le problème commun et présentez les opinions exprimées dans chacun des documents.\n2. Seconde partie : Prenez position sur le sujet en argumentant avec des exemples personnels.",
+                  duree_secondes: null,
+                  reference: ref || 'EE_T3',
+                };
+              }
+            } else {
+              foundTache = {
+                consigne: numTache === 1
+                  ? "Tâche 1 — Entretien sans préparation (environ 2 minutes)\nPrésentez-vous, parlez de votre quotidien, de vos activités et de vos projets personnels ou professionnels."
+                  : numTache === 2
+                    ? "Tâche 2 — Exercice en interaction (2 min préparation • 3 min 30 échange)\nPosez une dizaine de questions à votre examinateur pour obtenir des renseignements détaillés."
+                    : "Tâche 3 — Expression d'un point de vue (environ 4 minutes 30)\nPrésentez votre point de vue argumenté et illustré sur le thème de société proposé.",
+                duree_secondes: numTache === 1 ? 120 : numTache === 2 ? 330 : 270,
+                reference: ref || `EO_T${numTache}`,
+              };
+            }
+          }
+
+          setTache(foundTache);
+        }
+
+        if (prodData?.session_id && prodData?.epreuve) {
+          try {
+            await loadSessionProductions(prodData.session_id, prodData.epreuve);
+          } catch (e) {
+            console.warn('Erreur chargement sessionProductions:', e);
+          }
+        }
+      } catch (err) {
+        console.error('Erreur chargement production interface:', err);
+        toast.error('Erreur lors du chargement de la correction.');
+      } finally {
+        setLoading(false);
       }
-      setLoading(false);
     };
     load();
   }, [id, loadSessionProductions]);
