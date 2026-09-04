@@ -7,7 +7,14 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 import type { SessionExamen, NiveauCECRL, Production } from '@/types/index';
-import { CECRL_COLORS, EPREUVE_LABELS, pctToCECRL, CECRL_DESCRIPTIONS } from '@/types/index';
+import {
+  CECRL_COLORS,
+  EPREUVE_LABELS,
+  pctToCECRL,
+  scoreEeToCECRL,
+  scoreEeToCECRLLabel,
+  CECRL_DESCRIPTIONS,
+} from '@/types/index';
 import { Trophy, TrendingUp, ChevronDown, ChevronUp, Clock, CheckCircle2, MessageSquare, FileText, Mic, BookOpen, GraduationCap } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -336,8 +343,16 @@ export default function HistoriquePage() {
                     const allDone = prods.every(p =>
                       p.statut_correction === 'corrige' || p.statut_correction === 'refuse'
                     );
-                    const niveauEpreuve = allDone && scored.length > 0
-                      ? pctToCECRL(Math.round((scored.reduce((s, p) => s + (p.score ?? 0), 0) / (max * scored.length)) * 100))
+                    const scoreMoyen = scored.length > 0 ? scored.reduce((s, p) => s + (p.score ?? 0), 0) / scored.length : 0;
+                    const niveauEpreuveCode: NiveauCECRL | null = allDone && scored.length > 0
+                      ? isEE
+                        ? scoreEeToCECRL(scoreMoyen)
+                        : pctToCECRL(Math.round((scored.reduce((s, p) => s + (p.score ?? 0), 0) / (max * scored.length)) * 100))
+                      : null;
+                    const niveauEpreuveLabel: string | null = allDone && scored.length > 0
+                      ? isEE
+                        ? scoreEeToCECRLLabel(scoreMoyen)
+                        : niveauEpreuveCode
                       : null;
                     return (
                       <div key={ep} className="space-y-2">
@@ -347,15 +362,22 @@ export default function HistoriquePage() {
                             : <Mic className="w-4 h-4 text-primary shrink-0" />
                           }
                           <span className="text-xs font-semibold text-foreground">{EPREUVE_LABELS[ep]}</span>
-                          {niveauEpreuve && (
-                            <Badge style={{ backgroundColor: CECRL_COLORS[niveauEpreuve] }} className="text-white text-xs py-0 h-4">
-                              {niveauEpreuve} — {CECRL_DESCRIPTIONS[niveauEpreuve]}
+                          {niveauEpreuveCode && niveauEpreuveLabel && (
+                            <Badge style={{ backgroundColor: CECRL_COLORS[niveauEpreuveCode] }} className="text-white text-xs py-0 h-4">
+                              {niveauEpreuveLabel} — {CECRL_DESCRIPTIONS[niveauEpreuveCode]}
                             </Badge>
                           )}
                         </div>
                         {prods.map(prod => {
-                          const niveau = prod.score !== null
-                            ? pctToCECRL(Math.round((prod.score / max) * 100))
+                          const niveauCode: NiveauCECRL | null = prod.score !== null
+                            ? isEE
+                              ? scoreEeToCECRL(prod.score)
+                              : pctToCECRL(Math.round((prod.score / max) * 100))
+                            : null;
+                          const niveauLabel: string | null = prod.score !== null
+                            ? isEE
+                              ? scoreEeToCECRLLabel(prod.score)
+                              : niveauCode
                             : null;
                           // Audio supprimé 10j après correction (audio_url null + prod corrigée expression orale)
                           const audioSupprime =
@@ -377,12 +399,12 @@ export default function HistoriquePage() {
                                   </div>
                                 ) : prod.score !== null && (
                                   <div className="flex items-center gap-1.5 shrink-0">
-                                    {niveau && (
-                                      <Badge style={{ backgroundColor: CECRL_COLORS[niveau] }} className="text-white text-xs py-0 h-4">
-                                        {niveau}
+                                    {niveauCode && niveauLabel && (
+                                      <Badge style={{ backgroundColor: CECRL_COLORS[niveauCode] }} className="text-white text-xs py-0 h-4 font-semibold">
+                                        {niveauLabel}
                                       </Badge>
                                     )}
-                                    <Badge variant="outline" className="text-xs shrink-0">
+                                    <Badge variant="outline" className="text-xs shrink-0 font-medium font-mono">
                                       {prod.score} / {max} pts
                                     </Badge>
                                   </div>

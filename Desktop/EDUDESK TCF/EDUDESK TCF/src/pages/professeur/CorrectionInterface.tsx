@@ -17,15 +17,23 @@ import {
 import {
   Play, Pause, Loader2, ChevronLeft, CheckCircle, Mic,
   BarChart2, XCircle, FileText, User, Clock, CheckCircle2,
-  Volume2, FastForward
+  Volume2, FastForward, HelpCircle, Info, Sparkles, BookOpen,
+  Check
 } from 'lucide-react';
 import { toast } from 'sonner';
 import type { Production, Profile, NiveauCECRL } from '@/types/index';
-import { pctToCECRL, CECRL_COLORS, CECRL_DESCRIPTIONS } from '@/types/index';
+import {
+  pctToCECRL,
+  scoreEeToCECRL,
+  scoreEeToCECRLLabel,
+  CONVERSION_CECRL_EXPRESSION_ECRITE,
+  CECRL_COLORS,
+  CECRL_DESCRIPTIONS,
+} from '@/types/index';
 import { cn } from '@/lib/utils';
 
 // Max points par grille (TCF officiel)
-const MAX_EE = 20; // 4+4+4+8
+const MAX_EE = 20; // 8+8+4
 const MAX_EO = 18; // 3+3+3+3+3+3
 
 function scoreToNiveau(score: number): NiveauCECRL {
@@ -42,20 +50,107 @@ function tacheToNiveau(score: number, max: number): NiveauCECRL {
   return pctToCECRL(Math.round((score / max) * 100));
 }
 
-// Grille de notation TCF officielle
-const GRILLE_EXPRESSION_ECRITE = [
-  { critere: 'Adéquation de la production', max: 4 },
-  { critere: 'Capacité à interagir', max: 4 },
-  { critere: 'Cohérence et cohésion', max: 4 },
-  { critere: 'Compétence linguistique', max: 8 },
+export interface CritereGrille {
+  nom: string;
+  points_max: number;
+  description: string;
+  aideDepartage?: string;
+}
+
+export interface DimensionGrille {
+  nom: string;
+  points_max: number;
+  description?: string;
+  criteres: CritereGrille[];
+}
+
+// Grille officielle Expression Écrite TCF Canada (3 dimensions, 20 points au total)
+export const GRILLE_EXPRESSION_ECRITE_DIMENSIONS: DimensionGrille[] = [
+  {
+    nom: 'Compétence linguistique',
+    points_max: 8,
+    description: 'Étendue et maîtrise du vocabulaire, correction grammaticale, orthographe et ponctuation.',
+    criteres: [
+      {
+        nom: 'Étendue du lexique',
+        points_max: 2,
+        description: 'Vocabulaire varié, précis, adapté au sujet. Évite les répétitions excessives.',
+      },
+      {
+        nom: 'Maîtrise du lexique',
+        points_max: 2,
+        description: 'Choix des mots appropriés au contexte et au registre.',
+      },
+      {
+        nom: 'Correction grammaticale',
+        points_max: 2,
+        description: 'Conjugaison correcte, accords (sujet-verbe, nom-adjectif), structures de phrases variées.',
+      },
+      {
+        nom: 'Orthographe et ponctuation',
+        points_max: 2,
+        description: 'Orthographe lexicale et grammaticale correcte. Ponctuation appropriée.',
+      },
+    ],
+  },
+  {
+    nom: 'Compétence pragmatique',
+    points_max: 8,
+    description: 'Respect de la consigne, cohérence textuelle, connecteurs logiques et développement des idées.',
+    criteres: [
+      {
+        nom: 'Respect de la consigne',
+        points_max: 3,
+        description: 'Réponse complète à la tâche demandée. Nombre de mots respecté (±10%). Format approprié (message, article, lettre).',
+      },
+      {
+        nom: 'Cohérence et cohésion',
+        points_max: 3,
+        description: 'Clarté structurelle : organisation logique du texte (paragraphes, plan visible), connecteurs (d\'abord, ensuite, cependant, donc), idées enchaînées sans rupture ni contradiction.',
+        aideDepartage: '1. Le texte est-il bien construit formellement (paragraphes, connecteurs, enchaînement) ? → Cohérence et cohésion.',
+      },
+      {
+        nom: 'Développement thématique',
+        points_max: 2,
+        description: 'Idées développées avec exemples, arguments ou explications. Pas de hors-sujet.',
+      },
+    ],
+  },
+  {
+    nom: 'Compétence sociolinguistique',
+    points_max: 4,
+    description: 'Adaptation du registre au destinataire et clarté de l\'intention communicative.',
+    criteres: [
+      {
+        nom: 'Registre de langue et adéquation',
+        points_max: 2,
+        description: 'Le ton, le style et les formules correspondent au destinataire (ami, collègue, administration).',
+      },
+      {
+        nom: 'Clarté de la communication',
+        points_max: 2,
+        description: 'Clarté communicative : même si le texte est bien structuré, le destinataire comprend-il immédiatement l\'intention (informer, convaincre, demander, expliquer) et ce qu\'on attend de lui ?',
+        aideDepartage: '2. Une fois cette structure lue, le lecteur sait-il concrètement quoi faire ou penser ? → Clarté de la communication.',
+      },
+    ],
+  },
 ];
-const GRILLE_EXPRESSION_ORALE = [
-  { critere: 'Capacité à interagir', max: 3 },
-  { critere: 'Cohérence du discours', max: 3 },
-  { critere: 'Compétence sociolinguistique', max: 3 },
-  { critere: 'Étendue du vocabulaire', max: 3 },
-  { critere: 'Maîtrise du vocabulaire', max: 3 },
-  { critere: 'Maîtrise des structures grammaticales', max: 3 },
+
+// Grille Expression Orale
+export const GRILLE_EXPRESSION_ORALE_DIMENSIONS: DimensionGrille[] = [
+  {
+    nom: 'Évaluation de la production orale',
+    points_max: 18,
+    description: 'Évaluation des compétences orales (interaction, cohérence, sociolinguistique et grammaire).',
+    criteres: [
+      { nom: 'Capacité à interagir', points_max: 3, description: 'Aisance relationnelle, réactivité et prise d\'initiative dans l\'échange.' },
+      { nom: 'Cohérence du discours', points_max: 3, description: 'Enchaînement logique des propos et clarté de l\'argumentation.' },
+      { nom: 'Compétence sociolinguistique', points_max: 3, description: 'Adaptation du registre et respect de la situation de communication.' },
+      { nom: 'Étendue du vocabulaire', points_max: 3, description: 'Richesse et variété lexicale adaptées à la tâche.' },
+      { nom: 'Maîtrise du vocabulaire', points_max: 3, description: 'Précision des termes employés et justesse du vocabulaire.' },
+      { nom: 'Maîtrise des structures grammaticales', points_max: 3, description: 'Correction morphosyntaxique et complexité des structures.' },
+    ],
+  },
 ];
 
 function getWordTarget(numTache: number) {
@@ -167,11 +262,17 @@ export default function CorrectionInterface() {
   const [commentaire, setCommentaire] = useState('');
   const [sessionProductions, setSessionProductions] = useState<Production[]>([]);
   const [dureeEE, setDureeEE] = useState<number | null>(null);
-
-  const grille = production?.epreuve === 'expression_ecrite' ? GRILLE_EXPRESSION_ECRITE : GRILLE_EXPRESSION_ORALE;
-  const maxTotal = grille.reduce((a, b) => a + b.max, 0);
-  const scoreTotal = Math.round(Object.values(notes).reduce((a, b) => a + b, 0) * 100) / 100;
-  const niveauTache: NiveauCECRL | null = Object.keys(notes).length > 0 ? tacheToNiveau(scoreTotal, maxTotal) : null;
+  const isEE = production?.epreuve === 'expression_ecrite';
+  const dimensions = isEE ? GRILLE_EXPRESSION_ECRITE_DIMENSIONS : GRILLE_EXPRESSION_ORALE_DIMENSIONS;
+  const maxTotal = isEE ? MAX_EE : MAX_EO;
+  const scoreTotal = Math.round(Object.values(notes).reduce((a, b) => a + (Number(b) || 0), 0) * 100) / 100;
+  
+  const niveauTacheCode: NiveauCECRL | null = Object.keys(notes).length > 0
+    ? (isEE ? scoreEeToCECRL(scoreTotal) : tacheToNiveau(scoreTotal, maxTotal))
+    : null;
+  const niveauTacheLabel: string | null = Object.keys(notes).length > 0
+    ? (isEE ? scoreEeToCECRLLabel(scoreTotal) : niveauTacheCode)
+    : null;
 
   const loadSessionProductions = useCallback(async (sessionId: string, epreuve: string) => {
     const { data } = await supabase
@@ -815,69 +916,242 @@ export default function CorrectionInterface() {
         </Card>
       </div>
 
-      {/* ─── GRILLE DE NOTATION OFFICIELLE TCF ─── */}
-      <Card className="shadow-sm">
-        <CardHeader>
-          <CardTitle className="text-base flex items-center justify-between flex-wrap gap-2">
-            <span>Grille d'évaluation officielle TCF</span>
-            <div className="flex items-center gap-2">
-              {niveauTache && (
-                <Badge style={{ backgroundColor: CECRL_COLORS[niveauTache] }} className="text-white text-xs font-semibold">
-                  Niveau {niveauTache} — {CECRL_DESCRIPTIONS[niveauTache]}
+      {/* ─── GRILLE D'ÉVALUATION OFFICIELLE TCF CANADA ─── */}
+      <Card className="shadow-sm border-border overflow-hidden">
+        <CardHeader className="bg-muted/30 border-b border-border pb-4">
+          <div className="flex items-center justify-between flex-wrap gap-3">
+            <div>
+              <CardTitle className="text-base md:text-lg flex items-center gap-2 font-bold text-foreground">
+                <Award className="w-5 h-5 text-primary" />
+                <span>
+                  {isEE ? 'Grille d\'évaluation — Expression Écrite TCF Canada' : 'Grille d\'évaluation — Expression Orale'}
+                </span>
+              </CardTitle>
+              <p className="text-xs text-muted-foreground mt-0.5">
+                {isEE
+                  ? 'Évaluez les 3 dimensions clés (20 points au total) avec conversion automatique en niveau CECRL.'
+                  : 'Évaluez les compétences orales de l\'étudiant (18 points au total).'}
+              </p>
+            </div>
+
+            <div className="flex items-center gap-2.5">
+              {niveauTacheLabel && niveauTacheCode && (
+                <Badge
+                  style={{ backgroundColor: CECRL_COLORS[niveauTacheCode] }}
+                  className="text-white text-xs font-semibold px-2.5 py-1 shadow-xs"
+                >
+                  Niveau {niveauTacheLabel} {CECRL_DESCRIPTIONS[niveauTacheCode] ? `(${CECRL_DESCRIPTIONS[niveauTacheCode]})` : ''}
                 </Badge>
               )}
-              <span className="text-sm font-bold text-foreground">{scoreTotal} / {maxTotal}</span>
-            </div>
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          {grille.map(item => (
-            <div key={item.critere} className="flex items-center gap-3 flex-wrap p-2.5 rounded-lg hover:bg-muted/30 transition-colors border border-transparent hover:border-border">
-              <Label className="flex-1 text-sm font-medium min-w-48 text-foreground">
-                {item.critere}
-              </Label>
-              <div className="flex items-center gap-2 shrink-0">
-                <Input
-                  type="number"
-                  step="0.1"
-                  min={0}
-                  max={item.max}
-                  value={notes[item.critere] !== undefined ? notes[item.critere] : ''}
-                  onChange={e => {
-                    const raw = e.target.value.replace(',', '.');
-                    if (raw === '') {
-                      const updated = { ...notes };
-                      delete updated[item.critere];
-                      setNotes(updated);
-                    } else {
-                      const num = parseFloat(raw);
-                      const val = isNaN(num) ? 0 : Math.min(item.max, Math.max(0, Math.round(num * 100) / 100));
-                      setNotes(prev => ({ ...prev, [item.critere]: val }));
-                    }
-                  }}
-                  className="w-20 text-center font-bold font-mono text-base"
-                />
-                <span className="text-sm text-muted-foreground w-8">/ {item.max}</span>
+              <div className="bg-background border border-border px-3 py-1 rounded-lg text-sm font-bold text-foreground font-mono">
+                {scoreTotal} <span className="text-xs text-muted-foreground font-normal">/ {maxTotal} pts</span>
               </div>
             </div>
-          ))}
+          </div>
+        </CardHeader>
 
-          <div className="pt-4 border-t border-border flex items-center justify-between gap-3 flex-wrap">
-            <div>
-              <p className="font-bold text-base text-foreground">Score total de la tâche</p>
-              <p className="text-xs text-muted-foreground">Somme des points attribués aux critères</p>
-            </div>
-            <div className="flex items-center gap-3">
-              {niveauTache && (
-                <Badge style={{ backgroundColor: CECRL_COLORS[niveauTache] }} className="text-white text-sm px-3 py-1">
-                  Niveau {niveauTache}
+        <CardContent className="pt-5 space-y-6">
+          {/* Règle de départage contextuelle pour l'Expression Écrite */}
+          {isEE && (
+            <div className="p-4 bg-amber-500/10 border border-amber-500/25 rounded-xl space-y-2 text-xs md:text-sm">
+              <div className="flex items-center justify-between gap-2">
+                <div className="flex items-center gap-2 font-semibold text-amber-900 dark:text-amber-300">
+                  <HelpCircle className="w-4 h-4 text-amber-600 dark:text-amber-400 shrink-0" />
+                  <span>Règle de départage : « Cohérence et cohésion » vs « Clarté de la communication »</span>
+                </div>
+                <Badge variant="outline" className="text-[10px] uppercase font-bold border-amber-500/40 text-amber-800 dark:text-amber-300 bg-amber-500/10">
+                  Aide professeur
                 </Badge>
+              </div>
+              <p className="text-foreground/90 leading-relaxed text-xs">
+                <strong>1. Cohérence et cohésion :</strong> Le texte est-il bien construit formellement (paragraphes, connecteurs logiques, idées enchaînées sans rupture ni contradiction) ?<br />
+                <strong>2. Clarté de la communication :</strong> Une fois cette structure lue, le lecteur sait-il concrètement quoi faire ou penser (intention claire et action attendue bien comprise) ?
+              </p>
+              <p className="text-[11px] text-muted-foreground italic border-t border-amber-500/20 pt-1.5 mt-1">
+                💡 Exemple : Une lettre bien structurée en 3 paragraphes mais qui ne formule jamais clairement la demande aura une bonne note en « Cohérence » mais une note plus faible en « Clarté ».
+              </p>
+            </div>
+          )}
+
+          {/* Dimensions et critères */}
+          <div className="space-y-6">
+            {dimensions.map((dim, dimIdx) => {
+              const dimScore = Math.round(
+                dim.criteres.reduce((acc, c) => acc + (notes[c.nom] !== undefined ? Number(notes[c.nom]) : 0), 0) * 100
+              ) / 100;
+
+              return (
+                <div
+                  key={dim.nom}
+                  className="rounded-xl border border-border bg-card p-4 md:p-5 space-y-4 shadow-2xs"
+                >
+                  {/* En-tête de dimension avec sous-total automatique */}
+                  <div className="flex items-center justify-between gap-3 flex-wrap border-b border-border/80 pb-3">
+                    <div className="flex items-center gap-2.5">
+                      <span className="w-6 h-6 rounded-full bg-primary/10 text-primary text-xs font-bold flex items-center justify-center shrink-0">
+                        {dimIdx + 1}
+                      </span>
+                      <div>
+                        <h3 className="font-bold text-sm md:text-base text-foreground">
+                          {dim.nom}
+                        </h3>
+                        {dim.description && (
+                          <p className="text-xs text-muted-foreground">{dim.description}</p>
+                        )}
+                      </div>
+                    </div>
+
+                    <Badge
+                      variant="outline"
+                      className={cn(
+                        'text-xs font-mono font-semibold px-2.5 py-1',
+                        dimScore > 0 ? 'bg-primary/10 text-primary border-primary/30' : 'bg-muted text-muted-foreground'
+                      )}
+                    >
+                      Sous-total : {dimScore} / {dim.points_max} pts
+                    </Badge>
+                  </div>
+
+                  {/* Critères de la dimension */}
+                  <div className="space-y-3.5">
+                    {dim.criteres.map(c => {
+                      const noteVal = notes[c.nom];
+                      return (
+                        <div
+                          key={c.nom}
+                          className="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 rounded-lg bg-muted/25 hover:bg-muted/45 transition-colors border border-border/50"
+                        >
+                          {/* Intitulé & description du critère */}
+                          <div className="flex-1 min-w-0 pr-2 space-y-1">
+                            <div className="flex items-center gap-2 flex-wrap">
+                              <Label className="text-sm font-semibold text-foreground cursor-default">
+                                {c.nom}
+                              </Label>
+                              {c.aideDepartage && (
+                                <Badge
+                                  variant="outline"
+                                  className="text-[10px] py-0 h-4.5 bg-amber-500/10 text-amber-700 dark:text-amber-400 border-amber-500/30"
+                                  title={c.aideDepartage}
+                                >
+                                  Départage
+                                </Badge>
+                              )}
+                            </div>
+                            <p className="text-xs text-muted-foreground leading-relaxed">
+                              {c.description}
+                            </p>
+                            {c.aideDepartage && (
+                              <p className="text-[11px] text-amber-700/90 dark:text-amber-400/90 font-medium">
+                                ↳ {c.aideDepartage}
+                              </p>
+                            )}
+                          </div>
+
+                          {/* Champ de saisie de la note */}
+                          <div className="flex items-center gap-2 shrink-0 self-end md:self-center">
+                            <div className="flex items-center gap-1.5">
+                              <Input
+                                type="number"
+                                step="0.5"
+                                min={0}
+                                max={c.points_max}
+                                placeholder="0"
+                                value={noteVal !== undefined ? noteVal : ''}
+                                onChange={e => {
+                                  const raw = e.target.value.replace(',', '.');
+                                  if (raw === '') {
+                                    const updated = { ...notes };
+                                    delete updated[c.nom];
+                                    setNotes(updated);
+                                  } else {
+                                    const num = parseFloat(raw);
+                                    const val = isNaN(num) ? 0 : Math.min(c.points_max, Math.max(0, Math.round(num * 100) / 100));
+                                    setNotes(prev => ({ ...prev, [c.nom]: val }));
+                                  }
+                                }}
+                                className="w-20 text-center font-bold font-mono text-base bg-background h-9"
+                              />
+                              <span className="text-xs md:text-sm font-medium text-muted-foreground w-12">
+                                / {c.points_max} pts
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Récapitulatif Total + CECRL Automatique */}
+          <div className="pt-4 border-t border-border flex flex-col md:flex-row items-start md:items-center justify-between gap-4 bg-muted/30 p-4 rounded-xl">
+            <div className="space-y-1">
+              <div className="flex items-center gap-2">
+                <span className="font-bold text-base text-foreground">Score total de la tâche</span>
+                {isEE && (
+                  <Badge variant="outline" className="text-[10px] text-muted-foreground border-border">
+                    Barème officiel / 20
+                  </Badge>
+                )}
+              </div>
+              <p className="text-xs text-muted-foreground">
+                Somme automatique des {dimensions.reduce((a, d) => a + d.criteres.length, 0)} critères de notation
+              </p>
+            </div>
+
+            <div className="flex items-center gap-3 self-end md:self-auto flex-wrap">
+              {niveauTacheLabel && niveauTacheCode && (
+                <div className="flex items-center gap-2">
+                  <span className="text-xs text-muted-foreground font-medium">Niveau CECRL :</span>
+                  <Badge
+                    style={{ backgroundColor: CECRL_COLORS[niveauTacheCode] }}
+                    className="text-white text-sm px-3 py-1 font-bold shadow-xs"
+                  >
+                    {niveauTacheLabel}
+                  </Badge>
+                </div>
               )}
-              <span className="font-bold text-2xl text-foreground tabular-nums">
-                {scoreTotal} <span className="text-sm text-muted-foreground font-normal">/ {maxTotal}</span>
-              </span>
+              <div className="bg-card border border-border px-4 py-1.5 rounded-lg shadow-xs">
+                <span className="font-bold text-2xl text-foreground font-mono tabular-nums">
+                  {scoreTotal}
+                </span>
+                <span className="text-sm text-muted-foreground font-normal ml-1">
+                  / {maxTotal}
+                </span>
+              </div>
             </div>
           </div>
+
+          {/* Barème de conversion CECRL officiel (Expression Écrite) */}
+          {isEE && (
+            <div className="p-3 bg-muted/20 border border-border/60 rounded-lg text-xs space-y-2">
+              <span className="font-semibold text-foreground flex items-center gap-1.5">
+                <BookOpen className="w-3.5 h-3.5 text-primary" />
+                Tableau de conversion officiel (Score → Niveau CECRL) :
+              </span>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2 pt-1 font-mono text-[11px]">
+                {CONVERSION_CECRL_EXPRESSION_ECRITE.map(item => {
+                  const isCurrentRange = scoreTotal >= item.score_min && scoreTotal <= item.score_max && Object.keys(notes).length > 0;
+                  return (
+                    <div
+                      key={item.label}
+                      className={cn(
+                        'p-1.5 rounded border text-center transition-all',
+                        isCurrentRange
+                          ? 'border-primary bg-primary/10 text-primary font-bold ring-1 ring-primary'
+                          : 'border-border/60 bg-card text-muted-foreground'
+                      )}
+                    >
+                      <div className="font-semibold">{item.score_min} – {item.score_max} pts</div>
+                      <div className="text-foreground font-bold">{item.label}</div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
         </CardContent>
       </Card>
 
@@ -898,8 +1172,12 @@ export default function CorrectionInterface() {
                 const isRefuse = p.statut_correction === 'refuse' && !isCurrent;
                 const isCorrigee = p.statut_correction === 'corrige' && p.score !== null;
                 const scoreAffiche = isCurrent ? scoreTotal : (p.score ?? 0);
-                const niv = (isCorrigee || (isCurrent && Object.keys(notes).length > 0)) && !isRefuse
-                  ? tacheToNiveau(scoreAffiche, max)
+                const isEE_ = p.epreuve === 'expression_ecrite';
+                const nivCode = (isCorrigee || (isCurrent && Object.keys(notes).length > 0)) && !isRefuse
+                  ? (isEE_ ? scoreEeToCECRL(scoreAffiche) : tacheToNiveau(scoreAffiche, max))
+                  : null;
+                const nivLabel = (isCorrigee || (isCurrent && Object.keys(notes).length > 0)) && !isRefuse
+                  ? (isEE_ ? scoreEeToCECRLLabel(scoreAffiche) : nivCode)
                   : null;
 
                 return (
@@ -920,10 +1198,10 @@ export default function CorrectionInterface() {
                     <div className="flex items-center gap-2 shrink-0">
                       {p.statut_correction === 'refuse' && !isCurrent ? (
                         <Badge variant="destructive" className="text-xs">Refusée (0/{max})</Badge>
-                      ) : niv ? (
+                      ) : nivCode && nivLabel ? (
                         <>
-                          <Badge style={{ backgroundColor: CECRL_COLORS[niv] }} className="text-white text-xs">
-                            {niv}
+                          <Badge style={{ backgroundColor: CECRL_COLORS[nivCode] }} className="text-white text-xs">
+                            {nivLabel}
                           </Badge>
                           <span className="text-sm font-bold text-foreground tabular-nums">
                             {scoreAffiche} / {max}
@@ -949,8 +1227,11 @@ export default function CorrectionInterface() {
               if (terminees.length === 0) return null;
               const somme = terminees.reduce((s, p) => s + (p.score ?? 0), 0);
               const maxTotal_ = max * terminees.length;
+              const isEE_ = production?.epreuve === 'expression_ecrite';
+              const scoreMoyen = somme / terminees.length;
               const pct = maxTotal_ > 0 ? Math.round((somme / maxTotal_) * 100) : 0;
-              const niveauEpreuve = pctToCECRL(pct);
+              const niveauEpreuveCode = isEE_ ? scoreEeToCECRL(scoreMoyen) : pctToCECRL(pct);
+              const niveauEpreuveLabel = isEE_ ? scoreEeToCECRLLabel(scoreMoyen) : niveauEpreuveCode;
               const toutes = terminees.length === sessionProductions.length;
               return (
                 <div className="pt-3 border-t border-border flex items-center justify-between gap-3 flex-wrap">
@@ -961,8 +1242,8 @@ export default function CorrectionInterface() {
                     <p className="text-xs text-muted-foreground">{pct}% de réussite</p>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Badge style={{ backgroundColor: CECRL_COLORS[niveauEpreuve] }} className="text-white font-semibold">
-                      Niveau {niveauEpreuve} — {CECRL_DESCRIPTIONS[niveauEpreuve]}
+                    <Badge style={{ backgroundColor: CECRL_COLORS[niveauEpreuveCode] }} className="text-white font-semibold">
+                      Niveau {niveauEpreuveLabel} — {CECRL_DESCRIPTIONS[niveauEpreuveCode]}
                     </Badge>
                     <span className="font-bold text-xl text-foreground tabular-nums">{somme} / {maxTotal_}</span>
                   </div>
@@ -973,14 +1254,20 @@ export default function CorrectionInterface() {
         </Card>
       )}
 
-      {/* ─── COMMENTAIRES DU PROFESSEUR ─── */}
-      <Card className="shadow-sm">
+      {/* ─── COMMENTAIRE GLOBAL DU PROFESSEUR ─── */}
+      <Card className="shadow-sm border-border">
         <CardHeader className="pb-3">
-          <CardTitle className="text-base">Commentaires et conseils personnalisés</CardTitle>
+          <CardTitle className="text-base flex items-center gap-2">
+            <FileText className="w-4 h-4 text-primary" />
+            <span>Commentaire global du professeur</span>
+          </CardTitle>
+          <p className="text-xs text-muted-foreground">
+            Laissez une appréciation générale sur la copie (points forts, axes d'amélioration, conseils pour le candidat).
+          </p>
         </CardHeader>
         <CardContent>
           <Textarea
-            placeholder="Rédigez vos retours détaillés pour le candidat (points forts, axes d'amélioration, conseils lexicaux et grammaticaux)..."
+            placeholder="Rédigez votre appréciation globale pour l'étudiant..."
             className="min-h-32 text-base leading-relaxed"
             value={commentaire}
             onChange={e => setCommentaire(e.target.value)}

@@ -246,3 +246,33 @@ export const CECRL_DESCRIPTIONS: Record<NiveauCECRL, string> = {
 };
 
 export const NIVEAU_CECRL_LIST: NiveauCECRL[] = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
+
+/**
+ * Tableau de conversion officiel Expression Écrite TCF Canada (Score sur 20 -> Niveau CECRL)
+ */
+export const CONVERSION_CECRL_EXPRESSION_ECRITE = [
+  { score_min: 0, score_max: 3, niveau_cecrl: 'A1' as const, label: 'A1' },
+  { score_min: 4, score_max: 5, niveau_cecrl: 'A2' as const, label: 'A2' },
+  { score_min: 6, score_max: 9, niveau_cecrl: 'B1' as const, label: 'B1' },
+  { score_min: 10, score_max: 13, niveau_cecrl: 'B2' as const, label: 'B2' },
+  { score_min: 14, score_max: 15, niveau_cecrl: 'C1' as const, label: 'C1' },
+  { score_min: 16, score_max: 20, niveau_cecrl: 'C2' as const, label: 'C1-C2' },
+];
+
+export function scoreEeToCECRL(score: number): NiveauCECRL {
+  if (score >= 16) return 'C2';
+  if (score >= 14) return 'C1';
+  if (score >= 10) return 'B2';
+  if (score >= 6) return 'B1';
+  if (score >= 4) return 'A2';
+  return 'A1';
+}
+
+export function scoreEeToCECRLLabel(score: number): string {
+  if (score >= 16) return 'C1-C2';
+  if (score >= 14) return 'C1';
+  if (score >= 10) return 'B2';
+  if (score >= 6) return 'B1';
+  if (score >= 4) return 'A2';
+  return 'A1';
+}

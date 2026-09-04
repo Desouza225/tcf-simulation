@@ -9,16 +9,29 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { ClipboardList, CheckCircle, FileText, Mic, User } from 'lucide-react';
 import type { Production, Profile, NiveauCECRL } from '@/types/index';
-import { pctToCECRL, CECRL_COLORS, CECRL_DESCRIPTIONS, EPREUVE_LABELS } from '@/types/index';
+import {
+  pctToCECRL,
+  scoreEeToCECRL,
+  scoreEeToCECRLLabel,
+  CECRL_COLORS,
+  CECRL_DESCRIPTIONS,
+  EPREUVE_LABELS
+} from '@/types/index';
 import { cn } from '@/lib/utils';
 
 const MAX_EE = 20;
 const MAX_EO = 18;
 
-function getTaskNiveau(prod: Production): NiveauCECRL | null {
+function getTaskNiveau(prod: Production): { code: NiveauCECRL; label: string } | null {
   if (prod.score === null) return null;
-  const max = prod.epreuve === 'expression_ecrite' ? MAX_EE : MAX_EO;
-  return pctToCECRL(Math.round((prod.score / max) * 100));
+  if (prod.epreuve === 'expression_ecrite') {
+    return {
+      code: scoreEeToCECRL(prod.score),
+      label: scoreEeToCECRLLabel(prod.score),
+    };
+  }
+  const code = pctToCECRL(Math.round((prod.score / MAX_EO) * 100));
+  return { code, label: code };
 }
 
 interface EpreuveGroup {
@@ -152,8 +165,16 @@ export default function CorrectionsPage() {
             const scored = eg.productions.filter(p => p.score !== null);
             const somme = scored.reduce((s, p) => s + (p.score ?? 0), 0);
             const epDone = eg.productions.every(p => p.statut_correction === 'corrige');
-            const niveauEpreuve = epDone && scored.length > 0
-              ? pctToCECRL(Math.round((somme / (max * scored.length)) * 100))
+            const scoreMoyen = scored.length > 0 ? somme / scored.length : 0;
+            const niveauEpreuveCode: NiveauCECRL | null = epDone && scored.length > 0
+              ? isEE
+                ? scoreEeToCECRL(scoreMoyen)
+                : pctToCECRL(Math.round((somme / (max * scored.length)) * 100))
+              : null;
+            const niveauEpreuveLabel: string | null = epDone && scored.length > 0
+              ? isEE
+                ? scoreEeToCECRLLabel(scoreMoyen)
+                : niveauEpreuveCode
               : null;
 
             return (
@@ -166,9 +187,9 @@ export default function CorrectionsPage() {
                   <span className="text-xs font-semibold text-foreground">
                     {EPREUVE_LABELS[eg.epreuve as keyof typeof EPREUVE_LABELS]}
                   </span>
-                  {niveauEpreuve && (
-                    <Badge style={{ backgroundColor: CECRL_COLORS[niveauEpreuve] }} className="text-white text-xs py-0 h-4">
-                      {niveauEpreuve} — {CECRL_DESCRIPTIONS[niveauEpreuve]}
+                  {niveauEpreuveCode && niveauEpreuveLabel && (
+                    <Badge style={{ backgroundColor: CECRL_COLORS[niveauEpreuveCode] }} className="text-white text-xs py-0 h-4">
+                      {niveauEpreuveLabel} — {CECRL_DESCRIPTIONS[niveauEpreuveCode]}
                     </Badge>
                   )}
                 </div>
@@ -196,7 +217,9 @@ export default function CorrectionsPage() {
                             <div className="flex items-center gap-1.5 mt-0.5 flex-wrap">
                               <span className="text-xs text-success font-medium">{prod.score} / {max} pts</span>
                               {niveau && (
-                                <Badge style={{ backgroundColor: CECRL_COLORS[niveau] }} className="text-white text-xs py-0 h-4">{niveau}</Badge>
+                                <Badge style={{ backgroundColor: CECRL_COLORS[niveau.code] }} className="text-white text-xs py-0 h-4">
+                                  {niveau.label}
+                                </Badge>
                               )}
                             </div>
                           )}
