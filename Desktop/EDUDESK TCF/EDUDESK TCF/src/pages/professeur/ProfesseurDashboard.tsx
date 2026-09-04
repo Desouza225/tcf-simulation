@@ -52,12 +52,12 @@ export default function ProfesseurDashboard() {
         .select('id', { count: 'exact', head: true })
         .eq('statut_correction', 'en_attente');
 
-      // 3. Charger les corrections récentes en attente avec profil étudiant
+      // 3. Charger les corrections prioritaires (les plus anciennes en premier)
       const { data: corrData, error: corrErr } = await supabase
         .from('productions')
         .select('*, etudiant:profiles!etudiant_id(id, prenom, nom, email)')
         .eq('statut_correction', 'en_attente')
-        .order('created_at', { ascending: false })
+        .order('created_at', { ascending: true })
         .limit(10);
 
       let recentCorrections: ProductionWithEtudiant[] = [];
@@ -69,7 +69,7 @@ export default function ProfesseurDashboard() {
           .from('productions')
           .select('*')
           .eq('statut_correction', 'en_attente')
-          .order('created_at', { ascending: false })
+          .order('created_at', { ascending: true })
           .limit(10);
 
         if (Array.isArray(fbData) && fbData.length > 0) {

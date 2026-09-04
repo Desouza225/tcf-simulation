@@ -8,7 +8,7 @@ import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { ClipboardList, CheckCircle, FileText, Mic, User, RefreshCw, Search, Clock, Sparkles } from 'lucide-react';
+import { ClipboardList, CheckCircle, FileText, Mic, User, RefreshCw, Search, Clock, Sparkles, ArrowUpDown } from 'lucide-react';
 import type { Production, Profile, NiveauCECRL } from '@/types/index';
 import {
   pctToCECRL,
@@ -73,6 +73,7 @@ export default function CorrectionsPage() {
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
   const [search, setSearch] = useState('');
+  const [sortOrder, setSortOrder] = useState<'ancien_dabord' | 'recent_dabord'>('ancien_dabord');
   const [activeTab, setActiveTab] = useState<'tout' | 'examen_blanc' | 'entrainement'>('tout');
 
   const loadData = useCallback(async (isSilent = false) => {
@@ -85,7 +86,7 @@ export default function CorrectionsPage() {
         .from('productions')
         .select('*, etudiant:profiles!etudiant_id(*), session:sessions_examen!session_id(id, created_at, mode)')
         .eq('statut_correction', 'en_attente')
-        .order('created_at', { ascending: false });
+        .order('created_at', { ascending: true });
 
       let all: any[] = [];
       if (error || !data) {
@@ -94,7 +95,7 @@ export default function CorrectionsPage() {
           .from('productions')
           .select('*')
           .eq('statut_correction', 'en_attente')
-          .order('created_at', { ascending: false });
+          .order('created_at', { ascending: true });
 
         if (fallbackData && fallbackData.length > 0) {
           const uIds = [...new Set(fallbackData.map(p => p.etudiant_id).filter(Boolean))];
@@ -116,8 +117,12 @@ export default function CorrectionsPage() {
       }
 
       const groups = groupBySession(all);
-      // Tri du plus récent au plus ancien (nouveaux sujets en haut !)
-      groups.sort((a, b) => new Date(b.sessionDate).getTime() - new Date(a.sessionDate).getTime());
+      // Tri par défaut : anciennes d'abord (FIFO - priorité aux premiers arrivés)
+      groups.sort((a, b) => {
+        const timeA = new Date(a.sessionDate).getTime();
+        const timeB = new Date(b.sessionDate).getTime();
+        return sortOrder === 'ancien_dabord' ? timeA - timeB : timeB - timeA;
+      });
 
       setPendingGroups(groups);
       setPendingCount(all.length);
@@ -127,7 +132,7 @@ export default function CorrectionsPage() {
       setLoading(false);
       setRefreshing(false);
     }
-  }, [user]);
+  }, [user, sortOrder]);
 
   useEffect(() => {
     if (!user) return;
@@ -172,28 +177,49 @@ export default function CorrectionsPage() {
     entrainement: pendingGroups.filter(g => g.sessionMode === 'entrainement' || g.sessionMode === null).length,
   };
 
-  const isRecent = (dateStr: string) => {
-    const diffHours = (Date.now() - new Date(dateStr).getTime()) / (1000 * 60 * 60);
-    return diffHours < 24;
+  const getWaitingStatus = (dateStr: string) => {
+    const diffHours = Math.round((Date.now() - new Date(dateStr).getTime()) / (1000 * 60 * 60));
+    if (diffHours >= 48) {
+      const days = Math.floor(diffHours / 24);
+      return {
+        badge: (
+          <Badge variant="destructive" className="text-[10px] py-0 h-4 font-semibold">
+            Prioritaire · {days}j d'attente
+          </Badge>
+        ),
+      };
+    }
+    if (diffHours >= 24) {
+      return {
+        badge: (
+          <Badge className="bg-amber-500/20 text-amber-600 border-amber-500/30 text-[10px] py-0 h-4">
+            En attente depuis {diffHours}h
+          </Badge>
+        ),
+      };
+    }
+    return {
+      badge: (
+        <Badge variant="outline" className="text-[10px] py-0 h-4 text-muted-foreground">
+          Reçu il y a {diffHours <= 1 ? 'moins d\'1h' : `${diffHours}h`}
+        </Badge>
+      ),
+    };
   };
 
   const renderSessionGroup = (sg: SessionGroup) => {
     const totalTaches = sg.epreuves.reduce((n, eg) => n + eg.productions.length, 0);
-    const recent = isRecent(sg.sessionDate);
+    const waiting = getWaitingStatus(sg.sessionDate);
 
     return (
-      <Card key={sg.sessionId} className={cn('h-full border-border shadow-sm transition-all', recent && 'border-primary/30 ring-1 ring-primary/20')}>
+      <Card key={sg.sessionId} className="h-full border-border shadow-sm transition-all hover:border-primary/40">
         <CardHeader className="pb-3 border-b border-border/50 bg-muted/20">
           <div className="flex items-start justify-between gap-3 flex-wrap">
             <div className="min-w-0 flex-1">
               <CardTitle className="text-base font-bold text-foreground text-balance flex items-center gap-2">
                 <User className="w-4 h-4 text-primary shrink-0" />
                 <span>{sg.etudiant?.prenom || 'Étudiant'} {sg.etudiant?.nom || ''}</span>
-                {recent && (
-                  <Badge className="bg-emerald-600 text-white text-[10px] py-0 h-4 gap-1">
-                    <Sparkles className="w-2.5 h-2.5" /> Nouveau
-                  </Badge>
-                )}
+                {waiting.badge}
               </CardTitle>
               <div className="flex items-center gap-2 mt-1 flex-wrap">
                 <Badge className={cn('text-xs py-0 h-4 shrink-0 font-medium',
@@ -321,16 +347,34 @@ export default function CorrectionsPage() {
         </Button>
       </div>
 
-      {/* Barre de recherche et onglets */}
+      {/* Barre de recherche et tri */}
       <div className="space-y-3">
-        <div className="relative">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-          <Input
-            value={search}
-            onChange={e => setSearch(e.target.value)}
-            placeholder="Rechercher un étudiant par nom, prénom ou email..."
-            className="pl-9"
-          />
+        <div className="flex flex-col sm:flex-row gap-2">
+          <div className="relative flex-1">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+            <Input
+              value={search}
+              onChange={e => setSearch(e.target.value)}
+              placeholder="Rechercher un étudiant par nom, prénom ou email..."
+              className="pl-9"
+            />
+          </div>
+
+          <Button
+            type="button"
+            variant="outline"
+            size="sm"
+            onClick={() => setSortOrder(s => s === 'ancien_dabord' ? 'recent_dabord' : 'ancien_dabord')}
+            className="h-9 gap-2 text-xs font-medium shrink-0 self-stretch sm:self-auto"
+            title="Inverser l'ordre de priorité"
+          >
+            <ArrowUpDown className="w-3.5 h-3.5 text-primary" />
+            <span>
+              {sortOrder === 'ancien_dabord'
+                ? 'Ordre : Plus anciennes d\'abord (Priorité)'
+                : 'Ordre : Plus récentes d\'abord'}
+            </span>
+          </Button>
         </div>
 
         {!loading && (
