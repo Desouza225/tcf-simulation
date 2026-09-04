@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { supabase, fetchAllQuestions } from '@/db/supabase';
 import { useAuth } from '@/contexts/AuthContext';
+import { getAudioClaritySetting, attachAudioClarityProcessor } from '@/lib/audioProcessing';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -81,16 +82,54 @@ function TimerBig({ seconds, total }: { seconds: number; total: number }) {
 function AudioPlayerSimple({ url }: { url: string }) {
   const ref = useRef<HTMLAudioElement>(null);
   const [playing, setPlaying] = useState(true);
+
+  useEffect(() => {
+    let isMounted = true;
+    const initClarity = async () => {
+      const isClarityEnabled = await getAudioClaritySetting();
+      if (!isMounted || !ref.current) return;
+      attachAudioClarityProcessor(ref.current, isClarityEnabled);
+    };
+    initClarity();
+    return () => {
+      isMounted = false;
+    };
+  }, [url]);
+
+  const handlePlay = async () => {
+    const isClarityEnabled = await getAudioClaritySetting();
+    if (ref.current) {
+      attachAudioClarityProcessor(ref.current, isClarityEnabled);
+    }
+    setPlaying(true);
+  };
+
   return (
     <div className="flex items-center gap-3 p-3 bg-muted rounded-lg">
       <button
-        onClick={() => { if (ref.current) { if (playing) ref.current.pause(); else ref.current.play(); setPlaying(!playing); } }}
+        onClick={() => {
+          if (ref.current) {
+            if (playing) {
+              ref.current.pause();
+            } else {
+              ref.current.play();
+            }
+            setPlaying(!playing);
+          }
+        }}
         className="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-primary-foreground shrink-0"
       >
         {playing ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
       </button>
       <span className="text-sm text-muted-foreground">Audio de la question</span>
-      <audio ref={ref} src={url} autoPlay onEnded={() => setPlaying(false)} />
+      <audio
+        ref={ref}
+        src={url}
+        autoPlay
+        crossOrigin="anonymous"
+        onPlay={handlePlay}
+        onEnded={() => setPlaying(false)}
+      />
     </div>
   );
 }

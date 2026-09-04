@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { supabase, fetchAllQuestions } from '@/db/supabase';
 import { useAuth } from '@/contexts/AuthContext';
+import { getAudioClaritySetting, attachAudioClarityProcessor } from '@/lib/audioProcessing';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -148,20 +149,56 @@ function AudioPlayer({ url }: { url: string }) {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [playing, setPlaying] = useState(true);
   const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    let isMounted = true;
+    const initClarity = async () => {
+      const isClarityEnabled = await getAudioClaritySetting();
+      if (!isMounted || !audioRef.current) return;
+      attachAudioClarityProcessor(audioRef.current, isClarityEnabled);
+    };
+    initClarity();
+    return () => {
+      isMounted = false;
+    };
+  }, [url]);
+
   const toggle = () => {
     if (!audioRef.current) return;
-    if (playing) audioRef.current.pause(); else audioRef.current.play();
+    if (playing) {
+      audioRef.current.pause();
+    } else {
+      audioRef.current.play();
+    }
     setPlaying(!playing);
   };
+
+  const handlePlay = async () => {
+    const isClarityEnabled = await getAudioClaritySetting();
+    if (audioRef.current) {
+      attachAudioClarityProcessor(audioRef.current, isClarityEnabled);
+    }
+    setPlaying(true);
+  };
+
   return (
     <div className="flex items-center gap-3 p-3 bg-muted rounded-lg">
       <button onClick={toggle} className="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-primary-foreground shrink-0">
         {playing ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
       </button>
       <div className="flex-1 min-w-0"><Progress value={progress} className="h-1.5" /></div>
-      <audio ref={audioRef} src={url} autoPlay
-        onTimeUpdate={e => { const a = e.currentTarget; setProgress((a.currentTime / a.duration) * 100); }}
-        onEnded={() => setPlaying(false)} />
+      <audio
+        ref={audioRef}
+        src={url}
+        autoPlay
+        crossOrigin="anonymous"
+        onPlay={handlePlay}
+        onTimeUpdate={e => {
+          const a = e.currentTarget;
+          if (a.duration) setProgress((a.currentTime / a.duration) * 100);
+        }}
+        onEnded={() => setPlaying(false)}
+      />
     </div>
   );
 }
