@@ -18,7 +18,7 @@ import {
   Play, Pause, Loader2, ChevronLeft, CheckCircle, Mic,
   BarChart2, XCircle, FileText, User, Clock, CheckCircle2,
   Volume2, FastForward, HelpCircle, Info, Sparkles, BookOpen,
-  Check
+  Check, Award
 } from 'lucide-react';
 import { toast } from 'sonner';
 import type { Production, Profile, NiveauCECRL } from '@/types/index';

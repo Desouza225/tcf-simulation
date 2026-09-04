@@ -81,6 +81,11 @@ export class ErrorBoundary extends Component<Props, State> {
                 <p className="text-sm text-muted-foreground text-pretty">
                   Cette page a rencontré un problème inattendu. Vos données ne sont pas affectées.
                 </p>
+                {this.state.error?.message && (
+                  <p className="text-xs font-mono text-destructive/80 bg-destructive/10 p-2 rounded max-w-full overflow-x-auto text-left break-words">
+                    {this.state.error.message}
+                  </p>
+                )}
               </div>
               <div className="flex gap-3 flex-wrap justify-center">
                 <Button variant="outline" size="sm" onClick={this.handleBack}>
