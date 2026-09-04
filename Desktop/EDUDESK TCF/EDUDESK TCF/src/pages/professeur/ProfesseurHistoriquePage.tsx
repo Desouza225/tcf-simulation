@@ -9,11 +9,20 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { FileText, Mic, CheckCircle, XCircle, BarChart3 } from 'lucide-react';
 import type { Production, Profile, NiveauCECRL } from '@/types/index';
-import { pctToCECRL, CECRL_COLORS, CECRL_DESCRIPTIONS, EPREUVE_LABELS } from '@/types/index';
+import {
+  pctToCECRL,
+  scoreEeToCECRL,
+  scoreEeToCECRLLabel,
+  scoreEoToCECRL,
+  scoreEoToCECRLLabel,
+  CECRL_COLORS,
+  CECRL_DESCRIPTIONS,
+  EPREUVE_LABELS
+} from '@/types/index';
 import { cn } from '@/lib/utils';
 
 const MAX_EE = 20;
-const MAX_EO = 18;
+const MAX_EO = 20;
 
 interface SessionGroup {
   sessionId: string;
@@ -145,8 +154,12 @@ export default function ProfesseurHistoriquePage() {
             const isEE = eg.epreuve === 'expression_ecrite';
             const max = isEE ? MAX_EE : MAX_EO;
             const scored = eg.productions.filter(p => p.statut_correction === 'corrige' && p.score !== null);
-            const niveauEpreuve: NiveauCECRL | null = scored.length > 0
-              ? pctToCECRL(Math.round((scored.reduce((s, p) => s + (p.score ?? 0), 0) / (max * scored.length)) * 100))
+            const scoreMoyen = scored.length > 0 ? scored.reduce((s, p) => s + (p.score ?? 0), 0) / scored.length : 0;
+            const niveauEpreuveCode: NiveauCECRL | null = scored.length > 0
+              ? isEE ? scoreEeToCECRL(scoreMoyen) : scoreEoToCECRL(scoreMoyen)
+              : null;
+            const niveauEpreuveLabel: string | null = scored.length > 0
+              ? isEE ? scoreEeToCECRLLabel(scoreMoyen) : scoreEoToCECRLLabel(scoreMoyen)
               : null;
 
             return (
@@ -154,17 +167,20 @@ export default function ProfesseurHistoriquePage() {
                 <div className="flex items-center gap-2 flex-wrap">
                   {isEE ? <FileText className="w-3.5 h-3.5 text-primary shrink-0" /> : <Mic className="w-3.5 h-3.5 text-primary shrink-0" />}
                   <span className="text-xs font-semibold text-foreground">{EPREUVE_LABELS[eg.epreuve as keyof typeof EPREUVE_LABELS]}</span>
-                  {niveauEpreuve && (
-                    <Badge style={{ backgroundColor: CECRL_COLORS[niveauEpreuve] }} className="text-white text-xs py-0 h-4">
-                      {niveauEpreuve} — {CECRL_DESCRIPTIONS[niveauEpreuve]}
+                  {niveauEpreuveCode && niveauEpreuveLabel && (
+                    <Badge style={{ backgroundColor: CECRL_COLORS[niveauEpreuveCode] }} className="text-white text-xs py-0 h-4">
+                      {niveauEpreuveLabel} — {CECRL_DESCRIPTIONS[niveauEpreuveCode]}
                     </Badge>
                   )}
                 </div>
                 <div className="space-y-1.5 pl-5">
                   {eg.productions.map(prod => {
                     const isRefuse = prod.statut_correction === 'refuse';
-                    const niveau: NiveauCECRL | null = prod.score !== null
-                      ? pctToCECRL(Math.round((prod.score / max) * 100))
+                    const niveauCode: NiveauCECRL | null = prod.score !== null
+                      ? isEE ? scoreEeToCECRL(prod.score) : scoreEoToCECRL(prod.score)
+                      : null;
+                    const niveauLabel: string | null = prod.score !== null
+                      ? isEE ? scoreEeToCECRLLabel(prod.score) : scoreEoToCECRLLabel(prod.score)
                       : null;
                     return (
                       <div key={prod.id} className={cn(
@@ -179,8 +195,8 @@ export default function ProfesseurHistoriquePage() {
                           {!isRefuse && prod.score !== null && (
                             <div className="flex items-center gap-1.5 mt-0.5 flex-wrap">
                               <span className="text-xs text-success font-medium">{prod.score} / {max} pts</span>
-                              {niveau && (
-                                <Badge style={{ backgroundColor: CECRL_COLORS[niveau] }} className="text-white text-xs py-0 h-4">{niveau}</Badge>
+                              {niveauCode && niveauLabel && (
+                                <Badge style={{ backgroundColor: CECRL_COLORS[niveauCode] }} className="text-white text-xs py-0 h-4">{niveauLabel}</Badge>
                               )}
                             </div>
                           )}

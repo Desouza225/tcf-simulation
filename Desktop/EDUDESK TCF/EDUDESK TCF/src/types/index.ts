@@ -276,3 +276,36 @@ export function scoreEeToCECRLLabel(score: number): string {
   if (score >= 4) return 'A2';
   return 'A1';
 }
+
+/**
+ * Tableau de conversion officiel Expression Orale TCF Canada (Score sur 20 -> Niveau CECRL)
+ */
+export const CONVERSION_CECRL_EXPRESSION_ORALE = [
+  { score_min: 0, score_max: 0, niveau_cecrl: 'A1' as const, label: 'A1 non atteint' },
+  { score_min: 1, score_max: 1, niveau_cecrl: 'A1' as const, label: 'A1' },
+  { score_min: 2, score_max: 5, niveau_cecrl: 'A2' as const, label: 'A2' },
+  { score_min: 6, score_max: 9, niveau_cecrl: 'B1' as const, label: 'B1' },
+  { score_min: 10, score_max: 13, niveau_cecrl: 'B2' as const, label: 'B2' },
+  { score_min: 14, score_max: 17, niveau_cecrl: 'C1' as const, label: 'C1' },
+  { score_min: 18, score_max: 20, niveau_cecrl: 'C2' as const, label: 'C2' },
+];
+
+export function scoreEoToCECRL(score: number): NiveauCECRL {
+  if (score >= 18) return 'C2';
+  if (score >= 14) return 'C1';
+  if (score >= 10) return 'B2';
+  if (score >= 6) return 'B1';
+  if (score >= 2) return 'A2';
+  return 'A1';
+}
+
+export function scoreEoToCECRLLabel(score: number): string {
+  if (score >= 18) return 'C2';
+  if (score >= 14) return 'C1';
+  if (score >= 10) return 'B2';
+  if (score >= 6) return 'B1';
+  if (score >= 2) return 'A2';
+  if (score >= 1) return 'A1';
+  return 'A1 non atteint';
+}
+

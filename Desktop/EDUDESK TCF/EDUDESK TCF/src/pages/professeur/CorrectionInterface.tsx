@@ -26,7 +26,10 @@ import {
   pctToCECRL,
   scoreEeToCECRL,
   scoreEeToCECRLLabel,
+  scoreEoToCECRL,
+  scoreEoToCECRLLabel,
   CONVERSION_CECRL_EXPRESSION_ECRITE,
+  CONVERSION_CECRL_EXPRESSION_ORALE,
   CECRL_COLORS,
   CECRL_DESCRIPTIONS,
 } from '@/types/index';
@@ -34,7 +37,7 @@ import { cn } from '@/lib/utils';
 
 // Max points par grille (TCF officiel)
 const MAX_EE = 20; // 8+8+4
-const MAX_EO = 18; // 3+3+3+3+3+3
+const MAX_EO = 20; // 8+8+4 (Critères linguistiques 8 + pragmatiques 8 + sociolinguistiques 4)
 
 function scoreToNiveau(score: number): NiveauCECRL {
   if (score >= 549) return 'C2';
@@ -136,19 +139,67 @@ export const GRILLE_EXPRESSION_ECRITE_DIMENSIONS: DimensionGrille[] = [
   },
 ];
 
-// Grille Expression Orale
+// Grille officielle Expression Orale TCF Canada (3 dimensions, 20 points au total)
 export const GRILLE_EXPRESSION_ORALE_DIMENSIONS: DimensionGrille[] = [
   {
-    nom: 'Évaluation de la production orale',
-    points_max: 18,
-    description: 'Évaluation des compétences orales (interaction, cohérence, sociolinguistique et grammaire).',
+    nom: 'Critères linguistiques',
+    points_max: 8,
+    description: 'Étendue et maîtrise du lexique, correction grammaticale, aisance et fluidité, prononciation et intonation.',
     criteres: [
-      { nom: 'Capacité à interagir', points_max: 3, description: 'Aisance relationnelle, réactivité et prise d\'initiative dans l\'échange.' },
-      { nom: 'Cohérence du discours', points_max: 3, description: 'Enchaînement logique des propos et clarté de l\'argumentation.' },
-      { nom: 'Compétence sociolinguistique', points_max: 3, description: 'Adaptation du registre et respect de la situation de communication.' },
-      { nom: 'Étendue du vocabulaire', points_max: 3, description: 'Richesse et variété lexicale adaptées à la tâche.' },
-      { nom: 'Maîtrise du vocabulaire', points_max: 3, description: 'Précision des termes employés et justesse du vocabulaire.' },
-      { nom: 'Maîtrise des structures grammaticales', points_max: 3, description: 'Correction morphosyntaxique et complexité des structures.' },
+      {
+        nom: 'Étendue et maîtrise du lexique',
+        points_max: 2,
+        description: 'Vocabulaire varié et précis. Capacité à utiliser des expressions idiomatiques et à contourner les mots inconnus.',
+      },
+      {
+        nom: 'Correction grammaticale',
+        points_max: 2,
+        description: 'Conjugaison correcte, accords (sujet-verbe, nom-adjectif), structures de phrases variées (simples, complexes, subordonnées).',
+      },
+      {
+        nom: 'Aisance et fluidité',
+        points_max: 2,
+        description: 'Débit naturel, peu d\'hésitations (« euh… », silences longs), capacité à parler en continu sans bloquer.',
+      },
+      {
+        nom: 'Prononciation et intonation',
+        points_max: 2,
+        description: 'Articulation claire, prononciation correcte des sons français (nasales, u/ou, é/è), intonation naturelle.',
+      },
+    ],
+  },
+  {
+    nom: 'Critères pragmatiques',
+    points_max: 8,
+    description: 'Capacité à interagir, structuration du discours, cohérence et développement thématique.',
+    criteres: [
+      {
+        nom: 'Capacité à interagir',
+        points_max: 2,
+        description: 'Saluer, poser des questions adaptées, relancer, prendre son tour de parole, répondre aux questions de l\'examinateur.',
+      },
+      {
+        nom: 'Structuration du discours',
+        points_max: 3,
+        description: 'Organisation logique (introduction, développement, conclusion). Utilisation de connecteurs oraux (d\'abord, ensuite, cependant, donc, en résumé).',
+      },
+      {
+        nom: 'Cohérence et développement thématique',
+        points_max: 3,
+        description: 'Les idées s\'enchaînent logiquement. Le sujet est développé avec des exemples, des arguments ou des explications. Pas de hors-sujet.',
+      },
+    ],
+  },
+  {
+    nom: 'Critères sociolinguistiques',
+    points_max: 4,
+    description: 'Adéquation à la situation de communication et registre adapté.',
+    criteres: [
+      {
+        nom: 'Adéquation à la situation de communication',
+        points_max: 4,
+        description: 'Le ton, le style et le registre correspondent à la tâche (entretien formel T1, jeu de rôle quotidien T2, présentation argumentée T3). Formules de politesse adaptées.',
+      },
     ],
   },
 ];
@@ -268,10 +319,10 @@ export default function CorrectionInterface() {
   const scoreTotal = Math.round(Object.values(notes).reduce((a, b) => a + (Number(b) || 0), 0) * 100) / 100;
   
   const niveauTacheCode: NiveauCECRL | null = Object.keys(notes).length > 0
-    ? (isEE ? scoreEeToCECRL(scoreTotal) : tacheToNiveau(scoreTotal, maxTotal))
+    ? (isEE ? scoreEeToCECRL(scoreTotal) : scoreEoToCECRL(scoreTotal))
     : null;
   const niveauTacheLabel: string | null = Object.keys(notes).length > 0
-    ? (isEE ? scoreEeToCECRLLabel(scoreTotal) : niveauTacheCode)
+    ? (isEE ? scoreEeToCECRLLabel(scoreTotal) : scoreEoToCECRLLabel(scoreTotal))
     : null;
 
   const loadSessionProductions = useCallback(async (sessionId: string, epreuve: string) => {
@@ -964,13 +1015,13 @@ export default function CorrectionInterface() {
               <CardTitle className="text-base md:text-lg flex items-center gap-2 font-bold text-foreground">
                 <Award className="w-5 h-5 text-primary" />
                 <span>
-                  {isEE ? 'Grille d\'évaluation — Expression Écrite TCF Canada' : 'Grille d\'évaluation — Expression Orale'}
+                  {isEE ? 'Grille d\'évaluation — Expression Écrite TCF Canada' : 'Grille d\'évaluation — Expression Orale TCF Canada'}
                 </span>
               </CardTitle>
               <p className="text-xs text-muted-foreground mt-0.5">
                 {isEE
                   ? 'Évaluez les 3 dimensions clés (20 points au total) avec conversion automatique en niveau CECRL.'
-                  : 'Évaluez les compétences orales de l\'étudiant (18 points au total).'}
+                  : 'Évaluez les 3 dimensions clés (20 points au total) avec conversion automatique en niveau CECRL selon la grille officielle.'}
               </p>
             </div>
 
@@ -1009,6 +1060,53 @@ export default function CorrectionInterface() {
               </p>
               <p className="text-[11px] text-muted-foreground italic border-t border-amber-500/20 pt-1.5 mt-1">
                 💡 Exemple : Une lettre bien structurée en 3 paragraphes mais qui ne formule jamais clairement la demande aura une bonne note en « Cohérence » mais une note plus faible en « Clarté ».
+              </p>
+            </div>
+          )}
+
+          {/* Rappel visuel du contexte des 3 tâches pour l'Expression Orale */}
+          {!isEE && (
+            <div className="p-4 bg-primary/10 border border-primary/25 rounded-xl space-y-2.5 text-xs md:text-sm">
+              <div className="flex items-center justify-between gap-2">
+                <div className="flex items-center gap-2 font-semibold text-primary">
+                  <Info className="w-4 h-4 text-primary shrink-0" />
+                  <span>Rappel du contexte des 3 tâches — Expression Orale TCF Canada</span>
+                </div>
+                <Badge variant="outline" className="text-[10px] uppercase font-bold border-primary/40 text-primary bg-primary/10">
+                  Repère professeur
+                </Badge>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-2.5 pt-1 text-xs">
+                <div className={cn("p-2.5 rounded-lg border transition-all", production.numero_tache === 1 ? "bg-primary/15 border-primary font-medium ring-1 ring-primary/40" : "bg-card/80 border-border/80")}>
+                  <div className="font-bold text-foreground flex items-center justify-between">
+                    <span>T1 – Entretien dirigé</span>
+                    <span className="text-[10px] font-mono text-muted-foreground">~2 min</span>
+                  </div>
+                  <p className="text-muted-foreground text-[11px] mt-1 leading-relaxed">
+                    Parler de soi, de sa famille, de son environnement, de son parcours et de ses projets.
+                  </p>
+                </div>
+                <div className={cn("p-2.5 rounded-lg border transition-all", production.numero_tache === 2 ? "bg-primary/15 border-primary font-medium ring-1 ring-primary/40" : "bg-card/80 border-border/80")}>
+                  <div className="font-bold text-foreground flex items-center justify-between">
+                    <span>T2 – Exercice d'interaction</span>
+                    <span className="text-[10px] font-mono text-muted-foreground">~3 min 30</span>
+                  </div>
+                  <p className="text-muted-foreground text-[11px] mt-1 leading-relaxed">
+                    Obtenir des informations via un jeu de rôle avec l'examinateur (2 min préparation).
+                  </p>
+                </div>
+                <div className={cn("p-2.5 rounded-lg border transition-all", production.numero_tache === 3 ? "bg-primary/15 border-primary font-medium ring-1 ring-primary/40" : "bg-card/80 border-border/80")}>
+                  <div className="font-bold text-foreground flex items-center justify-between">
+                    <span>T3 – Point de vue argumenté</span>
+                    <span className="text-[10px] font-mono text-muted-foreground">~4 min 30</span>
+                  </div>
+                  <p className="text-muted-foreground text-[11px] mt-1 leading-relaxed">
+                    Argumenter spontanément et de manière structurée sur un thème de société.
+                  </p>
+                </div>
+              </div>
+              <p className="text-[11px] text-muted-foreground italic border-t border-primary/20 pt-1.5 mt-1">
+                💡 La grille s'applique à la prestation globale du candidat et sert de repère structuré selon votre appréciation professionnelle.
               </p>
             </div>
           )}
@@ -1130,11 +1228,9 @@ export default function CorrectionInterface() {
             <div className="space-y-1">
               <div className="flex items-center gap-2">
                 <span className="font-bold text-base text-foreground">Score total de la tâche</span>
-                {isEE && (
-                  <Badge variant="outline" className="text-[10px] text-muted-foreground border-border">
-                    Barème officiel / 20
-                  </Badge>
-                )}
+                <Badge variant="outline" className="text-[10px] text-muted-foreground border-border">
+                  Barème officiel / 20
+                </Badge>
               </div>
               <p className="text-xs text-muted-foreground">
                 Somme automatique des {dimensions.reduce((a, d) => a + d.criteres.length, 0)} critères de notation
@@ -1164,34 +1260,32 @@ export default function CorrectionInterface() {
             </div>
           </div>
 
-          {/* Barème de conversion CECRL officiel (Expression Écrite) */}
-          {isEE && (
-            <div className="p-3 bg-muted/20 border border-border/60 rounded-lg text-xs space-y-2">
-              <span className="font-semibold text-foreground flex items-center gap-1.5">
-                <BookOpen className="w-3.5 h-3.5 text-primary" />
-                Tableau de conversion officiel (Score → Niveau CECRL) :
-              </span>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2 pt-1 font-mono text-[11px]">
-                {CONVERSION_CECRL_EXPRESSION_ECRITE.map(item => {
-                  const isCurrentRange = scoreTotal >= item.score_min && scoreTotal <= item.score_max && Object.keys(notes).length > 0;
-                  return (
-                    <div
-                      key={item.label}
-                      className={cn(
-                        'p-1.5 rounded border text-center transition-all',
-                        isCurrentRange
-                          ? 'border-primary bg-primary/10 text-primary font-bold ring-1 ring-primary'
-                          : 'border-border/60 bg-card text-muted-foreground'
-                      )}
-                    >
-                      <div className="font-semibold">{item.score_min} – {item.score_max} pts</div>
-                      <div className="text-foreground font-bold">{item.label}</div>
-                    </div>
-                  );
-                })}
-              </div>
+          {/* Barème de conversion CECRL officiel (Expression Écrite ou Expression Orale) */}
+          <div className="p-3 bg-muted/20 border border-border/60 rounded-lg text-xs space-y-2">
+            <span className="font-semibold text-foreground flex items-center gap-1.5">
+              <BookOpen className="w-3.5 h-3.5 text-primary" />
+              Tableau de conversion officiel {isEE ? 'Expression Écrite' : 'Expression Orale'} (Score /20 → Niveau CECRL) :
+            </span>
+            <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-2 pt-1 font-mono text-[11px]">
+              {(isEE ? CONVERSION_CECRL_EXPRESSION_ECRITE : CONVERSION_CECRL_EXPRESSION_ORALE).map(item => {
+                const isCurrentRange = scoreTotal >= item.score_min && scoreTotal <= item.score_max && Object.keys(notes).length > 0;
+                return (
+                  <div
+                    key={item.label}
+                    className={cn(
+                      'p-1.5 rounded border text-center transition-all',
+                      isCurrentRange
+                        ? 'border-primary bg-primary/10 text-primary font-bold ring-1 ring-primary'
+                        : 'border-border/60 bg-card text-muted-foreground'
+                    )}
+                  >
+                    <div className="font-semibold">{item.score_min} – {item.score_max} pts</div>
+                    <div className="text-foreground font-bold">{item.label}</div>
+                  </div>
+                );
+              })}
             </div>
-          )}
+          </div>
         </CardContent>
       </Card>
 
@@ -1214,10 +1308,10 @@ export default function CorrectionInterface() {
                 const scoreAffiche = isCurrent ? scoreTotal : (p.score ?? 0);
                 const isEE_ = p.epreuve === 'expression_ecrite';
                 const nivCode = (isCorrigee || (isCurrent && Object.keys(notes).length > 0)) && !isRefuse
-                  ? (isEE_ ? scoreEeToCECRL(scoreAffiche) : tacheToNiveau(scoreAffiche, max))
+                  ? (isEE_ ? scoreEeToCECRL(scoreAffiche) : scoreEoToCECRL(scoreAffiche))
                   : null;
                 const nivLabel = (isCorrigee || (isCurrent && Object.keys(notes).length > 0)) && !isRefuse
-                  ? (isEE_ ? scoreEeToCECRLLabel(scoreAffiche) : nivCode)
+                  ? (isEE_ ? scoreEeToCECRLLabel(scoreAffiche) : scoreEoToCECRLLabel(scoreAffiche))
                   : null;
 
                 return (
@@ -1270,8 +1364,8 @@ export default function CorrectionInterface() {
               const isEE_ = production?.epreuve === 'expression_ecrite';
               const scoreMoyen = somme / terminees.length;
               const pct = maxTotal_ > 0 ? Math.round((somme / maxTotal_) * 100) : 0;
-              const niveauEpreuveCode = isEE_ ? scoreEeToCECRL(scoreMoyen) : pctToCECRL(pct);
-              const niveauEpreuveLabel = isEE_ ? scoreEeToCECRLLabel(scoreMoyen) : niveauEpreuveCode;
+              const niveauEpreuveCode = isEE_ ? scoreEeToCECRL(scoreMoyen) : scoreEoToCECRL(scoreMoyen);
+              const niveauEpreuveLabel = isEE_ ? scoreEeToCECRLLabel(scoreMoyen) : scoreEoToCECRLLabel(scoreMoyen);
               const toutes = terminees.length === sessionProductions.length;
               return (
                 <div className="pt-3 border-t border-border flex items-center justify-between gap-3 flex-wrap">

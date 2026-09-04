@@ -13,13 +13,15 @@ import {
   pctToCECRL,
   scoreEeToCECRL,
   scoreEeToCECRLLabel,
+  scoreEoToCECRL,
+  scoreEoToCECRLLabel,
   CECRL_DESCRIPTIONS,
 } from '@/types/index';
 import { Trophy, TrendingUp, ChevronDown, ChevronUp, Clock, CheckCircle2, MessageSquare, FileText, Mic, BookOpen, GraduationCap } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const MAX_EE = 20;
-const MAX_EO = 18;
+const MAX_EO = 20;
 
 interface SessionAvecProductions extends SessionExamen {
   productions?: Production[];
@@ -347,12 +349,12 @@ export default function HistoriquePage() {
                     const niveauEpreuveCode: NiveauCECRL | null = allDone && scored.length > 0
                       ? isEE
                         ? scoreEeToCECRL(scoreMoyen)
-                        : pctToCECRL(Math.round((scored.reduce((s, p) => s + (p.score ?? 0), 0) / (max * scored.length)) * 100))
+                        : scoreEoToCECRL(scoreMoyen)
                       : null;
                     const niveauEpreuveLabel: string | null = allDone && scored.length > 0
                       ? isEE
                         ? scoreEeToCECRLLabel(scoreMoyen)
-                        : niveauEpreuveCode
+                        : scoreEoToCECRLLabel(scoreMoyen)
                       : null;
                     return (
                       <div key={ep} className="space-y-2">
@@ -372,12 +374,12 @@ export default function HistoriquePage() {
                           const niveauCode: NiveauCECRL | null = prod.score !== null
                             ? isEE
                               ? scoreEeToCECRL(prod.score)
-                              : pctToCECRL(Math.round((prod.score / max) * 100))
+                              : scoreEoToCECRL(prod.score)
                             : null;
                           const niveauLabel: string | null = prod.score !== null
                             ? isEE
                               ? scoreEeToCECRLLabel(prod.score)
-                              : niveauCode
+                              : scoreEoToCECRLLabel(prod.score)
                             : null;
                           // Audio supprimé 10j après correction (audio_url null + prod corrigée expression orale)
                           const audioSupprime =

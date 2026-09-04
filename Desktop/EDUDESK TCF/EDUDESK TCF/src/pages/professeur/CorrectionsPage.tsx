@@ -13,6 +13,8 @@ import {
   pctToCECRL,
   scoreEeToCECRL,
   scoreEeToCECRLLabel,
+  scoreEoToCECRL,
+  scoreEoToCECRLLabel,
   CECRL_COLORS,
   CECRL_DESCRIPTIONS,
   EPREUVE_LABELS
@@ -20,7 +22,7 @@ import {
 import { cn } from '@/lib/utils';
 
 const MAX_EE = 20;
-const MAX_EO = 18;
+const MAX_EO = 20;
 
 function getTaskNiveau(prod: Production): { code: NiveauCECRL; label: string } | null {
   if (prod.score === null) return null;
@@ -30,8 +32,10 @@ function getTaskNiveau(prod: Production): { code: NiveauCECRL; label: string } |
       label: scoreEeToCECRLLabel(prod.score),
     };
   }
-  const code = pctToCECRL(Math.round((prod.score / MAX_EO) * 100));
-  return { code, label: code };
+  return {
+    code: scoreEoToCECRL(prod.score),
+    label: scoreEoToCECRLLabel(prod.score),
+  };
 }
 
 interface EpreuveGroup {
@@ -169,12 +173,12 @@ export default function CorrectionsPage() {
             const niveauEpreuveCode: NiveauCECRL | null = epDone && scored.length > 0
               ? isEE
                 ? scoreEeToCECRL(scoreMoyen)
-                : pctToCECRL(Math.round((somme / (max * scored.length)) * 100))
+                : scoreEoToCECRL(scoreMoyen)
               : null;
             const niveauEpreuveLabel: string | null = epDone && scored.length > 0
               ? isEE
                 ? scoreEeToCECRLLabel(scoreMoyen)
-                : niveauEpreuveCode
+                : scoreEoToCECRLLabel(scoreMoyen)
               : null;
 
             return (
